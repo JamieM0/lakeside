@@ -1,0 +1,12 @@
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\LakesideDB.mdf
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\LakesideDB_log.ldf
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\lakeside.exe.config
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\lakeside.exe
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\lakeside.pdb
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.csproj.AssemblyReference.cache
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.MainMenu.resources
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.Properties.Resources.resources
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.csproj.GenerateResource.cache
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.csproj.CoreCompileInputs.cache
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.exe
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.pdb

@@ -17,7 +17,7 @@ namespace lakeside
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SetUpDataDirectory();
-            Application.Run(new Form1());
+            Application.Run(new MainMenu());
         }
         private static void SetUpDataDirectory()
         {
