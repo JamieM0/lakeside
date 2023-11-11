@@ -42,5 +42,32 @@ namespace lakeside
         {
             draggingWindow = false;
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            btnClose.BackColor = Color.Red;
+            btnClose.ForeColor = Color.White;
+        }
+
+        private void btnClose_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnClose.BackColor = Color.Transparent;
+            btnClose.ForeColor = Color.Black;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void ythToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

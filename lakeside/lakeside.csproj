@@ -80,14 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="LakesideDBDataSet.xsc">
       <DependentUpon>LakesideDBDataSet.xsd</DependentUpon>
     </None>
@@ -103,6 +98,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -120,6 +120,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\RemoveGuestButton.png" />
+    <None Include="Resources\EditGuestButton.png" />
+    <None Include="Resources\AddGuestButton.png" />
+    <None Include="Resources\RemoveUser.png" />
+    <None Include="Resources\EditUser.png" />
+    <None Include="Resources\AddUser.png" />
     <None Include="Resources\Full Main Logo %28White%29.png" />
   </ItemGroup>
   <ItemGroup>
