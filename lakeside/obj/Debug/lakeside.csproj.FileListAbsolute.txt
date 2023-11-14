@@ -22,3 +22,4 @@ C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.csproj.Gene
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.csproj.CoreCompileInputs.cache
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.exe
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.pdb
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmAddGuest.resources

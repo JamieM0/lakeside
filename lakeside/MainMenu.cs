@@ -69,5 +69,11 @@ namespace lakeside
         {
 
         }
+
+        private void btnAddGuest_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmAddGuest().Show();
+        }
     }
 }

@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddGuest.Designer.cs">
+      <DependentUpon>frmAddGuest.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddGuest.resx">
+      <DependentUpon>frmAddGuest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +129,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\dice2.png" />
+    <None Include="Resources\diceSmall.png" />
+    <None Include="Resources\dice.png" />
     <None Include="Resources\RemoveGuestButton.png" />
     <None Include="Resources\EditGuestButton.png" />
     <None Include="Resources\AddGuestButton.png" />
@@ -139,6 +151,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
