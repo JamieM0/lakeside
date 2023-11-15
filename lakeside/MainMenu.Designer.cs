@@ -1,7 +1,7 @@
 ﻿
 namespace lakeside
 {
-    partial class MainMenu
+    partial class frmHome
     {
         /// <summary>
         /// Required designer variable.
@@ -163,7 +163,7 @@ namespace lakeside
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // MainMenu
+            // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,7 +182,7 @@ namespace lakeside
             this.ForeColor = System.Drawing.Color.Black;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "MainMenu";
+            this.Name = "frmHome";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainMenu_MouseDown);

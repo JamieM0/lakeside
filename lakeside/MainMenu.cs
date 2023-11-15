@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace lakeside
 {
-    public partial class MainMenu : Form
+    public partial class frmHome : Form
     {
         bool draggingWindow=false;
         Point dragCursorPoint;
         Point dragFormPoint;
 
-        public MainMenu()
+        public frmHome()
         {
             InitializeComponent();
             this.Text = "";

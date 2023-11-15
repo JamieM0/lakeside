@@ -45,6 +45,7 @@ namespace lakeside
             this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.btnRandomiseData = new System.Windows.Forms.Button();
             this.txtMobileNumber = new System.Windows.Forms.TextBox();
+            this.cmbPhoneNumberPrefix = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -164,6 +165,7 @@ namespace lakeside
             // 
             // cmbCountry
             // 
+            this.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCountry.FormattingEnabled = true;
             this.cmbCountry.Location = new System.Drawing.Point(791, 313);
@@ -187,16 +189,26 @@ namespace lakeside
             // txtMobileNumber
             // 
             this.txtMobileNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber.Location = new System.Drawing.Point(652, 145);
+            this.txtMobileNumber.Location = new System.Drawing.Point(729, 145);
             this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(369, 33);
+            this.txtMobileNumber.Size = new System.Drawing.Size(292, 33);
             this.txtMobileNumber.TabIndex = 2;
+            // 
+            // cmbPhoneNumberPrefix
+            // 
+            this.cmbPhoneNumberPrefix.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPhoneNumberPrefix.FormattingEnabled = true;
+            this.cmbPhoneNumberPrefix.Location = new System.Drawing.Point(642, 145);
+            this.cmbPhoneNumberPrefix.Name = "cmbPhoneNumberPrefix";
+            this.cmbPhoneNumberPrefix.Size = new System.Drawing.Size(81, 33);
+            this.cmbPhoneNumberPrefix.TabIndex = 8;
             // 
             // frmAddGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 563);
+            this.Controls.Add(this.cmbPhoneNumberPrefix);
             this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.cmbCountry);
             this.Controls.Add(this.txtPostcode);
@@ -240,5 +252,6 @@ namespace lakeside
         private System.Windows.Forms.MaskedTextBox txtPostcode;
         private System.Windows.Forms.ComboBox cmbCountry;
         private System.Windows.Forms.TextBox txtMobileNumber;
+        private System.Windows.Forms.ComboBox cmbPhoneNumberPrefix;
     }
 }
