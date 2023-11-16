@@ -75,5 +75,11 @@ namespace lakeside
             Hide();
             new frmAddGuest().Show();
         }
+
+        private void addGuestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmAddGuest().Show();
+        }
     }
 }

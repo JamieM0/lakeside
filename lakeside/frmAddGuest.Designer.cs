@@ -46,6 +46,7 @@ namespace lakeside
             this.btnRandomiseData = new System.Windows.Forms.Button();
             this.txtMobileNumber = new System.Windows.Forms.TextBox();
             this.cmbPhoneNumberPrefix = new System.Windows.Forms.ComboBox();
+            this.btnAddGuest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -80,7 +81,7 @@ namespace lakeside
             // lbMobileNumber
             // 
             this.lbMobileNumber.AutoSize = true;
-            this.lbMobileNumber.Location = new System.Drawing.Point(472, 144);
+            this.lbMobileNumber.Location = new System.Drawing.Point(528, 144);
             this.lbMobileNumber.Name = "lbMobileNumber";
             this.lbMobileNumber.Size = new System.Drawing.Size(164, 30);
             this.lbMobileNumber.TabIndex = 3;
@@ -127,7 +128,7 @@ namespace lakeside
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.Location = new System.Drawing.Point(144, 95);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(316, 33);
+            this.txtFullName.Size = new System.Drawing.Size(868, 33);
             this.txtFullName.TabIndex = 0;
             // 
             // txtEmail
@@ -185,29 +186,46 @@ namespace lakeside
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Click += new System.EventHandler(this.btnRandomiseData_Click);
             // 
             // txtMobileNumber
             // 
             this.txtMobileNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber.Location = new System.Drawing.Point(729, 145);
+            this.txtMobileNumber.Location = new System.Drawing.Point(785, 145);
             this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(292, 33);
+            this.txtMobileNumber.Size = new System.Drawing.Size(227, 33);
             this.txtMobileNumber.TabIndex = 2;
             // 
             // cmbPhoneNumberPrefix
             // 
+            this.cmbPhoneNumberPrefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPhoneNumberPrefix.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPhoneNumberPrefix.FormattingEnabled = true;
-            this.cmbPhoneNumberPrefix.Location = new System.Drawing.Point(642, 145);
+            this.cmbPhoneNumberPrefix.Items.AddRange(new object[] {
+            "+44"});
+            this.cmbPhoneNumberPrefix.Location = new System.Drawing.Point(698, 145);
             this.cmbPhoneNumberPrefix.Name = "cmbPhoneNumberPrefix";
             this.cmbPhoneNumberPrefix.Size = new System.Drawing.Size(81, 33);
             this.cmbPhoneNumberPrefix.TabIndex = 8;
+            // 
+            // btnAddGuest
+            // 
+            this.btnAddGuest.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
+            this.btnAddGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGuest.Location = new System.Drawing.Point(300, 470);
+            this.btnAddGuest.Name = "btnAddGuest";
+            this.btnAddGuest.Size = new System.Drawing.Size(712, 65);
+            this.btnAddGuest.TabIndex = 9;
+            this.btnAddGuest.UseVisualStyleBackColor = true;
+            this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
             // 
             // frmAddGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 563);
+            this.Controls.Add(this.btnAddGuest);
             this.Controls.Add(this.cmbPhoneNumberPrefix);
             this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.cmbCountry);
@@ -253,5 +271,6 @@ namespace lakeside
         private System.Windows.Forms.ComboBox cmbCountry;
         private System.Windows.Forms.TextBox txtMobileNumber;
         private System.Windows.Forms.ComboBox cmbPhoneNumberPrefix;
+        private System.Windows.Forms.Button btnAddGuest;
     }
 }

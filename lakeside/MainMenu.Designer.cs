@@ -70,19 +70,20 @@ namespace lakeside
             // addGuestToolStripMenuItem
             // 
             this.addGuestToolStripMenuItem.Name = "addGuestToolStripMenuItem";
-            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.addGuestToolStripMenuItem.Text = "Add Guest";
+            this.addGuestToolStripMenuItem.Click += new System.EventHandler(this.addGuestToolStripMenuItem_Click);
             // 
             // editGuestToolStripMenuItem
             // 
             this.editGuestToolStripMenuItem.Name = "editGuestToolStripMenuItem";
-            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.editGuestToolStripMenuItem.Text = "Edit Guest";
             // 
             // deleteGuestToolStripMenuItem
             // 
             this.deleteGuestToolStripMenuItem.Name = "deleteGuestToolStripMenuItem";
-            this.deleteGuestToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.deleteGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.deleteGuestToolStripMenuItem.Text = "Delete Guest";
             // 
             // btnPodBooking
