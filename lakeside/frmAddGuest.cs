@@ -17,6 +17,7 @@ namespace lakeside
         public frmAddGuest()
         {
             InitializeComponent();
+            CenterToScreen();
             cmbCountry.DataSource = GetCountryList();
             cmbCountry.Text = "United Kingdom";
             cmbPhoneNumberPrefix.Text = "+44";
@@ -57,11 +58,34 @@ namespace lakeside
         private void btnAddGuest_Click(object sender, EventArgs e)
         {
             DisableAllFields();
-            string names = txtFullName.Text.Split(' ');
-            guest guest = new guest();
-            
+            string[] names = txtFullName.Text.Trim().Split(' ');
+            string forename = "";
+            string givenName = names[0];
+            string surname = names[names.Length - 1];
+            for (int i = 0; i < names.Length - 1; i++)
+            {
+                forename += names[i] + " ";
+            }
+            forename.Trim();
+            surname.Trim();
+            givenName.Trim();
+            Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text);
+            LakesideDAL dal = new LakesideDAL();
+            dal.AddNewGuest(guest);
+            MessageBox.Show("Guest added successfully!");
+            ClearAllFields();
+            EnableAllFields();
         }
 
+        private void ClearAllFields()
+        {
+            txtFullName.Text = "";
+            txtAdd1.Text = "";
+            txtCityTown.Text = "";
+            txtPostcode.Text = "";
+            txtMobileNumber.Text = "";
+            txtEmail.Text = "";
+        }
         private void DisableAllFields()
         {
             txtFullName.Enabled = false;
@@ -70,6 +94,20 @@ namespace lakeside
             txtAdd1.Enabled = false;
             txtMobileNumber.Enabled = false;
             txtPostcode.Enabled = false;
+        }
+        private void EnableAllFields()
+        {
+            txtFullName.Enabled = true;
+            txtEmail.Enabled = true;
+            txtCityTown.Enabled = true;
+            txtAdd1.Enabled = true;
+            txtMobileNumber.Enabled = true;
+            txtPostcode.Enabled = true;
+        }
+
+        private void frmAddGuest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

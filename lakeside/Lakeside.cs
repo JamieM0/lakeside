@@ -10,18 +10,19 @@ namespace lakeside
     {
     }
 
-    public class guest
+    public class Guest
     {
-        private string Forename { get; set; }
-        private string Surname { get; set; }
-        private string Email { get; set; }
-        private string Number { get; set; }
-        private string Street { get; set; }
-        private string CityTown { get; set; }
-        private string Postcode { get; set; }
-        private string Country { get; set; }
+        public string Forename { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Number { get; set; }
+        public string Street { get; set; }
+        public string CityTown { get; set; }
+        public string Postcode { get; set; }
+        public string Country { get; set; }
+        public int GuestID { get; set; }
 
-        public guest()
+        public Guest()
         {
             Forename = "";
             Surname = "";
@@ -33,7 +34,7 @@ namespace lakeside
             Country = "";
         }
 
-        public guest(string forename, string surname, string email, string number, string street, string citytown, string postcode, string country)
+        public Guest(string forename, string surname, string email, string number, string street, string citytown, string postcode, string country)
         {
             Forename = forename;
             Surname = surname;

@@ -20,6 +20,7 @@ namespace lakeside
         {
             InitializeComponent();
             this.Text = "";
+            CenterToScreen();
         }
 
         private void MainMenu_MouseDown(object sender, MouseEventArgs e)
@@ -80,6 +81,18 @@ namespace lakeside
         {
             Hide();
             new frmAddGuest().Show();
+        }
+
+        private void btnEditGuest_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmSearchGuests().Show();
+        }
+
+        private void editGuestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmSearchGuests().Show();
         }
     }
 }

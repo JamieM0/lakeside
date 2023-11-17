@@ -15,7 +15,6 @@ C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\lakeside.exe.config
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\lakeside.exe
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\lakeside.pdb
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.csproj.AssemblyReference.cache
-C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.MainMenu.resources
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.Properties.Resources.resources
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.csproj.GenerateResource.cache
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.csproj.CoreCompileInputs.cache
@@ -23,3 +22,6 @@ C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.exe
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.pdb
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmAddGuest.resources
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmHome.resources
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmAddGuest.resources
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmHome.resources
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmSearchGuests.resources

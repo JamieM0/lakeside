@@ -62,11 +62,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DAL.cs" />
+    <Compile Include="DAL\LakesideDAL.cs" />
     <Compile Include="frmAddGuest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddGuest.Designer.cs">
       <DependentUpon>frmAddGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchGuests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchGuests.Designer.cs">
+      <DependentUpon>frmSearchGuests.cs</DependentUpon>
     </Compile>
     <Compile Include="Lakeside.cs" />
     <Compile Include="MainMenu.cs">
@@ -85,6 +93,9 @@
     <Compile Include="Validation.cs" />
     <EmbeddedResource Include="frmAddGuest.resx">
       <DependentUpon>frmAddGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchGuests.resx">
+      <DependentUpon>frmSearchGuests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -131,6 +142,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\searchIcon.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\search.svg" />
     <None Include="Resources\dice2.png" />
     <None Include="Resources\diceSmall.png" />
     <None Include="Resources\dice.png" />
@@ -155,7 +169,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
