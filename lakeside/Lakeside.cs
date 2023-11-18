@@ -8,6 +8,7 @@ namespace lakeside
 {
     class Lakeside
     {
+        
     }
 
     public class Guest
@@ -34,7 +35,7 @@ namespace lakeside
             Country = "";
         }
 
-        public Guest(string forename, string surname, string email, string number, string street, string citytown, string postcode, string country)
+        public Guest(string forename, string surname, string email, string number, string street, string citytown, string postcode, string country, int id)
         {
             Forename = forename;
             Surname = surname;
@@ -44,6 +45,7 @@ namespace lakeside
             CityTown = citytown;
             Postcode = postcode;
             Country = country;
+            GuestID = id;
         }
     }
 }

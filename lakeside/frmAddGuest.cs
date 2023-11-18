@@ -23,6 +23,28 @@ namespace lakeside
             cmbPhoneNumberPrefix.Text = "+44";
         }
 
+        public frmAddGuest(Guest edit)
+        {
+            InitializeComponent();
+            CenterToScreen();
+            cmbCountry.DataSource = GetCountryList();
+            cmbCountry.Text = "United Kingdom";
+            cmbPhoneNumberPrefix.Text = "+44";
+            txtFullName.Text = edit.Forename + " " + edit.Surname;
+            txtEmail.Text = edit.Email;
+            txtMobileNumber.Text = edit.Number;
+            txtAdd1.Text = edit.Street;
+            txtCityTown.Text = edit.CityTown;
+            txtPostcode.Text = edit.Postcode;
+            cmbCountry.Text = edit.Country;
+            btnAddGuest.BackgroundImage = Properties.Resources.EditGuestButton;
+            btnRandomiseData.Visible = false;
+            lbTitle.Text = "Edit Guest";
+            this.Text = "Lakeside Escapes: Edit Guest";
+            btnAddGuest.Location = new Point(31, 470);
+            btnAddGuest.Size = new Size(981, 65);
+        }
+
         public static List<string> GetCountryList()
         {
             List<string> cultureList = new List<string>();
@@ -69,7 +91,7 @@ namespace lakeside
             forename.Trim();
             surname.Trim();
             givenName.Trim();
-            Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text);
+            Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text,-1);
             LakesideDAL dal = new LakesideDAL();
             dal.AddNewGuest(guest);
             MessageBox.Show("Guest added successfully!");
