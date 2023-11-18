@@ -16,7 +16,14 @@ namespace lakeside
         public frmSearchGuests()
         {
             InitializeComponent();
+            CenterToScreen();
             txtSearch_SetText();
+        }
+        public frmSearchGuests(string search)
+        {
+            InitializeComponent();
+            CenterToScreen();
+            txtSearch.Text = (search);
         }
 
         protected void txtSearch_SetText()
@@ -138,7 +145,7 @@ namespace lakeside
                 int guestID = int.Parse(btnName.Split('_')[1]);
                 Guest g = dal.GuestLookup(guestID);
                 Hide();
-                new frmAddGuest(g).Show();
+                new frmAddGuest(g, txtSearch.Text).Show();
             }
             catch(Exception ex)
             {

@@ -41,18 +41,8 @@ namespace lakeside
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlGuestContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlG1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lbE1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlGuestContainer.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnlG1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -87,7 +77,7 @@ namespace lakeside
             // editGuestToolStripMenuItem
             // 
             this.editGuestToolStripMenuItem.Name = "editGuestToolStripMenuItem";
-            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.editGuestToolStripMenuItem.Text = "Edit Guest";
             this.editGuestToolStripMenuItem.Click += new System.EventHandler(this.editGuestToolStripMenuItem_Click);
             // 
@@ -176,75 +166,6 @@ namespace lakeside
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pnlGuestContainer
-            // 
-            this.pnlGuestContainer.Controls.Add(this.panel1);
-            this.pnlGuestContainer.Controls.Add(this.pnlG1);
-            this.pnlGuestContainer.Location = new System.Drawing.Point(143, 111);
-            this.pnlGuestContainer.Name = "pnlGuestContainer";
-            this.pnlGuestContainer.Size = new System.Drawing.Size(768, 341);
-            this.pnlGuestContainer.TabIndex = 12;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(3, 64);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 55);
-            this.panel1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(3, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 30);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Example Name";
-            // 
-            // pnlG1
-            // 
-            this.pnlG1.Controls.Add(this.button3);
-            this.pnlG1.Controls.Add(this.lbE1);
-            this.pnlG1.Controls.Add(this.label1);
-            this.pnlG1.Location = new System.Drawing.Point(3, 3);
-            this.pnlG1.Name = "pnlG1";
-            this.pnlG1.Size = new System.Drawing.Size(762, 55);
-            this.pnlG1.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::lakeside.Properties.Resources.EditGuestButton;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(604, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 49);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // lbE1
-            // 
-            this.lbE1.AutoSize = true;
-            this.lbE1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbE1.Location = new System.Drawing.Point(147, 19);
-            this.lbE1.Name = "lbE1";
-            this.lbE1.Size = new System.Drawing.Size(52, 21);
-            this.lbE1.TabIndex = 1;
-            this.lbE1.Text = "label3";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(3, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Example Name";
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -252,7 +173,6 @@ namespace lakeside
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
-            this.Controls.Add(this.pnlGuestContainer);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnClose);
@@ -274,11 +194,6 @@ namespace lakeside
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlGuestContainer.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.pnlG1.ResumeLayout(false);
-            this.pnlG1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,13 +213,6 @@ namespace lakeside
         private System.Windows.Forms.ToolStripMenuItem deleteGuestToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel pnlGuestContainer;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnlG1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lbE1;
-        private System.Windows.Forms.Label label1;
     }
 }
 

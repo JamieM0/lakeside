@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,36 @@ namespace lakeside
             string debugPath = System.IO.Path.GetDirectoryName(Environment.CurrentDirectory);
             string dataDirectory = System.IO.Path.GetDirectoryName(debugPath);
             AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
+        }
+    }
+    public class ValidationTextBox : TextBox
+    {
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Draw the border with a color of your choice
+            e.Graphics.DrawRectangle(Pens.Red, 0, 0, Width - 1, Height - 1);
+        }
+    }
+    public class ValidationMaskedTextBox : MaskedTextBox
+    {
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Draw the border with a color of your choice
+            e.Graphics.DrawRectangle(Pens.Red, 0, 0, Width - 1, Height - 1);
+        }
+    }
+    public class ValidationComboBox : ComboBox
+    {
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Draw the border with a color of your choice
+            e.Graphics.DrawRectangle(Pens.Red, 0, 0, Width - 1, Height - 1);
         }
     }
 }

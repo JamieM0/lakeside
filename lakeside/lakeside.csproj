@@ -144,6 +144,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\return-104.png" />
     <None Include="Resources\searchIcon.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\search.svg" />

@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.IO;
+using System.Xml.Linq;
 
 namespace lakeside
 {
     public partial class frmAddGuest : Form
     {
+        bool newMode = true;
+        string cachedSearch = "";
+        int id = 0;
         public frmAddGuest()
         {
+            newMode = true;
             InitializeComponent();
             CenterToScreen();
             cmbCountry.DataSource = GetCountryList();
@@ -23,8 +28,10 @@ namespace lakeside
             cmbPhoneNumberPrefix.Text = "+44";
         }
 
-        public frmAddGuest(Guest edit)
+        public frmAddGuest(Guest edit, string search)
         {
+            cachedSearch = search;
+            newMode = false;
             InitializeComponent();
             CenterToScreen();
             cmbCountry.DataSource = GetCountryList();
@@ -37,12 +44,14 @@ namespace lakeside
             txtCityTown.Text = edit.CityTown;
             txtPostcode.Text = edit.Postcode;
             cmbCountry.Text = edit.Country;
+            id = edit.GuestID;
             btnAddGuest.BackgroundImage = Properties.Resources.EditGuestButton;
-            btnRandomiseData.Visible = false;
+            btnRandomiseData.Image = null;
+            btnRandomiseData.Text = "";
+            btnRandomiseData.BackgroundImage = Properties.Resources.RemoveGuestButton;
             lbTitle.Text = "Edit Guest";
             this.Text = "Lakeside Escapes: Edit Guest";
-            btnAddGuest.Location = new Point(31, 470);
-            btnAddGuest.Size = new Size(981, 65);
+            btnReturn.Text = "Return to Search";
         }
 
         public static List<string> GetCountryList()
@@ -80,23 +89,47 @@ namespace lakeside
         private void btnAddGuest_Click(object sender, EventArgs e)
         {
             DisableAllFields();
-            string[] names = txtFullName.Text.Trim().Split(' ');
-            string forename = "";
-            string givenName = names[0];
-            string surname = names[names.Length - 1];
-            for (int i = 0; i < names.Length - 1; i++)
+            if(newMode)
             {
-                forename += names[i] + " ";
+                string[] names = txtFullName.Text.Trim().Split(' ');
+                string forename = "";
+                string givenName = names[0];
+                string surname = names[names.Length - 1];
+                for (int i = 0; i < names.Length - 1; i++)
+                {
+                    forename += names[i] + " ";
+                }
+                forename = forename.Trim();
+                surname = surname.Trim();
+                givenName = givenName.Trim();
+                Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text, -1);
+                LakesideDAL dal = new LakesideDAL();
+                dal.AddNewGuest(guest);
+                MessageBox.Show("Guest added successfully!");
+                ClearAllFields();
+                EnableAllFields();
             }
-            forename.Trim();
-            surname.Trim();
-            givenName.Trim();
-            Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text,-1);
-            LakesideDAL dal = new LakesideDAL();
-            dal.AddNewGuest(guest);
-            MessageBox.Show("Guest added successfully!");
-            ClearAllFields();
-            EnableAllFields();
+            else
+            {
+                //Edit current guest
+                string[] names = txtFullName.Text.Trim().Split(' ');
+                string forename = "";
+                string givenName = names[0];
+                string surname = names[names.Length - 1];
+                for (int i = 0; i < names.Length - 1; i++)
+                {
+                    forename += names[i] + " ";
+                }
+                forename = forename.Trim();
+                surname = surname.Trim();
+                givenName = givenName.Trim();
+                Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text, id);
+                LakesideDAL dal = new LakesideDAL();
+                dal.UpdateGuest(guest);
+                MessageBox.Show("Guest edited successfully!");
+                Hide();
+                new frmSearchGuests(cachedSearch).Show();
+            }
         }
 
         private void ClearAllFields()
@@ -130,6 +163,70 @@ namespace lakeside
         private void frmAddGuest_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtFullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Validation.Name(Char.ToString(e.KeyChar)) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFullName_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] names = txtFullName.Text.Trim().Split(' ');
+                string fullName = "";
+                for (int i = 0; i < names.Length; i++)
+                {
+                    names[i] = names[i].Trim();
+                    names[i] = Char.ToUpper(names[i][0]) + names[i].Substring(1);
+                    fullName += names[i] + " ";
+                }
+                txtFullName.Text = fullName.Trim();
+                Validation.Name(txtFullName.Text);
+            }
+            catch
+            {
+                
+            }
+        }
+
+        private void llbPostcodeFormat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Ask user if they want to change the format
+            if(MessageBox.Show("Although most do, some UK Postcodes don't fit this format.\r\nClick \"Yes\" to change the format.", "Change Postcode Format", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                txtPostcode.Mask = null;
+                llbPostcodeFormat.Text = "Change to UK Postcode Format";
+            }
+            
+            //if(llbPostcodeFormat.Text== "Change to UK Postcode Format")
+            //{
+            //    txtPostcode.Mask = "LL00 0LL";
+            //    llbPostcodeFormat.Text = "Change Postcode Format";
+            //}
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            //if(!Validation.Email(txtEmail.Text))
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            if(newMode)
+            {
+                Hide();
+                new frmHome().Show();
+            }
+            else
+            {
+                Hide();
+                new frmSearchGuests(cachedSearch).Show();
+            }
         }
     }
 }

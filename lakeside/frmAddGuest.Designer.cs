@@ -37,23 +37,26 @@ namespace lakeside
             this.lbCityTown = new System.Windows.Forms.Label();
             this.lbPostcode = new System.Windows.Forms.Label();
             this.lbCountry = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtAdd1 = new System.Windows.Forms.TextBox();
-            this.txtCityTown = new System.Windows.Forms.TextBox();
-            this.txtPostcode = new System.Windows.Forms.MaskedTextBox();
-            this.cmbCountry = new System.Windows.Forms.ComboBox();
-            this.btnRandomiseData = new System.Windows.Forms.Button();
-            this.txtMobileNumber = new System.Windows.Forms.TextBox();
-            this.cmbPhoneNumberPrefix = new System.Windows.Forms.ComboBox();
+            this.llbPostcodeFormat = new System.Windows.Forms.LinkLabel();
+            this.validFullName = new System.Windows.Forms.Label();
+            this.cmbPhoneNumberPrefix = new lakeside.ValidationComboBox();
+            this.txtMobileNumber = new lakeside.ValidationTextBox();
+            this.cmbCountry = new lakeside.ValidationComboBox();
+            this.txtPostcode = new lakeside.ValidationMaskedTextBox();
+            this.txtCityTown = new lakeside.ValidationTextBox();
+            this.txtAdd1 = new lakeside.ValidationTextBox();
+            this.txtEmail = new lakeside.ValidationTextBox();
+            this.txtFullName = new lakeside.ValidationTextBox();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
+            this.btnRandomiseData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(398, 9);
+            this.lbTitle.Location = new System.Drawing.Point(460, 9);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(162, 37);
@@ -72,7 +75,7 @@ namespace lakeside
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(60, 144);
+            this.lbEmail.Location = new System.Drawing.Point(60, 169);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(68, 30);
             this.lbEmail.TabIndex = 2;
@@ -81,7 +84,7 @@ namespace lakeside
             // lbMobileNumber
             // 
             this.lbMobileNumber.AutoSize = true;
-            this.lbMobileNumber.Location = new System.Drawing.Point(528, 144);
+            this.lbMobileNumber.Location = new System.Drawing.Point(528, 169);
             this.lbMobileNumber.Name = "lbMobileNumber";
             this.lbMobileNumber.Size = new System.Drawing.Size(164, 30);
             this.lbMobileNumber.TabIndex = 3;
@@ -99,7 +102,7 @@ namespace lakeside
             // lbCityTown
             // 
             this.lbCityTown.AutoSize = true;
-            this.lbCityTown.Location = new System.Drawing.Point(139, 308);
+            this.lbCityTown.Location = new System.Drawing.Point(139, 330);
             this.lbCityTown.Name = "lbCityTown";
             this.lbCityTown.Size = new System.Drawing.Size(121, 30);
             this.lbCityTown.TabIndex = 5;
@@ -117,43 +120,64 @@ namespace lakeside
             // lbCountry
             // 
             this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(686, 312);
+            this.lbCountry.Location = new System.Drawing.Point(686, 334);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(91, 30);
             this.lbCountry.TabIndex = 7;
             this.lbCountry.Text = "Country:";
             // 
-            // txtFullName
+            // llbPostcodeFormat
             // 
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(144, 95);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(868, 33);
-            this.txtFullName.TabIndex = 0;
+            this.llbPostcodeFormat.AutoSize = true;
+            this.llbPostcodeFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbPostcodeFormat.Location = new System.Drawing.Point(788, 297);
+            this.llbPostcodeFormat.Name = "llbPostcodeFormat";
+            this.llbPostcodeFormat.Size = new System.Drawing.Size(155, 17);
+            this.llbPostcodeFormat.TabIndex = 10;
+            this.llbPostcodeFormat.TabStop = true;
+            this.llbPostcodeFormat.Text = "Change Postcode Format";
+            this.llbPostcodeFormat.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbPostcodeFormat_LinkClicked);
             // 
-            // txtEmail
+            // validFullName
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(144, 145);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(316, 33);
-            this.txtEmail.TabIndex = 1;
+            this.validFullName.AutoSize = true;
+            this.validFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.validFullName.ForeColor = System.Drawing.Color.Red;
+            this.validFullName.Location = new System.Drawing.Point(140, 131);
+            this.validFullName.Name = "validFullName";
+            this.validFullName.Size = new System.Drawing.Size(52, 21);
+            this.validFullName.TabIndex = 11;
+            this.validFullName.Text = "label1";
             // 
-            // txtAdd1
+            // cmbPhoneNumberPrefix
             // 
-            this.txtAdd1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdd1.Location = new System.Drawing.Point(274, 261);
-            this.txtAdd1.Name = "txtAdd1";
-            this.txtAdd1.Size = new System.Drawing.Size(369, 33);
-            this.txtAdd1.TabIndex = 3;
+            this.cmbPhoneNumberPrefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPhoneNumberPrefix.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPhoneNumberPrefix.FormattingEnabled = true;
+            this.cmbPhoneNumberPrefix.Items.AddRange(new object[] {
+            "+44"});
+            this.cmbPhoneNumberPrefix.Location = new System.Drawing.Point(698, 170);
+            this.cmbPhoneNumberPrefix.Name = "cmbPhoneNumberPrefix";
+            this.cmbPhoneNumberPrefix.Size = new System.Drawing.Size(81, 33);
+            this.cmbPhoneNumberPrefix.TabIndex = 8;
             // 
-            // txtCityTown
+            // txtMobileNumber
             // 
-            this.txtCityTown.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCityTown.Location = new System.Drawing.Point(274, 309);
-            this.txtCityTown.Name = "txtCityTown";
-            this.txtCityTown.Size = new System.Drawing.Size(369, 33);
-            this.txtCityTown.TabIndex = 4;
+            this.txtMobileNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobileNumber.Location = new System.Drawing.Point(785, 170);
+            this.txtMobileNumber.Name = "txtMobileNumber";
+            this.txtMobileNumber.Size = new System.Drawing.Size(227, 33);
+            this.txtMobileNumber.TabIndex = 2;
+            // 
+            // cmbCountry
+            // 
+            this.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCountry.FormattingEnabled = true;
+            this.cmbCountry.Location = new System.Drawing.Point(791, 335);
+            this.cmbCountry.Name = "cmbCountry";
+            this.cmbCountry.Size = new System.Drawing.Size(221, 33);
+            this.cmbCountry.TabIndex = 6;
             // 
             // txtPostcode
             // 
@@ -164,15 +188,66 @@ namespace lakeside
             this.txtPostcode.Size = new System.Drawing.Size(100, 33);
             this.txtPostcode.TabIndex = 5;
             // 
-            // cmbCountry
+            // txtCityTown
             // 
-            this.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(791, 313);
-            this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(221, 33);
-            this.cmbCountry.TabIndex = 6;
+            this.txtCityTown.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCityTown.Location = new System.Drawing.Point(274, 331);
+            this.txtCityTown.Name = "txtCityTown";
+            this.txtCityTown.Size = new System.Drawing.Size(369, 33);
+            this.txtCityTown.TabIndex = 4;
+            // 
+            // txtAdd1
+            // 
+            this.txtAdd1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdd1.Location = new System.Drawing.Point(274, 261);
+            this.txtAdd1.Name = "txtAdd1";
+            this.txtAdd1.Size = new System.Drawing.Size(369, 33);
+            this.txtAdd1.TabIndex = 3;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(144, 170);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(316, 33);
+            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(144, 95);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(868, 33);
+            this.txtFullName.TabIndex = 0;
+            this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
+            this.txtFullName.Leave += new System.EventHandler(this.txtFullName_Leave);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReturn.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReturn.Location = new System.Drawing.Point(12, 9);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(256, 65);
+            this.btnReturn.TabIndex = 12;
+            this.btnReturn.Text = "Return to Home";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnAddGuest
+            // 
+            this.btnAddGuest.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
+            this.btnAddGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGuest.Location = new System.Drawing.Point(300, 470);
+            this.btnAddGuest.Name = "btnAddGuest";
+            this.btnAddGuest.Size = new System.Drawing.Size(712, 65);
+            this.btnAddGuest.TabIndex = 9;
+            this.btnAddGuest.UseVisualStyleBackColor = true;
+            this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
             // 
             // btnRandomiseData
             // 
@@ -188,43 +263,14 @@ namespace lakeside
             this.btnRandomiseData.UseVisualStyleBackColor = true;
             this.btnRandomiseData.Click += new System.EventHandler(this.btnRandomiseData_Click);
             // 
-            // txtMobileNumber
-            // 
-            this.txtMobileNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobileNumber.Location = new System.Drawing.Point(785, 145);
-            this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(227, 33);
-            this.txtMobileNumber.TabIndex = 2;
-            // 
-            // cmbPhoneNumberPrefix
-            // 
-            this.cmbPhoneNumberPrefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPhoneNumberPrefix.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPhoneNumberPrefix.FormattingEnabled = true;
-            this.cmbPhoneNumberPrefix.Items.AddRange(new object[] {
-            "+44"});
-            this.cmbPhoneNumberPrefix.Location = new System.Drawing.Point(698, 145);
-            this.cmbPhoneNumberPrefix.Name = "cmbPhoneNumberPrefix";
-            this.cmbPhoneNumberPrefix.Size = new System.Drawing.Size(81, 33);
-            this.cmbPhoneNumberPrefix.TabIndex = 8;
-            // 
-            // btnAddGuest
-            // 
-            this.btnAddGuest.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
-            this.btnAddGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGuest.Location = new System.Drawing.Point(300, 470);
-            this.btnAddGuest.Name = "btnAddGuest";
-            this.btnAddGuest.Size = new System.Drawing.Size(712, 65);
-            this.btnAddGuest.TabIndex = 9;
-            this.btnAddGuest.UseVisualStyleBackColor = true;
-            this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
-            // 
             // frmAddGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 563);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.validFullName);
+            this.Controls.Add(this.llbPostcodeFormat);
             this.Controls.Add(this.btnAddGuest);
             this.Controls.Add(this.cmbPhoneNumberPrefix);
             this.Controls.Add(this.txtMobileNumber);
@@ -264,14 +310,17 @@ namespace lakeside
         private System.Windows.Forms.Label lbPostcode;
         private System.Windows.Forms.Label lbCountry;
         private System.Windows.Forms.Button btnRandomiseData;
-        private System.Windows.Forms.TextBox txtFullName;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtAdd1;
-        private System.Windows.Forms.TextBox txtCityTown;
-        private System.Windows.Forms.MaskedTextBox txtPostcode;
-        private System.Windows.Forms.ComboBox cmbCountry;
-        private System.Windows.Forms.TextBox txtMobileNumber;
-        private System.Windows.Forms.ComboBox cmbPhoneNumberPrefix;
+        private lakeside.ValidationTextBox txtFullName;
+        private lakeside.ValidationTextBox txtEmail;
+        private lakeside.ValidationTextBox txtAdd1;
+        private lakeside.ValidationTextBox txtCityTown;
+        private lakeside.ValidationMaskedTextBox txtPostcode;
+        private lakeside.ValidationComboBox cmbCountry;
+        private lakeside.ValidationTextBox txtMobileNumber;
+        private lakeside.ValidationComboBox cmbPhoneNumberPrefix;
         private System.Windows.Forms.Button btnAddGuest;
+        private System.Windows.Forms.LinkLabel llbPostcodeFormat;
+        private System.Windows.Forms.Label validFullName;
+        private System.Windows.Forms.Button btnReturn;
     }
 }
