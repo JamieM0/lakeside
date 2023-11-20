@@ -18,6 +18,8 @@ namespace lakeside
         bool newMode = true;
         string cachedSearch = "";
         int id = 0;
+        bool[] allValid = new bool[7];
+
         public frmAddGuest()
         {
             newMode = true;
@@ -160,14 +162,35 @@ namespace lakeside
             txtPostcode.Enabled = true;
         }
 
+        private void Invalidator(int elementID, Control changeColour, Label errorDisplay, string msg)
+        {
+            //elementID: 0-Name, 1-Email, 2-PhoneNumber, 3-Street, 4-Postcode, 5-Town, 6-Country
+            //Lakeside.Notifier()
+            changeColour.BackColor = Color.LightCoral;
+            errorDisplay.Text = msg;
+            allValid[id] = false;
+        }
+        private void Validator(int elementID, Control changeColour, Label errorDisplay, string msg)
+        {
+            changeColour.BackColor = Color.White;
+            errorDisplay.Text = "";
+            allValid[id] = true;
+        }
+
         private void frmAddGuest_Load(object sender, EventArgs e)
         {
-
+            validAdd1.Text = "";
+            validCityTown.Text = "";
+            validCountry.Text = "";
+            validEmail.Text = "";
+            validFullName.Text = "";
+            validNumber.Text = "";
+            validPostcode.Text = "";
         }
 
         private void txtFullName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Validation.Name(Char.ToString(e.KeyChar)) && !Char.IsControl(e.KeyChar))
+            if (Validation.Name(Char.ToString(e.KeyChar))==null && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -186,7 +209,11 @@ namespace lakeside
                     fullName += names[i] + " ";
                 }
                 txtFullName.Text = fullName.Trim();
-                Validation.Name(txtFullName.Text);
+                string errMsg = Validation.Name(txtFullName.Text);
+                if (errMsg == null)
+                    Validator(0, txtFullName, validFullName, errMsg);
+                else
+                    Invalidator(0,txtFullName,validFullName,errMsg);
             }
             catch
             {
@@ -212,7 +239,11 @@ namespace lakeside
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            //if(!Validation.Email(txtEmail.Text))
+            string errMsg = Validation.Email(txtEmail.Text);
+            if (errMsg == null)
+                Validator(1, txtEmail, validEmail, errMsg);
+            else
+                Invalidator(1, txtEmail, validEmail, errMsg);
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -227,6 +258,24 @@ namespace lakeside
                 Hide();
                 new frmSearchGuests(cachedSearch).Show();
             }
+        }
+
+        private void txtFullName_TextChanged(object sender, EventArgs e)
+        {
+            string errMsg = Validation.Name(txtFullName.Text.Trim());
+            if (errMsg == null)
+                Validator(0, txtFullName, validFullName, errMsg);
+            else
+                Invalidator(0, txtFullName, validFullName, errMsg);
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            string errMsg = Validation.Email(txtEmail.Text);
+            if (errMsg == null)
+                Validator(1, txtEmail, validEmail, errMsg);
+            else
+                Invalidator(1, txtEmail, validEmail, errMsg);
         }
     }
 }

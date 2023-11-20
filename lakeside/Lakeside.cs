@@ -3,12 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace lakeside
 {
     class Lakeside
     {
-        
+        public static void Notifier(int notificationType)
+        {
+            /* Notification Type:
+             0: Error, 1: No (Other Negative), 2: Neutral / Info, 3: Yes / OK 
+            
+            Notifications only have 1 type of text - no title. This is to avoid being too cramped.
+
+             */
+        }
+    }
+
+    public class Notification
+    {
+        public PictureBox _pbIcon { get; set; }
+        public string _text { get; set; }
+        public int _notificationType { get; set; }
+
     }
 
     public class Guest

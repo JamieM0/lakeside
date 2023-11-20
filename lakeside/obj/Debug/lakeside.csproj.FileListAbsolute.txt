@@ -25,3 +25,4 @@ C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmAddGuest.resources
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmHome.resources
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmSearchGuests.resources
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmSearchGuests.resources
