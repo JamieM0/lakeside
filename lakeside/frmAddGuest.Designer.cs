@@ -56,6 +56,7 @@ namespace lakeside
             this.txtAdd1 = new lakeside.ValidationTextBox();
             this.txtEmail = new lakeside.ValidationTextBox();
             this.txtFullName = new lakeside.ValidationTextBox();
+            this.btnClearAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -280,6 +281,8 @@ namespace lakeside
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(227, 33);
             this.txtMobileNumber.TabIndex = 2;
+            this.txtMobileNumber.TextChanged += new System.EventHandler(this.txtMobileNumber_TextChanged);
+            this.txtMobileNumber.Leave += new System.EventHandler(this.txtMobileNumber_Leave);
             // 
             // cmbCountry
             // 
@@ -299,6 +302,8 @@ namespace lakeside
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(100, 33);
             this.txtPostcode.TabIndex = 5;
+            this.txtPostcode.TextChanged += new System.EventHandler(this.txtPostcode_TextChanged);
+            this.txtPostcode.Leave += new System.EventHandler(this.txtPostcode_Leave);
             // 
             // txtCityTown
             // 
@@ -307,6 +312,8 @@ namespace lakeside
             this.txtCityTown.Name = "txtCityTown";
             this.txtCityTown.Size = new System.Drawing.Size(369, 33);
             this.txtCityTown.TabIndex = 4;
+            this.txtCityTown.TextChanged += new System.EventHandler(this.txtCityTown_TextChanged);
+            this.txtCityTown.Leave += new System.EventHandler(this.txtCityTown_Leave);
             // 
             // txtAdd1
             // 
@@ -315,6 +322,8 @@ namespace lakeside
             this.txtAdd1.Name = "txtAdd1";
             this.txtAdd1.Size = new System.Drawing.Size(369, 33);
             this.txtAdd1.TabIndex = 3;
+            this.txtAdd1.TextChanged += new System.EventHandler(this.txtAdd1_TextChanged);
+            this.txtAdd1.Leave += new System.EventHandler(this.txtAdd1_Leave);
             // 
             // txtEmail
             // 
@@ -337,11 +346,26 @@ namespace lakeside
             this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
             this.txtFullName.Leave += new System.EventHandler(this.txtFullName_Leave);
             // 
+            // btnClearAll
+            // 
+            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClearAll.Location = new System.Drawing.Point(791, 9);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(256, 65);
+            this.btnClearAll.TabIndex = 19;
+            this.btnClearAll.Text = "Clear All Fields";
+            this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // 
             // frmAddGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 563);
+            this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.validCountry);
             this.Controls.Add(this.validCityTown);
             this.Controls.Add(this.validPostcode);
@@ -408,5 +432,6 @@ namespace lakeside
         private System.Windows.Forms.Label validPostcode;
         private System.Windows.Forms.Label validCityTown;
         private System.Windows.Forms.Label validCountry;
+        private System.Windows.Forms.Button btnClearAll;
     }
 }

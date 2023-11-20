@@ -152,5 +152,11 @@ namespace lakeside
                 MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmHome().Show();
+        }
     }
 }
