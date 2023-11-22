@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lakeside
+namespace lakeside.DAL
 {
     public class LakesideDAL : DAL
     {

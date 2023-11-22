@@ -94,5 +94,11 @@ namespace lakeside
             Hide();
             new frmSearchGuests().Show();
         }
+
+        private void btnAddPod_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmAddPod().Show();
+        }
     }
 }
