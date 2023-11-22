@@ -201,7 +201,7 @@ namespace lakeside
                 case 3:
                     changeColour = txtAdd1;
                     errorDisplay = validAdd1;
-                    msg=Validation.StreetName(changeColour.Text);
+                    msg=Validation.OtherText(changeColour.Text, "address");
                     break;
                 case 4:
                     changeColour = txtPostcode;

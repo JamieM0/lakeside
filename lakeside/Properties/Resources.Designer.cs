@@ -73,9 +73,39 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddPod {
+            get {
+                object obj = ResourceManager.GetObject("AddPod", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddPodButton {
+            get {
+                object obj = ResourceManager.GetObject("AddPodButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddUser {
             get {
                 object obj = ResourceManager.GetObject("AddUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeletePodButton {
+            get {
+                object obj = ResourceManager.GetObject("DeletePodButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +126,26 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap EditGuestButton {
             get {
                 object obj = ResourceManager.GetObject("EditGuestButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditPod {
+            get {
+                object obj = ResourceManager.GetObject("EditPod", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditPodButton {
+            get {
+                object obj = ResourceManager.GetObject("EditPodButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +176,16 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap RemoveGuestButton {
             get {
                 object obj = ResourceManager.GetObject("RemoveGuestButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemovePod {
+            get {
+                object obj = ResourceManager.GetObject("RemovePod", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

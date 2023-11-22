@@ -9,13 +9,14 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Collections;
 
 namespace lakeside.DAL
 {
     public class DAL
     {
         //The connection string
-        private string _connectionString = ConfigurationManager.ConnectionStrings["lakeside.Properties.Settings.LakesideDBConnectionString"].ConnectionString;
+        public string _connectionString = ConfigurationManager.ConnectionStrings["lakeside.Properties.Settings.LakesideDBConnectionString"].ConnectionString;
 
         //Get value of connection string
         public string ConnectionString
@@ -66,6 +67,18 @@ namespace lakeside.DAL
                 finally
                 {
                     connection.Close();
+                }
+            }
+        }
+
+        public object ExecuteScalar(string query)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    return command.ExecuteScalar();
                 }
             }
         }

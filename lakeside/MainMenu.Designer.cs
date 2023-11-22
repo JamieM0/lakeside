@@ -33,13 +33,13 @@ namespace lakeside
             this.ythToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managePodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editPosdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPodBooking = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAddPod = new System.Windows.Forms.Button();
-            this.managePodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addPodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editPosdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -83,6 +83,27 @@ namespace lakeside
             this.editGuestToolStripMenuItem.Text = "Edit Guest";
             this.editGuestToolStripMenuItem.Click += new System.EventHandler(this.editGuestToolStripMenuItem_Click);
             // 
+            // managePodsToolStripMenuItem
+            // 
+            this.managePodsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPodToolStripMenuItem,
+            this.editPosdToolStripMenuItem});
+            this.managePodsToolStripMenuItem.Name = "managePodsToolStripMenuItem";
+            this.managePodsToolStripMenuItem.Size = new System.Drawing.Size(115, 25);
+            this.managePodsToolStripMenuItem.Text = "Manage Pods";
+            // 
+            // addPodToolStripMenuItem
+            // 
+            this.addPodToolStripMenuItem.Name = "addPodToolStripMenuItem";
+            this.addPodToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.addPodToolStripMenuItem.Text = "Add Pod";
+            // 
+            // editPosdToolStripMenuItem
+            // 
+            this.editPosdToolStripMenuItem.Name = "editPosdToolStripMenuItem";
+            this.editPosdToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.editPosdToolStripMenuItem.Text = "Edit Pod";
+            // 
             // btnPodBooking
             // 
             this.btnPodBooking.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -109,47 +130,26 @@ namespace lakeside
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::lakeside.Properties.Resources.EditPodButton;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(695, 433);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(250, 65);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Edit Pod";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // btnAddPod
             // 
+            this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddPodButton;
             this.btnAddPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPod.Location = new System.Drawing.Point(695, 315);
             this.btnAddPod.Name = "btnAddPod";
             this.btnAddPod.Size = new System.Drawing.Size(250, 65);
             this.btnAddPod.TabIndex = 10;
-            this.btnAddPod.Text = "Add Pod";
             this.btnAddPod.UseVisualStyleBackColor = true;
             this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
-            // 
-            // managePodsToolStripMenuItem
-            // 
-            this.managePodsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addPodToolStripMenuItem,
-            this.editPosdToolStripMenuItem});
-            this.managePodsToolStripMenuItem.Name = "managePodsToolStripMenuItem";
-            this.managePodsToolStripMenuItem.Size = new System.Drawing.Size(115, 25);
-            this.managePodsToolStripMenuItem.Text = "Manage Pods";
-            // 
-            // addPodToolStripMenuItem
-            // 
-            this.addPodToolStripMenuItem.Name = "addPodToolStripMenuItem";
-            this.addPodToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.addPodToolStripMenuItem.Text = "Add Pod";
-            // 
-            // editPosdToolStripMenuItem
-            // 
-            this.editPosdToolStripMenuItem.Name = "editPosdToolStripMenuItem";
-            this.editPosdToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
-            this.editPosdToolStripMenuItem.Text = "Edit Pod";
             // 
             // btnEditGuest
             // 

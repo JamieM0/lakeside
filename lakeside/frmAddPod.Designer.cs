@@ -38,11 +38,6 @@ namespace lakeside
             this.btnReturn = new System.Windows.Forms.Button();
             this.validFriendlyName = new System.Windows.Forms.Label();
             this.btnAddPod = new System.Windows.Forms.Button();
-            this.txtPricePPPN = new lakeside.ValidationTextBox();
-            this.cmbType = new lakeside.ValidationComboBox();
-            this.txtCapacity = new lakeside.ValidationTextBox();
-            this.txtDescription = new lakeside.ValidationTextBox();
-            this.txtFriendlyName = new lakeside.ValidationTextBox();
             this.btnRandomiseData = new System.Windows.Forms.Button();
             this.lbType = new System.Windows.Forms.Label();
             this.lbPodLocation = new System.Windows.Forms.Label();
@@ -52,6 +47,21 @@ namespace lakeside
             this.lbFriendlyName = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.cmbPodLocation = new System.Windows.Forms.ComboBox();
+            this.pnlPods = new System.Windows.Forms.Panel();
+            this.txtPricePPPN = new lakeside.ValidationTextBox();
+            this.cmbType = new lakeside.ValidationComboBox();
+            this.txtCapacity = new lakeside.ValidationTextBox();
+            this.txtDescription = new lakeside.ValidationTextBox();
+            this.txtFriendlyName = new lakeside.ValidationTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pnlPods.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClearAll
@@ -95,7 +105,7 @@ namespace lakeside
             this.validCapacity.AutoSize = true;
             this.validCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCapacity.ForeColor = System.Drawing.Color.Red;
-            this.validCapacity.Location = new System.Drawing.Point(744, 294);
+            this.validCapacity.Location = new System.Drawing.Point(621, 383);
             this.validCapacity.Name = "validCapacity";
             this.validCapacity.Size = new System.Drawing.Size(52, 21);
             this.validCapacity.TabIndex = 43;
@@ -106,7 +116,7 @@ namespace lakeside
             this.validPricePPPN.AutoSize = true;
             this.validPricePPPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPricePPPN.ForeColor = System.Drawing.Color.Red;
-            this.validPricePPPN.Location = new System.Drawing.Point(744, 215);
+            this.validPricePPPN.Location = new System.Drawing.Point(621, 294);
             this.validPricePPPN.Name = "validPricePPPN";
             this.validPricePPPN.Size = new System.Drawing.Size(52, 21);
             this.validPricePPPN.TabIndex = 42;
@@ -150,7 +160,7 @@ namespace lakeside
             // 
             // btnAddPod
             // 
-            this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
+            this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddPodButton;
             this.btnAddPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPod.Location = new System.Drawing.Point(295, 479);
@@ -159,51 +169,6 @@ namespace lakeside
             this.btnAddPod.TabIndex = 37;
             this.btnAddPod.UseVisualStyleBackColor = true;
             this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
-            // 
-            // txtPricePPPN
-            // 
-            this.txtPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPricePPPN.Location = new System.Drawing.Point(748, 179);
-            this.txtPricePPPN.Name = "txtPricePPPN";
-            this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
-            this.txtPricePPPN.TabIndex = 25;
-            // 
-            // cmbType
-            // 
-            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
-            "Standard",
-            "Luxury"});
-            this.cmbType.Location = new System.Drawing.Point(179, 258);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(221, 33);
-            this.cmbType.TabIndex = 33;
-            // 
-            // txtCapacity
-            // 
-            this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapacity.Location = new System.Drawing.Point(748, 258);
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(105, 33);
-            this.txtCapacity.TabIndex = 27;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(179, 179);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(316, 33);
-            this.txtDescription.TabIndex = 22;
-            // 
-            // txtFriendlyName
-            // 
-            this.txtFriendlyName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFriendlyName.Location = new System.Drawing.Point(179, 104);
-            this.txtFriendlyName.Name = "txtFriendlyName";
-            this.txtFriendlyName.Size = new System.Drawing.Size(674, 33);
-            this.txtFriendlyName.TabIndex = 21;
             // 
             // btnRandomiseData
             // 
@@ -239,7 +204,7 @@ namespace lakeside
             // lbCapacity
             // 
             this.lbCapacity.AutoSize = true;
-            this.lbCapacity.Location = new System.Drawing.Point(604, 257);
+            this.lbCapacity.Location = new System.Drawing.Point(526, 346);
             this.lbCapacity.Name = "lbCapacity";
             this.lbCapacity.Size = new System.Drawing.Size(138, 30);
             this.lbCapacity.TabIndex = 28;
@@ -248,7 +213,7 @@ namespace lakeside
             // lbPricePPPN
             // 
             this.lbPricePPPN.AutoSize = true;
-            this.lbPricePPPN.Location = new System.Drawing.Point(630, 182);
+            this.lbPricePPPN.Location = new System.Drawing.Point(552, 261);
             this.lbPricePPPN.Name = "lbPricePPPN";
             this.lbPricePPPN.Size = new System.Drawing.Size(121, 30);
             this.lbPricePPPN.TabIndex = 26;
@@ -289,14 +254,145 @@ namespace lakeside
             this.cmbPodLocation.FormattingEnabled = true;
             this.cmbPodLocation.Location = new System.Drawing.Point(179, 344);
             this.cmbPodLocation.Name = "cmbPodLocation";
-            this.cmbPodLocation.Size = new System.Drawing.Size(369, 33);
+            this.cmbPodLocation.Size = new System.Drawing.Size(221, 33);
             this.cmbPodLocation.TabIndex = 48;
+            this.cmbPodLocation.TextChanged += new System.EventHandler(this.cmbPodLocation_TextChanged);
+            this.cmbPodLocation.Leave += new System.EventHandler(this.cmbPodLocation_Leave);
+            // 
+            // pnlPods
+            // 
+            this.pnlPods.Controls.Add(this.panel5);
+            this.pnlPods.Controls.Add(this.panel6);
+            this.pnlPods.Controls.Add(this.panel7);
+            this.pnlPods.Controls.Add(this.panel8);
+            this.pnlPods.Controls.Add(this.panel3);
+            this.pnlPods.Controls.Add(this.panel4);
+            this.pnlPods.Controls.Add(this.panel2);
+            this.pnlPods.Location = new System.Drawing.Point(13, 90);
+            this.pnlPods.Name = "pnlPods";
+            this.pnlPods.Size = new System.Drawing.Size(840, 461);
+            this.pnlPods.TabIndex = 49;
+            this.pnlPods.Visible = false;
+            // 
+            // txtPricePPPN
+            // 
+            this.txtPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPricePPPN.Location = new System.Drawing.Point(670, 258);
+            this.txtPricePPPN.Name = "txtPricePPPN";
+            this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
+            this.txtPricePPPN.TabIndex = 25;
+            this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
+            this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
+            // 
+            // cmbType
+            // 
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Standard",
+            "Luxury"});
+            this.cmbType.Location = new System.Drawing.Point(179, 258);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(221, 33);
+            this.cmbType.TabIndex = 33;
+            this.cmbType.TextChanged += new System.EventHandler(this.cmbType_TextChanged);
+            this.cmbType.Leave += new System.EventHandler(this.cmbType_Leave);
+            // 
+            // txtCapacity
+            // 
+            this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacity.Location = new System.Drawing.Point(670, 347);
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.Size = new System.Drawing.Size(105, 33);
+            this.txtCapacity.TabIndex = 27;
+            this.txtCapacity.TextChanged += new System.EventHandler(this.txtCapacity_TextChanged);
+            this.txtCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacity_KeyPress);
+            this.txtCapacity.Leave += new System.EventHandler(this.txtCapacity_Leave);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(179, 179);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(674, 33);
+            this.txtDescription.TabIndex = 22;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
+            // 
+            // txtFriendlyName
+            // 
+            this.txtFriendlyName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFriendlyName.Location = new System.Drawing.Point(179, 104);
+            this.txtFriendlyName.Name = "txtFriendlyName";
+            this.txtFriendlyName.Size = new System.Drawing.Size(674, 33);
+            this.txtFriendlyName.TabIndex = 21;
+            this.txtFriendlyName.TextChanged += new System.EventHandler(this.txtFriendlyName_TextChanged);
+            this.txtFriendlyName.Leave += new System.EventHandler(this.txtFriendlyName_Leave);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(12, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(426, 44);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(426, 44);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(1, 153);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(426, 44);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(0, 103);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(426, 44);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(4, 300);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(426, 44);
+            this.panel5.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            this.panel6.Location = new System.Drawing.Point(3, 250);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(426, 44);
+            this.panel6.TabIndex = 7;
+            // 
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(3, 200);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(426, 44);
+            this.panel7.TabIndex = 5;
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(4, 350);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(426, 44);
+            this.panel8.TabIndex = 4;
             // 
             // frmAddPod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 563);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlPods);
             this.Controls.Add(this.cmbPodLocation);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.validType);
@@ -324,6 +420,8 @@ namespace lakeside
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "frmAddPod";
             this.Text = "Lakeside Escapes: Add a Pod";
+            this.Load += new System.EventHandler(this.frmAddPod_Load);
+            this.pnlPods.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,5 +452,14 @@ namespace lakeside
         private System.Windows.Forms.Label lbFriendlyName;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.ComboBox cmbPodLocation;
+        private System.Windows.Forms.Panel pnlPods;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

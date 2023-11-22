@@ -155,6 +155,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\RemovePod.png" />
+    <None Include="Resources\EditPodButton.png" />
+    <None Include="Resources\EditPod.png" />
+    <None Include="Resources\DeletePodButton.png" />
+    <None Include="Resources\AddPodButton.png" />
+    <None Include="Resources\AddPod.png" />
     <None Include="Resources\return-104.png" />
     <None Include="Resources\searchIcon.png" />
     <None Include="Resources\search.png" />

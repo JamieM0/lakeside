@@ -76,20 +76,51 @@ namespace lakeside
                 return "Not a valid UK city or town.";
         }
         
-        public static string StreetName(string address)
+        public static string OtherText(string text, string elementName)
         {
-            if (address.Length < 1)
-                return "Street name cannot be empty.";
-            if (address.Length > 45)
-                return "Street name too long. Max length is 45 characters.";
-            if (address.Length < 3)
-                return "Street name must be at least 3 characters long.";
+            elementName = Char.ToUpper(elementName[0]) + elementName.Substring(1);
+            if (text.Length < 1)
+                return elementName + " cannot be empty.";
+            if (text.Length > 45)
+                return elementName + " too long. Max length is 45 characters.";
+            if (text.Length < 3)
+                return elementName + " must be at least 3 characters long.";
             string pattern = @"^[0-9a-zA-Z\s\-\,]+$";
             Regex regex = new Regex(pattern);
-            if (regex.IsMatch(address))
+            if (regex.IsMatch(text))
                 return null;
             else
-                return "Not a valid address. \r\nOnly letters, numbers, spaces, hyphens and commas allowed.";
+                return $"Not a valid {elementName.ToLower()}. \r\nOnly letters, numbers, spaces, hyphens and commas allowed.";
+        }
+
+        public static string NumberRange(string input, int inclusiveMin, int inclusiveMax, string elementName)
+        {
+            if (input.Length < 1)
+                return elementName + " cannot be empty.";
+            int number = int.Parse(input);
+            if (number>inclusiveMax)
+                return elementName + " cannot be greater than " + inclusiveMax + ".";
+            if(number<inclusiveMin)
+                return elementName + " cannot be less than " + inclusiveMin + ".";
+            return null;
+        }
+
+        public static string Money(string money)
+        {
+            string pattern = @"^£?\d+(\.\d{2})?$";
+            Regex regex = new Regex(pattern);
+            if (!regex.IsMatch(money))
+                return "Not a valid money amount. \r\nInclude the decimal (.) and 2 places.";
+            return null;
+        }
+
+        public static string PodType(string pod, int podsStandard, int podsLuxury)
+        {
+            if(pod=="Standard" && podsStandard>=10)
+                return "Maximum of 10 standard pods allowed.";
+            if (pod == "Luxury" && podsLuxury >= 6)
+                return "Maximum of 6 luxury pods allowed.";
+            return null;
         }
     }
 
