@@ -18,18 +18,30 @@ namespace lakeside
         bool[] allValid = new bool[6];
         int podsStandard = 0;
         int podsLuxury = 0;
-        
+        bool newPod = true;
+        int podID = 0;
+        string cachedSearch = "";
+
         public frmAddPod()
         {
             InitializeComponent();
         }
 
-        public frmAddPod(bool edit)
+        public frmAddPod(Pod edit, string search)
         {
-            lbTitle.Text = "Edit a Pod";
-            this.Text = "Lakeside Escapes: Edit a Pod";
-            pnlPods.Visible = true;
-            GetPods();
+            InitializeComponent();
+            //lbTitle.Text = "Edit a Pod";
+            //this.Text = "Lakeside Escapes: Edit a Pod";
+            txtFriendlyName.Text = edit.FriendlyName;
+            txtDescription.Text = edit.Description;
+            cmbType.Text = edit.Type;
+            cmbPodLocation.Text = edit.Location;
+            txtPricePPPN.Text = edit.Price.ToString();
+            txtCapacity.Text = edit.Capacity;
+            podID = edit.PodID;
+            newPod = false;
+            cachedSearch = search;
+            btnAddPod.BackgroundImage = Properties.Resources.EditPodButton;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -51,11 +63,11 @@ namespace lakeside
 
         private void btnAddPod_Click(object sender, EventArgs e)
         {
-            if(CheckValidation())
+            if(newPod && CheckValidation())
             {
                 try
                 {
-                    Pod p = new Pod(txtFriendlyName.Text, txtDescription.Text, txtPricePPPN.Text, txtCapacity.Text, cmbType.Text, cmbPodLocation.Text);
+                    Pod p = new Pod(txtFriendlyName.Text, txtDescription.Text, txtPricePPPN.Text, txtCapacity.Text, cmbType.Text, cmbPodLocation.Text, 0);
                     PodDAL dal = new PodDAL();
                     if (dal.AddNewPod(p))
                     {
@@ -67,6 +79,24 @@ namespace lakeside
                 catch (Exception ex)
                 {
                     MessageBox.Show("Sorry, there was a problem adding the pod. Please try again later.\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (CheckValidation())
+            {
+                try
+                {
+                    Pod p = new Pod(txtFriendlyName.Text, txtDescription.Text, txtPricePPPN.Text, txtCapacity.Text, cmbType.Text, cmbPodLocation.Text, podID);
+                    PodDAL dal = new PodDAL();
+                    if(dal.UpdatePod(p))
+                    {
+                        MessageBox.Show("Pod updated successfully!");
+                        Hide();
+                        new frmSearchGuests(p, cachedSearch).Show();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Sorry, there was a problem updating the pod. Please try again later.\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

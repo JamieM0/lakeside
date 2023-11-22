@@ -40,7 +40,7 @@
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(329, 9);
+            this.lbTitle.Location = new System.Drawing.Point(647, 20);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(395, 37);
             this.lbTitle.TabIndex = 0;
@@ -49,7 +49,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(199, 103);
+            this.txtSearch.Location = new System.Drawing.Point(199, 92);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(677, 43);
             this.txtSearch.TabIndex = 2;
@@ -59,17 +59,17 @@
             // 
             // pnlGuestContainer
             // 
-            this.pnlGuestContainer.Location = new System.Drawing.Point(108, 181);
+            this.pnlGuestContainer.Location = new System.Drawing.Point(108, 146);
             this.pnlGuestContainer.Name = "pnlGuestContainer";
-            this.pnlGuestContainer.Size = new System.Drawing.Size(768, 341);
+            this.pnlGuestContainer.Size = new System.Drawing.Size(768, 444);
             this.pnlGuestContainer.TabIndex = 3;
             // 
             // pbSearch
             // 
             this.pbSearch.Image = global::lakeside.Properties.Resources.searchIcon;
-            this.pbSearch.Location = new System.Drawing.Point(108, 91);
+            this.pbSearch.Location = new System.Drawing.Point(127, 85);
             this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(72, 66);
+            this.pbSearch.Size = new System.Drawing.Size(66, 55);
             this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbSearch.TabIndex = 1;
             this.pbSearch.TabStop = false;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 563);
+            this.ClientSize = new System.Drawing.Size(1054, 618);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.pnlGuestContainer);
             this.Controls.Add(this.txtSearch);
@@ -101,6 +101,7 @@
             this.Controls.Add(this.lbTitle);
             this.Name = "frmSearchGuests";
             this.Text = "Lakeside Escapes: Search for a Guest";
+            this.Load += new System.EventHandler(this.frmSearchGuests_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

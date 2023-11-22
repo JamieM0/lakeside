@@ -38,7 +38,7 @@ namespace lakeside
             this.editPosdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPodBooking = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditPod = new System.Windows.Forms.Button();
             this.btnAddPod = new System.Windows.Forms.Button();
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
@@ -128,16 +128,17 @@ namespace lakeside
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnClose_MouseMove);
             // 
-            // button1
+            // btnEditPod
             // 
-            this.button1.BackgroundImage = global::lakeside.Properties.Resources.EditPodButton;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(695, 433);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 65);
-            this.button1.TabIndex = 11;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEditPod.BackgroundImage = global::lakeside.Properties.Resources.EditPodButton;
+            this.btnEditPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEditPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPod.Location = new System.Drawing.Point(695, 433);
+            this.btnEditPod.Name = "btnEditPod";
+            this.btnEditPod.Size = new System.Drawing.Size(250, 65);
+            this.btnEditPod.TabIndex = 11;
+            this.btnEditPod.UseVisualStyleBackColor = true;
+            this.btnEditPod.Click += new System.EventHandler(this.btnEditPod_Click);
             // 
             // btnAddPod
             // 
@@ -193,7 +194,7 @@ namespace lakeside
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEditPod);
             this.Controls.Add(this.btnAddPod);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEditGuest);
@@ -230,7 +231,7 @@ namespace lakeside
         private System.Windows.Forms.ToolStripMenuItem ythToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addGuestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGuestToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditPod;
         private System.Windows.Forms.Button btnAddPod;
         private System.Windows.Forms.ToolStripMenuItem managePodsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addPodToolStripMenuItem;

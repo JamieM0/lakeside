@@ -27,7 +27,7 @@ namespace lakeside.Models
             PodID = 0;
         }
 
-        public Pod(string friendlyName, string description, string price, string capacity, string type, string location)
+        public Pod(string friendlyName, string description, string price, string capacity, string type, string location, int podID)
         {
             FriendlyName = friendlyName;
             Description = description;
@@ -35,6 +35,7 @@ namespace lakeside.Models
             Capacity = capacity;
             Type = type;
             Location = location;
+            PodID = podID;
         }
     }
 }

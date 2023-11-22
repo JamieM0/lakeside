@@ -39,5 +39,75 @@ namespace lakeside.DAL
                 }
             }
         }
+        
+        public Pod[] SearchPods(string search)
+        {
+            Pod[] allPods = new Pod[100];
+            Pod[] pods;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM Pod WHERE name LIKE '%{search}%' OR location LIKE '%{search}%' OR pod_id LIKE '{search}'", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int i = 0;
+                        while (reader.Read())
+                        {
+                            allPods[i] = new Pod(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), String.Format($"{reader[6]}"), String.Format($"{reader[4]}"), String.Format($"{reader[3]}"), String.Format($"{reader[5]}"), int.Parse(String.Format($"{reader[0]}")));
+                            i++;
+                        }
+
+                        //Check for duplicates in allGuests
+                        allPods = allPods.Distinct().ToArray();
+
+                        pods = new Pod[i];
+                        for (int l = 0; l < pods.Length; l++)
+                        {
+                            pods[l] = allPods[l];
+                        }
+                    }
+                }
+            }
+
+            return pods;
+        }
+
+        public bool UpdatePod(Pod p)
+        {
+            //SqlCommand used to store details of the command
+            SqlCommand command = new SqlCommand();
+
+            //Set SQL query command text to valid insert statement using values from the Guest class.
+            command.CommandText = string.Format($"UPDATE Pod SET name = '{p.FriendlyName}', description = '{p.Description}', type = '{p.Type}', capacity = '{p.Capacity}', location = '{p.Location}', pricePPPN = '{p.Price}' WHERE pod_id = {p.PodID}");
+
+            return ExecuteNonQuery(command);
+        }
+
+        public Pod PodLookup(int id)
+        {
+            Pod result = new Pod();
+
+            //Get the guest corresponding to the guest_id
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM Pod WHERE pod_id = {id}", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            result = new Pod(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), String.Format($"{reader[6]}"), String.Format($"{reader[4]}"), String.Format($"{reader[3]}"), String.Format($"{reader[5]}"), int.Parse(String.Format($"{reader[0]}")));
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

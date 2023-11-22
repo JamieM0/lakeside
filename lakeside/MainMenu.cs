@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lakeside.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using lakeside.DAL;
+using lakeside;
 
 namespace lakeside
 {
@@ -99,6 +102,13 @@ namespace lakeside
         {
             Hide();
             new frmAddPod().Show();
+        }
+
+        private void btnEditPod_Click(object sender, EventArgs e)
+        {
+            Pod tmp = new Pod();
+            Hide();
+            new frmSearchGuests(tmp, null).Show();
         }
     }
 }

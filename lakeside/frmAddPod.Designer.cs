@@ -47,21 +47,11 @@ namespace lakeside
             this.lbFriendlyName = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.cmbPodLocation = new System.Windows.Forms.ComboBox();
-            this.pnlPods = new System.Windows.Forms.Panel();
             this.txtPricePPPN = new lakeside.ValidationTextBox();
             this.cmbType = new lakeside.ValidationComboBox();
             this.txtCapacity = new lakeside.ValidationTextBox();
             this.txtDescription = new lakeside.ValidationTextBox();
             this.txtFriendlyName = new lakeside.ValidationTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pnlPods.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClearAll
@@ -259,21 +249,6 @@ namespace lakeside
             this.cmbPodLocation.TextChanged += new System.EventHandler(this.cmbPodLocation_TextChanged);
             this.cmbPodLocation.Leave += new System.EventHandler(this.cmbPodLocation_Leave);
             // 
-            // pnlPods
-            // 
-            this.pnlPods.Controls.Add(this.panel5);
-            this.pnlPods.Controls.Add(this.panel6);
-            this.pnlPods.Controls.Add(this.panel7);
-            this.pnlPods.Controls.Add(this.panel8);
-            this.pnlPods.Controls.Add(this.panel3);
-            this.pnlPods.Controls.Add(this.panel4);
-            this.pnlPods.Controls.Add(this.panel2);
-            this.pnlPods.Location = new System.Drawing.Point(13, 90);
-            this.pnlPods.Name = "pnlPods";
-            this.pnlPods.Size = new System.Drawing.Size(840, 461);
-            this.pnlPods.TabIndex = 49;
-            this.pnlPods.Visible = false;
-            // 
             // txtPricePPPN
             // 
             this.txtPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,69 +305,11 @@ namespace lakeside
             this.txtFriendlyName.TextChanged += new System.EventHandler(this.txtFriendlyName_TextChanged);
             this.txtFriendlyName.Leave += new System.EventHandler(this.txtFriendlyName_Leave);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 93);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(426, 44);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(0, 53);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(426, 44);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(1, 153);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(426, 44);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(0, 103);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(426, 44);
-            this.panel4.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(4, 300);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(426, 44);
-            this.panel5.TabIndex = 6;
-            // 
-            // panel6
-            // 
-            this.panel6.Location = new System.Drawing.Point(3, 250);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(426, 44);
-            this.panel6.TabIndex = 7;
-            // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(3, 200);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(426, 44);
-            this.panel7.TabIndex = 5;
-            // 
-            // panel8
-            // 
-            this.panel8.Location = new System.Drawing.Point(4, 350);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(426, 44);
-            this.panel8.TabIndex = 4;
-            // 
             // frmAddPod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 563);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlPods);
             this.Controls.Add(this.cmbPodLocation);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.validType);
@@ -421,7 +338,6 @@ namespace lakeside
             this.Name = "frmAddPod";
             this.Text = "Lakeside Escapes: Add a Pod";
             this.Load += new System.EventHandler(this.frmAddPod_Load);
-            this.pnlPods.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,14 +368,5 @@ namespace lakeside
         private System.Windows.Forms.Label lbFriendlyName;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.ComboBox cmbPodLocation;
-        private System.Windows.Forms.Panel pnlPods;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
     }
 }
