@@ -97,12 +97,19 @@ namespace lakeside
         {
             if (input.Length < 1)
                 return elementName + " cannot be empty.";
-            int number = int.Parse(input);
-            if (number>inclusiveMax)
-                return elementName + " cannot be greater than " + inclusiveMax + ".";
-            if(number<inclusiveMin)
-                return elementName + " cannot be less than " + inclusiveMin + ".";
-            return null;
+            try
+            {
+                int number = int.Parse(input);
+                if (number > inclusiveMax)
+                    return elementName + " cannot be greater than " + inclusiveMax + ".";
+                if (number < inclusiveMin)
+                    return elementName + " cannot be less than " + inclusiveMin + ".";
+                return null;
+            }
+            catch
+            {
+                return "Not a valid number.";
+            }
         }
 
         public static string Money(string money)

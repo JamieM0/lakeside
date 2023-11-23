@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AddCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddCourseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddCourseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AddGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,6 +142,15 @@
   <data name="dice2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dice2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EditCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditCourseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditCourseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditCourseButtons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditCourseButtons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EditGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +165,9 @@
   </data>
   <data name="Full_Main_Logo__White_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Full Main Logo (White).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemoveCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RemoveGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RemoveGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

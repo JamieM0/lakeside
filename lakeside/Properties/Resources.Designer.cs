@@ -63,6 +63,26 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddCourse {
+            get {
+                object obj = ResourceManager.GetObject("AddCourse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddCourseButton {
+            get {
+                object obj = ResourceManager.GetObject("AddCourseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddGuestButton {
             get {
                 object obj = ResourceManager.GetObject("AddGuestButton", resourceCulture);
@@ -123,6 +143,36 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditCourse {
+            get {
+                object obj = ResourceManager.GetObject("EditCourse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditCourseButton {
+            get {
+                object obj = ResourceManager.GetObject("EditCourseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditCourseButtons {
+            get {
+                object obj = ResourceManager.GetObject("EditCourseButtons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EditGuestButton {
             get {
                 object obj = ResourceManager.GetObject("EditGuestButton", resourceCulture);
@@ -166,6 +216,16 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap Full_Main_Logo__White_ {
             get {
                 object obj = ResourceManager.GetObject("Full_Main_Logo__White_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoveCourse {
+            get {
+                object obj = ResourceManager.GetObject("RemoveCourse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

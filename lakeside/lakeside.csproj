@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\CourseDAL.cs" />
     <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\LakesideDAL.cs" />
     <Compile Include="DAL\PodDAL.cs" />
@@ -103,6 +104,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LakesideDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Pod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,6 +166,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\RemoveCourse.png" />
+    <None Include="Resources\EditCourseButtons.png" />
+    <None Include="Resources\EditCourseButton.png" />
+    <None Include="Resources\EditCourse.png" />
+    <None Include="Resources\AddCourseButton.png" />
+    <None Include="Resources\AddCourse.png" />
     <None Include="Resources\RemovePod.png" />
     <None Include="Resources\EditPodButton.png" />
     <None Include="Resources\EditPod.png" />

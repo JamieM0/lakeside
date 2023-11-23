@@ -48,13 +48,13 @@ namespace lakeside
             this.lbDescription = new System.Windows.Forms.Label();
             this.lbCourseName = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.btnClearAll = new System.Windows.Forms.Button();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnAddPod = new System.Windows.Forms.Button();
-            this.btnRandomiseData = new System.Windows.Forms.Button();
             this.validDuration = new System.Windows.Forms.Label();
             this.txtDuration = new lakeside.ValidationTextBox();
             this.lbDuration = new System.Windows.Forms.Label();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnAddCourse = new System.Windows.Forms.Button();
+            this.btnRandomiseData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbCourseLevel
@@ -70,6 +70,8 @@ namespace lakeside
             this.cmbCourseLevel.Name = "cmbCourseLevel";
             this.cmbCourseLevel.Size = new System.Drawing.Size(221, 33);
             this.cmbCourseLevel.TabIndex = 71;
+            this.cmbCourseLevel.TextChanged += new System.EventHandler(this.cmbCourseLevel_TextChanged);
+            this.cmbCourseLevel.Leave += new System.EventHandler(this.cmbCourseLevel_Leave);
             // 
             // validTutor
             // 
@@ -98,7 +100,7 @@ namespace lakeside
             this.validCapacity.AutoSize = true;
             this.validCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCapacity.ForeColor = System.Drawing.Color.Red;
-            this.validCapacity.Location = new System.Drawing.Point(400, 389);
+            this.validCapacity.Location = new System.Drawing.Point(347, 391);
             this.validCapacity.Name = "validCapacity";
             this.validCapacity.Size = new System.Drawing.Size(52, 21);
             this.validCapacity.TabIndex = 67;
@@ -109,7 +111,7 @@ namespace lakeside
             this.validPricePPPN.AutoSize = true;
             this.validPricePPPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPricePPPN.ForeColor = System.Drawing.Color.Red;
-            this.validPricePPPN.Location = new System.Drawing.Point(203, 391);
+            this.validPricePPPN.Location = new System.Drawing.Point(58, 391);
             this.validPricePPPN.Name = "validPricePPPN";
             this.validPricePPPN.Size = new System.Drawing.Size(52, 21);
             this.validPricePPPN.TabIndex = 66;
@@ -144,6 +146,8 @@ namespace lakeside
             this.txtPricePPPN.Name = "txtPricePPPN";
             this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
             this.txtPricePPPN.TabIndex = 54;
+            this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
+            this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
             // 
             // cmbTutor
             // 
@@ -157,6 +161,8 @@ namespace lakeside
             this.cmbTutor.Name = "cmbTutor";
             this.cmbTutor.Size = new System.Drawing.Size(221, 33);
             this.cmbTutor.TabIndex = 59;
+            this.cmbTutor.TextChanged += new System.EventHandler(this.cmbTutor_TextChanged);
+            this.cmbTutor.Leave += new System.EventHandler(this.cmbTutor_Leave);
             // 
             // txtCapacity
             // 
@@ -165,6 +171,8 @@ namespace lakeside
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(105, 33);
             this.txtCapacity.TabIndex = 56;
+            this.txtCapacity.TextChanged += new System.EventHandler(this.txtCapacity_TextChanged);
+            this.txtCapacity.Leave += new System.EventHandler(this.txtCapacity_Leave);
             // 
             // txtDescription
             // 
@@ -173,6 +181,8 @@ namespace lakeside
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(658, 33);
             this.txtDescription.TabIndex = 51;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
             // txtCourseName
             // 
@@ -181,6 +191,8 @@ namespace lakeside
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(658, 33);
             this.txtCourseName.TabIndex = 50;
+            this.txtCourseName.TextChanged += new System.EventHandler(this.txtCourseName_TextChanged);
+            this.txtCourseName.Leave += new System.EventHandler(this.txtCourseName_Leave);
             // 
             // lbTutor
             // 
@@ -240,12 +252,42 @@ namespace lakeside
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(395, 14);
+            this.lbTitle.Location = new System.Drawing.Point(356, 23);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(140, 37);
+            this.lbTitle.Size = new System.Drawing.Size(176, 37);
             this.lbTitle.TabIndex = 49;
-            this.lbTitle.Text = "Add a Pod";
+            this.lbTitle.Text = "Add a Course";
+            // 
+            // validDuration
+            // 
+            this.validDuration.AutoSize = true;
+            this.validDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.validDuration.ForeColor = System.Drawing.Color.Red;
+            this.validDuration.Location = new System.Drawing.Point(593, 391);
+            this.validDuration.Name = "validDuration";
+            this.validDuration.Size = new System.Drawing.Size(52, 21);
+            this.validDuration.TabIndex = 74;
+            this.validDuration.Text = "label3";
+            // 
+            // txtDuration
+            // 
+            this.txtDuration.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuration.Location = new System.Drawing.Point(760, 354);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(105, 33);
+            this.txtDuration.TabIndex = 72;
+            this.txtDuration.TextChanged += new System.EventHandler(this.txtDuration_TextChanged);
+            this.txtDuration.Leave += new System.EventHandler(this.txtDuration_Leave);
+            // 
+            // lbDuration
+            // 
+            this.lbDuration.AutoSize = true;
+            this.lbDuration.Location = new System.Drawing.Point(592, 353);
+            this.lbDuration.Name = "lbDuration";
+            this.lbDuration.Size = new System.Drawing.Size(162, 30);
+            this.lbDuration.TabIndex = 73;
+            this.lbDuration.Text = "Duration (Mins):";
             // 
             // btnClearAll
             // 
@@ -275,16 +317,17 @@ namespace lakeside
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // btnAddPod
+            // btnAddCourse
             // 
-            this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddPodButton;
-            this.btnAddPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPod.Location = new System.Drawing.Point(307, 444);
-            this.btnAddPod.Name = "btnAddPod";
-            this.btnAddPod.Size = new System.Drawing.Size(558, 65);
-            this.btnAddPod.TabIndex = 62;
-            this.btnAddPod.UseVisualStyleBackColor = true;
+            this.btnAddCourse.BackgroundImage = global::lakeside.Properties.Resources.AddCourseButton;
+            this.btnAddCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCourse.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCourse.Location = new System.Drawing.Point(330, 444);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Size = new System.Drawing.Size(535, 79);
+            this.btnAddCourse.TabIndex = 62;
+            this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // btnRandomiseData
             // 
@@ -293,39 +336,11 @@ namespace lakeside
             this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRandomiseData.Location = new System.Drawing.Point(38, 444);
             this.btnRandomiseData.Name = "btnRandomiseData";
-            this.btnRandomiseData.Size = new System.Drawing.Size(229, 65);
+            this.btnRandomiseData.Size = new System.Drawing.Size(237, 79);
             this.btnRandomiseData.TabIndex = 60;
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
-            // 
-            // validDuration
-            // 
-            this.validDuration.AutoSize = true;
-            this.validDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.validDuration.ForeColor = System.Drawing.Color.Red;
-            this.validDuration.Location = new System.Drawing.Point(702, 389);
-            this.validDuration.Name = "validDuration";
-            this.validDuration.Size = new System.Drawing.Size(52, 21);
-            this.validDuration.TabIndex = 74;
-            this.validDuration.Text = "label3";
-            // 
-            // txtDuration
-            // 
-            this.txtDuration.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.Location = new System.Drawing.Point(760, 354);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(105, 33);
-            this.txtDuration.TabIndex = 72;
-            // 
-            // lbDuration
-            // 
-            this.lbDuration.AutoSize = true;
-            this.lbDuration.Location = new System.Drawing.Point(592, 353);
-            this.lbDuration.Name = "lbDuration";
-            this.lbDuration.Size = new System.Drawing.Size(162, 30);
-            this.lbDuration.TabIndex = 73;
-            this.lbDuration.Text = "Duration (Mins):";
             // 
             // frmAddCourse
             // 
@@ -344,7 +359,7 @@ namespace lakeside
             this.Controls.Add(this.validDescription);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.validCourseName);
-            this.Controls.Add(this.btnAddPod);
+            this.Controls.Add(this.btnAddCourse);
             this.Controls.Add(this.txtPricePPPN);
             this.Controls.Add(this.cmbTutor);
             this.Controls.Add(this.txtCapacity);
@@ -379,7 +394,7 @@ namespace lakeside
         private System.Windows.Forms.Label validDescription;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Label validCourseName;
-        private System.Windows.Forms.Button btnAddPod;
+        private System.Windows.Forms.Button btnAddCourse;
         private ValidationTextBox txtPricePPPN;
         private ValidationComboBox cmbTutor;
         private ValidationTextBox txtCapacity;

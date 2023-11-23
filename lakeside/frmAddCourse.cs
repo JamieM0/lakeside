@@ -15,6 +15,7 @@ namespace lakeside
     public partial class frmAddCourse : Form
     {
         bool newCourse = true;
+        bool[] allValid = new bool[7];
         public frmAddCourse()
         {
             InitializeComponent();
@@ -45,37 +46,37 @@ namespace lakeside
                 case 0:
                     changeColour = txtCourseName;
                     errorDisplay = validCourseName;
-                    msg = Validation.OtherText(changeColour.Text, "course name");
+                    msg = Validation.OtherText(changeColour.Text, "Course name");
                     break;
                 case 1:
                     changeColour = txtDescription;
                     errorDisplay = validDescription;
-                    msg = Validation.OtherText(changeColour.Text, "course description");
+                    msg = Validation.OtherText(changeColour.Text, "Course description");
                     break;
                 case 2:
                     changeColour = cmbTutor;
                     errorDisplay = validTutor;
-                    //msg = Validation.PhoneNumber(changeColour.Text);
+                    msg = Validation.OtherText(changeColour.Text, "Tutor");
                     break;
                 case 3:
-                    changeColour = cmbTutor;
-                    errorDisplay = validTutor;
-                    msg = Validation.OtherText(changeColour.Text, "address");
+                    changeColour = cmbCourseLevel;
+                    errorDisplay = validCourseLevel;
+                    //msg = Validation.OtherText(changeColour.Text, "address");
                     break;
                 case 4:
                     changeColour = txtPricePPPN;
                     errorDisplay = validPricePPPN;
-                    msg = Validation.UKPostcode(changeColour.Text);
+                    msg = Validation.Money(changeColour.Text);
                     break;
                 case 5:
                     changeColour = txtCapacity;
                     errorDisplay = validCapacity;
-                    msg = Validation.UKCityTown(changeColour.Text);
+                    msg = Validation.NumberRange(changeColour.Text, 1, 50, "Capacity");
                     break;
                 case 6:
                     changeColour = txtDuration;
                     errorDisplay = validDuration;
-                    msg=Validation.Country(changeColour.Text);
+                    msg = Validation.NumberRange(changeColour.Text, 15, 120, "Duration");
                     break;
             }
             if (msg == null)
@@ -117,6 +118,114 @@ namespace lakeside
             validDuration.Text = "";
             validPricePPPN.Text = "";
             validTutor.Text = "";
+
+            cmbCourseLevel.Text = "Beginner";
+        }
+
+        private void txtCourseName_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(0);
+        }
+
+        private void txtCourseName_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(0);
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(1);
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(1);
+        }
+
+        private void cmbTutor_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(2);
+        }
+
+        private void cmbTutor_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(2);
+        }
+
+        private void cmbCourseLevel_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(3);
+        }
+
+        private void cmbCourseLevel_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(3);
+        }
+
+        private void txtPricePPPN_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(4);
+        }
+
+        private void txtPricePPPN_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(4);
+        }
+
+        private void txtCapacity_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(5);
+        }
+
+        private void txtCapacity_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(5);
+        }
+
+        private void txtDuration_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(6);
+        }
+
+        private void txtDuration_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(6);
+        }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            int level = 0;
+            if (cmbCourseLevel.Text == "Intermediate")
+                level = 1;
+            else
+                level = 2;
+
+            if (newCourse && CheckValidation())
+            {
+                try
+                {
+                    int tutorID = 0;
+                    //int tutorID = TutorDAL.GetTutorID(cmbTutor.Text);
+                    Course course = new Course(0, tutorID, txtCourseName.Text, txtDescription.Text, int.Parse(txtDuration.Text), int.Parse(txtCapacity.Text), double.Parse(txtPricePPPN.Text), level);
+                    CourseDAL dal = new CourseDAL();
+                    if (dal.AddNewCourse(course))
+                    {
+                        MessageBox.Show("Course added successfully");
+                        Hide();
+                        new frmAddCourse().Show();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error adding course.\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    validTotal = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validTotal = true;
+            }
         }
     }
 }
