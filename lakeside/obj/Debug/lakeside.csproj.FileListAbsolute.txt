@@ -30,3 +30,4 @@ C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmAddPod.resources
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmAddCourse.resources
 C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmAddCourse.resources
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmAddExtra.resources

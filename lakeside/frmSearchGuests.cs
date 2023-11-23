@@ -41,6 +41,13 @@ namespace lakeside
                 searchType = "pod";
                 lbTitle.Text = "Lakeside Escapes: Search Pods";
             }
+            else if (type.GetType() == typeof(Extra))
+            {
+                CenterToScreen();
+                txtSearch_SetText("Search for Extra Name, Description, or Extra ID...");
+                searchType = "extra";
+                lbTitle.Text = "Lakeside Escapes: Search Extras";
+            }
 
             if (search != null)
                 txtSearch.Text = search;
@@ -100,6 +107,12 @@ namespace lakeside
                 Pod[] searchResults = dal.SearchPods(searchCase);
                 PopulateGuestResults(searchResults);
             }
+            else if (searchType=="extra")
+            {
+                ExtraDAL dal = new ExtraDAL();
+                Extra[] searchResults = dal.SearchExtras(searchCase);
+                PopulateGuestResults(searchResults);
+            }
         }
 
         private void PopulateGuestResults(object[] results)
@@ -139,6 +152,16 @@ namespace lakeside
                         element3 = pod.Description;
                         idElement = pod.PodID;
                         btnImg = Properties.Resources.EditPodButton;
+                    }
+                    else if(searchType=="extra")
+                    {
+                        //Convert g to Extra
+                        Extra extra = (Extra)g;
+                        element1 = extra.ExtraName;
+                        element2 = "";
+                        element3 = extra.Description;
+                        idElement = extra.ExtraID;
+                        btnImg = Properties.Resources.dice2;
                     }
                     Panel pnl = new Panel();
                     pnl.Name = "pnlGuest" + i;
@@ -220,6 +243,23 @@ namespace lakeside
                     new frmAddPod(p, txtSearch.Text).Show();
                 }
                 catch(Exception ex)
+                {
+                    MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (searchType == "extra")
+            {
+                try
+                {
+                    ExtraDAL dal = new ExtraDAL();
+                    System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+                    string btnName = btn.Name;
+                    int extraID = int.Parse(btnName.Split('_')[1]);
+                    Extra ex = dal.ExtraLookup(extraID);
+                    Hide();
+                    new frmAddExtra(ex, txtSearch.Text).Show();
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

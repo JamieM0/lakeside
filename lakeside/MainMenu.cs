@@ -123,5 +123,18 @@ namespace lakeside
             Hide();
             new frmAddCourse().Show();
         }
+
+        private void addExtraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmAddExtra().Show();
+        }
+
+        private void editExtraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Extra tmp = new Extra();
+            Hide();
+            new frmSearchGuests(tmp, null).Show();
+        }
     }
 }
