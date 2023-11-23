@@ -265,7 +265,7 @@ namespace lakeside
 
         private void txtFullName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Validation.Name(Char.ToString(e.KeyChar))==null && !Char.IsControl(e.KeyChar))
+            if (Char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

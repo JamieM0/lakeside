@@ -303,6 +303,7 @@ namespace lakeside
             this.txtFriendlyName.Size = new System.Drawing.Size(674, 33);
             this.txtFriendlyName.TabIndex = 21;
             this.txtFriendlyName.TextChanged += new System.EventHandler(this.txtFriendlyName_TextChanged);
+            this.txtFriendlyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFriendlyName_KeyPress);
             this.txtFriendlyName.Leave += new System.EventHandler(this.txtFriendlyName_Leave);
             // 
             // frmAddPod

@@ -110,5 +110,18 @@ namespace lakeside
             Hide();
             new frmSearchGuests(tmp, null).Show();
         }
+
+        private void editPosdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pod tmp = new Pod();
+            Hide();
+            new frmSearchGuests(tmp, null).Show();
+        }
+
+        private void addCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmAddCourse().Show();
+        }
     }
 }

@@ -135,7 +135,7 @@ namespace lakeside
                         //Convert g to Pod
                         Pod pod = (Pod)g;
                         element1 = pod.FriendlyName;
-                        element2 = pod.Location;
+                        element2 = "("+pod.Location+")";
                         element3 = pod.Description;
                         idElement = pod.PodID;
                         btnImg = Properties.Resources.EditPodButton;
@@ -150,7 +150,7 @@ namespace lakeside
                     Label lbName = new Label();
                     lbName.Font = new Font("Segoe UI", 16);
                     lbName.Name = "lbName" + i;
-                    lbName.Text = element1 + " (" + element2 + ")";
+                    lbName.Text = element1 + " " + element2;
                     lbName.Location = new Point(3, 12);
                     int nameWidth = TextRenderer.MeasureText(lbName.Text, lbName.Font).Width;
                     lbName.Anchor = AnchorStyles.Left;
