@@ -39,6 +39,9 @@ namespace lakeside
             this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.extraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addExtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editExtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPodBooking = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEditPod = new System.Windows.Forms.Button();
@@ -46,9 +49,9 @@ namespace lakeside
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.extraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addExtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editExtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +63,8 @@ namespace lakeside
             this.ythToolStripMenuItem,
             this.managePodsToolStripMenuItem,
             this.coursesToolStripMenuItem,
-            this.extraToolStripMenuItem});
+            this.extraToolStripMenuItem,
+            this.staffToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1054, 29);
@@ -134,6 +138,29 @@ namespace lakeside
             this.editCourseToolStripMenuItem.Name = "editCourseToolStripMenuItem";
             this.editCourseToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.editCourseToolStripMenuItem.Text = "Edit Course";
+            // 
+            // extraToolStripMenuItem
+            // 
+            this.extraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addExtraToolStripMenuItem,
+            this.editExtraToolStripMenuItem});
+            this.extraToolStripMenuItem.Name = "extraToolStripMenuItem";
+            this.extraToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
+            this.extraToolStripMenuItem.Text = "Extra";
+            // 
+            // addExtraToolStripMenuItem
+            // 
+            this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.addExtraToolStripMenuItem.Text = "Add Extra";
+            this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
+            // 
+            // editExtraToolStripMenuItem
+            // 
+            this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.editExtraToolStripMenuItem.Text = "Edit Extra";
+            this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 
             // btnPodBooking
             // 
@@ -218,28 +245,27 @@ namespace lakeside
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // extraToolStripMenuItem
+            // staffToolStripMenuItem
             // 
-            this.extraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addExtraToolStripMenuItem,
-            this.editExtraToolStripMenuItem});
-            this.extraToolStripMenuItem.Name = "extraToolStripMenuItem";
-            this.extraToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
-            this.extraToolStripMenuItem.Text = "Extra";
+            this.staffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStaffMemberToolStripMenuItem,
+            this.editStaffMemberToolStripMenuItem});
+            this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
+            this.staffToolStripMenuItem.Size = new System.Drawing.Size(53, 25);
+            this.staffToolStripMenuItem.Text = "Staff";
             // 
-            // addExtraToolStripMenuItem
+            // addStaffMemberToolStripMenuItem
             // 
-            this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.addExtraToolStripMenuItem.Text = "Add Extra";
-            this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
+            this.addStaffMemberToolStripMenuItem.Name = "addStaffMemberToolStripMenuItem";
+            this.addStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.addStaffMemberToolStripMenuItem.Text = "Add Staff Member";
+            this.addStaffMemberToolStripMenuItem.Click += new System.EventHandler(this.addStaffMemberToolStripMenuItem_Click);
             // 
-            // editExtraToolStripMenuItem
+            // editStaffMemberToolStripMenuItem
             // 
-            this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.editExtraToolStripMenuItem.Text = "Edit Extra";
-            this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
+            this.editStaffMemberToolStripMenuItem.Name = "editStaffMemberToolStripMenuItem";
+            this.editStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.editStaffMemberToolStripMenuItem.Text = "Edit Staff Member";
             // 
             // frmHome
             // 
@@ -296,6 +322,9 @@ namespace lakeside
         private System.Windows.Forms.ToolStripMenuItem extraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addExtraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editExtraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem staffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStaffMemberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editStaffMemberToolStripMenuItem;
     }
 }
 

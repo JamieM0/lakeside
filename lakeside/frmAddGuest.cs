@@ -21,26 +21,17 @@ namespace lakeside
         string cachedSearch = "";
         int id = 0;
         bool[] allValid = new bool[7];
+        bool staffMode = false;
 
         public frmAddGuest()
         {
-            newMode = true;
             InitializeComponent();
-            CenterToScreen();
-            cmbCountry.DataSource = GetCountryList();
-            cmbCountry.Text = "United Kingdom";
-            cmbPhoneNumberPrefix.Text = "+44";
         }
 
         public frmAddGuest(Guest edit, string search)
         {
             cachedSearch = search;
-            newMode = false;
             InitializeComponent();
-            CenterToScreen();
-            cmbCountry.DataSource = GetCountryList();
-            cmbCountry.Text = "United Kingdom";
-            cmbPhoneNumberPrefix.Text = "+44";
             txtFullName.Text = edit.Forename + " " + edit.Surname;
             txtEmail.Text = edit.Email;
             txtMobileNumber.Text = edit.Number;
@@ -56,6 +47,25 @@ namespace lakeside
             lbTitle.Text = "Edit Guest";
             this.Text = "Lakeside Escapes: Edit Guest";
             btnReturn.Text = "Return to Search";
+        }
+
+        public frmAddGuest(int staff)
+        {
+            InitializeComponent();
+            staffMode = true;
+            lbTitle.Text = "Add a Staff Member";
+            this.Text = "Lakeside Escapes: Add a Staff Member";
+            btnAddGuest.BackgroundImage = null;
+            btnAddGuest.Image = Properties.Resources.AddUser;
+            btnAddGuest.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddGuest.Text = "Add Staff Member";
+            txtPosition.Visible = true;
+            lbPosition.Visible = true;
+            validPosition.Visible = true;
+        }
+        public frmAddGuest(Staff edit)
+        {
+
         }
 
         public static List<string> GetCountryList()
@@ -96,7 +106,7 @@ namespace lakeside
         {
             allValid[6] = true;
             DisableAllFields();
-            if(newMode && CheckValidation())
+            if(newMode && !staffMode && CheckValidation())
             {
                 string[] names = txtFullName.Text.Trim().Split(' ');
                 string forename = "";
@@ -118,7 +128,7 @@ namespace lakeside
                 Hide();
                 new frmAddGuest().Show();
             }
-            else if(CheckValidation())
+            else if(!newMode && !staffMode && CheckValidation())
             {
                 //Edit current guest
                 string[] names = txtFullName.Text.Trim().Split(' ');
@@ -138,6 +148,28 @@ namespace lakeside
                 MessageBox.Show("Guest edited successfully!");
                 Hide();
                 new frmSearchGuests(cachedSearch).Show();
+            }
+            else if (newMode && CheckValidation())
+            {
+                string[] names = txtFullName.Text.Trim().Split(' ');
+                string forename = "";
+                string givenName = names[0];
+                string surname = names[names.Length - 1];
+                for (int i = 0; i < names.Length - 1; i++)
+                {
+                    forename += names[i] + " ";
+                }
+                forename = forename.Trim();
+                surname = surname.Trim();
+                givenName = givenName.Trim();
+                Staff staff = new Staff(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text, -1, txtPosition.Text);
+                StaffDAL dal = new StaffDAL();
+                dal.AddNewStaff(staff);
+                MessageBox.Show("Staff added successfully!");
+                //ClearAllFields();
+                //EnableAllFields();
+                Hide();
+                new frmAddGuest().Show();
             }
             else
             {
@@ -221,6 +253,11 @@ namespace lakeside
                     errorDisplay = validCountry;
                     //msg=Validation.Country(changeColour.Text);
                     break;
+                case 7:
+                    changeColour = txtPosition;
+                    errorDisplay = validPosition;
+                    msg = Validation.OtherText(changeColour.Text, "Position");
+                    break;
             }
             if(msg==null)
                 Validator(elementID, changeColour, errorDisplay, msg);
@@ -254,6 +291,12 @@ namespace lakeside
 
         private void frmAddGuest_Load(object sender, EventArgs e)
         {
+            newMode = true;
+            
+            CenterToScreen();
+            cmbCountry.DataSource = GetCountryList();
+            cmbCountry.Text = "United Kingdom";
+            cmbPhoneNumberPrefix.Text = "+44";
             validAdd1.Text = "";
             validCityTown.Text = "";
             validCountry.Text = "";
@@ -379,6 +422,16 @@ namespace lakeside
         {
             Hide();
             new frmAddGuest().Show();
+        }
+
+        private void txtPosition_TextChanged(object sender, EventArgs e)
+        {
+            ValidSetter(7);
+        }
+
+        private void txtPosition_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(7);
         }
     }
 }

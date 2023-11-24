@@ -48,6 +48,11 @@ namespace lakeside
             this.validPostcode = new System.Windows.Forms.Label();
             this.validCityTown = new System.Windows.Forms.Label();
             this.validCountry = new System.Windows.Forms.Label();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.validPosition = new System.Windows.Forms.Label();
+            this.lbPosition = new System.Windows.Forms.Label();
+            this.txtFullName = new lakeside.ValidationTextBox();
+            this.txtPosition = new lakeside.ValidationTextBox();
             this.cmbPhoneNumberPrefix = new lakeside.ValidationComboBox();
             this.txtMobileNumber = new lakeside.ValidationTextBox();
             this.cmbCountry = new lakeside.ValidationComboBox();
@@ -55,8 +60,6 @@ namespace lakeside
             this.txtCityTown = new lakeside.ValidationTextBox();
             this.txtAdd1 = new lakeside.ValidationTextBox();
             this.txtEmail = new lakeside.ValidationTextBox();
-            this.txtFullName = new lakeside.ValidationTextBox();
-            this.btnClearAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -118,7 +121,7 @@ namespace lakeside
             // lbPostcode
             // 
             this.lbPostcode.AutoSize = true;
-            this.lbPostcode.Location = new System.Drawing.Point(686, 260);
+            this.lbPostcode.Location = new System.Drawing.Point(680, 259);
             this.lbPostcode.Name = "lbPostcode";
             this.lbPostcode.Size = new System.Drawing.Size(102, 30);
             this.lbPostcode.TabIndex = 6;
@@ -234,7 +237,7 @@ namespace lakeside
             this.validPostcode.AutoSize = true;
             this.validPostcode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPostcode.ForeColor = System.Drawing.Color.Red;
-            this.validPostcode.Location = new System.Drawing.Point(787, 297);
+            this.validPostcode.Location = new System.Drawing.Point(781, 296);
             this.validPostcode.Name = "validPostcode";
             this.validPostcode.Size = new System.Drawing.Size(52, 21);
             this.validPostcode.TabIndex = 16;
@@ -261,6 +264,64 @@ namespace lakeside
             this.validCountry.Size = new System.Drawing.Size(52, 21);
             this.validCountry.TabIndex = 18;
             this.validCountry.Text = "label6";
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClearAll.Location = new System.Drawing.Point(791, 9);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(256, 65);
+            this.btnClearAll.TabIndex = 19;
+            this.btnClearAll.Text = "Clear All Fields";
+            this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // 
+            // validPosition
+            // 
+            this.validPosition.AutoSize = true;
+            this.validPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.validPosition.ForeColor = System.Drawing.Color.Red;
+            this.validPosition.Location = new System.Drawing.Point(787, 135);
+            this.validPosition.Name = "validPosition";
+            this.validPosition.Size = new System.Drawing.Size(52, 21);
+            this.validPosition.TabIndex = 22;
+            this.validPosition.Text = "label5";
+            this.validPosition.Visible = false;
+            // 
+            // lbPosition
+            // 
+            this.lbPosition.AutoSize = true;
+            this.lbPosition.Location = new System.Drawing.Point(693, 95);
+            this.lbPosition.Name = "lbPosition";
+            this.lbPosition.Size = new System.Drawing.Size(91, 30);
+            this.lbPosition.TabIndex = 21;
+            this.lbPosition.Text = "Position:";
+            this.lbPosition.Visible = false;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(144, 95);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(499, 33);
+            this.txtFullName.TabIndex = 0;
+            this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
+            this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
+            this.txtFullName.Leave += new System.EventHandler(this.txtFullName_Leave);
+            // 
+            // txtPosition
+            // 
+            this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPosition.Location = new System.Drawing.Point(785, 95);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(221, 33);
+            this.txtPosition.TabIndex = 20;
+            this.txtPosition.Visible = false;
+            this.txtPosition.TextChanged += new System.EventHandler(this.txtPosition_TextChanged);
+            this.txtPosition.Leave += new System.EventHandler(this.txtPosition_Leave);
             // 
             // cmbPhoneNumberPrefix
             // 
@@ -297,7 +358,7 @@ namespace lakeside
             // txtPostcode
             // 
             this.txtPostcode.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPostcode.Location = new System.Drawing.Point(791, 261);
+            this.txtPostcode.Location = new System.Drawing.Point(785, 260);
             this.txtPostcode.Mask = "LL00 0LL";
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(100, 33);
@@ -335,36 +396,15 @@ namespace lakeside
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
-            // txtFullName
-            // 
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(144, 95);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(868, 33);
-            this.txtFullName.TabIndex = 0;
-            this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
-            this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
-            this.txtFullName.Leave += new System.EventHandler(this.txtFullName_Leave);
-            // 
-            // btnClearAll
-            // 
-            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
-            this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearAll.Location = new System.Drawing.Point(791, 9);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(256, 65);
-            this.btnClearAll.TabIndex = 19;
-            this.btnClearAll.Text = "Clear All Fields";
-            this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
-            // 
             // frmAddGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 563);
+            this.Controls.Add(this.txtFullName);
+            this.Controls.Add(this.validPosition);
+            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.lbPosition);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.validCountry);
             this.Controls.Add(this.validCityTown);
@@ -383,7 +423,6 @@ namespace lakeside
             this.Controls.Add(this.txtCityTown);
             this.Controls.Add(this.txtAdd1);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.btnRandomiseData);
             this.Controls.Add(this.lbCountry);
             this.Controls.Add(this.lbPostcode);
@@ -433,5 +472,8 @@ namespace lakeside
         private System.Windows.Forms.Label validCityTown;
         private System.Windows.Forms.Label validCountry;
         private System.Windows.Forms.Button btnClearAll;
+        private System.Windows.Forms.Label validPosition;
+        private ValidationTextBox txtPosition;
+        private System.Windows.Forms.Label lbPosition;
     }
 }
