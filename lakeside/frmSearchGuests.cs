@@ -55,6 +55,13 @@ namespace lakeside
                 searchType = "staff";
                 lbTitle.Text = "Lakeside Escapes: Search Staff";
             }
+            else if (type.GetType() == typeof(Course))
+            {
+                CenterToScreen();
+                txtSearch_SetText("Search for Course Name, Tutor, or Course ID...");
+                searchType = "course";
+                lbTitle.Text = "Lakeside Escapes: Search Course";
+            }
 
             if (search != null)
                 txtSearch.Text = search;
@@ -126,6 +133,12 @@ namespace lakeside
                 Staff[] searchResults = dal.SearchStaff(searchCase);
                 PopulateGuestResults(searchResults);
             }
+            else if (searchType == "course")
+            {
+                CourseDAL dal = new CourseDAL();
+                Course[] searchResults = dal.SearchCourses(searchCase);
+                PopulateGuestResults(searchResults);
+            }
         }
 
         private void PopulateGuestResults(object[] results)
@@ -186,7 +199,17 @@ namespace lakeside
                         idElement = staff.StaffID;
                         btnImg = Properties.Resources.EditGuestButton;
                     }
-                    
+                    else if (searchType == "course")
+                    {
+                        //Convert g to Course
+                        Course course = (Course)g;
+                        element1 = course.CourseName;
+                        element2 = "";
+                        element3 = "Tutor ID: " + course.TutorID.ToString();
+                        idElement = course.CourseID;
+                        btnImg = Properties.Resources.EditCourseButton;
+                    }
+
                     Panel pnl = new Panel();
                     pnl.Name = "pnlGuest" + i;
                     pnl.Size = new Size(762, 55);
@@ -299,6 +322,23 @@ namespace lakeside
                     Staff s = dal.StaffLookup(staffID);
                     Hide();
                     new frmAddGuest(s, txtSearch.Text).Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if(searchType=="course")
+            {
+                try
+                {
+                    CourseDAL dal = new CourseDAL();
+                    System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+                    string btnName = btn.Name;
+                    int courseID = int.Parse(btnName.Split('_')[1]);
+                    Course c = dal.CourseLookup(courseID);
+                    Hide();
+                    new frmAddCourse(c, txtSearch.Text).Show();
                 }
                 catch (Exception ex)
                 {

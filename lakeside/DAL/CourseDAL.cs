@@ -48,7 +48,7 @@ namespace lakeside.DAL
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand($"SELECT * FROM Course WHERE courseName LIKE '%{search}%' OR tutor_id LIKE '{search}' OR course_id LIKE '{search}'", connection))
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM Course WHERE courseName LIKE '%{search}%' OR staff_id LIKE '{search}' OR course_id LIKE '{search}'", connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -74,18 +74,18 @@ namespace lakeside.DAL
             return courses;
         }
 
-        public bool UpdatePod(Course c)
+        public bool CoursePod(Course c)
         {
             //SqlCommand used to store details of the command
             SqlCommand command = new SqlCommand();
 
             //Set SQL query command text to valid insert statement using values from the Guest class.
-            command.CommandText = string.Format($"UPDATE Pod SET courseName = '{c.CourseName}', description = '{c.Description}', durationMins = '{c.Duration}', capacity = '{c.Capacity}', costPN = '{c.Price}', level = '{c.Level}' WHERE course_id = {c.CourseID}");
+            command.CommandText = string.Format($"UPDATE Course SET courseName = '{c.CourseName}', description = '{c.Description}', durationMins = '{c.Duration}', capacity = '{c.Capacity}', costPN = '{c.Price}', level = '{c.Level}' WHERE course_id = {c.CourseID}");
 
             return ExecuteNonQuery(command);
         }
 
-        public Course PodLookup(int id)
+        public Course CourseLookup(int id)
         {
             Course result = new Course();
 

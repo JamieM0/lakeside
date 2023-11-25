@@ -18,9 +18,22 @@ namespace lakeside
         bool[] allValid = new bool[7];
         StaffDAL dal = new StaffDAL();
         Staff[] allStaff;
+        string cachedSearch = "";
         public frmAddCourse()
         {
             InitializeComponent();
+        }
+        public frmAddCourse(Course c, string search)
+        {
+            cachedSearch = search;
+            txtCourseName.Text = c.CourseName;
+            txtDescription.Text = c.Description;
+            cmbTutor.SelectedIndex = c.TutorID;
+            cmbCourseLevel.SelectedIndex = c.Level;
+            txtDuration.Text = c.Duration.ToString();
+            txtCapacity.Text = c.Capacity.ToString();
+            txtPricePPPN.Text = c.Price.ToString();
+            newCourse = false;
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)

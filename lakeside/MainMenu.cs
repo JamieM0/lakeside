@@ -150,5 +150,12 @@ namespace lakeside
             Hide();
             new frmSearchGuests(tmp, null).Show();
         }
+
+        private void editCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Course tmp = new Course();
+            Hide();
+            new frmSearchGuests(tmp, null).Show();
+        }
     }
 }
