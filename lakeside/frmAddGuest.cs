@@ -20,7 +20,7 @@ namespace lakeside
         bool newMode = true;
         string cachedSearch = "";
         int id = 0;
-        bool[] allValid = new bool[7];
+        bool[] allValid = new bool[8];
         bool staffMode = false;
 
         public frmAddGuest()
@@ -56,16 +56,40 @@ namespace lakeside
             lbTitle.Text = "Add a Staff Member";
             this.Text = "Lakeside Escapes: Add a Staff Member";
             btnAddGuest.BackgroundImage = null;
-            btnAddGuest.Image = Properties.Resources.AddUser;
+            btnAddGuest.Image = Properties.Resources.AddUser_Small;
             btnAddGuest.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddGuest.Text = "Add Staff Member";
             txtPosition.Visible = true;
             lbPosition.Visible = true;
             validPosition.Visible = true;
         }
-        public frmAddGuest(Staff edit)
+        public frmAddGuest(Staff edit, string search)
         {
-
+            staffMode = true;
+            cachedSearch = search;
+            InitializeComponent();
+            txtFullName.Text = edit.Forename + " " + edit.Surname;
+            txtEmail.Text = edit.Email;
+            txtMobileNumber.Text = edit.Number;
+            txtAdd1.Text = edit.Street;
+            txtCityTown.Text = edit.CityTown;
+            txtPostcode.Text = edit.Postcode;
+            cmbCountry.Text = edit.Country;
+            id = edit.StaffID;
+            txtPosition.Text = edit.Position;
+            btnAddGuest.BackgroundImage = null;
+            btnAddGuest.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddGuest.Image = Properties.Resources.EditUser_Small;
+            btnAddGuest.Text = "Edit Staff Member";
+            btnRandomiseData.Image = null;
+            btnRandomiseData.Text = "";
+            btnRandomiseData.BackgroundImage = Properties.Resources.RemoveGuestButton;
+            lbTitle.Text = "Edit Staff";
+            this.Text = "Lakeside Escapes: Edit Staff";
+            btnReturn.Text = "Return to Search";
+            txtPosition.Visible = true;
+            lbPosition.Visible = true;
+            validPosition.Visible = true;
         }
 
         public static List<string> GetCountryList()
@@ -171,6 +195,27 @@ namespace lakeside
                 Hide();
                 new frmAddGuest().Show();
             }
+            else if(staffMode && CheckValidation())
+            {
+                //Edit current staff
+                string[] names = txtFullName.Text.Trim().Split(' ');
+                string forename = "";
+                string givenName = names[0];
+                string surname = names[names.Length - 1];
+                for (int i = 0; i < names.Length - 1; i++)
+                {
+                    forename += names[i] + " ";
+                }
+                forename = forename.Trim();
+                surname = surname.Trim();
+                givenName = givenName.Trim();
+                Staff staff = new Staff(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text, id, txtPosition.Text);
+                StaffDAL dal = new StaffDAL();
+                dal.UpdateStaff(staff);
+                MessageBox.Show("Staff edited successfully!");
+                Hide();
+                new frmSearchGuests(staff,cachedSearch).Show();
+            }
             else
             {
                 //INVALID DATA
@@ -188,6 +233,7 @@ namespace lakeside
             txtPostcode.Text = "";
             txtMobileNumber.Text = "";
             txtEmail.Text = "";
+            txtPosition.Text = "";
         }
         private void DisableAllFields()
         {
@@ -197,6 +243,7 @@ namespace lakeside
             txtAdd1.Enabled = false;
             txtMobileNumber.Enabled = false;
             txtPostcode.Enabled = false;
+            txtPosition.Enabled = false;
         }
         private void EnableAllFields()
         {
@@ -206,6 +253,7 @@ namespace lakeside
             txtAdd1.Enabled = true;
             txtMobileNumber.Enabled = true;
             txtPostcode.Enabled = true;
+            txtPosition.Enabled = true;
         }
 
         private void ValidSetter(int elementID)
@@ -281,9 +329,9 @@ namespace lakeside
         bool validTotal = true;
         private bool CheckValidation()
         {
-            foreach(bool validTest in allValid)
+            for(int i=0; i<allValid.Length-1; i++)
             {
-                if (!validTest)
+                if (!allValid[i])
                     validTotal = false;
             }
             return validTotal;
@@ -304,6 +352,7 @@ namespace lakeside
             validFullName.Text = "";
             validNumber.Text = "";
             validPostcode.Text = "";
+            validPosition.Text = "";
         }
 
         private void txtFullName_KeyPress(object sender, KeyPressEventArgs e)
@@ -358,10 +407,16 @@ namespace lakeside
                 Hide();
                 new frmHome().Show();
             }
-            else
+            else if(!staffMode)
             {
                 Hide();
                 new frmSearchGuests(cachedSearch).Show();
+            }
+            else
+            {
+                Staff tmp = new Staff();
+                Hide();
+                new frmSearchGuests(tmp, cachedSearch).Show();
             }
         }
 

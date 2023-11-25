@@ -69,7 +69,7 @@
     <Compile Include="DAL\ExtraDAL.cs" />
     <Compile Include="DAL\LakesideDAL.cs" />
     <Compile Include="DAL\PodDAL.cs" />
-    <Compile Include="DAL\Staff.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="frmAddCourse.cs">
       <SubType>Form</SubType>
@@ -179,6 +179,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\bk_1.png" />
+    <None Include="Resources\RemoveUser_Small.png" />
+    <None Include="Resources\EditUser_Small.png" />
+    <None Include="Resources\AddUser_Small.png" />
     <None Include="Resources\RemoveCourse.png" />
     <None Include="Resources\EditCourseButtons.png" />
     <None Include="Resources\EditCourseButton.png" />

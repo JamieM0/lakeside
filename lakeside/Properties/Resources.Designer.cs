@@ -123,6 +123,26 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddUser_Small {
+            get {
+                object obj = ResourceManager.GetObject("AddUser_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bk_1 {
+            get {
+                object obj = ResourceManager.GetObject("bk_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DeletePodButton {
             get {
                 object obj = ResourceManager.GetObject("DeletePodButton", resourceCulture);
@@ -213,6 +233,16 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditUser_Small {
+            get {
+                object obj = ResourceManager.GetObject("EditUser_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Full_Main_Logo__White_ {
             get {
                 object obj = ResourceManager.GetObject("Full_Main_Logo__White_", resourceCulture);
@@ -256,6 +286,16 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap RemoveUser {
             get {
                 object obj = ResourceManager.GetObject("RemoveUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoveUser_Small {
+            get {
+                object obj = ResourceManager.GetObject("RemoveUser_Small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

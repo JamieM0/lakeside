@@ -143,5 +143,12 @@ namespace lakeside
             Hide();
             new frmAddGuest(1).Show();
         }
+
+        private void editStaffMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Staff tmp = new Staff();
+            Hide();
+            new frmSearchGuests(tmp, null).Show();
+        }
     }
 }

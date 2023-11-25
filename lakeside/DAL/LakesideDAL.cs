@@ -23,7 +23,7 @@ namespace lakeside.DAL
 
         public Guest[] SearchGuests(string search)
         {
-            Guest[] allGuests = new Guest[100];
+            Guest[] allGuests = new Guest[50];
             Guest[] guests;
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))

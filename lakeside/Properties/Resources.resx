@@ -118,32 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AddCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddCourseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddCourseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddPod" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddPod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddPodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddPodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AddUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DeletePodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DeletePodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dice2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dice2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EditCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditUser_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditUser_Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditCourseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditCourseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,37 +130,70 @@
   <data name="EditCourseButtons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditCourseButtons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RemoveGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditPod" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditPod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditPodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditPodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="searchIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EditUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EditUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Full_Main_Logo__White_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Full Main Logo (White).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddPod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddPod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RemoveCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RemoveCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RemoveGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RemoveGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RemoveUser_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveUser_Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RemovePod" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RemovePod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditPodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditPodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Full_Main_Logo__White_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Full Main Logo (White).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditPod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditPod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddCourseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddCourseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RemoveUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RemoveUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AddPodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddPodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dice2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dice2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemovePod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemovePod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddUser_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddUser_Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="returnIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\return-104.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="searchIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\searchIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddGuestButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddGuestButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DeletePodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeletePodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditCourse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditCourse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bk_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bk_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

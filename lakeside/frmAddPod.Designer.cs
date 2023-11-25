@@ -62,7 +62,7 @@ namespace lakeside
             this.btnClearAll.Location = new System.Drawing.Point(597, 18);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(256, 65);
-            this.btnClearAll.TabIndex = 47;
+            this.btnClearAll.TabIndex = 8;
             this.btnClearAll.Text = "Clear All Fields";
             this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClearAll.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@ namespace lakeside
             this.btnReturn.Location = new System.Drawing.Point(7, 18);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(256, 65);
-            this.btnReturn.TabIndex = 40;
+            this.btnReturn.TabIndex = 7;
             this.btnReturn.Text = "Return to Home";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@ namespace lakeside
             this.btnAddPod.Location = new System.Drawing.Point(295, 479);
             this.btnAddPod.Name = "btnAddPod";
             this.btnAddPod.Size = new System.Drawing.Size(558, 65);
-            this.btnAddPod.TabIndex = 37;
+            this.btnAddPod.TabIndex = 6;
             this.btnAddPod.UseVisualStyleBackColor = true;
             this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
             // 
@@ -172,6 +172,7 @@ namespace lakeside
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Visible = false;
             // 
             // lbType
             // 
@@ -231,7 +232,7 @@ namespace lakeside
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(383, 9);
+            this.lbTitle.Location = new System.Drawing.Point(366, 29);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(140, 37);
@@ -245,7 +246,7 @@ namespace lakeside
             this.cmbPodLocation.Location = new System.Drawing.Point(179, 344);
             this.cmbPodLocation.Name = "cmbPodLocation";
             this.cmbPodLocation.Size = new System.Drawing.Size(221, 33);
-            this.cmbPodLocation.TabIndex = 48;
+            this.cmbPodLocation.TabIndex = 4;
             this.cmbPodLocation.TextChanged += new System.EventHandler(this.cmbPodLocation_TextChanged);
             this.cmbPodLocation.Leave += new System.EventHandler(this.cmbPodLocation_Leave);
             // 
@@ -255,7 +256,7 @@ namespace lakeside
             this.txtPricePPPN.Location = new System.Drawing.Point(670, 258);
             this.txtPricePPPN.Name = "txtPricePPPN";
             this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
-            this.txtPricePPPN.TabIndex = 25;
+            this.txtPricePPPN.TabIndex = 3;
             this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
             this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
             // 
@@ -270,7 +271,7 @@ namespace lakeside
             this.cmbType.Location = new System.Drawing.Point(179, 258);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(221, 33);
-            this.cmbType.TabIndex = 33;
+            this.cmbType.TabIndex = 2;
             this.cmbType.TextChanged += new System.EventHandler(this.cmbType_TextChanged);
             this.cmbType.Leave += new System.EventHandler(this.cmbType_Leave);
             // 
@@ -280,7 +281,7 @@ namespace lakeside
             this.txtCapacity.Location = new System.Drawing.Point(670, 347);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(105, 33);
-            this.txtCapacity.TabIndex = 27;
+            this.txtCapacity.TabIndex = 5;
             this.txtCapacity.TextChanged += new System.EventHandler(this.txtCapacity_TextChanged);
             this.txtCapacity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacity_KeyPress);
             this.txtCapacity.Leave += new System.EventHandler(this.txtCapacity_Leave);
@@ -291,7 +292,7 @@ namespace lakeside
             this.txtDescription.Location = new System.Drawing.Point(179, 179);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(674, 33);
-            this.txtDescription.TabIndex = 22;
+            this.txtDescription.TabIndex = 1;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
@@ -301,7 +302,7 @@ namespace lakeside
             this.txtFriendlyName.Location = new System.Drawing.Point(179, 104);
             this.txtFriendlyName.Name = "txtFriendlyName";
             this.txtFriendlyName.Size = new System.Drawing.Size(674, 33);
-            this.txtFriendlyName.TabIndex = 21;
+            this.txtFriendlyName.TabIndex = 0;
             this.txtFriendlyName.TextChanged += new System.EventHandler(this.txtFriendlyName_TextChanged);
             this.txtFriendlyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFriendlyName_KeyPress);
             this.txtFriendlyName.Leave += new System.EventHandler(this.txtFriendlyName_Leave);

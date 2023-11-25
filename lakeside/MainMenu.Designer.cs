@@ -42,6 +42,9 @@ namespace lakeside
             this.extraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editExtraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPodBooking = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEditPod = new System.Windows.Forms.Button();
@@ -49,9 +52,6 @@ namespace lakeside
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -162,6 +162,29 @@ namespace lakeside
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 
+            // staffToolStripMenuItem
+            // 
+            this.staffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStaffMemberToolStripMenuItem,
+            this.editStaffMemberToolStripMenuItem});
+            this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
+            this.staffToolStripMenuItem.Size = new System.Drawing.Size(53, 25);
+            this.staffToolStripMenuItem.Text = "Staff";
+            // 
+            // addStaffMemberToolStripMenuItem
+            // 
+            this.addStaffMemberToolStripMenuItem.Name = "addStaffMemberToolStripMenuItem";
+            this.addStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.addStaffMemberToolStripMenuItem.Text = "Add Staff Member";
+            this.addStaffMemberToolStripMenuItem.Click += new System.EventHandler(this.addStaffMemberToolStripMenuItem_Click);
+            // 
+            // editStaffMemberToolStripMenuItem
+            // 
+            this.editStaffMemberToolStripMenuItem.Name = "editStaffMemberToolStripMenuItem";
+            this.editStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.editStaffMemberToolStripMenuItem.Text = "Edit Staff Member";
+            this.editStaffMemberToolStripMenuItem.Click += new System.EventHandler(this.editStaffMemberToolStripMenuItem_Click);
+            // 
             // btnPodBooking
             // 
             this.btnPodBooking.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,28 +267,6 @@ namespace lakeside
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // staffToolStripMenuItem
-            // 
-            this.staffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addStaffMemberToolStripMenuItem,
-            this.editStaffMemberToolStripMenuItem});
-            this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
-            this.staffToolStripMenuItem.Size = new System.Drawing.Size(53, 25);
-            this.staffToolStripMenuItem.Text = "Staff";
-            // 
-            // addStaffMemberToolStripMenuItem
-            // 
-            this.addStaffMemberToolStripMenuItem.Name = "addStaffMemberToolStripMenuItem";
-            this.addStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
-            this.addStaffMemberToolStripMenuItem.Text = "Add Staff Member";
-            this.addStaffMemberToolStripMenuItem.Click += new System.EventHandler(this.addStaffMemberToolStripMenuItem_Click);
-            // 
-            // editStaffMemberToolStripMenuItem
-            // 
-            this.editStaffMemberToolStripMenuItem.Name = "editStaffMemberToolStripMenuItem";
-            this.editStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
-            this.editStaffMemberToolStripMenuItem.Text = "Edit Staff Member";
             // 
             // frmHome
             // 

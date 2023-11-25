@@ -16,6 +16,8 @@ namespace lakeside
     {
         bool newCourse = true;
         bool[] allValid = new bool[7];
+        StaffDAL dal = new StaffDAL();
+        Staff[] allStaff;
         public frmAddCourse()
         {
             InitializeComponent();
@@ -56,7 +58,10 @@ namespace lakeside
                 case 2:
                     changeColour = cmbTutor;
                     errorDisplay = validTutor;
-                    msg = Validation.OtherText(changeColour.Text, "Tutor");
+                    if (cmbTutor.SelectedIndex == -1)
+                    {
+                        msg = "Please select a tutor";
+                    }
                     break;
                 case 3:
                     changeColour = cmbCourseLevel;
@@ -108,7 +113,7 @@ namespace lakeside
             }
             return validTotal;
         }
-
+        int[] staffMembers;
         private void frmAddCourse_Load(object sender, EventArgs e)
         {
             validCapacity.Text = "";
@@ -118,8 +123,18 @@ namespace lakeside
             validDuration.Text = "";
             validPricePPPN.Text = "";
             validTutor.Text = "";
-
+            
             cmbCourseLevel.Text = "Beginner";
+            allStaff = dal.GetTutors();
+            staffMembers = new int[allStaff.Length];
+            int i = 0;
+            foreach(Staff g in allStaff)
+            {
+                cmbTutor.Items.Add(g.Forename + " " + g.Surname + " (" + g.StaffID + ")");
+                staffMembers[i] = g.StaffID;
+                i++;
+            }
+            cmbTutor.Text = "Select Tutor";
         }
 
         private void txtCourseName_TextChanged(object sender, EventArgs e)
@@ -144,7 +159,8 @@ namespace lakeside
 
         private void cmbTutor_TextChanged(object sender, EventArgs e)
         {
-            ValidSetter(2);
+            //ValidSetter(2);
+            //MessageBox.Show(Convert.ToString(cmbTutor.SelectedIndex));
         }
 
         private void cmbTutor_Leave(object sender, EventArgs e)
@@ -204,7 +220,7 @@ namespace lakeside
             {
                 try
                 {
-                    int tutorID = 0;
+                    int tutorID = staffMembers[cmbTutor.SelectedIndex];
                     //int tutorID = TutorDAL.GetTutorID(cmbTutor.Text);
                     Course course = new Course(0, tutorID, txtCourseName.Text, txtDescription.Text, int.Parse(txtDuration.Text), int.Parse(txtCapacity.Text), double.Parse(txtPricePPPN.Text), level);
                     CourseDAL dal = new CourseDAL();

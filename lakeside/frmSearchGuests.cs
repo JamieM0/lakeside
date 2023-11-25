@@ -48,6 +48,13 @@ namespace lakeside
                 searchType = "extra";
                 lbTitle.Text = "Lakeside Escapes: Search Extras";
             }
+            else if (type.GetType() == typeof(Staff))
+            {
+                CenterToScreen();
+                txtSearch_SetText("Search for Staff Name, Email, or Staff ID...");
+                searchType = "staff";
+                lbTitle.Text = "Lakeside Escapes: Search Staff";
+            }
 
             if (search != null)
                 txtSearch.Text = search;
@@ -113,6 +120,12 @@ namespace lakeside
                 Extra[] searchResults = dal.SearchExtras(searchCase);
                 PopulateGuestResults(searchResults);
             }
+            else if(searchType=="staff")
+            {
+                StaffDAL dal = new StaffDAL();
+                Staff[] searchResults = dal.SearchStaff(searchCase);
+                PopulateGuestResults(searchResults);
+            }
         }
 
         private void PopulateGuestResults(object[] results)
@@ -163,6 +176,17 @@ namespace lakeside
                         idElement = extra.ExtraID;
                         btnImg = Properties.Resources.dice2;
                     }
+                    else if (searchType == "staff")
+                    {
+                        //Convert g to Staff
+                        Staff staff = (Staff)g;
+                        element1 = staff.Forename;
+                        element2 = staff.Surname;
+                        element3 = staff.Position;
+                        idElement = staff.StaffID;
+                        btnImg = Properties.Resources.EditGuestButton;
+                    }
+                    
                     Panel pnl = new Panel();
                     pnl.Name = "pnlGuest" + i;
                     pnl.Size = new Size(762, 55);
@@ -258,6 +282,23 @@ namespace lakeside
                     Extra ex = dal.ExtraLookup(extraID);
                     Hide();
                     new frmAddExtra(ex, txtSearch.Text).Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (searchType=="staff")
+            {
+                try
+                {
+                    StaffDAL dal = new StaffDAL();
+                    System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+                    string btnName = btn.Name;
+                    int staffID = int.Parse(btnName.Split('_')[1]);
+                    Staff s = dal.StaffLookup(staffID);
+                    Hide();
+                    new frmAddGuest(s, txtSearch.Text).Show();
                 }
                 catch (Exception ex)
                 {

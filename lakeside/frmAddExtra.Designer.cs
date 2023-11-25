@@ -52,7 +52,7 @@
             this.btnClearAll.Location = new System.Drawing.Point(615, 31);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(256, 65);
-            this.btnClearAll.TabIndex = 96;
+            this.btnClearAll.TabIndex = 5;
             this.btnClearAll.Text = "Clear All Fields";
             this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClearAll.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             this.btnReturn.Location = new System.Drawing.Point(25, 31);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(256, 65);
-            this.btnReturn.TabIndex = 90;
+            this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Return to Home";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             this.btnAddCourse.Location = new System.Drawing.Point(336, 301);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(535, 79);
-            this.btnAddCourse.TabIndex = 88;
+            this.btnAddCourse.TabIndex = 3;
             this.btnAddCourse.UseVisualStyleBackColor = true;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
@@ -121,7 +121,7 @@
             this.txtPricePPPN.Location = new System.Drawing.Point(766, 190);
             this.txtPricePPPN.Name = "txtPricePPPN";
             this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
-            this.txtPricePPPN.TabIndex = 80;
+            this.txtPricePPPN.TabIndex = 2;
             this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
             this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
             // 
@@ -131,7 +131,7 @@
             this.txtDescription.Location = new System.Drawing.Point(213, 190);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(373, 33);
-            this.txtDescription.TabIndex = 77;
+            this.txtDescription.TabIndex = 1;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
@@ -141,7 +141,7 @@
             this.txtExtraName.Location = new System.Drawing.Point(213, 115);
             this.txtExtraName.Name = "txtExtraName";
             this.txtExtraName.Size = new System.Drawing.Size(658, 33);
-            this.txtExtraName.TabIndex = 76;
+            this.txtExtraName.TabIndex = 0;
             this.txtExtraName.TextChanged += new System.EventHandler(this.txtExtraName_TextChanged);
             this.txtExtraName.Leave += new System.EventHandler(this.txtExtraName_Leave);
             // 
@@ -157,6 +157,7 @@
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Visible = false;
             // 
             // lbPricePPPN
             // 

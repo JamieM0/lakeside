@@ -69,7 +69,7 @@ namespace lakeside
             this.cmbCourseLevel.Location = new System.Drawing.Point(644, 262);
             this.cmbCourseLevel.Name = "cmbCourseLevel";
             this.cmbCourseLevel.Size = new System.Drawing.Size(221, 33);
-            this.cmbCourseLevel.TabIndex = 71;
+            this.cmbCourseLevel.TabIndex = 3;
             this.cmbCourseLevel.TextChanged += new System.EventHandler(this.cmbCourseLevel_TextChanged);
             this.cmbCourseLevel.Leave += new System.EventHandler(this.cmbCourseLevel_Leave);
             // 
@@ -145,7 +145,7 @@ namespace lakeside
             this.txtPricePPPN.Location = new System.Drawing.Point(207, 350);
             this.txtPricePPPN.Name = "txtPricePPPN";
             this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
-            this.txtPricePPPN.TabIndex = 54;
+            this.txtPricePPPN.TabIndex = 4;
             this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
             this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
             // 
@@ -154,13 +154,10 @@ namespace lakeside
             this.cmbTutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTutor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTutor.FormattingEnabled = true;
-            this.cmbTutor.Items.AddRange(new object[] {
-            "Standard",
-            "Luxury"});
             this.cmbTutor.Location = new System.Drawing.Point(207, 262);
             this.cmbTutor.Name = "cmbTutor";
             this.cmbTutor.Size = new System.Drawing.Size(221, 33);
-            this.cmbTutor.TabIndex = 59;
+            this.cmbTutor.TabIndex = 2;
             this.cmbTutor.TextChanged += new System.EventHandler(this.cmbTutor_TextChanged);
             this.cmbTutor.Leave += new System.EventHandler(this.cmbTutor_Leave);
             // 
@@ -170,7 +167,7 @@ namespace lakeside
             this.txtCapacity.Location = new System.Drawing.Point(449, 353);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(105, 33);
-            this.txtCapacity.TabIndex = 56;
+            this.txtCapacity.TabIndex = 5;
             this.txtCapacity.TextChanged += new System.EventHandler(this.txtCapacity_TextChanged);
             this.txtCapacity.Leave += new System.EventHandler(this.txtCapacity_Leave);
             // 
@@ -180,7 +177,7 @@ namespace lakeside
             this.txtDescription.Location = new System.Drawing.Point(207, 182);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(658, 33);
-            this.txtDescription.TabIndex = 51;
+            this.txtDescription.TabIndex = 1;
             this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
             this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
@@ -190,7 +187,7 @@ namespace lakeside
             this.txtCourseName.Location = new System.Drawing.Point(207, 107);
             this.txtCourseName.Name = "txtCourseName";
             this.txtCourseName.Size = new System.Drawing.Size(658, 33);
-            this.txtCourseName.TabIndex = 50;
+            this.txtCourseName.TabIndex = 0;
             this.txtCourseName.TextChanged += new System.EventHandler(this.txtCourseName_TextChanged);
             this.txtCourseName.Leave += new System.EventHandler(this.txtCourseName_Leave);
             // 
@@ -276,7 +273,7 @@ namespace lakeside
             this.txtDuration.Location = new System.Drawing.Point(760, 354);
             this.txtDuration.Name = "txtDuration";
             this.txtDuration.Size = new System.Drawing.Size(105, 33);
-            this.txtDuration.TabIndex = 72;
+            this.txtDuration.TabIndex = 6;
             this.txtDuration.TextChanged += new System.EventHandler(this.txtDuration_TextChanged);
             this.txtDuration.Leave += new System.EventHandler(this.txtDuration_Leave);
             // 
@@ -297,7 +294,7 @@ namespace lakeside
             this.btnClearAll.Location = new System.Drawing.Point(609, 23);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(256, 65);
-            this.btnClearAll.TabIndex = 70;
+            this.btnClearAll.TabIndex = 9;
             this.btnClearAll.Text = "Clear All Fields";
             this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClearAll.UseVisualStyleBackColor = true;
@@ -311,7 +308,7 @@ namespace lakeside
             this.btnReturn.Location = new System.Drawing.Point(19, 23);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(256, 65);
-            this.btnReturn.TabIndex = 64;
+            this.btnReturn.TabIndex = 8;
             this.btnReturn.Text = "Return to Home";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -325,7 +322,7 @@ namespace lakeside
             this.btnAddCourse.Location = new System.Drawing.Point(330, 444);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(535, 79);
-            this.btnAddCourse.TabIndex = 62;
+            this.btnAddCourse.TabIndex = 7;
             this.btnAddCourse.UseVisualStyleBackColor = true;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
@@ -341,6 +338,7 @@ namespace lakeside
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Visible = false;
             // 
             // frmAddCourse
             // 

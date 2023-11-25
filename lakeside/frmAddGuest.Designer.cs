@@ -66,7 +66,7 @@ namespace lakeside
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(460, 9);
+            this.lbTitle.Location = new System.Drawing.Point(437, 20);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(162, 37);
