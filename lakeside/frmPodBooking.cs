@@ -21,21 +21,82 @@ namespace lakeside
         public frmPodBooking()
         {
             InitializeComponent();
+            CenterToScreen();
             InitialiseCalendar();
         }
 
         private void InitialiseCalendar()
         {
-            
-            for(int i=0; i<DateTime.DaysInMonth(DateTime.Now.Year,DateTime.Now.Month); i++)
+            pnlCalBase = new Panel { Size = new Size(416, 307) };
+            pnlCalContainer.Controls.Add(pnlCalBase);
+
+            dayPanels = new Panel[7];
+            for (int i = 6; i >= 0; i--)
             {
-                AddDateDisplay(i);
+                dayPanels[i] = new Panel { Dock = DockStyle.Left, Width = pnlCalBase.Width / 7 };
+                pnlCalBase.Controls.Add(dayPanels[i]);
+            }
+
+            DisplayCurrentMonth();
+        }
+
+        private void DisplayCurrentMonth()
+        {
+            DateTime currentDate = DateTime.Now;
+            int daysInMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+            DateTime firstDayOfMonth = new DateTime(currentDate.Year, currentDate.Month, 1);
+            int firstDayOfWeek = ((int)firstDayOfMonth.DayOfWeek + 6) % 7; // Monday = 0, Sunday = 6
+
+            // Add empty labels for the days before the first day of the month
+            for (int i = 0; i < firstDayOfWeek; i++)
+            {
+                Label emptyLabel = new Label
+                {
+                    AutoSize = true,
+                    Location = new Point(0, dayPanels[i].Controls.Count * 40),
+                    Font = new Font("Segoe UI", 16, FontStyle.Bold),
+                    Margin = new Padding(0, 0, 0, 15) // Add a bottom margin
+                };
+                emptyLabel.Click += new EventHandler(DateDisplay_Click);
+
+                dayPanels[i].Controls.Add(emptyLabel);
+            }
+
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                DateTime currentDay = new DateTime(currentDate.Year, currentDate.Month, day);
+                int dayOfWeek = ((int)currentDay.DayOfWeek + 6) % 7; // Monday = 0, Sunday = 6
+
+                Label dayLabel = new Label
+                {
+                    Text = day.ToString(),
+                    AutoSize = true,
+                    Location = new Point(0, dayPanels[dayOfWeek].Controls.Count * 40),
+                    Font = new Font("Segoe UI", 16, FontStyle.Bold),
+                    Name = "day_" + day.ToString(),
+                    Margin = new Padding(0, 0, 0, 15) // Add a bottom margin
+                };
+
+                dayPanels[dayOfWeek].Controls.Add(dayLabel);
             }
         }
 
-        private void AddDateDisplay(int dayID)
+        private void DateDisplay_Click(object sender, EventArgs e)
         {
-            firstDayOfMonth
+            //throw new NotImplementedException();
+            Label dateDisplay = (Label)sender;
+            
+            PictureBox pbSelector = new PictureBox();
+            pbSelector.Size = new Size(50, 50);
+            pbSelector.BackColor = Color.Transparent;
+            pbSelector.Image = Properties.Resources.dateSelector;
+            pbSelector.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbSelector.Location = new Point(dateDisplay.Location.X + dateDisplay.Width + 10, dateDisplay.Location.Y - 10);
+            pbSelector.BringToFront();
+            pnlCalBase.Controls.Add(pbSelector);
+
+            dateDisplay.ForeColor = Color.White;
+            dateDisplay.BringToFront();
         }
     }
 }

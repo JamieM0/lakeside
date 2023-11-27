@@ -52,8 +52,17 @@ namespace lakeside
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlCalContainer = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlCalBase2 = new System.Windows.Forms.Panel();
+            this.pnlFridays = new System.Windows.Forms.Panel();
+            this.pnlMondays = new System.Windows.Forms.Panel();
+            this.pnlThursdays = new System.Windows.Forms.Panel();
+            this.pnlTuesdays = new System.Windows.Forms.Panel();
+            this.pnlWednesdays = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlCalContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -270,6 +279,67 @@ namespace lakeside
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pnlCalContainer
+            // 
+            this.pnlCalContainer.Controls.Add(this.label1);
+            this.pnlCalContainer.Controls.Add(this.pnlCalBase2);
+            this.pnlCalContainer.Location = new System.Drawing.Point(124, 88);
+            this.pnlCalContainer.Name = "pnlCalContainer";
+            this.pnlCalContainer.Size = new System.Drawing.Size(487, 386);
+            this.pnlCalContainer.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(97, 334);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "10";
+            // 
+            // pnlCalBase2
+            // 
+            this.pnlCalBase2.Location = new System.Drawing.Point(23, 24);
+            this.pnlCalBase2.Name = "pnlCalBase2";
+            this.pnlCalBase2.Size = new System.Drawing.Size(416, 307);
+            this.pnlCalBase2.TabIndex = 4;
+            // 
+            // pnlFridays
+            // 
+            this.pnlFridays.Location = new System.Drawing.Point(877, 151);
+            this.pnlFridays.Name = "pnlFridays";
+            this.pnlFridays.Size = new System.Drawing.Size(53, 301);
+            this.pnlFridays.TabIndex = 17;
+            // 
+            // pnlMondays
+            // 
+            this.pnlMondays.Location = new System.Drawing.Point(641, 151);
+            this.pnlMondays.Name = "pnlMondays";
+            this.pnlMondays.Size = new System.Drawing.Size(53, 301);
+            this.pnlMondays.TabIndex = 12;
+            // 
+            // pnlThursdays
+            // 
+            this.pnlThursdays.Location = new System.Drawing.Point(818, 151);
+            this.pnlThursdays.Name = "pnlThursdays";
+            this.pnlThursdays.Size = new System.Drawing.Size(53, 301);
+            this.pnlThursdays.TabIndex = 16;
+            // 
+            // pnlTuesdays
+            // 
+            this.pnlTuesdays.Location = new System.Drawing.Point(700, 151);
+            this.pnlTuesdays.Name = "pnlTuesdays";
+            this.pnlTuesdays.Size = new System.Drawing.Size(53, 301);
+            this.pnlTuesdays.TabIndex = 13;
+            // 
+            // pnlWednesdays
+            // 
+            this.pnlWednesdays.Location = new System.Drawing.Point(759, 151);
+            this.pnlWednesdays.Name = "pnlWednesdays";
+            this.pnlWednesdays.Size = new System.Drawing.Size(53, 301);
+            this.pnlWednesdays.TabIndex = 14;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -277,6 +347,12 @@ namespace lakeside
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
+            this.Controls.Add(this.pnlCalContainer);
+            this.Controls.Add(this.pnlFridays);
+            this.Controls.Add(this.pnlMondays);
+            this.Controls.Add(this.pnlThursdays);
+            this.Controls.Add(this.pnlTuesdays);
+            this.Controls.Add(this.pnlWednesdays);
             this.Controls.Add(this.btnEditPod);
             this.Controls.Add(this.btnAddPod);
             this.Controls.Add(this.btnClose);
@@ -298,6 +374,8 @@ namespace lakeside
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlCalContainer.ResumeLayout(false);
+            this.pnlCalContainer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,6 +406,14 @@ namespace lakeside
         private System.Windows.Forms.ToolStripMenuItem staffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addStaffMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editStaffMemberToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlCalContainer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlCalBase2;
+        private System.Windows.Forms.Panel pnlFridays;
+        private System.Windows.Forms.Panel pnlMondays;
+        private System.Windows.Forms.Panel pnlThursdays;
+        private System.Windows.Forms.Panel pnlTuesdays;
+        private System.Windows.Forms.Panel pnlWednesdays;
     }
 }
 
