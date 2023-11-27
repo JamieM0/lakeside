@@ -157,5 +157,11 @@ namespace lakeside
             Hide();
             new frmSearchGuests(tmp, null).Show();
         }
+
+        private void btnPodBooking_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmPodBooking().Show();
+        }
     }
 }

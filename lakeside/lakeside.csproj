@@ -69,6 +69,12 @@
     <Compile Include="DAL\ExtraDAL.cs" />
     <Compile Include="DAL\LakesideDAL.cs" />
     <Compile Include="DAL\PodDAL.cs" />
+    <Compile Include="frmPodBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPodBooking.Designer.cs">
+      <DependentUpon>frmPodBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Staff.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="frmAddCourse.cs">
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddPod.resx">
       <DependentUpon>frmAddPod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPodBooking.resx">
+      <DependentUpon>frmPodBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchGuests.resx">
       <DependentUpon>frmSearchGuests.cs</DependentUpon>

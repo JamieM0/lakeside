@@ -103,7 +103,7 @@ namespace lakeside
             // lbAdd1
             // 
             this.lbAdd1.AutoSize = true;
-            this.lbAdd1.Location = new System.Drawing.Point(26, 260);
+            this.lbAdd1.Location = new System.Drawing.Point(26, 271);
             this.lbAdd1.Name = "lbAdd1";
             this.lbAdd1.Size = new System.Drawing.Size(242, 30);
             this.lbAdd1.TabIndex = 4;
@@ -112,7 +112,7 @@ namespace lakeside
             // lbCityTown
             // 
             this.lbCityTown.AutoSize = true;
-            this.lbCityTown.Location = new System.Drawing.Point(139, 330);
+            this.lbCityTown.Location = new System.Drawing.Point(139, 341);
             this.lbCityTown.Name = "lbCityTown";
             this.lbCityTown.Size = new System.Drawing.Size(121, 30);
             this.lbCityTown.TabIndex = 5;
@@ -121,7 +121,7 @@ namespace lakeside
             // lbPostcode
             // 
             this.lbPostcode.AutoSize = true;
-            this.lbPostcode.Location = new System.Drawing.Point(680, 259);
+            this.lbPostcode.Location = new System.Drawing.Point(680, 270);
             this.lbPostcode.Name = "lbPostcode";
             this.lbPostcode.Size = new System.Drawing.Size(102, 30);
             this.lbPostcode.TabIndex = 6;
@@ -130,7 +130,7 @@ namespace lakeside
             // lbCountry
             // 
             this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(686, 334);
+            this.lbCountry.Location = new System.Drawing.Point(686, 345);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(91, 30);
             this.lbCountry.TabIndex = 7;
@@ -140,7 +140,7 @@ namespace lakeside
             // 
             this.llbPostcodeFormat.AutoSize = true;
             this.llbPostcodeFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llbPostcodeFormat.Location = new System.Drawing.Point(897, 277);
+            this.llbPostcodeFormat.Location = new System.Drawing.Point(897, 288);
             this.llbPostcodeFormat.Name = "llbPostcodeFormat";
             this.llbPostcodeFormat.Size = new System.Drawing.Size(155, 17);
             this.llbPostcodeFormat.TabIndex = 10;
@@ -226,7 +226,7 @@ namespace lakeside
             this.validAdd1.AutoSize = true;
             this.validAdd1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validAdd1.ForeColor = System.Drawing.Color.Red;
-            this.validAdd1.Location = new System.Drawing.Point(270, 297);
+            this.validAdd1.Location = new System.Drawing.Point(270, 308);
             this.validAdd1.Name = "validAdd1";
             this.validAdd1.Size = new System.Drawing.Size(52, 21);
             this.validAdd1.TabIndex = 15;
@@ -237,7 +237,7 @@ namespace lakeside
             this.validPostcode.AutoSize = true;
             this.validPostcode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPostcode.ForeColor = System.Drawing.Color.Red;
-            this.validPostcode.Location = new System.Drawing.Point(781, 296);
+            this.validPostcode.Location = new System.Drawing.Point(781, 307);
             this.validPostcode.Name = "validPostcode";
             this.validPostcode.Size = new System.Drawing.Size(52, 21);
             this.validPostcode.TabIndex = 16;
@@ -248,7 +248,7 @@ namespace lakeside
             this.validCityTown.AutoSize = true;
             this.validCityTown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCityTown.ForeColor = System.Drawing.Color.Red;
-            this.validCityTown.Location = new System.Drawing.Point(270, 371);
+            this.validCityTown.Location = new System.Drawing.Point(270, 382);
             this.validCityTown.Name = "validCityTown";
             this.validCityTown.Size = new System.Drawing.Size(52, 21);
             this.validCityTown.TabIndex = 17;
@@ -259,7 +259,7 @@ namespace lakeside
             this.validCountry.AutoSize = true;
             this.validCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCountry.ForeColor = System.Drawing.Color.Red;
-            this.validCountry.Location = new System.Drawing.Point(787, 371);
+            this.validCountry.Location = new System.Drawing.Point(787, 382);
             this.validCountry.Name = "validCountry";
             this.validCountry.Size = new System.Drawing.Size(52, 21);
             this.validCountry.TabIndex = 18;
@@ -350,7 +350,7 @@ namespace lakeside
             this.cmbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCountry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(785, 331);
+            this.cmbCountry.Location = new System.Drawing.Point(785, 342);
             this.cmbCountry.Name = "cmbCountry";
             this.cmbCountry.Size = new System.Drawing.Size(221, 33);
             this.cmbCountry.TabIndex = 6;
@@ -358,7 +358,7 @@ namespace lakeside
             // txtPostcode
             // 
             this.txtPostcode.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPostcode.Location = new System.Drawing.Point(785, 260);
+            this.txtPostcode.Location = new System.Drawing.Point(785, 271);
             this.txtPostcode.Mask = "LL00 0LL";
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(100, 33);
@@ -369,7 +369,7 @@ namespace lakeside
             // txtCityTown
             // 
             this.txtCityTown.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCityTown.Location = new System.Drawing.Point(274, 331);
+            this.txtCityTown.Location = new System.Drawing.Point(274, 342);
             this.txtCityTown.Name = "txtCityTown";
             this.txtCityTown.Size = new System.Drawing.Size(369, 33);
             this.txtCityTown.TabIndex = 4;
@@ -379,7 +379,7 @@ namespace lakeside
             // txtAdd1
             // 
             this.txtAdd1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdd1.Location = new System.Drawing.Point(274, 261);
+            this.txtAdd1.Location = new System.Drawing.Point(274, 272);
             this.txtAdd1.Name = "txtAdd1";
             this.txtAdd1.Size = new System.Drawing.Size(369, 33);
             this.txtAdd1.TabIndex = 3;
