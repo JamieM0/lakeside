@@ -15,6 +15,9 @@ namespace lakeside
         DateTime current = DateTime.Now.Date;
         DayOfWeek firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).DayOfWeek;
 
+        DateTime proposedStartDate = new DateTime();
+        DateTime proposedEndDate = new DateTime();
+
         Panel pnlCalBase;
         Panel[] dayPanels;
 
@@ -22,6 +25,7 @@ namespace lakeside
         {
             InitializeComponent();
             CenterToScreen();
+            cmbDatePickerStayLength.SelectedIndex = 0;
             InitialiseCalendar();
         }
 
@@ -33,16 +37,27 @@ namespace lakeside
             dayPanels = new Panel[7];
             for (int i = 6; i >= 0; i--)
             {
-                dayPanels[i] = new Panel { Dock = DockStyle.Left, Width = pnlCalBase.Width / 7 };
+                dayPanels[i] = new Panel { Location = new Point(0 + i * pnlCalBase.Width / 7, 0), Width = pnlCalBase.Width / 7, Height = pnlCalBase.Height };
                 pnlCalBase.Controls.Add(dayPanels[i]);
             }
 
-            DisplayCurrentMonth();
+            DisplayCurrentMonth(DateTime.Now);
         }
 
-        private void DisplayCurrentMonth()
+        private void DisplayCurrentMonth(DateTime currentDate)
         {
-            DateTime currentDate = DateTime.Now;
+            //DateTime currentDate = DateTime.Now;
+            current = currentDate;
+            foreach (Panel day in dayPanels)
+            {
+                day.Controls.Clear();
+            }
+
+            //Place lbMonthName in the middle of pnlCalOutside
+            lbMonthName.Text = currentDate.ToString("MMMM yyyy");
+            lbMonthName.Location = new Point((pnlCalOutside.Width - lbMonthName.Width) / 2, lbMonthName.Location.Y);
+            lbMonthName.TextAlign = ContentAlignment.MiddleCenter;
+
             int daysInMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
             DateTime firstDayOfMonth = new DateTime(currentDate.Year, currentDate.Month, 1);
             int firstDayOfWeek = ((int)firstDayOfMonth.DayOfWeek + 6) % 7; // Monday = 0, Sunday = 6
@@ -53,7 +68,7 @@ namespace lakeside
                 Label emptyLabel = new Label
                 {
                     AutoSize = true,
-                    Location = new Point(0, dayPanels[i].Controls.Count * 40),
+                    Location = new Point(3, dayPanels[i].Controls.Count * 40),
                     Font = new Font("Segoe UI", 16, FontStyle.Bold),
                     Margin = new Padding(0, 0, 0, 15) // Add a bottom margin
                 };
@@ -71,11 +86,12 @@ namespace lakeside
                 {
                     Text = day.ToString(),
                     AutoSize = true,
-                    Location = new Point(0, dayPanels[dayOfWeek].Controls.Count * 40),
+                    Location = new Point(3, dayPanels[dayOfWeek].Controls.Count * 40),
                     Font = new Font("Segoe UI", 16, FontStyle.Bold),
                     Name = "day_" + day.ToString(),
                     Margin = new Padding(0, 0, 0, 15) // Add a bottom margin
                 };
+                dayLabel.Click += new EventHandler(DateDisplay_Click);
 
                 dayPanels[dayOfWeek].Controls.Add(dayLabel);
             }
@@ -84,19 +100,73 @@ namespace lakeside
         private void DateDisplay_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
+
             Label dateDisplay = (Label)sender;
+            SelectDate(dateDisplay);
+
+            proposedStartDate = new DateTime(current.Year, current.Month, Convert.ToInt32(dateDisplay.Text));
+            proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
+        }
+
+        private void SelectDate(Label dateDisplay)
+        {
+            //Go through all panels in dayPanels and remove all PictureBoxes
+            foreach (Panel day in dayPanels)
+            {
+                foreach (Control c in day.Controls)
+                {
+                    if (c is PictureBox)
+                    {
+                        day.Controls.Remove(c);
+                    }
+                    if (c is Label)
+                    {
+                        Label lb = (Label)c;
+                        lb.Image = null;
+                        lb.ForeColor = Color.Black;
+                    }
+                }
+            }
             
+            dateDisplay.ForeColor = Color.White;
+            dateDisplay.BringToFront();
+
+            Panel containerPanel = (Panel)dateDisplay.Parent;
+            containerPanel.BringToFront();
+
+            dateDisplay.Image = Properties.Resources.dateSelector;
+
             PictureBox pbSelector = new PictureBox();
-            pbSelector.Size = new Size(50, 50);
+            pbSelector.Size = new Size(47, 47);
             pbSelector.BackColor = Color.Transparent;
             pbSelector.Image = Properties.Resources.dateSelector;
             pbSelector.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbSelector.Location = new Point(dateDisplay.Location.X + dateDisplay.Width + 10, dateDisplay.Location.Y - 10);
-            pbSelector.BringToFront();
-            pnlCalBase.Controls.Add(pbSelector);
+            pbSelector.Location = new Point(dateDisplay.Location.X - 4, dateDisplay.Location.Y - 9);
+            containerPanel.Controls.Add(pbSelector);
+            //pbSelector.BringToFront();
+        }
 
-            dateDisplay.ForeColor = Color.White;
-            dateDisplay.BringToFront();
+        private void btnNextMonth_Click(object sender, EventArgs e)
+        {
+            DisplayCurrentMonth(current.AddMonths(1));
+        }
+
+        private void btnPreviousMonth_Click(object sender, EventArgs e)
+        {
+            DisplayCurrentMonth(current.AddMonths(-1));
+        }
+
+        private void frmPodBooking_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDatePickerStayLength_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (proposedStartDate != null)
+            {
+                proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
+            }
         }
     }
 }
