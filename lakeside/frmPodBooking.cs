@@ -21,11 +21,14 @@ namespace lakeside
         Panel pnlCalBase;
         Panel[] dayPanels;
 
+        bool formLoaded = false;
+
         public frmPodBooking()
         {
             InitializeComponent();
             CenterToScreen();
             cmbDatePickerStayLength.SelectedIndex = 0;
+            lbDateRange.Visible = false;
             InitialiseCalendar();
         }
 
@@ -95,35 +98,90 @@ namespace lakeside
 
                 dayPanels[dayOfWeek].Controls.Add(dayLabel);
             }
+
+            formLoaded = true;
         }
 
+        bool newDate = true;
         private void DateDisplay_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
-
+            newDate = true;
             Label dateDisplay = (Label)sender;
-            SelectDate(dateDisplay);
-
             proposedStartDate = new DateTime(current.Year, current.Month, Convert.ToInt32(dateDisplay.Text));
             proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
+
+            if (Validation.BookingStartDate(proposedStartDate)==null)
+            {
+                SelectDate(dateDisplay);
+                
+                HighlightStayPeriod();
+            }
+            else
+            {
+                //Invalid Start Date
+                MessageBox.Show(Validation.BookingStartDate(proposedStartDate), "Invalid Start Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                proposedStartDate = new DateTime();
+                proposedEndDate = new DateTime();
+            }
+        }
+
+        private void HighlightStayPeriod()
+        {
+            lbDateRange.Visible = true;
+            lbDateRange.Text = proposedStartDate.ToString("dd MMM") + " - " + proposedEndDate.ToString("dd MMM");
+
+            if (proposedEndDate.Month == proposedStartDate.Month)
+            {
+                foreach (Panel day in dayPanels)
+                {
+                    foreach (Control c in day.Controls)
+                    {
+                        if (c is PictureBox)
+                        {
+                            day.Controls.Remove(c);
+                        }
+                        if (c is Label)
+                        {
+                            Label lb = (Label)c;
+                            lb.Image = null;
+                            lb.ForeColor = Color.Black;
+                        }
+                    }
+                }
+
+                Label endDateDisplay = pnlCalBase.Controls.Find("day_" + proposedEndDate.Day, true).FirstOrDefault() as Label;
+
+                newDate = false;
+                SelectDate(endDateDisplay);
+
+                //Get all dates between start and end
+                for (int i = proposedStartDate.Day; i < proposedEndDate.Day+1; i++)
+                {
+                    SelectDate(pnlCalBase.Controls.Find("day_" + i, true).FirstOrDefault() as Label);
+                }
+            }
         }
 
         private void SelectDate(Label dateDisplay)
         {
             //Go through all panels in dayPanels and remove all PictureBoxes
-            foreach (Panel day in dayPanels)
+            if(newDate)
             {
-                foreach (Control c in day.Controls)
+                foreach (Panel day in dayPanels)
                 {
-                    if (c is PictureBox)
+                    foreach (Control c in day.Controls)
                     {
-                        day.Controls.Remove(c);
-                    }
-                    if (c is Label)
-                    {
-                        Label lb = (Label)c;
-                        lb.Image = null;
-                        lb.ForeColor = Color.Black;
+                        if (c is PictureBox)
+                        {
+                            day.Controls.Remove(c);
+                        }
+                        if (c is Label)
+                        {
+                            Label lb = (Label)c;
+                            lb.Image = null;
+                            lb.ForeColor = Color.Black;
+                        }
                     }
                 }
             }
@@ -148,11 +206,13 @@ namespace lakeside
 
         private void btnNextMonth_Click(object sender, EventArgs e)
         {
+            HighlightStayPeriod();
             DisplayCurrentMonth(current.AddMonths(1));
         }
 
         private void btnPreviousMonth_Click(object sender, EventArgs e)
         {
+            HighlightStayPeriod();
             DisplayCurrentMonth(current.AddMonths(-1));
         }
 
@@ -163,9 +223,11 @@ namespace lakeside
 
         private void cmbDatePickerStayLength_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (proposedStartDate != null)
+            if (formLoaded)
             {
                 proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
+                HighlightStayPeriod();
+                HighlightStayPeriod();
             }
         }
     }

@@ -40,6 +40,7 @@ namespace lakeside
             this.btnPreviousMonth = new System.Windows.Forms.Button();
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.lbDayTitles = new System.Windows.Forms.Label();
+            this.lbDateRange = new System.Windows.Forms.Label();
             this.pnlCalOutside.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@ namespace lakeside
             // 
             // pnlCalOutside
             // 
+            this.pnlCalOutside.Controls.Add(this.lbDateRange);
             this.pnlCalOutside.Controls.Add(this.lbMonthName);
             this.pnlCalOutside.Controls.Add(this.cmbDatePickerStayLength);
             this.pnlCalOutside.Controls.Add(this.lbDatePickerStayPeriod);
@@ -158,6 +160,17 @@ namespace lakeside
             this.lbDayTitles.TabIndex = 8;
             this.lbDayTitles.Text = "M        T       W       T        F        S        S";
             // 
+            // lbDateRange
+            // 
+            this.lbDateRange.AutoSize = true;
+            this.lbDateRange.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateRange.Location = new System.Drawing.Point(338, 372);
+            this.lbDateRange.Name = "lbDateRange";
+            this.lbDateRange.Size = new System.Drawing.Size(139, 25);
+            this.lbDateRange.TabIndex = 14;
+            this.lbDateRange.Text = "29 Nov - 1 Dec";
+            this.lbDateRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,5 +203,6 @@ namespace lakeside
         private System.Windows.Forms.ComboBox cmbDatePickerStayLength;
         private System.Windows.Forms.Label lbDatePickerStayPeriod;
         private System.Windows.Forms.Label lbMonthName;
+        private System.Windows.Forms.Label lbDateRange;
     }
 }
