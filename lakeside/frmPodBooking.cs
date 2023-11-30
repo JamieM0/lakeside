@@ -111,19 +111,19 @@ namespace lakeside
             proposedStartDate = new DateTime(current.Year, current.Month, Convert.ToInt32(dateDisplay.Text));
             proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
 
-            if (Validation.BookingStartDate(proposedStartDate)==null)
-            {
+            //if (Validation.BookingStartDate(proposedStartDate)==null)
+            //{
                 SelectDate(dateDisplay);
                 
                 HighlightStayPeriod();
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 //Invalid Start Date
-                MessageBox.Show(Validation.BookingStartDate(proposedStartDate), "Invalid Start Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                proposedStartDate = new DateTime();
-                proposedEndDate = new DateTime();
-            }
+                //MessageBox.Show(Validation.BookingStartDate(proposedStartDate), "Invalid Start Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //proposedStartDate = new DateTime();
+                //proposedEndDate = new DateTime();
+            //}
         }
 
         private void HighlightStayPeriod()
@@ -229,6 +229,11 @@ namespace lakeside
                 HighlightStayPeriod();
                 HighlightStayPeriod();
             }
+        }
+
+        private void btnSelectDates_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

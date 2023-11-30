@@ -34,14 +34,17 @@ namespace lakeside
             this.pnlSaturdays = new System.Windows.Forms.Panel();
             this.pnlCalContainer = new System.Windows.Forms.Panel();
             this.pnlCalOutside = new System.Windows.Forms.Panel();
+            this.lbDateRange = new System.Windows.Forms.Label();
             this.lbMonthName = new System.Windows.Forms.Label();
             this.cmbDatePickerStayLength = new System.Windows.Forms.ComboBox();
             this.lbDatePickerStayPeriod = new System.Windows.Forms.Label();
             this.btnPreviousMonth = new System.Windows.Forms.Button();
             this.btnNextMonth = new System.Windows.Forms.Button();
             this.lbDayTitles = new System.Windows.Forms.Label();
-            this.lbDateRange = new System.Windows.Forms.Label();
+            this.btnSelectDates = new System.Windows.Forms.Button();
+            this.pnlDatePicker = new System.Windows.Forms.Panel();
             this.pnlCalOutside.SuspendLayout();
+            this.pnlDatePicker.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -70,32 +73,40 @@ namespace lakeside
             // 
             // pnlCalContainer
             // 
-            this.pnlCalContainer.Location = new System.Drawing.Point(61, 120);
+            this.pnlCalContainer.Location = new System.Drawing.Point(32, 115);
             this.pnlCalContainer.Name = "pnlCalContainer";
-            this.pnlCalContainer.Size = new System.Drawing.Size(416, 231);
+            this.pnlCalContainer.Size = new System.Drawing.Size(416, 234);
             this.pnlCalContainer.TabIndex = 7;
             // 
             // pnlCalOutside
             // 
-            this.pnlCalOutside.Controls.Add(this.lbDateRange);
             this.pnlCalOutside.Controls.Add(this.lbMonthName);
-            this.pnlCalOutside.Controls.Add(this.cmbDatePickerStayLength);
-            this.pnlCalOutside.Controls.Add(this.lbDatePickerStayPeriod);
             this.pnlCalOutside.Controls.Add(this.btnPreviousMonth);
             this.pnlCalOutside.Controls.Add(this.btnNextMonth);
             this.pnlCalOutside.Controls.Add(this.lbDayTitles);
             this.pnlCalOutside.Controls.Add(this.pnlCalContainer);
             this.pnlCalOutside.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlCalOutside.Location = new System.Drawing.Point(247, 42);
+            this.pnlCalOutside.Location = new System.Drawing.Point(266, 3);
             this.pnlCalOutside.Name = "pnlCalOutside";
-            this.pnlCalOutside.Size = new System.Drawing.Size(541, 421);
+            this.pnlCalOutside.Size = new System.Drawing.Size(480, 363);
             this.pnlCalOutside.TabIndex = 8;
+            // 
+            // lbDateRange
+            // 
+            this.lbDateRange.AutoSize = true;
+            this.lbDateRange.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateRange.Location = new System.Drawing.Point(55, 45);
+            this.lbDateRange.Name = "lbDateRange";
+            this.lbDateRange.Size = new System.Drawing.Size(139, 25);
+            this.lbDateRange.TabIndex = 14;
+            this.lbDateRange.Text = "29 Nov - 1 Dec";
+            this.lbDateRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbMonthName
             // 
             this.lbMonthName.AutoSize = true;
             this.lbMonthName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMonthName.Location = new System.Drawing.Point(215, 24);
+            this.lbMonthName.Location = new System.Drawing.Point(186, 19);
             this.lbMonthName.Name = "lbMonthName";
             this.lbMonthName.Size = new System.Drawing.Size(103, 25);
             this.lbMonthName.TabIndex = 13;
@@ -112,7 +123,7 @@ namespace lakeside
             "4",
             "6",
             "13"});
-            this.cmbDatePickerStayLength.Location = new System.Drawing.Point(175, 369);
+            this.cmbDatePickerStayLength.Location = new System.Drawing.Point(129, 78);
             this.cmbDatePickerStayLength.Name = "cmbDatePickerStayLength";
             this.cmbDatePickerStayLength.Size = new System.Drawing.Size(45, 33);
             this.cmbDatePickerStayLength.TabIndex = 12;
@@ -122,7 +133,7 @@ namespace lakeside
             // 
             this.lbDatePickerStayPeriod.AutoSize = true;
             this.lbDatePickerStayPeriod.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDatePickerStayPeriod.Location = new System.Drawing.Point(56, 372);
+            this.lbDatePickerStayPeriod.Location = new System.Drawing.Point(12, 81);
             this.lbDatePickerStayPeriod.Name = "lbDatePickerStayPeriod";
             this.lbDatePickerStayPeriod.Size = new System.Drawing.Size(233, 25);
             this.lbDatePickerStayPeriod.TabIndex = 11;
@@ -131,7 +142,7 @@ namespace lakeside
             // btnPreviousMonth
             // 
             this.btnPreviousMonth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviousMonth.Location = new System.Drawing.Point(61, 17);
+            this.btnPreviousMonth.Location = new System.Drawing.Point(32, 12);
             this.btnPreviousMonth.Name = "btnPreviousMonth";
             this.btnPreviousMonth.Size = new System.Drawing.Size(130, 41);
             this.btnPreviousMonth.TabIndex = 10;
@@ -142,7 +153,7 @@ namespace lakeside
             // btnNextMonth
             // 
             this.btnNextMonth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextMonth.Location = new System.Drawing.Point(347, 17);
+            this.btnNextMonth.Location = new System.Drawing.Point(318, 12);
             this.btnNextMonth.Name = "btnNextMonth";
             this.btnNextMonth.Size = new System.Drawing.Size(130, 41);
             this.btnNextMonth.TabIndex = 9;
@@ -154,29 +165,41 @@ namespace lakeside
             // 
             this.lbDayTitles.AutoSize = true;
             this.lbDayTitles.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDayTitles.Location = new System.Drawing.Point(61, 79);
+            this.lbDayTitles.Location = new System.Drawing.Point(32, 74);
             this.lbDayTitles.Name = "lbDayTitles";
             this.lbDayTitles.Size = new System.Drawing.Size(382, 30);
             this.lbDayTitles.TabIndex = 8;
             this.lbDayTitles.Text = "M        T       W       T        F        S        S";
             // 
-            // lbDateRange
+            // btnSelectDates
             // 
-            this.lbDateRange.AutoSize = true;
-            this.lbDateRange.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateRange.Location = new System.Drawing.Point(338, 372);
-            this.lbDateRange.Name = "lbDateRange";
-            this.lbDateRange.Size = new System.Drawing.Size(139, 25);
-            this.lbDateRange.TabIndex = 14;
-            this.lbDateRange.Text = "29 Nov - 1 Dec";
-            this.lbDateRange.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelectDates.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectDates.Location = new System.Drawing.Point(17, 267);
+            this.btnSelectDates.Name = "btnSelectDates";
+            this.btnSelectDates.Size = new System.Drawing.Size(228, 48);
+            this.btnSelectDates.TabIndex = 15;
+            this.btnSelectDates.Text = "Select Dates";
+            this.btnSelectDates.UseVisualStyleBackColor = true;
+            this.btnSelectDates.Click += new System.EventHandler(this.btnSelectDates_Click);
+            // 
+            // pnlDatePicker
+            // 
+            this.pnlDatePicker.Controls.Add(this.cmbDatePickerStayLength);
+            this.pnlDatePicker.Controls.Add(this.btnSelectDates);
+            this.pnlDatePicker.Controls.Add(this.pnlCalOutside);
+            this.pnlDatePicker.Controls.Add(this.lbDateRange);
+            this.pnlDatePicker.Controls.Add(this.lbDatePickerStayPeriod);
+            this.pnlDatePicker.Location = new System.Drawing.Point(121, 42);
+            this.pnlDatePicker.Name = "pnlDatePicker";
+            this.pnlDatePicker.Size = new System.Drawing.Size(749, 381);
+            this.pnlDatePicker.TabIndex = 9;
             // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 475);
-            this.Controls.Add(this.pnlCalOutside);
+            this.ClientSize = new System.Drawing.Size(1059, 498);
+            this.Controls.Add(this.pnlDatePicker);
             this.Controls.Add(this.pnlSundays);
             this.Controls.Add(this.pnlSaturdays);
             this.Controls.Add(this.lbTitle);
@@ -185,6 +208,8 @@ namespace lakeside
             this.Load += new System.EventHandler(this.frmPodBooking_Load);
             this.pnlCalOutside.ResumeLayout(false);
             this.pnlCalOutside.PerformLayout();
+            this.pnlDatePicker.ResumeLayout(false);
+            this.pnlDatePicker.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +229,7 @@ namespace lakeside
         private System.Windows.Forms.Label lbDatePickerStayPeriod;
         private System.Windows.Forms.Label lbMonthName;
         private System.Windows.Forms.Label lbDateRange;
+        private System.Windows.Forms.Button btnSelectDates;
+        private System.Windows.Forms.Panel pnlDatePicker;
     }
 }
