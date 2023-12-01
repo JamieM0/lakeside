@@ -76,6 +76,7 @@
     <Compile Include="frmPodBooking.Designer.cs">
       <DependentUpon>frmPodBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="frmAddCourse.cs">

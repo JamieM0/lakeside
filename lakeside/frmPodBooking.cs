@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lakeside.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using lakeside.Models;
 
 namespace lakeside
 {
@@ -24,7 +26,11 @@ namespace lakeside
         Panel[] dayPanels;
 
         bool formLoaded = false;
-
+        int guestsStaying = 1;
+        int staffID = 1;
+        int selectedPodID=0;
+        int podID = 0;
+        
         public frmPodBooking()
         {
             InitializeComponent();
@@ -233,16 +239,62 @@ namespace lakeside
             }
         }
 
+        private void AddAvailablePods()
+        {
+            BookingDAL dal = new BookingDAL();
+            // Get all available pods and add to data grid view.
+            DataTable results = dal.GetAvailablePods(proposedStartDate, proposedEndDate);
+            if(results!=null)
+            {
+                //Set up data grid view
+                dgAvailablePods.DataSource = results;
+                dgAvailablePods.Columns["pod_id"].Visible = false;
+                dgAvailablePods.MultiSelect = false;
+                dgAvailablePods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgAvailablePods.ReadOnly = true;
+            }
+            else
+            {
+                //Notification
+                MessageBox.Show("No available pods for the selected dates", "No available pods", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void btnSelectDates_Click(object sender, EventArgs e)
         {
-            StartDate = proposedStartDate;
-            EndDate = proposedEndDate;
+            //Change cursor to loading cursor
+            UseWaitCursor = true;
             pnlDatePicker.Visible = false;
+            AddAvailablePods();
+            UseWaitCursor = false;
         }
 
         private void btnDatePickerOpenerSelector_Click(object sender, EventArgs e)
         {
             pnlDatePicker.Visible = true;
+        }
+
+        private void btnConfirmPod_Click(object sender, EventArgs e)
+        {
+            StartDate = proposedStartDate;
+            EndDate = proposedEndDate;
+            Booking booking = new Booking("Provisional", StartDate, EndDate, DateTime.Now, guestsStaying, 0.0M, DateTime.Now, staffID, podID);
+            BookingDAL dal = new BookingDAL();
+            if (dal.AddNewBooking(booking))
+            {
+                MessageBox.Show("Booking added successfully!","Booking Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+        }
+
+        private void dgAvailablePods_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnConfirmPod.Enabled = true;
+            // Get the first selected row
+            DataGridViewRow selectedRow = dgAvailablePods.SelectedRows[0];
+
+            // Assuming the pod_id is in the first column (index 0)
+            podID = Convert.ToInt32(selectedRow.Cells[0].Value);
         }
     }
 }
