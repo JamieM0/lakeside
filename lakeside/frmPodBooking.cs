@@ -17,6 +17,8 @@ namespace lakeside
 
         DateTime proposedStartDate = new DateTime();
         DateTime proposedEndDate = new DateTime();
+        DateTime StartDate = new DateTime();
+        DateTime EndDate = new DateTime();
 
         Panel pnlCalBase;
         Panel[] dayPanels;
@@ -233,7 +235,14 @@ namespace lakeside
 
         private void btnSelectDates_Click(object sender, EventArgs e)
         {
+            StartDate = proposedStartDate;
+            EndDate = proposedEndDate;
+            pnlDatePicker.Visible = false;
+        }
 
+        private void btnDatePickerOpenerSelector_Click(object sender, EventArgs e)
+        {
+            pnlDatePicker.Visible = true;
         }
     }
 }
