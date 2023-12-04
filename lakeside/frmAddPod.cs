@@ -21,6 +21,7 @@ namespace lakeside
         bool newPod = true;
         int podID = 0;
         string cachedSearch = "";
+        string editType = "";
 
         public frmAddPod()
         {
@@ -35,6 +36,7 @@ namespace lakeside
             txtFriendlyName.Text = edit.FriendlyName;
             txtDescription.Text = edit.Description;
             cmbType.Text = edit.Type;
+            editType = edit.Type;
             cmbPodLocation.Text = edit.Location;
             txtPricePPPN.Text = edit.Price.ToString();
             txtCapacity.Text = edit.Capacity;
@@ -115,12 +117,12 @@ namespace lakeside
                 case 0:
                     changeColour = txtFriendlyName;
                     errorDisplay = validFriendlyName;
-                    msg = Validation.OtherText(changeColour.Text, "Name");
+                    msg = Validation.OtherText(changeColour.Text, "Name", 45);
                     break;
                 case 1:
                     changeColour = txtDescription;
                     errorDisplay = validDescription;
-                    msg = Validation.OtherText(changeColour.Text, "Desctiption");
+                    msg = Validation.OtherText(changeColour.Text, "Desctiption", 50);
                     break;
                 case 2:
                     changeColour = txtPricePPPN;
@@ -130,6 +132,10 @@ namespace lakeside
                 case 3:
                     changeColour = cmbType;
                     errorDisplay = validType;
+                    if (editType == "Standard" || editType == "standard")
+                        podsStandard--;
+                    else
+                        podsLuxury--;
                     msg = Validation.PodType(changeColour.Text, podsStandard, podsLuxury);
                     break;
                 case 4:
@@ -140,7 +146,7 @@ namespace lakeside
                 case 5:
                     changeColour = cmbPodLocation;
                     errorDisplay = validPodLocation;
-                    msg = Validation.OtherText(changeColour.Text, "Location");
+                    msg = Validation.OtherText(changeColour.Text, "Location", 45);
                     break;
             }
             if (msg == null)

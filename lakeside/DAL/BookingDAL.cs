@@ -19,7 +19,7 @@ namespace lakeside.DAL
         public DataTable GetAvailablePods(DateTime start, DateTime end)
         {
             SqlCommand command = new SqlCommand();
-            command.CommandText = string.Format($"SELECT * FROM Pod WHERE pod_id NOT IN( SELECT pod_id FROM Booking WHERE(checkInDate <= '{start.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{start.ToString("yyyy-MM-dd")}') OR(checkInDate < '{end.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{end.ToString("yyyy-MM-dd")}') OR ('{start.ToString("yyyy-MM-dd")}' <= checkInDate AND '{end.ToString("yyyy-MM-dd")}' >= checkInDate) ); ");
+            command.CommandText = string.Format($"SELECT pod_id AS pod_id, name AS Name, description AS Description, type AS Type, capacity AS Capacity, location AS Location, pricePPPN AS Price FROM Pod WHERE pod_id NOT IN( SELECT pod_id FROM Booking WHERE(checkInDate <= '{start.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{start.ToString("yyyy-MM-dd")}') OR(checkInDate < '{end.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{end.ToString("yyyy-MM-dd")}') OR ('{start.ToString("yyyy-MM-dd")}' <= checkInDate AND '{end.ToString("yyyy-MM-dd")}' >= checkInDate) ); ");
             return RunSelectQueryOnTable(command);
         }
 

@@ -128,6 +128,7 @@ namespace lakeside
 
         private void btnAddGuest_Click(object sender, EventArgs e)
         {
+            UseWaitCursor = true;
             allValid[6] = true;
             DisableAllFields();
             if(newMode && !staffMode && CheckValidation())
@@ -223,6 +224,7 @@ namespace lakeside
                 EnableAllFields();
                 validTotal = true;
             }
+            UseWaitCursor = false;
         }
 
         private void ClearAllFields()
@@ -281,7 +283,7 @@ namespace lakeside
                 case 3:
                     changeColour = txtAdd1;
                     errorDisplay = validAdd1;
-                    msg=Validation.OtherText(changeColour.Text, "address");
+                    msg=Validation.OtherText(changeColour.Text, "address", 45);
                     break;
                 case 4:
                     changeColour = txtPostcode;
@@ -304,7 +306,7 @@ namespace lakeside
                 case 7:
                     changeColour = txtPosition;
                     errorDisplay = validPosition;
-                    msg = Validation.OtherText(changeColour.Text, "Position");
+                    msg = Validation.OtherText(changeColour.Text, "Position", 45);
                     break;
             }
             if(msg==null)

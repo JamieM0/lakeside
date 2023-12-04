@@ -61,12 +61,12 @@ namespace lakeside
                 case 0:
                     changeColour = txtCourseName;
                     errorDisplay = validCourseName;
-                    msg = Validation.OtherText(changeColour.Text, "Course name");
+                    msg = Validation.OtherText(changeColour.Text, "Course name",45);
                     break;
                 case 1:
                     changeColour = txtDescription;
                     errorDisplay = validDescription;
-                    msg = Validation.OtherText(changeColour.Text, "Course description");
+                    msg = Validation.OtherText(changeColour.Text, "Course description", 50);
                     break;
                 case 2:
                     changeColour = cmbTutor;

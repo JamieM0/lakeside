@@ -46,9 +46,13 @@ namespace lakeside
             this.btnDatePickerOpenerSelector = new System.Windows.Forms.Button();
             this.dgAvailablePods = new System.Windows.Forms.DataGridView();
             this.btnConfirmPod = new System.Windows.Forms.Button();
+            this.lbLocationDisplay = new System.Windows.Forms.Label();
+            this.pnlLocationDateDisplay = new System.Windows.Forms.Panel();
+            this.lbDateDisplay = new System.Windows.Forms.Label();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAvailablePods)).BeginInit();
+            this.pnlLocationDateDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -218,7 +222,7 @@ namespace lakeside
             this.dgAvailablePods.Location = new System.Drawing.Point(28, 151);
             this.dgAvailablePods.Name = "dgAvailablePods";
             this.dgAvailablePods.ReadOnly = true;
-            this.dgAvailablePods.Size = new System.Drawing.Size(429, 218);
+            this.dgAvailablePods.Size = new System.Drawing.Size(571, 218);
             this.dgAvailablePods.TabIndex = 11;
             this.dgAvailablePods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAvailablePods_CellClick);
             // 
@@ -234,18 +238,49 @@ namespace lakeside
             this.btnConfirmPod.UseVisualStyleBackColor = true;
             this.btnConfirmPod.Click += new System.EventHandler(this.btnConfirmPod_Click);
             // 
+            // lbLocationDisplay
+            // 
+            this.lbLocationDisplay.AutoSize = true;
+            this.lbLocationDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLocationDisplay.Location = new System.Drawing.Point(13, 9);
+            this.lbLocationDisplay.Name = "lbLocationDisplay";
+            this.lbLocationDisplay.Size = new System.Drawing.Size(61, 25);
+            this.lbLocationDisplay.TabIndex = 17;
+            this.lbLocationDisplay.Text = "label1";
+            // 
+            // pnlLocationDateDisplay
+            // 
+            this.pnlLocationDateDisplay.Controls.Add(this.lbDateDisplay);
+            this.pnlLocationDateDisplay.Controls.Add(this.lbLocationDisplay);
+            this.pnlLocationDateDisplay.Location = new System.Drawing.Point(20, 51);
+            this.pnlLocationDateDisplay.Name = "pnlLocationDateDisplay";
+            this.pnlLocationDateDisplay.Size = new System.Drawing.Size(209, 85);
+            this.pnlLocationDateDisplay.TabIndex = 14;
+            this.pnlLocationDateDisplay.Visible = false;
+            // 
+            // lbDateDisplay
+            // 
+            this.lbDateDisplay.AutoSize = true;
+            this.lbDateDisplay.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateDisplay.Location = new System.Drawing.Point(13, 44);
+            this.lbDateDisplay.Name = "lbDateDisplay";
+            this.lbDateDisplay.Size = new System.Drawing.Size(58, 25);
+            this.lbDateDisplay.TabIndex = 18;
+            this.lbDateDisplay.Text = "label1";
+            // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 498);
-            this.Controls.Add(this.pnlDatePicker);
+            this.Controls.Add(this.pnlLocationDateDisplay);
             this.Controls.Add(this.dgAvailablePods);
             this.Controls.Add(this.btnDatePickerOpenerSelector);
             this.Controls.Add(this.pnlSundays);
             this.Controls.Add(this.pnlSaturdays);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.btnConfirmPod);
+            this.Controls.Add(this.pnlDatePicker);
             this.Name = "frmPodBooking";
             this.Text = "Lakeside Escapes: Pod Booking";
             this.Load += new System.EventHandler(this.frmPodBooking_Load);
@@ -254,6 +289,8 @@ namespace lakeside
             this.pnlDatePicker.ResumeLayout(false);
             this.pnlDatePicker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAvailablePods)).EndInit();
+            this.pnlLocationDateDisplay.ResumeLayout(false);
+            this.pnlLocationDateDisplay.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,5 +315,8 @@ namespace lakeside
         private System.Windows.Forms.Button btnDatePickerOpenerSelector;
         private System.Windows.Forms.DataGridView dgAvailablePods;
         private System.Windows.Forms.Button btnConfirmPod;
+        private System.Windows.Forms.Label lbLocationDisplay;
+        private System.Windows.Forms.Panel pnlLocationDateDisplay;
+        private System.Windows.Forms.Label lbDateDisplay;
     }
 }

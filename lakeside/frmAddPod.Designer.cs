@@ -241,8 +241,20 @@ namespace lakeside
             // 
             // cmbPodLocation
             // 
+            this.cmbPodLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPodLocation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPodLocation.FormattingEnabled = true;
+            this.cmbPodLocation.Items.AddRange(new object[] {
+            "Lakeside",
+            "Forest",
+            "Beachside",
+            "Meadow",
+            "Riverside",
+            "Mountain",
+            "Orchard",
+            "Hilltop",
+            "Open Field",
+            "Harbour"});
             this.cmbPodLocation.Location = new System.Drawing.Point(179, 344);
             this.cmbPodLocation.Name = "cmbPodLocation";
             this.cmbPodLocation.Size = new System.Drawing.Size(221, 33);

@@ -30,7 +30,9 @@ namespace lakeside
         int staffID = 1;
         int selectedPodID=0;
         int podID = 0;
-        
+        PodDAL pDAL = new PodDAL();
+        Pod selectedPod = new Pod();
+
         public frmPodBooking()
         {
             InitializeComponent();
@@ -267,11 +269,13 @@ namespace lakeside
             pnlDatePicker.Visible = false;
             AddAvailablePods();
             UseWaitCursor = false;
+            dgAvailablePods.Visible = true;
         }
 
         private void btnDatePickerOpenerSelector_Click(object sender, EventArgs e)
         {
             pnlDatePicker.Visible = true;
+            pnlDatePicker.BringToFront();
         }
 
         private void btnConfirmPod_Click(object sender, EventArgs e)
@@ -283,6 +287,13 @@ namespace lakeside
             if (dal.AddNewBooking(booking))
             {
                 MessageBox.Show("Booking added successfully!","Booking Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                selectedPod = pDAL.PodLookup(podID);
+                dgAvailablePods.Visible = false;
+                btnConfirmPod.Visible = false;
+                btnDatePickerOpenerSelector.Visible = false;
+                pnlLocationDateDisplay.Visible = true;
+                lbDateDisplay.Text = $"{StartDate.ToString("dd-MM")} - {EndDate.ToString("dd-MM")}";
+                lbLocationDisplay.Text = selectedPod.FriendlyName;
             }
             
         }

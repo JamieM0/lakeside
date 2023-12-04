@@ -50,12 +50,12 @@ namespace lakeside
                 case 0:
                     changeColour = txtExtraName;
                     errorDisplay = validExtraName;
-                    msg = Validation.OtherText(changeColour.Text, "Extra name");
+                    msg = Validation.OtherText(changeColour.Text, "Extra name", 45);
                     break;
                 case 1:
                     changeColour = txtDescription;
                     errorDisplay = validDescription;
-                    msg = Validation.OtherText(changeColour.Text, "Extra description");
+                    msg = Validation.OtherText(changeColour.Text, "Extra description", 50);
                     break;
                 case 2:
                     changeColour = txtPricePPPN;

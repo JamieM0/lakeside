@@ -76,13 +76,13 @@ namespace lakeside
                 return "Not a valid UK city or town.";
         }
         
-        public static string OtherText(string text, string elementName)
+        public static string OtherText(string text, string elementName, int maxLength)
         {
             elementName = Char.ToUpper(elementName[0]) + elementName.Substring(1);
             if (text.Length < 1)
                 return elementName + " cannot be empty.";
-            if (text.Length > 45)
-                return elementName + " too long. Max length is 45 characters.";
+            if (text.Length > maxLength)
+                return elementName + $" too long. Max length is {maxLength.ToString()} characters.";
             if (text.Length < 3)
                 return elementName + " must be at least 3 characters long.";
             string pattern = @"^[0-9a-zA-Z\s\-\,]+$";
