@@ -297,7 +297,8 @@ namespace lakeside
                 lbDateDisplay.Text = $"{StartDate.ToString("dd MMM")} -> {EndDate.ToString("dd MMM")}";
                 lbLocationDisplay.Text = selectedPod.FriendlyName;
             //}
-            
+
+            pnlGuests.Visible = true;
         }
 
         private void dgAvailablePods_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -312,13 +313,44 @@ namespace lakeside
 
         private void btnAddGuest_Click(object sender, EventArgs e)
         {
-            new frmAddGuest().Show();
+            new frmAddGuest(true).Show();
+        }
+        public void AddNewGuest()
+        {
             selectedGuests.Add(Lakeside.currentlySelectedGuest);
+            addGuests();
         }
 
         private void btnSelectGuests_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addGuests()
+        {
+            int i = 0;
+            foreach(Guest g in selectedGuests)
+            {
+                pnlGuestPicker.Location = new Point(pnlGuestPicker.Location.X, pnlGuestPicker.Location.Y + 40);
+                i++;
+                Panel pnl = new Panel();
+                pnl.Size = new Size(256, 40);
+                pnl.Location = new Point(12, 45*i);
+                pnlGuests.Controls.Add(pnl);
+
+                Label lb = new Label();
+                lb.Font = new Font("Segoe UI", 14);
+                lb.Text = g.Forename + " " + g.Surname;
+                lb.Location = new Point(3, 8);
+                pnl.Controls.Add(lb);
+
+                Button btn = new Button();
+                btn.Font = new Font("Segoe UI", 14);
+                btn.Text = "X";
+                btn.Location = new Point(125, 3);
+                btn.Size = new Size(35, 35);
+                pnl.Controls.Add(btn);
+            }
         }
     }
 }

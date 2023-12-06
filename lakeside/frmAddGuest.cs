@@ -162,17 +162,18 @@ namespace lakeside
                 Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text, -1);
                 LakesideDAL dal = new LakesideDAL();
                 dal.AddNewGuest(guest);
-                MessageBox.Show("Guest added successfully!");
                 //ClearAllFields();
                 //EnableAllFields();
                 if(!fromPodBooking)
                 {
+                    MessageBox.Show("Guest added successfully!");
                     Hide();
                     new frmAddGuest().Show();
                 }
                 else
                 {
                     Lakeside.currentlySelectedGuest = guest;
+                    frmPodBooking.AddNewGuest();
                 }
             }
             else if(!newMode && !staffMode && CheckValidation())
