@@ -22,10 +22,21 @@ namespace lakeside
         int id = 0;
         bool[] allValid = new bool[8];
         bool staffMode = false;
+        bool fromPodBooking;
 
         public frmAddGuest()
         {
             InitializeComponent();
+        }
+
+        public frmAddGuest(bool close)
+        {
+            InitializeComponent();
+
+            if(fromPodBooking)
+            {
+                fromPodBooking = close;
+            }
         }
 
         public frmAddGuest(Guest edit, string search)
@@ -131,6 +142,10 @@ namespace lakeside
             UseWaitCursor = true;
             allValid[6] = true;
             DisableAllFields();
+            if(fromPodBooking)
+            {
+
+            }
             if(newMode && !staffMode && CheckValidation())
             {
                 string[] names = txtFullName.Text.Trim().Split(' ');
@@ -150,8 +165,15 @@ namespace lakeside
                 MessageBox.Show("Guest added successfully!");
                 //ClearAllFields();
                 //EnableAllFields();
-                Hide();
-                new frmAddGuest().Show();
+                if(!fromPodBooking)
+                {
+                    Hide();
+                    new frmAddGuest().Show();
+                }
+                else
+                {
+                    Lakeside.currentlySelectedGuest = guest;
+                }
             }
             else if(!newMode && !staffMode && CheckValidation())
             {

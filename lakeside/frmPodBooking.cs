@@ -33,6 +33,8 @@ namespace lakeside
         PodDAL pDAL = new PodDAL();
         Pod selectedPod = new Pod();
 
+        List<Guest> selectedGuests = new List<Guest>();
+
         public frmPodBooking()
         {
             InitializeComponent();
@@ -282,19 +284,19 @@ namespace lakeside
         {
             StartDate = proposedStartDate;
             EndDate = proposedEndDate;
-            Booking booking = new Booking("Provisional", StartDate, EndDate, DateTime.Now, guestsStaying, 0.0M, DateTime.Now, staffID, podID);
-            BookingDAL dal = new BookingDAL();
-            if (dal.AddNewBooking(booking))
-            {
-                MessageBox.Show("Booking added successfully!","Booking Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //Booking booking = new Booking("Provisional", StartDate, EndDate, DateTime.Now, guestsStaying, 0.0M, DateTime.Now, staffID, podID);
+            //BookingDAL dal = new BookingDAL();
+            //if (dal.AddNewBooking(booking))
+            //{
+                //MessageBox.Show("Booking added successfully!","Booking Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 selectedPod = pDAL.PodLookup(podID);
                 dgAvailablePods.Visible = false;
                 btnConfirmPod.Visible = false;
                 btnDatePickerOpenerSelector.Visible = false;
                 pnlLocationDateDisplay.Visible = true;
-                lbDateDisplay.Text = $"{StartDate.ToString("dd-MM")} - {EndDate.ToString("dd-MM")}";
+                lbDateDisplay.Text = $"{StartDate.ToString("dd MMM")} -> {EndDate.ToString("dd MMM")}";
                 lbLocationDisplay.Text = selectedPod.FriendlyName;
-            }
+            //}
             
         }
 
@@ -306,6 +308,17 @@ namespace lakeside
 
             // Assuming the pod_id is in the first column (index 0)
             podID = Convert.ToInt32(selectedRow.Cells[0].Value);
+        }
+
+        private void btnAddGuest_Click(object sender, EventArgs e)
+        {
+            new frmAddGuest().Show();
+            selectedGuests.Add(Lakeside.currentlySelectedGuest);
+        }
+
+        private void btnSelectGuests_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

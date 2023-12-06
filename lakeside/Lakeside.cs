@@ -9,6 +9,9 @@ namespace lakeside
 {
     class Lakeside
     {
+        public static Guest currentlySelectedGuest = new Guest();
+        public static object lastSearched = new object();
+        
         public static void Notifier(int notificationType)
         {
             /* Notification Type:
