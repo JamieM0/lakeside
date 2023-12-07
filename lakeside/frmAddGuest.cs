@@ -33,10 +33,7 @@ namespace lakeside
         {
             InitializeComponent();
 
-            if(fromPodBooking)
-            {
-                fromPodBooking = close;
-            }
+            fromPodBooking = close;
         }
 
         public frmAddGuest(Guest edit, string search)
@@ -173,7 +170,7 @@ namespace lakeside
                 else
                 {
                     Lakeside.currentlySelectedGuest = guest;
-                    frmPodBooking.AddNewGuest();
+                    Hide();
                 }
             }
             else if(!newMode && !staffMode && CheckValidation())

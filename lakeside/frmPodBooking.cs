@@ -313,6 +313,7 @@ namespace lakeside
 
         private void btnAddGuest_Click(object sender, EventArgs e)
         {
+            tmrTick.Start();
             new frmAddGuest(true).Show();
         }
         public void AddNewGuest()
@@ -332,24 +333,48 @@ namespace lakeside
             foreach(Guest g in selectedGuests)
             {
                 pnlGuestPicker.Location = new Point(pnlGuestPicker.Location.X, pnlGuestPicker.Location.Y + 40);
-                i++;
                 Panel pnl = new Panel();
-                pnl.Size = new Size(256, 40);
-                pnl.Location = new Point(12, 45*i);
+                pnl.Size = new Size(308, 40);
+                pnl.Location = new Point(12, 45*(i+1));
+                pnl.BackColor = Color.LightBlue;
                 pnlGuests.Controls.Add(pnl);
 
                 Label lb = new Label();
                 lb.Font = new Font("Segoe UI", 14);
                 lb.Text = g.Forename + " " + g.Surname;
                 lb.Location = new Point(3, 8);
+                lb.AutoSize = true;
                 pnl.Controls.Add(lb);
 
                 Button btn = new Button();
                 btn.Font = new Font("Segoe UI", 14);
                 btn.Text = "X";
-                btn.Location = new Point(125, 3);
+                btn.Location = new Point(267, 3);
                 btn.Size = new Size(35, 35);
+                btn.Click += new EventHandler(removeGuestFromBooking);
+                btn.Name = "btnGuest_" + g.GuestID;
                 pnl.Controls.Add(btn);
+                i++;
+            }
+        }
+
+        private void removeGuestFromBooking(object sender, EventArgs e)
+        {
+            Button removeButton = (Button)sender;
+            int removeID = Convert.ToInt32(removeButton.Name.Split('_')[1]);
+            LakesideDAL guestDAL = new LakesideDAL();
+            Guest toRemove = guestDAL.GuestLookup(removeID);
+            selectedGuests.Remove(toRemove);
+            addGuests();
+        }
+
+        private void tmrTick_Tick(object sender, EventArgs e)
+        {
+            if(Lakeside.currentlySelectedGuest.Forename!="")
+            {
+                tmrTick.Stop();
+                AddNewGuest();
+                Lakeside.currentlySelectedGuest = new Guest();
             }
         }
     }
