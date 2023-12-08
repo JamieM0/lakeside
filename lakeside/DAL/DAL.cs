@@ -46,6 +46,35 @@ namespace lakeside.DAL
             }
         }
 
+        //public int ExecuteAndGetID(SqlCommand command)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(_connectionString))
+        //    {
+        //        try
+        //        {
+        //            connection.Open();
+        //            command.Connection = connection;
+        //            SqlDataReader reader = command.ExecuteReader();
+        //            int id = 0;
+        //            if(reader.Read())
+        //            {
+        //                id = reader.GetInt32(0);
+        //            }
+        //            reader.Close();
+        //            MessageBox.Show(id.ToString());
+        //            return id;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return -1;
+        //        }
+        //        finally
+        //        {
+        //            connection.Close();
+        //        }
+        //    }
+        //}
+
         //Fills in table with data from in the database
         public DataTable RunSelectQueryOnTable(SqlCommand command)
         {

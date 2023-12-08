@@ -10,7 +10,7 @@ namespace lakeside.DAL
 {
     public class LakesideDAL : DAL
     {
-        public bool AddNewGuest(Guest g)
+        public int AddNewGuest(Guest g)
         {
             //SqlCommand used to store details of the command
             SqlCommand command = new SqlCommand();
@@ -18,7 +18,7 @@ namespace lakeside.DAL
             //Set SQL query command text to valid insert statement using values from the Guest class.
             command.CommandText = string.Format($"INSERT INTO Guest VALUES('{g.Forename}','{g.Surname}','{g.Email}','{g.Number}','{g.Street}','{g.CityTown}','{g.Postcode}','{g.Country}')");
 
-            return ExecuteNonQuery(command);
+            return ExecuteScalar($"INSERT INTO Guest VALUES('{g.Forename}','{g.Surname}','{g.Email}','{g.Number}','{g.Street}','{g.CityTown}','{g.Postcode}','{g.Country}')");
         }
 
         public Guest[] SearchGuests(string search)

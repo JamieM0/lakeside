@@ -330,13 +330,23 @@ namespace lakeside
         private void addGuests()
         {
             int i = 0;
+            pnlGuestPicker.Location = new Point(12, 50);
+            foreach(Control c in pnlGuests.Controls)
+            {
+                if(c.GetType() == typeof(Panel) && c.Name[4]=='A')
+                {
+                    pnlGuests.Controls.Remove(c);
+                }
+            }
+
             foreach(Guest g in selectedGuests)
             {
-                pnlGuestPicker.Location = new Point(pnlGuestPicker.Location.X, pnlGuestPicker.Location.Y + 40);
+                pnlGuestPicker.Location = new Point(pnlGuestPicker.Location.X, pnlGuestPicker.Location.Y + 45);
                 Panel pnl = new Panel();
                 pnl.Size = new Size(308, 40);
                 pnl.Location = new Point(12, 45*(i+1));
                 pnl.BackColor = Color.LightBlue;
+                pnl.Name = $"pnlGA_" + i;
                 pnlGuests.Controls.Add(pnl);
 
                 Label lb = new Label();
