@@ -267,10 +267,10 @@ namespace lakeside
         private void btnSelectDates_Click(object sender, EventArgs e)
         {
             //Change cursor to loading cursor
-            UseWaitCursor = true;
-            pnlDatePicker.Visible = false;
+            Cursor.Current = Cursors.WaitCursor;
             AddAvailablePods();
-            UseWaitCursor = false;
+            pnlDatePicker.Visible = false;
+            Cursor.Current = Cursors.Default;
             dgAvailablePods.Visible = true;
         }
 

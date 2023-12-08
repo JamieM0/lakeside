@@ -12,6 +12,7 @@ using System.IO;
 using lakeside.DAL;
 //using lakeside.Models;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace lakeside
 {
@@ -128,8 +129,20 @@ namespace lakeside
             txtFullName.Text = subject[0] + " " + subject[1];
             txtAdd1.Text = subject[2];
             txtCityTown.Text = townData[rnd.Next(0,townData.Length)];
-            txtPostcode.Text = "AB12 3CD";
-            txtMobileNumber.Text = "7766884747"/*subject[5].Substring(1,subject[5].Length-1)*/;
+
+            var r = new Random();
+            Func<string, char> randomChar = s => s[r.Next(s.Length)];
+            string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", numbers = "0123456789";
+            txtPostcode.Text = $"{randomChar(letters)}{randomChar(letters)}{randomChar(numbers)}{randomChar(numbers)} {randomChar(numbers)}{randomChar(letters)}{randomChar(letters)}";
+            
+            string number = "7";
+            Random rand = new Random();
+            for (int i = 0; i < 9; i++)
+            {
+                number += rand.Next(0, 10).ToString();
+            }
+            txtMobileNumber.Text = number/*subject[5].Substring(1,subject[5].Length-1)*/;
+            
             txtEmail.Text = subject[6];
             townData = null;
         }
@@ -158,7 +171,7 @@ namespace lakeside
                 givenName = givenName.Trim();
                 Guest guest = new Guest(forename, surname, txtEmail.Text, txtMobileNumber.Text, txtAdd1.Text, txtCityTown.Text, txtPostcode.Text, cmbCountry.Text, -1);
                 LakesideDAL dal = new LakesideDAL();
-                dal.AddNewGuest(guest);
+                int gID = dal.AddNewGuest(guest);
                 //ClearAllFields();
                 //EnableAllFields();
                 if(!fromPodBooking)
@@ -169,6 +182,7 @@ namespace lakeside
                 }
                 else
                 {
+                    guest.GuestID = gID;
                     Lakeside.currentlySelectedGuest = guest;
                     Hide();
                 }
