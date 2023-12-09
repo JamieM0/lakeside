@@ -163,5 +163,10 @@ namespace lakeside
             Hide();
             new frmPodBooking().Show();
         }
+
+        private void cbDebug_CheckedChanged(object sender, EventArgs e)
+        {
+            Lakeside.debug = cbDebug.Checked;
+        }
     }
 }

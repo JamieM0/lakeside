@@ -230,7 +230,23 @@ namespace lakeside
 
         private void frmPodBooking_Load(object sender, EventArgs e)
         {
-
+            lbDebugInfo.Visible = Lakeside.debug;
+            if(Lakeside.debug)
+            {
+                foreach (Control c in this.Controls)
+                {
+                    c.MouseEnter += new EventHandler(Control_DebugUpdate);
+                }
+            }
+        }
+        private void Control_DebugUpdate(object sender, EventArgs e)
+        {
+            Control control = sender as Control;
+            if (control != null)
+            {
+                // Update your label here
+                lbDebugInfo.Text = "Debug Info (Hovering Over): " + control.Name;
+            }
         }
 
         private void cmbDatePickerStayLength_SelectedIndexChanged(object sender, EventArgs e)
@@ -319,12 +335,19 @@ namespace lakeside
         public void AddNewGuest()
         {
             selectedGuests.Add(Lakeside.currentlySelectedGuest);
+            btnAcceptGuests.Enabled = true;
+            if(selectedGuests.Count>=selectedPod.Capacity)
+            {
+                btnAddGuest.Enabled = false;
+                btnSelectGuests.Enabled = false;
+            }
             addGuests();
         }
 
         private void btnSelectGuests_Click(object sender, EventArgs e)
         {
-
+            tmrTick.Start();
+            new frmSearchGuests(true).Show();
         }
 
         private void addGuests()
@@ -345,7 +368,7 @@ namespace lakeside
                 Panel pnl = new Panel();
                 pnl.Size = new Size(308, 40);
                 pnl.Location = new Point(12, 45*(i+1));
-                pnl.BackColor = Color.LightBlue;
+                //pnl.BackColor = Color.LightBlue;
                 pnl.Name = $"pnlGA_" + i;
                 pnlGuests.Controls.Add(pnl);
 
@@ -359,12 +382,20 @@ namespace lakeside
                 Button btn = new Button();
                 btn.Font = new Font("Segoe UI", 14);
                 btn.Text = "X";
-                btn.Location = new Point(267, 3);
+                btn.Location = new Point(267, 5);
                 btn.Size = new Size(35, 35);
                 btn.Click += new EventHandler(removeGuestFromBooking);
                 btn.Name = "btnGuest_" + g.GuestID;
                 pnl.Controls.Add(btn);
                 i++;
+            }
+
+            if (Lakeside.debug)
+            {
+                foreach (Control c in pnlGuests.Controls)
+                {
+                    c.MouseEnter += new EventHandler(Control_DebugUpdate);
+                }
             }
         }
 
@@ -375,6 +406,11 @@ namespace lakeside
             LakesideDAL guestDAL = new LakesideDAL();
             Guest toRemove = guestDAL.GuestLookup(removeID);
             selectedGuests.Remove(toRemove);
+            if (selectedGuests.Count < selectedPod.Capacity)
+            {
+                btnAddGuest.Enabled = true;
+                btnSelectGuests.Enabled = true;
+            }
             addGuests();
         }
 
@@ -385,6 +421,26 @@ namespace lakeside
                 tmrTick.Stop();
                 AddNewGuest();
                 Lakeside.currentlySelectedGuest = new Guest();
+            }
+        }
+
+        private void btnAcceptGuests_Click(object sender, EventArgs e)
+        {
+            if(btnAddGuest.Enabled)
+            {
+                pnlGuests.Visible = false;
+                pnlGuestDisplay.Visible = true;
+                string guestDisplay = "";
+                for (int i = 0; i < selectedGuests.Count; i++)
+                {
+                    guestDisplay += selectedGuests[i].Forename + " " + selectedGuests[i].Surname + "\r\n";
+                }
+                lbGuestDisplay.Text = guestDisplay;
+            }
+            else
+            {
+                //Notfy
+                MessageBox.Show("Please select at least one guest", "No guests selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

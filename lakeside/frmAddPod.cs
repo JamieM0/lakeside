@@ -39,7 +39,7 @@ namespace lakeside
             editType = edit.Type;
             cmbPodLocation.Text = edit.Location;
             txtPricePPPN.Text = edit.Price.ToString();
-            txtCapacity.Text = edit.Capacity;
+            txtCapacity.Text = edit.Capacity.ToString();
             podID = edit.PodID;
             newPod = false;
             cachedSearch = search;
@@ -69,7 +69,7 @@ namespace lakeside
             {
                 try
                 {
-                    Pod p = new Pod(txtFriendlyName.Text, txtDescription.Text, txtPricePPPN.Text, txtCapacity.Text, cmbType.Text, cmbPodLocation.Text, 0);
+                    Pod p = new Pod(txtFriendlyName.Text, txtDescription.Text, txtPricePPPN.Text, Convert.ToInt32(txtCapacity.Text), cmbType.Text, cmbPodLocation.Text, 0);
                     PodDAL dal = new PodDAL();
                     if (dal.AddNewPod(p))
                     {
@@ -87,7 +87,7 @@ namespace lakeside
             {
                 try
                 {
-                    Pod p = new Pod(txtFriendlyName.Text, txtDescription.Text, txtPricePPPN.Text, txtCapacity.Text, cmbType.Text, cmbPodLocation.Text, podID);
+                    Pod p = new Pod(txtFriendlyName.Text, txtDescription.Text, txtPricePPPN.Text, Convert.ToInt32(txtCapacity.Text), cmbType.Text, cmbPodLocation.Text, podID);
                     PodDAL dal = new PodDAL();
                     if(dal.UpdatePod(p))
                     {

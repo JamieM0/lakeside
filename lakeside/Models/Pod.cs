@@ -11,7 +11,7 @@ namespace lakeside.Models
         public string FriendlyName { get; set; }
         public string Description { get; set; }
         public string Price { get; set; }
-        public string Capacity { get; set; }
+        public int Capacity { get; set; }
         public string Type { get; set; }
         public string Location { get; set; }
         public int PodID { get; set; }
@@ -21,13 +21,13 @@ namespace lakeside.Models
             FriendlyName = "";
             Description = "";
             Price = "";
-            Capacity = "";
+            Capacity = 0;
             Type = "";
             Location = "";
             PodID = 0;
         }
 
-        public Pod(string friendlyName, string description, string price, string capacity, string type, string location, int podID)
+        public Pod(string friendlyName, string description, string price, int capacity, string type, string location, int podID)
         {
             FriendlyName = friendlyName;
             Description = description;

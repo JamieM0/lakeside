@@ -52,6 +52,7 @@ namespace lakeside
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbDebug = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -270,6 +271,17 @@ namespace lakeside
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // cbDebug
+            // 
+            this.cbDebug.AutoSize = true;
+            this.cbDebug.Location = new System.Drawing.Point(862, 4);
+            this.cbDebug.Name = "cbDebug";
+            this.cbDebug.Size = new System.Drawing.Size(151, 25);
+            this.cbDebug.TabIndex = 12;
+            this.cbDebug.Text = "Use Debug Tools?";
+            this.cbDebug.UseVisualStyleBackColor = true;
+            this.cbDebug.CheckedChanged += new System.EventHandler(this.cbDebug_CheckedChanged);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -277,6 +289,7 @@ namespace lakeside
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
+            this.Controls.Add(this.cbDebug);
             this.Controls.Add(this.btnEditPod);
             this.Controls.Add(this.btnAddPod);
             this.Controls.Add(this.btnClose);
@@ -328,6 +341,7 @@ namespace lakeside
         private System.Windows.Forms.ToolStripMenuItem staffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addStaffMemberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editStaffMemberToolStripMenuItem;
+        private System.Windows.Forms.CheckBox cbDebug;
     }
 }
 

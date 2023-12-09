@@ -11,6 +11,7 @@ namespace lakeside
     {
         public static Guest currentlySelectedGuest = new Guest();
         public static object lastSearched = new object();
+        public static bool debug = false;
         
         public static void Notifier(int notificationType)
         {
@@ -66,6 +67,23 @@ namespace lakeside
             Postcode = postcode;
             Country = country;
             GuestID = id;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            Guest g = (Guest)obj;
+            // Replace 'YourProperty' with the actual property you want to compare
+            return GuestID == g.GuestID;
+        }
+
+        // You should also override GetHashCode when you override Equals
+        public override int GetHashCode()
+        {
+            // Replace 'YourProperty' with the actual property you used in Equals
+            return GuestID.GetHashCode();
         }
     }
 }

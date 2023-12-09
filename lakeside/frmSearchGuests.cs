@@ -16,6 +16,7 @@ namespace lakeside
     public partial class frmSearchGuests : Form
     {
         string searchType="";
+        bool fromPodBooking=true;
         public frmSearchGuests()
         {
             InitializeComponent();
@@ -28,6 +29,14 @@ namespace lakeside
             CenterToScreen();
             txtSearch.Text = (search);
             searchType = "guest";
+        }
+        public frmSearchGuests(bool fromPodBookingForm)
+        {
+            InitializeComponent();
+            CenterToScreen();
+            txtSearch_SetText("Search for Name, Email, or Guest ID...");
+            searchType = "guest";
+            fromPodBooking = fromPodBookingForm;
         }
 
         public frmSearchGuests(object type, string search)
@@ -264,13 +273,26 @@ namespace lakeside
             {
                 try
                 {
-                    LakesideDAL dal = new LakesideDAL();
-                    System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
-                    string btnName = btn.Name;
-                    int guestID = int.Parse(btnName.Split('_')[1]);
-                    Guest g = dal.GuestLookup(guestID);
-                    Hide();
-                    new frmAddGuest(g, txtSearch.Text).Show();
+                    if(!fromPodBooking)
+                    {
+                        LakesideDAL dal = new LakesideDAL();
+                        System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+                        string btnName = btn.Name;
+                        int guestID = int.Parse(btnName.Split('_')[1]);
+                        Guest g = dal.GuestLookup(guestID);
+                        Hide();
+                        new frmAddGuest(g, txtSearch.Text).Show();
+                    }
+                    else
+                    {
+                        LakesideDAL dal = new LakesideDAL();
+                        System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+                        string btnName = btn.Name;
+                        int guestID = int.Parse(btnName.Split('_')[1]);
+                        Guest g = dal.GuestLookup(guestID);
+                        Lakeside.currentlySelectedGuest = g;
+                        Hide();
+                    }
                 }
                 catch (Exception ex)
                 {

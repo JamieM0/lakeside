@@ -18,7 +18,7 @@ namespace lakeside.DAL
             //Set SQL query command text to valid insert statement using values from the Guest class.
             command.CommandText = string.Format($"INSERT INTO Guest VALUES('{g.Forename}','{g.Surname}','{g.Email}','{g.Number}','{g.Street}','{g.CityTown}','{g.Postcode}','{g.Country}')");
 
-            object obj = ExecuteScalar($"INSERT INTO Guest VALUES('{g.Forename}','{g.Surname}','{g.Email}','{g.Number}','{g.Street}','{g.CityTown}','{g.Postcode}','{g.Country}')");
+            object obj = ExecuteScalar($"INSERT INTO Guest OUTPUT INSERTED.guest_id VALUES('{g.Forename}','{g.Surname}','{g.Email}','{g.Number}','{g.Street}','{g.CityTown}','{g.Postcode}','{g.Country}')");
             return Convert.ToInt32(obj);
         }
 
