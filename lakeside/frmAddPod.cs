@@ -104,6 +104,7 @@ namespace lakeside
             else
             {
                 MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validTotal = true;
             }
         }
 
@@ -181,7 +182,7 @@ namespace lakeside
 
         private void frmAddPod_Load(object sender, EventArgs e)
         {
-            cmbType.Text = "Standard";
+            //cmbType.Text = "Standard";
             CenterToScreen();
             validCapacity.Text = "";
             validDescription.Text = "";

@@ -108,8 +108,9 @@ namespace lakeside
             // addPodToolStripMenuItem
             // 
             this.addPodToolStripMenuItem.Name = "addPodToolStripMenuItem";
-            this.addPodToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.addPodToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.addPodToolStripMenuItem.Text = "Add Pod";
+            this.addPodToolStripMenuItem.Click += new System.EventHandler(this.addPodToolStripMenuItem_Click);
             // 
             // editPosdToolStripMenuItem
             // 
@@ -149,18 +150,19 @@ namespace lakeside
             this.extraToolStripMenuItem.Name = "extraToolStripMenuItem";
             this.extraToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
             this.extraToolStripMenuItem.Text = "Extra";
+            this.extraToolStripMenuItem.Visible = false;
             // 
             // addExtraToolStripMenuItem
             // 
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.addExtraToolStripMenuItem.Text = "Add Extra";
             this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
             // 
             // editExtraToolStripMenuItem
             // 
             this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 

@@ -135,7 +135,14 @@ namespace lakeside
             if (date < DateTime.Now)
                 return "Booking start date cannot be in the past.";
             //Check if date between 20/12 and 20/01
-            if (date >= DateTime.Parse("20/12") && date <= DateTime.Parse("20/01"))
+            DateTime startInvalid = new DateTime(date.Year, 12, 20);
+            DateTime endInvalid = new DateTime(date.Year, 1, 20).AddYears(1);
+            if(date<startInvalid)
+            {
+                startInvalid = startInvalid.AddYears(-1);
+                endInvalid = endInvalid.AddYears(-1);
+            }
+            if (date >= startInvalid && date <= endInvalid)
                 return "Booking start date cannot be between 20/12 and 20/01.";
             if(date<=DateTime.Now.AddMonths(2))
                 return "Booking start date must be at least 2 months in the future.";

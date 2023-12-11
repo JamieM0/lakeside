@@ -24,7 +24,7 @@ namespace lakeside.DAL
 
         public Guest[] SearchGuests(string search)
         {
-            Guest[] allGuests = new Guest[50];
+            List<Guest> allGuests = new List<Guest>();
             Guest[] guests;
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
@@ -38,12 +38,12 @@ namespace lakeside.DAL
                         int i = 0;
                         while (reader.Read())
                         {
-                            allGuests[i] = new Guest(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), String.Format($"{reader[3]}"), String.Format($"{reader[4]}"), String.Format($"{reader[5]}"), String.Format($"{reader[6]}"), String.Format($"{reader[7]}"), String.Format($"{reader[8]}"), int.Parse(String.Format($"{reader[0]}")));
+                            allGuests.Add(new Guest(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), String.Format($"{reader[3]}"), String.Format($"{reader[4]}"), String.Format($"{reader[5]}"), String.Format($"{reader[6]}"), String.Format($"{reader[7]}"), String.Format($"{reader[8]}"), int.Parse(String.Format($"{reader[0]}"))));
                             i++;
                         }
 
                         //Check for duplicates in allGuests
-                        allGuests = allGuests.Distinct().ToArray();
+                        //allGuests = allGuests.Distinct().ToArray();
 
                         guests = new Guest[i];
                         for (int l = 0; l < guests.Length; l++)

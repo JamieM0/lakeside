@@ -42,6 +42,9 @@ namespace lakeside
             cmbDatePickerStayLength.SelectedIndex = 0;
             lbDateRange.Visible = false;
             InitialiseCalendar();
+            pnlDatePicker.Visible = true;
+            pnlDatePicker.BringToFront();
+            this.Text = "Lakeside Escapes: Make a Booking";
         }
 
         private void InitialiseCalendar()
@@ -123,19 +126,19 @@ namespace lakeside
             proposedStartDate = new DateTime(current.Year, current.Month, Convert.ToInt32(dateDisplay.Text));
             proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
 
-            //if (Validation.BookingStartDate(proposedStartDate)==null)
-            //{
+            if (Validation.BookingStartDate(proposedStartDate) == null)
+            {
                 SelectDate(dateDisplay);
-                
+
                 HighlightStayPeriod();
-            //}
-            //else
-            //{
+            }
+            else
+            {
                 //Invalid Start Date
-                //MessageBox.Show(Validation.BookingStartDate(proposedStartDate), "Invalid Start Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //proposedStartDate = new DateTime();
-                //proposedEndDate = new DateTime();
-            //}
+                MessageBox.Show(Validation.BookingStartDate(proposedStartDate), "Invalid Start Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                proposedStartDate = new DateTime();
+                proposedEndDate = new DateTime();
+            }
         }
 
         private void HighlightStayPeriod()
@@ -311,7 +314,7 @@ namespace lakeside
                 btnDatePickerOpenerSelector.Visible = false;
                 pnlLocationDateDisplay.Visible = true;
                 lbDateDisplay.Text = $"{StartDate.ToString("dd MMM")} -> {EndDate.ToString("dd MMM")}";
-                lbLocationDisplay.Text = selectedPod.FriendlyName;
+                lbLocationDisplay.Text = selectedPod.FriendlyName/* + " (Capacity: " + selectedPod.Capacity + ")"*/;
             //}
 
             pnlGuests.Visible = true;
@@ -426,7 +429,12 @@ namespace lakeside
 
         private void btnAcceptGuests_Click(object sender, EventArgs e)
         {
-            if(btnAddGuest.Enabled)
+            if(selectedGuests.Count==0)
+            {
+                //Notfy
+                MessageBox.Show("Please select at least one guest", "No guests selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(selectedGuests.Count<=selectedPod.Capacity)
             {
                 pnlGuests.Visible = false;
                 pnlGuestDisplay.Visible = true;
@@ -439,8 +447,8 @@ namespace lakeside
             }
             else
             {
-                //Notfy
-                MessageBox.Show("Please select at least one guest", "No guests selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Notify
+                //MessaegeBox.Show("")
             }
         }
     }

@@ -62,7 +62,7 @@
             this.validPricePPPN.AutoSize = true;
             this.validPricePPPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPricePPPN.ForeColor = System.Drawing.Color.Red;
-            this.validPricePPPN.Location = new System.Drawing.Point(617, 231);
+            this.validPricePPPN.Location = new System.Drawing.Point(629, 231);
             this.validPricePPPN.Name = "validPricePPPN";
             this.validPricePPPN.Size = new System.Drawing.Size(52, 21);
             this.validPricePPPN.TabIndex = 92;
@@ -162,11 +162,11 @@
             // lbPricePPPN
             // 
             this.lbPricePPPN.AutoSize = true;
-            this.lbPricePPPN.Location = new System.Drawing.Point(616, 192);
+            this.lbPricePPPN.Location = new System.Drawing.Point(628, 190);
             this.lbPricePPPN.Name = "lbPricePPPN";
-            this.lbPricePPPN.Size = new System.Drawing.Size(150, 30);
+            this.lbPricePPPN.Size = new System.Drawing.Size(132, 30);
             this.lbPricePPPN.TabIndex = 81;
-            this.lbPricePPPN.Text = "Course Price: £";
+            this.lbPricePPPN.Text = "Extra Price: £";
             // 
             // lbDescription
             // 

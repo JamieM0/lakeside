@@ -168,5 +168,11 @@ namespace lakeside
         {
             Lakeside.debug = cbDebug.Checked;
         }
+
+        private void addPodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmAddPod().Show();
+        }
     }
 }
