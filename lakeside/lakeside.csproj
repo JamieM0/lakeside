@@ -190,6 +190,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\_a130da06-644f-4672-a272-42f123d85136.jfif" />
+    <None Include="Resources\PodIconWhite.png" />
+    <None Include="Resources\UserIconWhite.png" />
+    <None Include="Resources\UserIcon.png" />
+    <None Include="Resources\PodIcon.png" />
     <None Include="Resources\AcceptGuestsButton.png" />
     <None Include="Resources\SelectGuestsButton.png" />
     <None Include="Resources\SelectGuestButton.png" />

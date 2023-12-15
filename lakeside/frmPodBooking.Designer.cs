@@ -77,13 +77,14 @@ namespace lakeside
             // 
             // lbTitle
             // 
-            this.lbTitle.AutoSize = true;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(442, 9);
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(175, 30);
+            this.lbTitle.Size = new System.Drawing.Size(1059, 498);
             this.lbTitle.TabIndex = 2;
             this.lbTitle.Text = "Check Availability";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnlSundays
             // 
@@ -245,6 +246,7 @@ namespace lakeside
             this.dgAvailablePods.Size = new System.Drawing.Size(571, 218);
             this.dgAvailablePods.TabIndex = 11;
             this.dgAvailablePods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAvailablePods_CellClick);
+            this.dgAvailablePods.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAvailablePods_CellDoubleClick);
             // 
             // btnConfirmPod
             // 
@@ -434,6 +436,7 @@ namespace lakeside
             this.pnlCourses.Name = "pnlCourses";
             this.pnlCourses.Size = new System.Drawing.Size(607, 353);
             this.pnlCourses.TabIndex = 20;
+            this.pnlCourses.Visible = false;
             // 
             // frmPodBooking
             // 

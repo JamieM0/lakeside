@@ -24,6 +24,11 @@ namespace lakeside
             InitializeComponent();
             this.Text = "";
             CenterToScreen();
+            //menuStrip1.AutoSize = false;
+            //menuStrip1.Dock = DockStyle.Fill;
+            menuStrip1.Anchor = AnchorStyles.None;
+            menuStrip1.Left = this.ClientSize.Width / 2 - menuStrip1.Width / 2;
+            pnlBlackBackground.SendToBack();
         }
 
         private void MainMenu_MouseDown(object sender, MouseEventArgs e)
@@ -54,19 +59,19 @@ namespace lakeside
 
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            btnClose.BackColor = Color.Red;
-            btnClose.ForeColor = Color.White;
+            //btnClose.BackColor = Color.Red;
+            //btnClose.ForeColor = Color.White;
         }
 
         private void btnClose_MouseMove(object sender, MouseEventArgs e)
         {
-            btnClose.BackColor = Color.Transparent;
-            btnClose.ForeColor = Color.Black;
+            //btnClose.BackColor = Color.Transparent;
+            //btnClose.ForeColor = Color.Black;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            
         }
 
         private void ythToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,6 +178,26 @@ namespace lakeside
         {
             Hide();
             new frmAddPod().Show();
+        }
+
+        private void lbExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void pnlExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void lbExit_MouseEnter(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.Red;
+        }
+
+        private void lbExit_MouseLeave(object sender, EventArgs e)
+        {
+            lbExit.ForeColor = Color.White;
         }
     }
 }
