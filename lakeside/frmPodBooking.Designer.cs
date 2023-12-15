@@ -65,6 +65,7 @@ namespace lakeside
             this.lbGuestDisplay = new System.Windows.Forms.Label();
             this.lbGuestsStayingDisplayTitle = new System.Windows.Forms.Label();
             this.pnlCourses = new System.Windows.Forms.Panel();
+            this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAvailablePods)).BeginInit();
@@ -438,11 +439,23 @@ namespace lakeside
             this.pnlCourses.TabIndex = 20;
             this.pnlCourses.Visible = false;
             // 
+            // btnBackToHomeOrMainMenu
+            // 
+            this.btnBackToHomeOrMainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToHomeOrMainMenu.Location = new System.Drawing.Point(895, 12);
+            this.btnBackToHomeOrMainMenu.Name = "btnBackToHomeOrMainMenu";
+            this.btnBackToHomeOrMainMenu.Size = new System.Drawing.Size(152, 47);
+            this.btnBackToHomeOrMainMenu.TabIndex = 21;
+            this.btnBackToHomeOrMainMenu.Text = "Cancel Booking";
+            this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
+            this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
+            // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 498);
+            this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pnlCourses);
             this.Controls.Add(this.pnlGuestDisplay);
             this.Controls.Add(this.lbDebugInfo);
@@ -514,5 +527,6 @@ namespace lakeside
         private System.Windows.Forms.Label lbGuestDisplay;
         private System.Windows.Forms.Label lbGuestsStayingDisplayTitle;
         private System.Windows.Forms.Panel pnlCourses;
+        private System.Windows.Forms.Button btnBackToHomeOrMainMenu;
     }
 }

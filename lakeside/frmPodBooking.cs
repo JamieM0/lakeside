@@ -141,30 +141,30 @@ namespace lakeside
             }
         }
 
-        private void HighlightStayPeriod()
+        private void HighlightStayPeriod(PaintEventArgs e)
         {
             lbDateRange.Visible = true;
             lbDateRange.Text = proposedStartDate.ToString("dd MMM") + " - " + proposedEndDate.ToString("dd MMM");
 
-            if (proposedEndDate.Month == proposedStartDate.Month)
+            foreach (Panel day in dayPanels)
             {
-                foreach (Panel day in dayPanels)
+                foreach (Control c in day.Controls)
                 {
-                    foreach (Control c in day.Controls)
+                    if (c is PictureBox)
                     {
-                        if (c is PictureBox)
-                        {
-                            day.Controls.Remove(c);
-                        }
-                        if (c is Label)
-                        {
-                            Label lb = (Label)c;
-                            lb.Image = null;
-                            lb.ForeColor = Color.Black;
-                        }
+                        day.Controls.Remove(c);
+                    }
+                    if (c is Label)
+                    {
+                        Label lb = (Label)c;
+                        lb.Image = null;
+                        lb.ForeColor = Color.Black;
                     }
                 }
+            }
 
+            if (proposedEndDate.Month == proposedStartDate.Month)
+            {
                 Label endDateDisplay = pnlCalBase.Controls.Find("day_" + proposedEndDate.Day, true).FirstOrDefault() as Label;
 
                 newDate = false;
@@ -175,6 +175,33 @@ namespace lakeside
                 {
                     SelectDate(pnlCalBase.Controls.Find("day_" + i, true).FirstOrDefault() as Label);
                 }
+            }
+            else
+            {
+                // Selected period goes over 2 months.
+
+                //Step 1: Select all dates in beginning month
+                int endOfMonth = (DateTime.DaysInMonth(proposedStartDate.Year, proposedStartDate.Month));
+                Label endDateDisplay = pnlCalBase.Controls.Find("day_" + endOfMonth, true).FirstOrDefault() as Label;
+                newDate = false;
+                SelectDate(endDateDisplay);
+
+                //Get all dates between start and end
+                for(int i = proposedStartDate.Day; i<endOfMonth; i++)
+                {
+                    SelectDate(pnlCalBase.Controls.Find("day_" + i, true).FirstOrDefault() as Label);
+                }
+
+
+                //Step 2: Display an arrow coming from the end date in the beginning month, going off to the right side of the calendar,
+                //to another selected date "display", this will have on it, the end date of the entire booking.
+                Pen linePen = new Pen(Color.FromArgb(139, 201, 187), 3);
+                Point p1 = new Point(endDateDisplay.Location.X + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Width, endDateDisplay.Location.Y + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Height/2);
+                Point p2 = new Point(0, 0);
+                e.Graphics.DrawLine(linePen, p1, p2);
+
+                //Step 3: When the next month button is clicked, the date select should continue to the end date, and the previous screen should be retained
+                //when the previous month button is clicked.
             }
         }
 
@@ -486,6 +513,15 @@ namespace lakeside
             // Assuming the pod_id is in the first column (index 0)
             podID = Convert.ToInt32(selectedRow.Cells[0].Value);
             ConfirmPod();
+        }
+
+        private void btnBackToHomeOrMainMenu_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to cancel the booking?\r\nNo changes will be saved.","Confirm Cancellation",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Hide();
+                new frmHome().Show();
+            }
         }
     }
 }

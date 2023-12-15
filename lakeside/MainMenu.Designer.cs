@@ -29,7 +29,11 @@ namespace lakeside
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ythToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editPosdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +56,6 @@ namespace lakeside
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ythToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlBlackBackground.SuspendLayout();
             this.pnlExit.SuspendLayout();
@@ -79,6 +80,37 @@ namespace lakeside
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // ythToolStripMenuItem
+            // 
+            this.ythToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addGuestToolStripMenuItem,
+            this.editGuestToolStripMenuItem});
+            this.ythToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ythToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ythToolStripMenuItem.Image = global::lakeside.Properties.Resources.UserIconWhite;
+            this.ythToolStripMenuItem.Name = "ythToolStripMenuItem";
+            this.ythToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
+            this.ythToolStripMenuItem.Text = "Guests";
+            this.ythToolStripMenuItem.Click += new System.EventHandler(this.ythToolStripMenuItem_Click);
+            // 
+            // addGuestToolStripMenuItem
+            // 
+            this.addGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.addGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.addGuestToolStripMenuItem.Name = "addGuestToolStripMenuItem";
+            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
+            this.addGuestToolStripMenuItem.Text = "Add Guest";
+            this.addGuestToolStripMenuItem.Click += new System.EventHandler(this.addGuestToolStripMenuItem_Click);
+            // 
+            // editGuestToolStripMenuItem
+            // 
+            this.editGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
+            this.editGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.editGuestToolStripMenuItem.Name = "editGuestToolStripMenuItem";
+            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
+            this.editGuestToolStripMenuItem.Text = "Edit Guest";
+            this.editGuestToolStripMenuItem.Click += new System.EventHandler(this.editGuestToolStripMenuItem_Click);
+            // 
             // managePodsToolStripMenuItem
             // 
             this.managePodsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -96,7 +128,7 @@ namespace lakeside
             this.addPodToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addPodToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addPodToolStripMenuItem.Name = "addPodToolStripMenuItem";
-            this.addPodToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addPodToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
             this.addPodToolStripMenuItem.Text = "Add Pod";
             this.addPodToolStripMenuItem.Click += new System.EventHandler(this.addPodToolStripMenuItem_Click);
             // 
@@ -105,7 +137,7 @@ namespace lakeside
             this.editPosdToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editPosdToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editPosdToolStripMenuItem.Name = "editPosdToolStripMenuItem";
-            this.editPosdToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.editPosdToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
             this.editPosdToolStripMenuItem.Text = "Edit Pod";
             this.editPosdToolStripMenuItem.Click += new System.EventHandler(this.editPosdToolStripMenuItem_Click);
             // 
@@ -156,7 +188,7 @@ namespace lakeside
             this.addExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addExtraToolStripMenuItem.Text = "Add Extra";
             this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
             // 
@@ -165,7 +197,7 @@ namespace lakeside
             this.editExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 
@@ -206,7 +238,7 @@ namespace lakeside
             this.btnPodBooking.Name = "btnPodBooking";
             this.btnPodBooking.Size = new System.Drawing.Size(250, 183);
             this.btnPodBooking.TabIndex = 4;
-            this.btnPodBooking.Text = "Pod Booking";
+            this.btnPodBooking.Text = "Create a Booking";
             this.btnPodBooking.UseVisualStyleBackColor = true;
             this.btnPodBooking.Click += new System.EventHandler(this.btnPodBooking_Click);
             // 
@@ -314,42 +346,13 @@ namespace lakeside
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // ythToolStripMenuItem
-            // 
-            this.ythToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addGuestToolStripMenuItem,
-            this.editGuestToolStripMenuItem});
-            this.ythToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ythToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ythToolStripMenuItem.Image = global::lakeside.Properties.Resources.UserIconWhite;
-            this.ythToolStripMenuItem.Name = "ythToolStripMenuItem";
-            this.ythToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
-            this.ythToolStripMenuItem.Text = "Guests";
-            this.ythToolStripMenuItem.Click += new System.EventHandler(this.ythToolStripMenuItem_Click);
-            // 
-            // addGuestToolStripMenuItem
-            // 
-            this.addGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
-            this.addGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.addGuestToolStripMenuItem.Name = "addGuestToolStripMenuItem";
-            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.addGuestToolStripMenuItem.Text = "Add Guest";
-            this.addGuestToolStripMenuItem.Click += new System.EventHandler(this.addGuestToolStripMenuItem_Click);
-            // 
-            // editGuestToolStripMenuItem
-            // 
-            this.editGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
-            this.editGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.editGuestToolStripMenuItem.Name = "editGuestToolStripMenuItem";
-            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.editGuestToolStripMenuItem.Text = "Edit Guest";
-            this.editGuestToolStripMenuItem.Click += new System.EventHandler(this.editGuestToolStripMenuItem_Click);
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
             this.Controls.Add(this.btnEditPod);
