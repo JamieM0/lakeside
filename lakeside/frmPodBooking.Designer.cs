@@ -44,6 +44,8 @@ namespace lakeside
             this.lbDatePickerStayPeriod = new System.Windows.Forms.Label();
             this.btnSelectDates = new System.Windows.Forms.Button();
             this.pnlDatePicker = new System.Windows.Forms.Panel();
+            this.pnlOverflow = new System.Windows.Forms.Panel();
+            this.lbOverflow = new System.Windows.Forms.Label();
             this.btnDatePickerOpenerSelector = new System.Windows.Forms.Button();
             this.dgAvailablePods = new System.Windows.Forms.DataGridView();
             this.btnConfirmPod = new System.Windows.Forms.Button();
@@ -66,8 +68,10 @@ namespace lakeside
             this.lbGuestsStayingDisplayTitle = new System.Windows.Forms.Label();
             this.pnlCourses = new System.Windows.Forms.Panel();
             this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
+            this.lbOverflowText = new System.Windows.Forms.Label();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
+            this.pnlOverflow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAvailablePods)).BeginInit();
             this.pnlLocationDateDisplay.SuspendLayout();
             this.pnlGuests.SuspendLayout();
@@ -214,6 +218,7 @@ namespace lakeside
             // 
             // pnlDatePicker
             // 
+            this.pnlDatePicker.Controls.Add(this.pnlOverflow);
             this.pnlDatePicker.Controls.Add(this.cmbDatePickerStayLength);
             this.pnlDatePicker.Controls.Add(this.btnSelectDates);
             this.pnlDatePicker.Controls.Add(this.pnlCalOutside);
@@ -221,9 +226,32 @@ namespace lakeside
             this.pnlDatePicker.Controls.Add(this.lbDatePickerStayPeriod);
             this.pnlDatePicker.Location = new System.Drawing.Point(28, 42);
             this.pnlDatePicker.Name = "pnlDatePicker";
-            this.pnlDatePicker.Size = new System.Drawing.Size(757, 444);
+            this.pnlDatePicker.Size = new System.Drawing.Size(789, 444);
             this.pnlDatePicker.TabIndex = 9;
             this.pnlDatePicker.Visible = false;
+            // 
+            // pnlOverflow
+            // 
+            this.pnlOverflow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(201)))), ((int)(((byte)(187)))));
+            this.pnlOverflow.Controls.Add(this.lbOverflowText);
+            this.pnlOverflow.Controls.Add(this.lbOverflow);
+            this.pnlOverflow.Location = new System.Drawing.Point(720, 217);
+            this.pnlOverflow.Name = "pnlOverflow";
+            this.pnlOverflow.Size = new System.Drawing.Size(48, 98);
+            this.pnlOverflow.TabIndex = 14;
+            this.pnlOverflow.Visible = false;
+            // 
+            // lbOverflow
+            // 
+            this.lbOverflow.AutoSize = true;
+            this.lbOverflow.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverflow.ForeColor = System.Drawing.Color.White;
+            this.lbOverflow.Location = new System.Drawing.Point(6, 40);
+            this.lbOverflow.Name = "lbOverflow";
+            this.lbOverflow.Size = new System.Drawing.Size(37, 30);
+            this.lbOverflow.TabIndex = 0;
+            this.lbOverflow.Text = "12";
+            this.lbOverflow.Visible = false;
             // 
             // btnDatePickerOpenerSelector
             // 
@@ -380,7 +408,7 @@ namespace lakeside
             // 
             this.lbGuestsTitle.AutoSize = true;
             this.lbGuestsTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestsTitle.Location = new System.Drawing.Point(15, 22);
+            this.lbGuestsTitle.Location = new System.Drawing.Point(62, 21);
             this.lbGuestsTitle.Name = "lbGuestsTitle";
             this.lbGuestsTitle.Size = new System.Drawing.Size(207, 25);
             this.lbGuestsTitle.TabIndex = 18;
@@ -450,16 +478,28 @@ namespace lakeside
             this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
             this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
             // 
+            // lbOverflowText
+            // 
+            this.lbOverflowText.AutoSize = true;
+            this.lbOverflowText.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverflowText.ForeColor = System.Drawing.Color.White;
+            this.lbOverflowText.Location = new System.Drawing.Point(1, 0);
+            this.lbOverflowText.Name = "lbOverflowText";
+            this.lbOverflowText.Size = new System.Drawing.Size(47, 40);
+            this.lbOverflowText.TabIndex = 1;
+            this.lbOverflowText.Text = "END\r\nDATE";
+            this.lbOverflowText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 498);
+            this.Controls.Add(this.pnlGuests);
             this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pnlCourses);
             this.Controls.Add(this.pnlGuestDisplay);
             this.Controls.Add(this.lbDebugInfo);
-            this.Controls.Add(this.pnlGuests);
             this.Controls.Add(this.pnlLocationDateDisplay);
             this.Controls.Add(this.dgAvailablePods);
             this.Controls.Add(this.btnDatePickerOpenerSelector);
@@ -475,6 +515,8 @@ namespace lakeside
             this.pnlCalOutside.PerformLayout();
             this.pnlDatePicker.ResumeLayout(false);
             this.pnlDatePicker.PerformLayout();
+            this.pnlOverflow.ResumeLayout(false);
+            this.pnlOverflow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAvailablePods)).EndInit();
             this.pnlLocationDateDisplay.ResumeLayout(false);
             this.pnlLocationDateDisplay.PerformLayout();
@@ -528,5 +570,8 @@ namespace lakeside
         private System.Windows.Forms.Label lbGuestsStayingDisplayTitle;
         private System.Windows.Forms.Panel pnlCourses;
         private System.Windows.Forms.Button btnBackToHomeOrMainMenu;
+        private System.Windows.Forms.Panel pnlOverflow;
+        private System.Windows.Forms.Label lbOverflow;
+        private System.Windows.Forms.Label lbOverflowText;
     }
 }

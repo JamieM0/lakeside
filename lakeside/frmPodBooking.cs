@@ -129,7 +129,7 @@ namespace lakeside
             if (Validation.BookingStartDate(proposedStartDate) == null)
             {
                 SelectDate(dateDisplay);
-
+                
                 HighlightStayPeriod();
             }
             else
@@ -141,7 +141,7 @@ namespace lakeside
             }
         }
 
-        private void HighlightStayPeriod(PaintEventArgs e)
+        private void HighlightStayPeriod()
         {
             lbDateRange.Visible = true;
             lbDateRange.Text = proposedStartDate.ToString("dd MMM") + " - " + proposedEndDate.ToString("dd MMM");
@@ -166,6 +166,8 @@ namespace lakeside
             if (proposedEndDate.Month == proposedStartDate.Month)
             {
                 Label endDateDisplay = pnlCalBase.Controls.Find("day_" + proposedEndDate.Day, true).FirstOrDefault() as Label;
+                pnlOverflow.Visible = false;
+                lbOverflow.Visible = false;
 
                 newDate = false;
                 SelectDate(endDateDisplay);
@@ -195,10 +197,15 @@ namespace lakeside
 
                 //Step 2: Display an arrow coming from the end date in the beginning month, going off to the right side of the calendar,
                 //to another selected date "display", this will have on it, the end date of the entire booking.
-                Pen linePen = new Pen(Color.FromArgb(139, 201, 187), 3);
-                Point p1 = new Point(endDateDisplay.Location.X + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Width, endDateDisplay.Location.Y + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Height/2);
-                Point p2 = new Point(0, 0);
-                e.Graphics.DrawLine(linePen, p1, p2);
+                //Graphics g = pnlCalContainer.CreateGraphics();
+                //Pen linePen = new Pen(Color.FromArgb(139, 201, 187), 3);
+                //Point p1 = new Point(endDateDisplay.Location.X/* + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Width*/, endDateDisplay.Location.Y/* + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Height / 2*/);
+                //Point p2 = new Point(415, 202);
+                //linePen.StartCap = System.Drawing.Drawing2D.LineCap.ArrowAnchor;
+                //g.DrawLine(linePen, p1, p2);
+                pnlOverflow.Visible = true;
+                lbOverflow.Visible = true;
+                lbOverflow.Text = proposedEndDate.ToString("dd") + "\n" + proposedEndDate.ToString("MM");
 
                 //Step 3: When the next month button is clicked, the date select should continue to the end date, and the previous screen should be retained
                 //when the previous month button is clicked.
@@ -248,14 +255,52 @@ namespace lakeside
 
         private void btnNextMonth_Click(object sender, EventArgs e)
         {
-            HighlightStayPeriod();
-            DisplayCurrentMonth(current.AddMonths(1));
+            if(proposedStartDate!=new DateTime())
+            {
+                if (MessageBox.Show("Moving to the next month will clear your selection.\nAre you sure you want to do this?", "Next Month", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    HighlightStayPeriod();
+                    DisplayCurrentMonth(current.AddMonths(1));
+                    proposedStartDate = new DateTime();
+                    proposedEndDate = new DateTime();
+                    lbDateRange.Visible = false;
+                    pnlOverflow.Visible = false;
+                }
+            }
+            else
+            {
+                HighlightStayPeriod();
+                DisplayCurrentMonth(current.AddMonths(1));
+                proposedStartDate = new DateTime();
+                proposedEndDate = new DateTime();
+                lbDateRange.Visible = false;
+                pnlOverflow.Visible = false;
+            }
         }
 
         private void btnPreviousMonth_Click(object sender, EventArgs e)
         {
-            HighlightStayPeriod();
-            DisplayCurrentMonth(current.AddMonths(-1));
+            if(proposedStartDate!=new DateTime())
+            {
+                if (MessageBox.Show("Moving to the previous month will clear your selection.\nAre you sure you want to do this?", "Previous Month", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //HighlightStayPeriod();
+                    DisplayCurrentMonth(current.AddMonths(-1));
+                    proposedStartDate = new DateTime();
+                    proposedEndDate = new DateTime();
+                    lbDateRange.Visible = false;
+                    pnlOverflow.Visible = false;
+                }
+            }
+            else
+            {
+                //HighlightStayPeriod();
+                DisplayCurrentMonth(current.AddMonths(-1));
+                proposedStartDate = new DateTime();
+                proposedEndDate = new DateTime();
+                lbDateRange.Visible = false;
+                pnlOverflow.Visible = false;
+            }
         }
 
         private void frmPodBooking_Load(object sender, EventArgs e)
@@ -281,7 +326,7 @@ namespace lakeside
 
         private void cmbDatePickerStayLength_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (formLoaded)
+            if (formLoaded&&proposedStartDate!=new DateTime())
             {
                 proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
                 HighlightStayPeriod();
@@ -344,7 +389,7 @@ namespace lakeside
 
         private void btnConfirmPod_Click(object sender, EventArgs e)
         {
-            
+            ConfirmPod();
         }
         private void ConfirmPod()
         {
@@ -523,5 +568,15 @@ namespace lakeside
                 new frmHome().Show();
             }
         }
+
+        //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)
+        //{
+        //    int endOfMonth = (DateTime.DaysInMonth(proposedStartDate.Year, proposedStartDate.Month));
+        //    Label endDateDisplay = pnlCalBase.Controls.Find("day_" + endOfMonth, true).FirstOrDefault() as Label;
+        //    Pen linePen = new Pen(Color.FromArgb(139, 201, 187), 3);
+        //    Point p1 = new Point(endDateDisplay.Location.X + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Width, endDateDisplay.Location.Y + TextRenderer.MeasureText(endDateDisplay.Text, endDateDisplay.Font).Height / 2);
+        //    Point p2 = new Point(0, 0);
+        //    e.Graphics.DrawLine(linePen, p1, p2);
+        //}
     }
 }
