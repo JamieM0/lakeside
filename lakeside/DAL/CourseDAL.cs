@@ -5,6 +5,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Collections;
 using lakeside.DAL;
 using lakeside.Models;
 
@@ -38,6 +44,13 @@ namespace lakeside.DAL
                 }
             }
         }*/
+
+        //public DataTable GetAvailableCourses(DateTime start, DateTime end)
+        //{
+        //    SqlCommand command = new SqlCommand();
+        //    command.CommandText = string.Format($"SELECT course_id AS course_id, courseName AS 'Course Name', description AS Description, durationMins AS 'Duration (Mins)', capacity AS Capacity, costPN AS 'Price', level AS Level FROM Course WHERE pod_id NOT IN( SELECT pod_id FROM Booking WHERE(checkInDate <= '{start.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{start.ToString("yyyy-MM-dd")}') OR(checkInDate < '{end.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{end.ToString("yyyy-MM-dd")}') OR ('{start.ToString("yyyy-MM-dd")}' <= checkInDate AND '{end.ToString("yyyy-MM-dd")}' >= checkInDate) ); ");
+        //    return RunSelectQueryOnTable(command);
+        //};
 
         public Course[] SearchCourses(string search)
         {

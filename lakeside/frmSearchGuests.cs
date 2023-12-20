@@ -37,6 +37,7 @@ namespace lakeside
             txtSearch_SetText("Search for Name, Email, or Guest ID...");
             searchType = "guest";
             fromPodBooking = fromPodBookingForm;
+            btnReturn.Text = "Back to Booking";
         }
 
         public frmSearchGuests(object type, string search)
@@ -372,7 +373,8 @@ namespace lakeside
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Hide();
-            new frmHome().Show();
+            if(!fromPodBooking)
+                new frmHome().Show();
         }
 
         private void frmSearchGuests_Load(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace lakeside
         bool draggingWindow=false;
         Point dragCursorPoint;
         Point dragFormPoint;
-
+        //26, 30, 36 <- Colour for black bar at the top of the screen.
         public frmHome()
         {
             InitializeComponent();

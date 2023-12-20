@@ -359,6 +359,9 @@ namespace lakeside
 
         private void btnSelectDates_Click(object sender, EventArgs e)
         {
+            pnlLocationDateDisplay.Visible = false;
+            pnlGuestDisplay.Visible = false;
+            pnlGuests.Visible = false;
             //Change cursor to loading cursor
             Cursor.Current = Cursors.WaitCursor;
             if(AddAvailablePods())
@@ -432,14 +435,22 @@ namespace lakeside
         }
         public void AddNewGuest()
         {
-            selectedGuests.Add(Lakeside.currentlySelectedGuest);
-            btnAcceptGuests.Enabled = true;
-            if(selectedGuests.Count>=selectedPod.Capacity)
+            if (!selectedGuests.Contains(Lakeside.currentlySelectedGuest))
             {
-                btnAddGuest.Enabled = false;
-                btnSelectGuests.Enabled = false;
+                selectedGuests.Add(Lakeside.currentlySelectedGuest);
+                btnAcceptGuests.Enabled = true;
+                if (selectedGuests.Count >= selectedPod.Capacity)
+                {
+                    btnAddGuest.Enabled = false;
+                    btnSelectGuests.Enabled = false;
+                }
+                addGuests();
             }
-            addGuests();
+            else
+            {
+                //Notify
+                MessageBox.Show("This guest is already selected!","Guest already selected!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void btnSelectGuests_Click(object sender, EventArgs e)
@@ -533,20 +544,64 @@ namespace lakeside
             {
                 pnlGuests.Visible = false;
                 pnlGuestDisplay.Visible = true;
-                string guestDisplay = "";
-                for (int i = 0; i < selectedGuests.Count; i++)
+                //string guestDisplay = "";
+                lbGuestDisplay.Text = selectedGuests[0].Forename + " " + selectedGuests[0].Surname;
+                if(selectedGuests.Count>1)
                 {
-                    guestDisplay += selectedGuests[i].Forename + " " + selectedGuests[i].Surname + "\r\n";
+                    lbGuestDisplay2.Visible = true;
+                    lbGuestDisplay2.Text = selectedGuests[1].Forename + " " + selectedGuests[1].Surname;
                 }
-                lbGuestDisplay.Text = guestDisplay;
+                if (selectedGuests.Count > 2)
+                {
+                    lbGuestDisplay3.Visible = true;
+                    lbGuestDisplay3.Text = selectedGuests[2].Forename + " " + selectedGuests[2].Surname;
+                }
+                if (selectedGuests.Count > 3)
+                {
+                    lbGuestDisplay4.Visible = true;
+                    lbGuestDisplay4.Text = selectedGuests[3].Forename + " " + selectedGuests[3].Surname;
+                }
+                //for (int i = 1; i < selectedGuests.Count; i++)
+                //{
+                //    Label guestDisplay = pnlGuestDisplay.Controls.Find("lbGuestDisplay" + i, true).FirstOrDefault() as Label;
+                //    guestDisplay.Text = selectedGuests[i].Forename + " " + selectedGuests[i].Surname + "\r\n";
+                //}
+                //lbGuestDisplay.Text = guestDisplay;
                 lbTitle.Text = "Choose Courses if Applicable";
+                pnlCourses.Visible = true;
+                lbGuestDisplay.ForeColor = Color.Green;
+                lbGuestCoursePickerTitle.Text = $"Choose a course for {selectedGuests[0].Forename}, or skip.";
+                //AddAvailableCourses();
             }
             else
             {
                 //Notify
-                //MessaegeBox.Show("")
+                //MessageBox.Show("")
             }
         }
+
+        //private bool AddAvailableCourses()
+        //{
+        //    CourseDAL dal = new CourseDAL();
+        //    // Get all available pods and add to data grid view.
+        //    DataTable results = dal.GetAvailablePods(proposedStartDate, proposedEndDate);
+        //    if (results != null)
+        //    {
+        //        //Set up data grid view
+        //        dgAvailablePods.DataSource = results;
+        //        dgAvailablePods.Columns["pod_id"].Visible = false;
+        //        dgAvailablePods.MultiSelect = false;
+        //        dgAvailablePods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        //        dgAvailablePods.ReadOnly = true;
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        //Notification
+        //        MessageBox.Show("No available pods for the selected dates", "No available pods", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return false;
+        //    }
+        //}
 
         private void dgAvailablePods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -567,6 +622,47 @@ namespace lakeside
                 Hide();
                 new frmHome().Show();
             }
+        }
+
+        private void llbChangeDates_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlDatePicker.Visible = true;
+        }
+
+        private void llbChangeGuests_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if(MessageBox.Show("Changing the guests will clear the courses you've selected!\r\nAre you sure you want to do this?","Change Guests?",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                pnlGuests.Visible = true;
+            }
+        }
+
+        private void changeSelectedGuest(Guest selected, Label display)
+        {
+            foreach (Label lb in pnlGuestDisplay.Controls)
+                lb.ForeColor = Color.Black;
+            display.ForeColor = Color.Green;
+            lbGuestCoursePickerTitle.Text = $"Choose a course for {selected.Forename}, or skip.";
+        }
+
+        private void lbGuestDisplay_Click(object sender, EventArgs e)
+        {
+            changeSelectedGuest(selectedGuests[0], lbGuestDisplay);
+        }
+
+        private void lbGuestDisplay2_Click(object sender, EventArgs e)
+        {
+            changeSelectedGuest(selectedGuests[1], lbGuestDisplay2);
+        }
+
+        private void lbGuestDisplay3_Click(object sender, EventArgs e)
+        {
+            changeSelectedGuest(selectedGuests[2], lbGuestDisplay3);
+        }
+
+        private void lbGuestDisplay4_Click(object sender, EventArgs e)
+        {
+            changeSelectedGuest(selectedGuests[3], lbGuestDisplay4);
         }
 
         //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)

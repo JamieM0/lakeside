@@ -35,6 +35,7 @@ namespace lakeside
             InitializeComponent();
 
             fromPodBooking = close;
+            btnReturn.Text = "Back to Booking";
         }
 
         public frmAddGuest(Guest edit, string search)
@@ -438,7 +439,11 @@ namespace lakeside
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if(newMode)
+            if(fromPodBooking)
+            {
+                Hide();
+            }
+            else if(newMode)
             {
                 Hide();
                 new frmHome().Show();

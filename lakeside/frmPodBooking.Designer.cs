@@ -45,6 +45,7 @@ namespace lakeside
             this.btnSelectDates = new System.Windows.Forms.Button();
             this.pnlDatePicker = new System.Windows.Forms.Panel();
             this.pnlOverflow = new System.Windows.Forms.Panel();
+            this.lbOverflowText = new System.Windows.Forms.Label();
             this.lbOverflow = new System.Windows.Forms.Label();
             this.btnDatePickerOpenerSelector = new System.Windows.Forms.Button();
             this.dgAvailablePods = new System.Windows.Forms.DataGridView();
@@ -68,7 +69,14 @@ namespace lakeside
             this.lbGuestsStayingDisplayTitle = new System.Windows.Forms.Label();
             this.pnlCourses = new System.Windows.Forms.Panel();
             this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
-            this.lbOverflowText = new System.Windows.Forms.Label();
+            this.llbChangeDates = new System.Windows.Forms.LinkLabel();
+            this.llbChangeGuests = new System.Windows.Forms.LinkLabel();
+            this.lbGuestDisplay2 = new System.Windows.Forms.Label();
+            this.lbGuestDisplay3 = new System.Windows.Forms.Label();
+            this.lbGuestDisplay4 = new System.Windows.Forms.Label();
+            this.lbGuestCoursePickerTitle = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgCourses = new System.Windows.Forms.DataGridView();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
             this.pnlOverflow.SuspendLayout();
@@ -78,6 +86,8 @@ namespace lakeside
             this.panel1.SuspendLayout();
             this.pnlGuestPicker.SuspendLayout();
             this.pnlGuestDisplay.SuspendLayout();
+            this.pnlCourses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -241,6 +251,18 @@ namespace lakeside
             this.pnlOverflow.TabIndex = 14;
             this.pnlOverflow.Visible = false;
             // 
+            // lbOverflowText
+            // 
+            this.lbOverflowText.AutoSize = true;
+            this.lbOverflowText.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverflowText.ForeColor = System.Drawing.Color.White;
+            this.lbOverflowText.Location = new System.Drawing.Point(1, 0);
+            this.lbOverflowText.Name = "lbOverflowText";
+            this.lbOverflowText.Size = new System.Drawing.Size(47, 40);
+            this.lbOverflowText.TabIndex = 1;
+            this.lbOverflowText.Text = "END\r\nDATE";
+            this.lbOverflowText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // lbOverflow
             // 
             this.lbOverflow.AutoSize = true;
@@ -272,7 +294,7 @@ namespace lakeside
             this.dgAvailablePods.Location = new System.Drawing.Point(28, 151);
             this.dgAvailablePods.Name = "dgAvailablePods";
             this.dgAvailablePods.ReadOnly = true;
-            this.dgAvailablePods.Size = new System.Drawing.Size(571, 218);
+            this.dgAvailablePods.Size = new System.Drawing.Size(639, 218);
             this.dgAvailablePods.TabIndex = 11;
             this.dgAvailablePods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAvailablePods_CellClick);
             this.dgAvailablePods.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAvailablePods_CellDoubleClick);
@@ -301,11 +323,12 @@ namespace lakeside
             // 
             // pnlLocationDateDisplay
             // 
+            this.pnlLocationDateDisplay.Controls.Add(this.llbChangeDates);
             this.pnlLocationDateDisplay.Controls.Add(this.lbDateDisplay);
             this.pnlLocationDateDisplay.Controls.Add(this.lbLocationDisplay);
             this.pnlLocationDateDisplay.Location = new System.Drawing.Point(15, 88);
             this.pnlLocationDateDisplay.Name = "pnlLocationDateDisplay";
-            this.pnlLocationDateDisplay.Size = new System.Drawing.Size(209, 85);
+            this.pnlLocationDateDisplay.Size = new System.Drawing.Size(209, 87);
             this.pnlLocationDateDisplay.TabIndex = 14;
             this.pnlLocationDateDisplay.Visible = false;
             // 
@@ -313,7 +336,7 @@ namespace lakeside
             // 
             this.lbDateDisplay.AutoSize = true;
             this.lbDateDisplay.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateDisplay.Location = new System.Drawing.Point(13, 44);
+            this.lbDateDisplay.Location = new System.Drawing.Point(13, 50);
             this.lbDateDisplay.Name = "lbDateDisplay";
             this.lbDateDisplay.Size = new System.Drawing.Size(58, 25);
             this.lbDateDisplay.TabIndex = 18;
@@ -324,7 +347,7 @@ namespace lakeside
             this.pnlGuests.Controls.Add(this.panel1);
             this.pnlGuests.Controls.Add(this.pnlGuestPicker);
             this.pnlGuests.Controls.Add(this.lbGuestsTitle);
-            this.pnlGuests.Location = new System.Drawing.Point(235, 36);
+            this.pnlGuests.Location = new System.Drawing.Point(360, 36);
             this.pnlGuests.Name = "pnlGuests";
             this.pnlGuests.Size = new System.Drawing.Size(336, 433);
             this.pnlGuests.TabIndex = 17;
@@ -431,9 +454,13 @@ namespace lakeside
             // 
             // pnlGuestDisplay
             // 
+            this.pnlGuestDisplay.Controls.Add(this.lbGuestDisplay4);
+            this.pnlGuestDisplay.Controls.Add(this.lbGuestDisplay3);
+            this.pnlGuestDisplay.Controls.Add(this.lbGuestDisplay2);
+            this.pnlGuestDisplay.Controls.Add(this.llbChangeGuests);
             this.pnlGuestDisplay.Controls.Add(this.lbGuestDisplay);
             this.pnlGuestDisplay.Controls.Add(this.lbGuestsStayingDisplayTitle);
-            this.pnlGuestDisplay.Location = new System.Drawing.Point(15, 179);
+            this.pnlGuestDisplay.Location = new System.Drawing.Point(15, 181);
             this.pnlGuestDisplay.Name = "pnlGuestDisplay";
             this.pnlGuestDisplay.Size = new System.Drawing.Size(209, 176);
             this.pnlGuestDisplay.TabIndex = 19;
@@ -443,11 +470,12 @@ namespace lakeside
             // 
             this.lbGuestDisplay.AutoSize = true;
             this.lbGuestDisplay.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestDisplay.Location = new System.Drawing.Point(13, 44);
+            this.lbGuestDisplay.Location = new System.Drawing.Point(13, 50);
             this.lbGuestDisplay.Name = "lbGuestDisplay";
             this.lbGuestDisplay.Size = new System.Drawing.Size(58, 25);
             this.lbGuestDisplay.TabIndex = 18;
             this.lbGuestDisplay.Text = "label1";
+            this.lbGuestDisplay.Click += new System.EventHandler(this.lbGuestDisplay_Click);
             // 
             // lbGuestsStayingDisplayTitle
             // 
@@ -461,6 +489,9 @@ namespace lakeside
             // 
             // pnlCourses
             // 
+            this.pnlCourses.Controls.Add(this.dgCourses);
+            this.pnlCourses.Controls.Add(this.label2);
+            this.pnlCourses.Controls.Add(this.lbGuestCoursePickerTitle);
             this.pnlCourses.Location = new System.Drawing.Point(247, 86);
             this.pnlCourses.Name = "pnlCourses";
             this.pnlCourses.Size = new System.Drawing.Size(607, 353);
@@ -478,28 +509,102 @@ namespace lakeside
             this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
             this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
             // 
-            // lbOverflowText
+            // llbChangeDates
             // 
-            this.lbOverflowText.AutoSize = true;
-            this.lbOverflowText.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOverflowText.ForeColor = System.Drawing.Color.White;
-            this.lbOverflowText.Location = new System.Drawing.Point(1, 0);
-            this.lbOverflowText.Name = "lbOverflowText";
-            this.lbOverflowText.Size = new System.Drawing.Size(47, 40);
-            this.lbOverflowText.TabIndex = 1;
-            this.lbOverflowText.Text = "END\r\nDATE";
-            this.lbOverflowText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.llbChangeDates.AutoSize = true;
+            this.llbChangeDates.Location = new System.Drawing.Point(15, 32);
+            this.llbChangeDates.Name = "llbChangeDates";
+            this.llbChangeDates.Size = new System.Drawing.Size(75, 13);
+            this.llbChangeDates.TabIndex = 19;
+            this.llbChangeDates.TabStop = true;
+            this.llbChangeDates.Text = "Change Dates";
+            this.llbChangeDates.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbChangeDates_LinkClicked);
+            // 
+            // llbChangeGuests
+            // 
+            this.llbChangeGuests.AutoSize = true;
+            this.llbChangeGuests.Location = new System.Drawing.Point(15, 32);
+            this.llbChangeGuests.Name = "llbChangeGuests";
+            this.llbChangeGuests.Size = new System.Drawing.Size(80, 13);
+            this.llbChangeGuests.TabIndex = 20;
+            this.llbChangeGuests.TabStop = true;
+            this.llbChangeGuests.Text = "Change Guests";
+            this.llbChangeGuests.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbChangeGuests_LinkClicked);
+            // 
+            // lbGuestDisplay2
+            // 
+            this.lbGuestDisplay2.AutoSize = true;
+            this.lbGuestDisplay2.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestDisplay2.Location = new System.Drawing.Point(13, 75);
+            this.lbGuestDisplay2.Name = "lbGuestDisplay2";
+            this.lbGuestDisplay2.Size = new System.Drawing.Size(58, 25);
+            this.lbGuestDisplay2.TabIndex = 21;
+            this.lbGuestDisplay2.Text = "label1";
+            this.lbGuestDisplay2.Visible = false;
+            this.lbGuestDisplay2.Click += new System.EventHandler(this.lbGuestDisplay2_Click);
+            // 
+            // lbGuestDisplay3
+            // 
+            this.lbGuestDisplay3.AutoSize = true;
+            this.lbGuestDisplay3.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestDisplay3.Location = new System.Drawing.Point(13, 100);
+            this.lbGuestDisplay3.Name = "lbGuestDisplay3";
+            this.lbGuestDisplay3.Size = new System.Drawing.Size(58, 25);
+            this.lbGuestDisplay3.TabIndex = 22;
+            this.lbGuestDisplay3.Text = "label1";
+            this.lbGuestDisplay3.Visible = false;
+            this.lbGuestDisplay3.Click += new System.EventHandler(this.lbGuestDisplay3_Click);
+            // 
+            // lbGuestDisplay4
+            // 
+            this.lbGuestDisplay4.AutoSize = true;
+            this.lbGuestDisplay4.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestDisplay4.Location = new System.Drawing.Point(13, 125);
+            this.lbGuestDisplay4.Name = "lbGuestDisplay4";
+            this.lbGuestDisplay4.Size = new System.Drawing.Size(58, 25);
+            this.lbGuestDisplay4.TabIndex = 23;
+            this.lbGuestDisplay4.Text = "label1";
+            this.lbGuestDisplay4.Visible = false;
+            this.lbGuestDisplay4.Click += new System.EventHandler(this.lbGuestDisplay4_Click);
+            // 
+            // lbGuestCoursePickerTitle
+            // 
+            this.lbGuestCoursePickerTitle.AutoSize = true;
+            this.lbGuestCoursePickerTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestCoursePickerTitle.Location = new System.Drawing.Point(18, 11);
+            this.lbGuestCoursePickerTitle.Name = "lbGuestCoursePickerTitle";
+            this.lbGuestCoursePickerTitle.Size = new System.Drawing.Size(317, 25);
+            this.lbGuestCoursePickerTitle.TabIndex = 0;
+            this.lbGuestCoursePickerTitle.Text = "Choose a course for {guest}, or skip.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(450, 21);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Click on a guest\'s name on the left to change the selected guest.";
+            // 
+            // dgCourses
+            // 
+            this.dgCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCourses.Location = new System.Drawing.Point(23, 73);
+            this.dgCourses.Name = "dgCourses";
+            this.dgCourses.Size = new System.Drawing.Size(561, 147);
+            this.dgCourses.TabIndex = 2;
             // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 498);
-            this.Controls.Add(this.pnlGuests);
-            this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pnlCourses);
-            this.Controls.Add(this.pnlGuestDisplay);
+            this.Controls.Add(this.pnlGuests);
             this.Controls.Add(this.lbDebugInfo);
+            this.Controls.Add(this.btnBackToHomeOrMainMenu);
+            this.Controls.Add(this.pnlGuestDisplay);
             this.Controls.Add(this.pnlLocationDateDisplay);
             this.Controls.Add(this.dgAvailablePods);
             this.Controls.Add(this.btnDatePickerOpenerSelector);
@@ -527,6 +632,9 @@ namespace lakeside
             this.pnlGuestPicker.ResumeLayout(false);
             this.pnlGuestDisplay.ResumeLayout(false);
             this.pnlGuestDisplay.PerformLayout();
+            this.pnlCourses.ResumeLayout(false);
+            this.pnlCourses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,5 +681,13 @@ namespace lakeside
         private System.Windows.Forms.Panel pnlOverflow;
         private System.Windows.Forms.Label lbOverflow;
         private System.Windows.Forms.Label lbOverflowText;
+        private System.Windows.Forms.LinkLabel llbChangeDates;
+        private System.Windows.Forms.LinkLabel llbChangeGuests;
+        private System.Windows.Forms.Label lbGuestDisplay4;
+        private System.Windows.Forms.Label lbGuestDisplay3;
+        private System.Windows.Forms.Label lbGuestDisplay2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbGuestCoursePickerTitle;
+        private System.Windows.Forms.DataGridView dgCourses;
     }
 }
