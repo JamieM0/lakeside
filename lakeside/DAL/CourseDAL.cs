@@ -45,12 +45,12 @@ namespace lakeside.DAL
             }
         }*/
 
-        //public DataTable GetAvailableCourses(DateTime start, DateTime end)
-        //{
-        //    SqlCommand command = new SqlCommand();
-        //    command.CommandText = string.Format($"SELECT course_id AS course_id, courseName AS 'Course Name', description AS Description, durationMins AS 'Duration (Mins)', capacity AS Capacity, costPN AS 'Price', level AS Level FROM Course WHERE pod_id NOT IN( SELECT pod_id FROM Booking WHERE(checkInDate <= '{start.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{start.ToString("yyyy-MM-dd")}') OR(checkInDate < '{end.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{end.ToString("yyyy-MM-dd")}') OR ('{start.ToString("yyyy-MM-dd")}' <= checkInDate AND '{end.ToString("yyyy-MM-dd")}' >= checkInDate) ); ");
-        //    return RunSelectQueryOnTable(command);
-        //};
+        public DataTable GetAvailableCourses(DateTime start, DateTime end)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format($"SELECT course_id AS course_id, courseName AS 'Course Name', description AS Description, durationMins AS 'Duration (Mins)', capacity AS Capacity, costPN AS 'Price', level AS Level FROM Course WHERE course_id NOT IN( SELECT course_id FROM CourseDiary WHERE(startDate <= '{start.ToString("yyyy-MM-dd")}' AND endDate >= '{start.ToString("yyyy-MM-dd")}') OR(startDate < '{end.ToString("yyyy-MM-dd")}' AND endDate >= '{end.ToString("yyyy-MM-dd")}') OR ('{start.ToString("yyyy-MM-dd")}' <= startDate AND '{end.ToString("yyyy-MM-dd")}' >= startDate) ); ");
+            return RunSelectQueryOnTable(command);
+        }
 
         public Course[] SearchCourses(string search)
         {

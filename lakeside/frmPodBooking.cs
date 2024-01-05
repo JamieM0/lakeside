@@ -545,6 +545,10 @@ namespace lakeside
                 pnlGuests.Visible = false;
                 pnlGuestDisplay.Visible = true;
                 //string guestDisplay = "";
+                lbGuestDisplay.ForeColor = Color.Black;
+                lbGuestDisplay2.ForeColor = Color.Black;
+                lbGuestDisplay3.ForeColor = Color.Black;
+                lbGuestDisplay4.ForeColor = Color.Black;
                 lbGuestDisplay.Text = selectedGuests[0].Forename + " " + selectedGuests[0].Surname;
                 if(selectedGuests.Count>1)
                 {
@@ -571,7 +575,7 @@ namespace lakeside
                 pnlCourses.Visible = true;
                 lbGuestDisplay.ForeColor = Color.Green;
                 lbGuestCoursePickerTitle.Text = $"Choose a course for {selectedGuests[0].Forename}, or skip.";
-                //AddAvailableCourses();
+                AddAvailableCourses();
             }
             else
             {
@@ -580,28 +584,28 @@ namespace lakeside
             }
         }
 
-        //private bool AddAvailableCourses()
-        //{
-        //    CourseDAL dal = new CourseDAL();
-        //    // Get all available pods and add to data grid view.
-        //    DataTable results = dal.GetAvailablePods(proposedStartDate, proposedEndDate);
-        //    if (results != null)
-        //    {
-        //        //Set up data grid view
-        //        dgAvailablePods.DataSource = results;
-        //        dgAvailablePods.Columns["pod_id"].Visible = false;
-        //        dgAvailablePods.MultiSelect = false;
-        //        dgAvailablePods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        //        dgAvailablePods.ReadOnly = true;
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        //Notification
-        //        MessageBox.Show("No available pods for the selected dates", "No available pods", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        return false;
-        //    }
-        //}
+        private bool AddAvailableCourses()
+        {
+            CourseDAL dal = new CourseDAL();
+            // Get all available courses and add to data grid view.
+            DataTable results = dal.GetAvailableCourses(proposedStartDate, proposedEndDate);
+            if (results != null)
+            {
+                //Set up data grid view
+                dgCourses.DataSource = results;
+                dgCourses.Columns["course_id"].Visible = false;
+                dgCourses.MultiSelect = false;
+                dgCourses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgCourses.ReadOnly = true;
+                return true;
+            }
+            else
+            {
+                //Notification
+                MessageBox.Show("No available courses for the selected dates", "No available courses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+        }
 
         private void dgAvailablePods_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -626,7 +630,13 @@ namespace lakeside
 
         private void llbChangeDates_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pnlDatePicker.Visible = true;
+            if (MessageBox.Show("Changing the dates will clear the guests, pod, and courses you've selected!\r\nAre you sure you want to do this?", "Change Guests?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                pnlDatePicker.Visible = true;
+                pnlCourses.Visible = false;
+                pnlGuestDisplay.Visible = false;
+                pnlLocationDateDisplay.Visible = false;
+            }
         }
 
         private void llbChangeGuests_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -634,6 +644,8 @@ namespace lakeside
             if(MessageBox.Show("Changing the guests will clear the courses you've selected!\r\nAre you sure you want to do this?","Change Guests?",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pnlGuests.Visible = true;
+                pnlCourses.Visible = false;
+                pnlGuestDisplay.Visible = false;
             }
         }
 
