@@ -190,6 +190,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\SelectGuestButton2.png" />
     <None Include="Resources\AddCourse1.png" />
     <None Include="Resources\HomePageBackground1.png" />
     <None Include="Resources\_a130da06-644f-4672-a272-42f123d85136.jfif" />

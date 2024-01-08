@@ -76,7 +76,7 @@ namespace lakeside
             this.staffToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(110, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(382, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(300, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -212,6 +212,7 @@ namespace lakeside
             this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
             this.staffToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
             this.staffToolStripMenuItem.Text = "Staff";
+            this.staffToolStripMenuItem.Visible = false;
             // 
             // addStaffMemberToolStripMenuItem
             // 

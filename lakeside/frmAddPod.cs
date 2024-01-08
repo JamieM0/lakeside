@@ -229,11 +229,19 @@ namespace lakeside
         private void cmbType_TextChanged(object sender, EventArgs e)
         {
             ValidSetter(3);
+            if (cmbType.Text == "Standard")
+                txtCapacity.Text = "4";
+            else if (cmbType.Text == "Luxury")
+                txtCapacity.Text = "6";
         }
 
         private void cmbType_Leave(object sender, EventArgs e)
         {
             ValidSetter(3);
+            if (cmbType.Text == "Standard")
+                txtCapacity.Text = "4";
+            else if (cmbType.Text == "Luxury")
+                txtCapacity.Text = "6";
         }
 
         private void txtCapacity_TextChanged(object sender, EventArgs e)

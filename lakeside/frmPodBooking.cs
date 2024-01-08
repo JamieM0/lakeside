@@ -34,6 +34,7 @@ namespace lakeside
         Pod selectedPod = new Pod();
 
         List<Guest> selectedGuests = new List<Guest>();
+        Guest currentlySelectedGuest = new Guest();
 
         public frmPodBooking()
         {
@@ -461,6 +462,7 @@ namespace lakeside
 
         private void addGuests()
         {
+            pnlGuestSelectionActionGroup.Location = new Point(329, 31);
             int i = 0;
             pnlGuestPicker.Location = new Point(12, 50);
             foreach(Control c in pnlGuests.Controls)
@@ -549,21 +551,40 @@ namespace lakeside
                 lbGuestDisplay2.ForeColor = Color.Black;
                 lbGuestDisplay3.ForeColor = Color.Black;
                 lbGuestDisplay4.ForeColor = Color.Black;
+                //lbGuestDisplay.Visible = false;
+                lbGuestDisplay2.Visible = false;
+                lbGuestDisplay3.Visible = false;
+                lbGuestDisplay4.Visible = false;
                 lbGuestDisplay.Text = selectedGuests[0].Forename + " " + selectedGuests[0].Surname;
-                if(selectedGuests.Count>1)
+                btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay2.Location.Y);
+                if (selectedGuests.Count>1)
                 {
                     lbGuestDisplay2.Visible = true;
                     lbGuestDisplay2.Text = selectedGuests[1].Forename + " " + selectedGuests[1].Surname;
+                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay3.Location.Y);
                 }
                 if (selectedGuests.Count > 2)
                 {
                     lbGuestDisplay3.Visible = true;
                     lbGuestDisplay3.Text = selectedGuests[2].Forename + " " + selectedGuests[2].Surname;
+                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay4.Location.Y);
                 }
                 if (selectedGuests.Count > 3)
                 {
                     lbGuestDisplay4.Visible = true;
                     lbGuestDisplay4.Text = selectedGuests[3].Forename + " " + selectedGuests[3].Surname;
+                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay5.Location.Y);
+                }
+                if (selectedGuests.Count > 4)
+                {
+                    lbGuestDisplay5.Visible = true;
+                    lbGuestDisplay5.Text = selectedGuests[4].Forename + " " + selectedGuests[4].Surname;
+                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay6.Location.Y);
+                }
+                if (selectedGuests.Count > 5)
+                {
+                    lbGuestDisplay6.Visible = true;
+                    lbGuestDisplay6.Text = selectedGuests[5].Forename + " " + selectedGuests[5].Surname;
                 }
                 //for (int i = 1; i < selectedGuests.Count; i++)
                 //{
@@ -575,12 +596,13 @@ namespace lakeside
                 pnlCourses.Visible = true;
                 lbGuestDisplay.ForeColor = Color.Green;
                 lbGuestCoursePickerTitle.Text = $"Choose a course for {selectedGuests[0].Forename}, or skip.";
+                btnSkipCourseSelection.Text = $"Skip Course Selection for {selectedGuests[0].Forename}";
                 AddAvailableCourses();
             }
             else
             {
                 //Notify
-                //MessageBox.Show("")
+                MessageBox.Show("Too many guests selected! " + selectedPod.FriendlyName + " onlt supports a maximum of " + selectedPod.Capacity + " people!");
             }
         }
 
@@ -655,6 +677,8 @@ namespace lakeside
                 lb.ForeColor = Color.Black;
             display.ForeColor = Color.Green;
             lbGuestCoursePickerTitle.Text = $"Choose a course for {selected.Forename}, or skip.";
+            btnSkipCourseSelection.Text = $"Skip Course Selection for {selected.Forename}";
+            currentlySelectedGuest = selected;
         }
 
         private void lbGuestDisplay_Click(object sender, EventArgs e)
@@ -675,6 +699,26 @@ namespace lakeside
         private void lbGuestDisplay4_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[3], lbGuestDisplay4);
+        }
+
+        private void btnContinueCourseSelection_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSkipCourseSelection_Click(object sender, EventArgs e)
+        {
+            //currentlySelectedGuest
+        }
+
+        private void lbGuestDisplay5_Click(object sender, EventArgs e)
+        {
+            changeSelectedGuest(selectedGuests[4], lbGuestDisplay5);
+        }
+
+        private void lbGuestDisplay6_Click(object sender, EventArgs e)
+        {
+            changeSelectedGuest(selectedGuests[5], lbGuestDisplay6);
         }
 
         //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)

@@ -16,7 +16,8 @@ namespace lakeside
     public partial class frmSearchGuests : Form
     {
         string searchType="";
-        bool fromPodBooking=true;
+        bool fromPodBooking=false;
+        Image buttonIcon = Properties.Resources.EditGuestButton;
         public frmSearchGuests()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace lakeside
             searchType = "guest";
             fromPodBooking = fromPodBookingForm;
             btnReturn.Text = "Back to Booking";
+            buttonIcon = Properties.Resources.SelectGuestButton2;
         }
 
         public frmSearchGuests(object type, string search)
@@ -177,7 +179,8 @@ namespace lakeside
                         element2 = guest.Surname;
                         element3 = guest.Email;
                         idElement = guest.GuestID;
-                        btnImg = Properties.Resources.EditGuestButton;
+                        btnImg = buttonIcon;
+
                     }
                     else if(searchType=="pod")
                     {
