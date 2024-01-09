@@ -44,6 +44,8 @@ namespace lakeside
         public string Country { get; set; }
         public int GuestID { get; set; }
 
+        public int cachedCourseChoiceID { get; set; }
+
         public Guest()
         {
             Forename = "";

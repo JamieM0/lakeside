@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using lakeside.DAL;
+using lakeside.Models;
 
 namespace lakeside.DAL
 {
@@ -90,6 +92,25 @@ namespace lakeside.DAL
             command.CommandText = string.Format($"UPDATE Guest SET forename = '{g.Forename}', surname = '{g.Surname}', email = '{g.Email}', mobilePhone = '{g.Number}', streetname = '{g.Street}', townname = '{g.CityTown}', postcode = '{g.Postcode}', country = '{g.Country}' WHERE guest_id = {g.GuestID}");
 
             return ExecuteNonQuery(command);
+        }
+
+        public bool RegisterForCourse(Guest g, Course c, Booking b)
+        {
+            //SqlCommand used to store details of the command
+            SqlCommand command = new SqlCommand();
+
+            //Set SQL query command text to valid insert statement using values from the Guest class.
+            command.CommandText = string.Format($"INSERT INTO GuestCourseBooking VALUES('{b.BookingID}','{g.GuestID}','{c.CourseID}','','','','')");
+
+            return ExecuteNonQuery(command);
+            
+        }
+
+        public int CountGuests()
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = String.Format("SELECT COUNT(*) FROM Guest");
+            return Convert.ToInt32(ExecuteScalar("SELECT COUNT(*) FROM Guest"));
         }
     }
 }

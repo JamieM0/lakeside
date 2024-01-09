@@ -35,6 +35,7 @@ namespace lakeside
 
         List<Guest> selectedGuests = new List<Guest>();
         Guest currentlySelectedGuest = new Guest();
+        int currentIterationThroughGuests = 0;
 
         public frmPodBooking()
         {
@@ -431,6 +432,7 @@ namespace lakeside
 
         private void btnAddGuest_Click(object sender, EventArgs e)
         {
+            btnRandomiseData.Enabled = false;
             tmrTick.Start();
             new frmAddGuest(true).Show();
         }
@@ -456,6 +458,7 @@ namespace lakeside
 
         private void btnSelectGuests_Click(object sender, EventArgs e)
         {
+            btnRandomiseData.Enabled = false;
             tmrTick.Start();
             new frmSearchGuests(true).Show();
         }
@@ -535,6 +538,8 @@ namespace lakeside
             }
         }
 
+        bool[] validCourses;
+        int[] selectedCourseID;
         private void btnAcceptGuests_Click(object sender, EventArgs e)
         {
             if(selectedGuests.Count==0)
@@ -556,30 +561,30 @@ namespace lakeside
                 lbGuestDisplay3.Visible = false;
                 lbGuestDisplay4.Visible = false;
                 lbGuestDisplay.Text = selectedGuests[0].Forename + " " + selectedGuests[0].Surname;
-                btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay2.Location.Y);
+                //btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay2.Location.Y);
                 if (selectedGuests.Count>1)
                 {
                     lbGuestDisplay2.Visible = true;
                     lbGuestDisplay2.Text = selectedGuests[1].Forename + " " + selectedGuests[1].Surname;
-                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay3.Location.Y);
+                    //btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay3.Location.Y);
                 }
                 if (selectedGuests.Count > 2)
                 {
                     lbGuestDisplay3.Visible = true;
                     lbGuestDisplay3.Text = selectedGuests[2].Forename + " " + selectedGuests[2].Surname;
-                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay4.Location.Y);
+                    //btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay4.Location.Y);
                 }
                 if (selectedGuests.Count > 3)
                 {
                     lbGuestDisplay4.Visible = true;
                     lbGuestDisplay4.Text = selectedGuests[3].Forename + " " + selectedGuests[3].Surname;
-                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay5.Location.Y);
+                    //btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay5.Location.Y);
                 }
                 if (selectedGuests.Count > 4)
                 {
                     lbGuestDisplay5.Visible = true;
                     lbGuestDisplay5.Text = selectedGuests[4].Forename + " " + selectedGuests[4].Surname;
-                    btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay6.Location.Y);
+                    //btnContinueFromCourseSelection.Location = new Point(12, lbGuestDisplay6.Location.Y);
                 }
                 if (selectedGuests.Count > 5)
                 {
@@ -594,10 +599,12 @@ namespace lakeside
                 //lbGuestDisplay.Text = guestDisplay;
                 lbTitle.Text = "Choose Courses if Applicable";
                 pnlCourses.Visible = true;
-                lbGuestDisplay.ForeColor = Color.Green;
+                lbGuestDisplay.ForeColor = Color.MediumBlue;
                 lbGuestCoursePickerTitle.Text = $"Choose a course for {selectedGuests[0].Forename}, or skip.";
                 btnSkipCourseSelection.Text = $"Skip Course Selection for {selectedGuests[0].Forename}";
                 AddAvailableCourses();
+                validCourses = new bool[selectedGuests.Count];
+                selectedCourseID = new int[selectedGuests.Count];
             }
             else
             {
@@ -673,9 +680,17 @@ namespace lakeside
 
         private void changeSelectedGuest(Guest selected, Label display)
         {
+            lbCoursePickerInstructions.Font = new Font(lbCoursePickerInstructions.Font, FontStyle.Regular);
+            dgCourses.ClearSelection();
+            //dgCourses.SelectedRows.Clear();
+            foreach (DataGridViewRow row in dgCourses.Rows)
+            {
+                if (Convert.ToInt32(row.Cells[0].Value)==selected.cachedCourseChoiceID)
+                    row.Selected = true;
+            }
             foreach (Label lb in pnlGuestDisplay.Controls)
                 lb.ForeColor = Color.Black;
-            display.ForeColor = Color.Green;
+            display.ForeColor = Color.MediumBlue;
             lbGuestCoursePickerTitle.Text = $"Choose a course for {selected.Forename}, or skip.";
             btnSkipCourseSelection.Text = $"Skip Course Selection for {selected.Forename}";
             currentlySelectedGuest = selected;
@@ -684,26 +699,30 @@ namespace lakeside
         private void lbGuestDisplay_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[0], lbGuestDisplay);
+            currentIterationThroughGuests = 1;
         }
 
         private void lbGuestDisplay2_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[1], lbGuestDisplay2);
+            currentIterationThroughGuests = 1;
         }
 
         private void lbGuestDisplay3_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[2], lbGuestDisplay3);
+            currentIterationThroughGuests = 2;
         }
 
         private void lbGuestDisplay4_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[3], lbGuestDisplay4);
+            currentIterationThroughGuests = 3;
         }
 
         private void btnContinueCourseSelection_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnSkipCourseSelection_Click(object sender, EventArgs e)
@@ -714,11 +733,98 @@ namespace lakeside
         private void lbGuestDisplay5_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[4], lbGuestDisplay5);
+            currentIterationThroughGuests = 4;
         }
 
         private void lbGuestDisplay6_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[5], lbGuestDisplay6);
+            currentIterationThroughGuests = 5;
+        }
+
+        private void dgCourses_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Set the selected course to valid
+            validCourses[currentIterationThroughGuests] = true;
+
+            // Get the first selected row
+            DataGridViewRow selectedRow = dgCourses.SelectedRows[0];
+
+            // Assuming the course_id is in the first column (index 0)
+            currentlySelectedGuest.cachedCourseChoiceID = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+            //Make label green
+            //Label control = pnlGuestDisplay.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "lbGuestDisplay"+currentIterationThroughGuests++);
+            //control.ForeColor = Color.Green;
+
+            if(currentIterationThroughGuests==0)
+                lbCoursePickerInstructions.Font = new Font(lbCoursePickerInstructions.Font, FontStyle.Bold);
+        }
+
+        Random rnd = new Random();
+        private void btnRandomiseData_Click(object sender, EventArgs e)
+        {
+            btnRandomiseData.Enabled = false;
+            //Select 6 random guests
+            Guest[] randomGuests = new Guest[6];
+            LakesideDAL guestDAL = new LakesideDAL();
+            int guestCount = guestDAL.CountGuests();
+            int[] selectedID = new int[6];
+            for (int i=0; i<6; i++)
+            {
+                randomGuests[i] = guestDAL.GuestLookup(rnd.Next(1, guestCount--));
+                while(randomGuests[i].GuestID==0 || selectedID.Contains(randomGuests[i].GuestID))
+                {
+                    randomGuests[i] = guestDAL.GuestLookup(rnd.Next(1, guestCount--));
+                }
+                selectedID[i] = randomGuests[i].GuestID;
+            }
+
+            //Add these 6 random guests to the booking
+            for(int i = 0; i<6; i++)
+            {
+                Lakeside.currentlySelectedGuest = randomGuests[i];
+                AddNewGuest();
+            }
+        }
+
+        private void btnContinueFromCourseSelection_Click(object sender, EventArgs e)
+        {
+            bool allValidCourses = true;
+            //for(int i=0; i<validCourses.Length;i++)
+            //{
+            //    if (validCourses[i] == false)
+            //        allValidCourses = false;
+            //}
+            if (allValidCourses)
+            {
+                //Give User Feedback
+                btnContinueFromCourseSelection.Enabled = false;
+                
+                //Create new booking
+                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 0, selectedPod.PodID);
+                BookingDAL BookingDAL = new BookingDAL();
+                BookingDAL.AddNewBooking(b);
+                
+                LakesideDAL GuestDAL = new LakesideDAL();
+                CourseDAL CourseDAL = new CourseDAL();
+                foreach(Guest g in selectedGuests)
+                {
+                    if(g.cachedCourseChoiceID!=null)
+                    {
+                        GuestDAL.RegisterForCourse(g,CourseDAL.CourseLookup(g.cachedCourseChoiceID),b);
+                    }
+                }
+
+                MessageBox.Show("Booking added successfully!");
+                Hide();
+                new frmHome().Show();
+            }
+            else
+            {
+                //Notify
+                //MessageBox.Show("You did't complete all the course options! Please use the skip button")
+            }
         }
 
         //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)

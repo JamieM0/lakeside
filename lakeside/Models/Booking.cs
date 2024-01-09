@@ -13,7 +13,7 @@ namespace lakeside.Models
         public DateTime CheckOutDate { get; set; }
         public DateTime DateBooked { get; set; }
         public int NumberOccupants { get; set; }
-        public decimal DepositPaid { get; set; }
+        public double DepositPaid { get; set; }
         public DateTime DepositPayDate { get; set; }
         public int BookedBy { get; set; }
         public int PodID { get; set; }
@@ -26,14 +26,14 @@ namespace lakeside.Models
             CheckOutDate = new DateTime();
             DateBooked = new DateTime();
             NumberOccupants = 0;
-            DepositPaid = 0.0M;
+            DepositPaid = 0.0;
             DepositPayDate = new DateTime();
             BookedBy = 0;
             PodID = 0;
             BookingID = 0;
         }
 
-        public Booking(string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, decimal depositPaid, DateTime depositPayDate, int bookedBy, int podID)
+        public Booking(string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID)
         {
             BookingType = bookingType;
             CheckInDate = checkInDate;

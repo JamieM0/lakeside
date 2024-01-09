@@ -29,6 +29,8 @@ namespace lakeside
             menuStrip1.Anchor = AnchorStyles.None;
             menuStrip1.Left = this.ClientSize.Width / 2 - menuStrip1.Width / 2;
             pnlBlackBackground.SendToBack();
+            //LakesideDAL a = new LakesideDAL();
+            //MessageBox.Show($"{a.CountGuests()}");
         }
 
         private void MainMenu_MouseDown(object sender, MouseEventArgs e)
