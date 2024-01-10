@@ -23,15 +23,17 @@ namespace lakeside.DAL
             return RunSelectQueryOnTable(command);
         }
 
-        public bool AddNewBooking(Booking b)
+        public int AddNewBooking(Booking b)
         {
             //SqlCommand used to store details of the command
             SqlCommand command = new SqlCommand();
 
             //Set SQL query command text to valid insert statement using values from the Guest class.
-            command.CommandText = string.Format($"INSERT INTO Booking VALUES('{b.PodID}','{b.BookingType}','{b.CheckInDate}','{b.CheckOutDate}','{b.DateBooked}','{b.NumberOccupants}','{b.DepositPaid}','{b.DepositPayDate}','{b.BookedBy}')");
+            //command.CommandText = string.Format
 
-            return ExecuteNonQuery(command);
+            object obj = ExecuteScalar($"INSERT INTO Booking OUTPUT INSERTED.booking_id VALUES('{b.PodID}','{b.BookingType}','{b.CheckInDate}','{b.CheckOutDate}','{b.DateBooked}','{b.NumberOccupants}','{b.DepositPaid}','{b.DepositPayDate}','{b.BookedBy}')");
+
+            return Convert.ToInt32(obj);
         }
     }
 }

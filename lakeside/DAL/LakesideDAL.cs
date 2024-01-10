@@ -100,7 +100,7 @@ namespace lakeside.DAL
             SqlCommand command = new SqlCommand();
 
             //Set SQL query command text to valid insert statement using values from the Guest class.
-            command.CommandText = string.Format($"INSERT INTO GuestCourseBooking VALUES('{b.BookingID}','{g.GuestID}','{c.CourseID}','','','','')");
+            command.CommandText = string.Format($"INSERT INTO GuestCouseBooking VALUES('{b.BookingID}','{g.GuestID}','{c.CourseID}','','','','')");
 
             return ExecuteNonQuery(command);
             

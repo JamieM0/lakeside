@@ -605,6 +605,14 @@ namespace lakeside
                 AddAvailableCourses();
                 validCourses = new bool[selectedGuests.Count];
                 selectedCourseID = new int[selectedGuests.Count];
+
+                foreach(Guest g in selectedGuests)
+                {
+                    g.cachedCourseChoiceID = -1;
+                }
+
+                changeSelectedGuest(selectedGuests[0], lbGuestDisplay);
+                currentIterationThroughGuests = 1; 
             }
             else
             {
@@ -680,6 +688,7 @@ namespace lakeside
 
         private void changeSelectedGuest(Guest selected, Label display)
         {
+            currentlySelectedGuest = selected;
             lbCoursePickerInstructions.Font = new Font(lbCoursePickerInstructions.Font, FontStyle.Regular);
             dgCourses.ClearSelection();
             //dgCourses.SelectedRows.Clear();
@@ -693,7 +702,6 @@ namespace lakeside
             display.ForeColor = Color.MediumBlue;
             lbGuestCoursePickerTitle.Text = $"Choose a course for {selected.Forename}, or skip.";
             btnSkipCourseSelection.Text = $"Skip Course Selection for {selected.Forename}";
-            currentlySelectedGuest = selected;
         }
 
         private void lbGuestDisplay_Click(object sender, EventArgs e)
@@ -751,13 +759,24 @@ namespace lakeside
             DataGridViewRow selectedRow = dgCourses.SelectedRows[0];
 
             // Assuming the course_id is in the first column (index 0)
-            currentlySelectedGuest.cachedCourseChoiceID = Convert.ToInt32(selectedRow.Cells[0].Value);
+            //currentlySelectedGuest.cachedCourseChoiceID = Convert.ToInt32(selectedRow.Cells[0].Value);
+            try
+            {
+                var item = selectedGuests.FirstOrDefault(o => o.GuestID == currentlySelectedGuest.GuestID);
+                if (item != null)
+                    item.cachedCourseChoiceID = Convert.ToInt32(selectedRow.Cells[0].Value);
+            }
+            catch(Exception ex)
+            {
+                //Notify
+                MessageBox.Show("There was a problem selecting that course! Please try again!", "Error Selecting Course", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             //Make label green
             //Label control = pnlGuestDisplay.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "lbGuestDisplay"+currentIterationThroughGuests++);
             //control.ForeColor = Color.Green;
 
-            if(currentIterationThroughGuests==0)
+            if (currentIterationThroughGuests==0)
                 lbCoursePickerInstructions.Font = new Font(lbCoursePickerInstructions.Font, FontStyle.Bold);
         }
 
@@ -802,21 +821,24 @@ namespace lakeside
                 btnContinueFromCourseSelection.Enabled = false;
                 
                 //Create new booking
-                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 0, selectedPod.PodID);
+                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID);
                 BookingDAL BookingDAL = new BookingDAL();
-                BookingDAL.AddNewBooking(b);
+                b.BookingID = BookingDAL.AddNewBooking(b);
+                if (b.BookingID!=null)
+                {
+                    MessageBox.Show("Booking added successfully!");
+                }
                 
                 LakesideDAL GuestDAL = new LakesideDAL();
                 CourseDAL CourseDAL = new CourseDAL();
                 foreach(Guest g in selectedGuests)
                 {
-                    if(g.cachedCourseChoiceID!=null)
+                    if(g.cachedCourseChoiceID!=null&&g.cachedCourseChoiceID>=0)
                     {
                         GuestDAL.RegisterForCourse(g,CourseDAL.CourseLookup(g.cachedCourseChoiceID),b);
                     }
                 }
 
-                MessageBox.Show("Booking added successfully!");
                 Hide();
                 new frmHome().Show();
             }
