@@ -821,8 +821,10 @@ namespace lakeside
                 btnContinueFromCourseSelection.Enabled = false;
                 
                 //Create new booking
-                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID);
+                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID,0.0,0);
                 BookingDAL BookingDAL = new BookingDAL();
+                b.TotalOwed = CalculateTotalAmountToPay();
+                b.DiscountPercent = CalculateTotalDiscountAllowedOnBooking();
                 b.BookingID = BookingDAL.AddNewBooking(b);
                 if (b.BookingID!=null)
                 {
@@ -847,6 +849,15 @@ namespace lakeside
                 //Notify
                 //MessageBox.Show("You did't complete all the course options! Please use the skip button")
             }
+        }
+
+        private double CalculateTotalAmountToPay()
+        {
+
+        }
+        private int CalculateTotalDiscountAllowedOnBooking()
+        {
+
         }
 
         //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)

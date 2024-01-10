@@ -18,6 +18,8 @@ namespace lakeside.Models
         public int BookedBy { get; set; }
         public int PodID { get; set; }
         public int BookingID { get; set; }
+        public double TotalOwed { get; set; }
+        public int DiscountPercent { get; set; }
 
         public Booking()
         {
@@ -31,9 +33,11 @@ namespace lakeside.Models
             BookedBy = 0;
             PodID = 0;
             BookingID = 0;
+            TotalOwed = 0.0;
+            DiscountPercent = 0;
         }
 
-        public Booking(string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID)
+        public Booking(string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID, double totalOwed, int discountPercent)
         {
             BookingType = bookingType;
             CheckInDate = checkInDate;
@@ -44,6 +48,8 @@ namespace lakeside.Models
             DepositPayDate = depositPayDate;
             BookedBy = bookedBy;
             PodID = podID;
+            TotalOwed = totalOwed;
+            DiscountPercent = discountPercent;
         }
     }
 }
