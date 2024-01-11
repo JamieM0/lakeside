@@ -45,6 +45,7 @@ namespace lakeside
         public int GuestID { get; set; }
 
         public int cachedCourseChoiceID { get; set; }
+        public bool previousGuest { get; set; }
 
         public Guest()
         {

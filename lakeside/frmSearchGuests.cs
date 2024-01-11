@@ -295,6 +295,7 @@ namespace lakeside
                         int guestID = int.Parse(btnName.Split('_')[1]);
                         Guest g = dal.GuestLookup(guestID);
                         Lakeside.currentlySelectedGuest = g;
+                        Lakeside.currentlySelectedGuest.previousGuest = true;
                         Hide();
                     }
                 }

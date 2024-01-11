@@ -456,8 +456,10 @@ namespace lakeside
             }
         }
 
+        //bool previousGuest = false;
         private void btnSelectGuests_Click(object sender, EventArgs e)
         {
+            //previousGuest = true;
             btnRandomiseData.Enabled = false;
             tmrTick.Start();
             new frmSearchGuests(true).Show();
@@ -853,11 +855,35 @@ namespace lakeside
 
         private double CalculateTotalAmountToPay()
         {
-
+            CourseDAL CourseDAL = new CourseDAL();
+            double total = 0.0;
+            total += Convert.ToDouble(selectedPod.Price) * Convert.ToDouble(cmbDatePickerStayLength.Text) * selectedGuests.Count;
+            foreach(Guest g in selectedGuests)
+            {
+                if(g.cachedCourseChoiceID!=null && g.cachedCourseChoiceID>=0)
+                {
+                    Course chosen = CourseDAL.CourseLookup(g.cachedCourseChoiceID);
+                    total+=chosen.Price;
+                }
+            }
+            return total;
         }
         private int CalculateTotalDiscountAllowedOnBooking()
         {
-
+            int discount = 0;
+            foreach(Guest g in selectedGuests)
+            {
+                if (g.previousGuest)
+                {
+                    discount += 2;
+                    break;
+                }
+            }
+            if(proposedStartDate<=DateTime.Now.Date.AddMonths(6))
+            {
+                discount += 3;
+            }
+            return discount;
         }
 
         //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)
