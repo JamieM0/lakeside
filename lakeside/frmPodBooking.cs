@@ -37,6 +37,8 @@ namespace lakeside
         Guest currentlySelectedGuest = new Guest();
         int currentIterationThroughGuests = 0;
 
+        bool tempStayedBefore = false;
+
         public frmPodBooking()
         {
             InitializeComponent();
@@ -459,6 +461,7 @@ namespace lakeside
         //bool previousGuest = false;
         private void btnSelectGuests_Click(object sender, EventArgs e)
         {
+            tempStayedBefore = true;
             //previousGuest = true;
             btnRandomiseData.Enabled = false;
             tmrTick.Start();
@@ -785,6 +788,7 @@ namespace lakeside
         Random rnd = new Random();
         private void btnRandomiseData_Click(object sender, EventArgs e)
         {
+            tempStayedBefore = true;
             btnRandomiseData.Enabled = false;
             //Select 6 random guests
             Guest[] randomGuests = new Guest[6];
@@ -871,14 +875,16 @@ namespace lakeside
         private int CalculateTotalDiscountAllowedOnBooking()
         {
             int discount = 0;
-            foreach(Guest g in selectedGuests)
-            {
-                if (g.previousGuest)
-                {
-                    discount += 2;
-                    break;
-                }
-            }
+            //foreach(Guest g in selectedGuests)
+            //{
+            //    if (g.previousGuest)
+            //    {
+            //        discount += 2;
+            //        break;
+            //    }
+            //}
+            if (tempStayedBefore)
+                discount += 2;
             if(proposedStartDate<=DateTime.Now.Date.AddMonths(6))
             {
                 discount += 3;
