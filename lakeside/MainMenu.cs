@@ -201,5 +201,11 @@ namespace lakeside
         {
             lbExit.ForeColor = Color.White;
         }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmCheckOutExperience().Show();
+        }
     }
 }

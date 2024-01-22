@@ -153,9 +153,9 @@ namespace lakeside
             this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddPodButton;
             this.btnAddPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPod.Location = new System.Drawing.Point(165, 476);
+            this.btnAddPod.Location = new System.Drawing.Point(246, 479);
             this.btnAddPod.Name = "btnAddPod";
-            this.btnAddPod.Size = new System.Drawing.Size(558, 65);
+            this.btnAddPod.Size = new System.Drawing.Size(347, 65);
             this.btnAddPod.TabIndex = 6;
             this.btnAddPod.UseVisualStyleBackColor = true;
             this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
@@ -289,6 +289,7 @@ namespace lakeside
             // 
             // txtCapacity
             // 
+            this.txtCapacity.Enabled = false;
             this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCapacity.Location = new System.Drawing.Point(670, 347);
             this.txtCapacity.Name = "txtCapacity";

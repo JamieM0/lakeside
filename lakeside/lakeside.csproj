@@ -70,6 +70,12 @@
     <Compile Include="DAL\ExtraDAL.cs" />
     <Compile Include="DAL\LakesideDAL.cs" />
     <Compile Include="DAL\PodDAL.cs" />
+    <Compile Include="frmCheckOutExperience.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckOutExperience.Designer.cs">
+      <DependentUpon>frmCheckOutExperience.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPodBooking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,7 @@
       <DependentUpon>frmPodBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="frmAddCourse.cs">
@@ -139,6 +146,9 @@
     <EmbeddedResource Include="frmAddPod.resx">
       <DependentUpon>frmAddPod.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckOutExperience.resx">
+      <DependentUpon>frmCheckOutExperience.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPodBooking.resx">
       <DependentUpon>frmPodBooking.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +200,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\leadBookerIcon2.png" />
+    <None Include="Resources\leadBookerIcon.png" />
     <None Include="Resources\SelectGuestButton2.png" />
     <None Include="Resources\AddCourse1.png" />
     <None Include="Resources\HomePageBackground1.png" />

@@ -697,16 +697,25 @@ namespace lakeside
             lbCoursePickerInstructions.Font = new Font(lbCoursePickerInstructions.Font, FontStyle.Regular);
             dgCourses.ClearSelection();
             //dgCourses.SelectedRows.Clear();
+            bool prevSelect = false;
             foreach (DataGridViewRow row in dgCourses.Rows)
             {
                 if (Convert.ToInt32(row.Cells[0].Value)==selected.cachedCourseChoiceID)
+                {
                     row.Selected = true;
+                    prevSelect = true;
+                }
             }
-            foreach (Label lb in pnlGuestDisplay.Controls)
+            foreach (Label lb in pnlInnerGuestDisplay.Controls)
                 lb.ForeColor = Color.Black;
             display.ForeColor = Color.MediumBlue;
             lbGuestCoursePickerTitle.Text = $"Choose a course for {selected.Forename}, or skip.";
             btnSkipCourseSelection.Text = $"Skip Course Selection for {selected.Forename}";
+            btnSkipCourseSelection.BackColor = btnContinueCourseSelection.BackColor;
+            if(!prevSelect)
+            {
+                btnSkipCourseSelection.BackColor = Color.LightGreen;
+            }
         }
 
         private void lbGuestDisplay_Click(object sender, EventArgs e)
@@ -741,6 +750,19 @@ namespace lakeside
         private void btnSkipCourseSelection_Click(object sender, EventArgs e)
         {
             //currentlySelectedGuest
+            btnSkipCourseSelection.BackColor = Color.LightGreen;
+            dgCourses.ClearSelection();
+            try
+            {
+                var item = selectedGuests.FirstOrDefault(o => o.GuestID == currentlySelectedGuest.GuestID);
+                if (item != null)
+                    item.cachedCourseChoiceID = -1;
+            }
+            catch (Exception ex)
+            {
+                //Notify
+                MessageBox.Show("There was a problem skipping the course! Please try again!", "Error Selecting Course", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lbGuestDisplay5_Click(object sender, EventArgs e)
@@ -783,6 +805,8 @@ namespace lakeside
 
             if (currentIterationThroughGuests==0)
                 lbCoursePickerInstructions.Font = new Font(lbCoursePickerInstructions.Font, FontStyle.Bold);
+
+            btnSkipCourseSelection.BackColor = btnContinueCourseSelection.BackColor;
         }
 
         Random rnd = new Random();
@@ -841,6 +865,11 @@ namespace lakeside
                 CourseDAL CourseDAL = new CourseDAL();
                 foreach(Guest g in selectedGuests)
                 {
+                    bool lead = false;
+                    if (g.Equals(selectedGuests[0]))
+                        lead = true;
+
+                    GuestDAL.AddToBooking(g, b, lead);
                     if(g.cachedCourseChoiceID!=null&&g.cachedCourseChoiceID>=0)
                     {
                         GuestDAL.RegisterForCourse(g,CourseDAL.CourseLookup(g.cachedCourseChoiceID),b);

@@ -106,6 +106,21 @@ namespace lakeside.DAL
             
         }
 
+        public bool AddToBooking(Guest g, Booking b, bool leadBooker)
+        {
+            //SqlCommand used to store details of the command
+            SqlCommand command = new SqlCommand();
+
+            string typeGuest="standard";
+            if (leadBooker)
+                typeGuest = "lead";
+
+            //Set SQL query command text to valid insert statement using values from the Guest class.
+            command.CommandText = string.Format($"INSERT INTO GuestBooking VALUES('{b.BookingID}','{g.GuestID}','{typeGuest}')");
+
+            return ExecuteNonQuery(command);
+        }
+
         public int CountGuests()
         {
             SqlCommand command = new SqlCommand();

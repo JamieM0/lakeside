@@ -56,6 +56,7 @@ namespace lakeside
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCheckOut = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlBlackBackground.SuspendLayout();
             this.pnlExit.SuspendLayout();
@@ -293,9 +294,9 @@ namespace lakeside
             this.btnEditPod.BackgroundImage = global::lakeside.Properties.Resources.EditPodButton;
             this.btnEditPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEditPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPod.Location = new System.Drawing.Point(695, 433);
+            this.btnEditPod.Location = new System.Drawing.Point(695, 374);
             this.btnEditPod.Name = "btnEditPod";
-            this.btnEditPod.Size = new System.Drawing.Size(250, 65);
+            this.btnEditPod.Size = new System.Drawing.Size(250, 53);
             this.btnEditPod.TabIndex = 11;
             this.btnEditPod.UseVisualStyleBackColor = true;
             this.btnEditPod.Click += new System.EventHandler(this.btnEditPod_Click);
@@ -307,7 +308,7 @@ namespace lakeside
             this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPod.Location = new System.Drawing.Point(695, 315);
             this.btnAddPod.Name = "btnAddPod";
-            this.btnAddPod.Size = new System.Drawing.Size(250, 65);
+            this.btnAddPod.Size = new System.Drawing.Size(250, 53);
             this.btnAddPod.TabIndex = 10;
             this.btnAddPod.UseVisualStyleBackColor = true;
             this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
@@ -347,6 +348,16 @@ namespace lakeside
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Location = new System.Drawing.Point(695, 433);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(250, 65);
+            this.btnCheckOut.TabIndex = 14;
+            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -356,6 +367,7 @@ namespace lakeside
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnEditPod);
             this.Controls.Add(this.btnAddPod);
             this.Controls.Add(this.btnEditGuest);
@@ -414,6 +426,7 @@ namespace lakeside
         private System.Windows.Forms.Panel pnlBlackBackground;
         private System.Windows.Forms.Panel pnlExit;
         private System.Windows.Forms.Label lbExit;
+        private System.Windows.Forms.Button btnCheckOut;
     }
 }
 
