@@ -23,6 +23,13 @@ namespace lakeside.DAL
             return RunSelectQueryOnTable(command);
         }
 
+        public DataTable GetBookedPods(DateTime start, DateTime end)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = string.Format($"SELECT pod_id AS pod_id, name AS Name,description AS Description,type AS Type,capacity AS Capacity,location AS Location,pricePPPN AS PriceFROM PodWHERE pod_id IN(SELECT pod_idFROM BookingWHERE(checkInDate <= '{start.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{start.ToString("yyyy-MM-dd")}')OR(checkInDate < '{end.ToString("yyyy-MM-dd")}' AND checkOutDate >= '{end.ToString("yyyy-MM-dd")}')OR('{start.ToString("yyyy-MM-dd")}' <= checkInDate AND '{end.ToString("yyyy-MM-dd")}' >= checkInDate)); ");
+            return RunSelectQueryOnTable(command);
+        }
+
         public int AddNewBooking(Booking b)
         {
             //SqlCommand used to store details of the command

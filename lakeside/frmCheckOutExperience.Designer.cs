@@ -35,8 +35,14 @@ namespace lakeside
             this.lbNights = new System.Windows.Forms.Label();
             this.btnContinue = new System.Windows.Forms.Button();
             this.pnlStayLength = new System.Windows.Forms.Panel();
+            this.lbDateRange = new System.Windows.Forms.Label();
+            this.pnlPodChooser = new System.Windows.Forms.Panel();
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector = new System.Windows.Forms.Label();
+            this.dgPods = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlStayLength.SuspendLayout();
+            this.pnlPodChooser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPods)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -71,7 +77,7 @@ namespace lakeside
             "4",
             "6",
             "13"});
-            this.cmbDatePickerStayLength.Location = new System.Drawing.Point(63, 52);
+            this.cmbDatePickerStayLength.Location = new System.Drawing.Point(67, 43);
             this.cmbDatePickerStayLength.Name = "cmbDatePickerStayLength";
             this.cmbDatePickerStayLength.Size = new System.Drawing.Size(45, 33);
             this.cmbDatePickerStayLength.TabIndex = 13;
@@ -81,7 +87,7 @@ namespace lakeside
             // 
             this.lbNights.AutoSize = true;
             this.lbNights.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNights.Location = new System.Drawing.Point(114, 55);
+            this.lbNights.Location = new System.Drawing.Point(118, 46);
             this.lbNights.Name = "lbNights";
             this.lbNights.Size = new System.Drawing.Size(67, 25);
             this.lbNights.TabIndex = 14;
@@ -91,7 +97,7 @@ namespace lakeside
             // 
             this.btnContinue.Enabled = false;
             this.btnContinue.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.Location = new System.Drawing.Point(222, 260);
+            this.btnContinue.Location = new System.Drawing.Point(1, 138);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(244, 40);
             this.btnContinue.TabIndex = 15;
@@ -101,27 +107,72 @@ namespace lakeside
             // 
             // pnlStayLength
             // 
+            this.pnlStayLength.Controls.Add(this.btnContinue);
+            this.pnlStayLength.Controls.Add(this.lbDateRange);
             this.pnlStayLength.Controls.Add(this.label1);
             this.pnlStayLength.Controls.Add(this.cmbDatePickerStayLength);
             this.pnlStayLength.Controls.Add(this.lbNights);
             this.pnlStayLength.Location = new System.Drawing.Point(222, 128);
             this.pnlStayLength.Name = "pnlStayLength";
-            this.pnlStayLength.Size = new System.Drawing.Size(246, 100);
+            this.pnlStayLength.Size = new System.Drawing.Size(246, 181);
             this.pnlStayLength.TabIndex = 16;
+            // 
+            // lbDateRange
+            // 
+            this.lbDateRange.AutoSize = true;
+            this.lbDateRange.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDateRange.Location = new System.Drawing.Point(28, 91);
+            this.lbDateRange.Name = "lbDateRange";
+            this.lbDateRange.Size = new System.Drawing.Size(184, 21);
+            this.lbDateRange.TabIndex = 17;
+            this.lbDateRange.Text = "01/01/0000 - 01/01/0000";
+            this.lbDateRange.Visible = false;
+            // 
+            // pnlPodChooser
+            // 
+            this.pnlPodChooser.Controls.Add(this.dgPods);
+            this.pnlPodChooser.Controls.Add(this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector);
+            this.pnlPodChooser.Location = new System.Drawing.Point(121, 115);
+            this.pnlPodChooser.Name = "pnlPodChooser";
+            this.pnlPodChooser.Size = new System.Drawing.Size(568, 230);
+            this.pnlPodChooser.TabIndex = 17;
+            this.pnlPodChooser.Visible = false;
+            // 
+            // lbInstructionsForThePodPickerOrPodChooserOrPodSelector
+            // 
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.AutoSize = true;
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Location = new System.Drawing.Point(3, 8);
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Name = "lbInstructionsForThePodPickerOrPodChooserOrPodSelector";
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Size = new System.Drawing.Size(173, 25);
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.TabIndex = 0;
+            this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Text = "Please Select a Pod";
+            // 
+            // dgPods
+            // 
+            this.dgPods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPods.Location = new System.Drawing.Point(8, 36);
+            this.dgPods.Name = "dgPods";
+            this.dgPods.Size = new System.Drawing.Size(557, 187);
+            this.dgPods.TabIndex = 1;
             // 
             // frmCheckOutExperience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 350);
-            this.Controls.Add(this.pnlStayLength);
-            this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pnlPodChooser);
+            this.Controls.Add(this.pnlStayLength);
             this.Name = "frmCheckOutExperience";
             this.Text = "Lakeside Escapes: Check Out Experience";
+            this.Load += new System.EventHandler(this.frmCheckOutExperience_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlStayLength.ResumeLayout(false);
             this.pnlStayLength.PerformLayout();
+            this.pnlPodChooser.ResumeLayout(false);
+            this.pnlPodChooser.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPods)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +185,9 @@ namespace lakeside
         private System.Windows.Forms.Label lbNights;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Panel pnlStayLength;
+        private System.Windows.Forms.Label lbDateRange;
+        private System.Windows.Forms.Panel pnlPodChooser;
+        private System.Windows.Forms.Label lbInstructionsForThePodPickerOrPodChooserOrPodSelector;
+        private System.Windows.Forms.DataGridView dgPods;
     }
 }

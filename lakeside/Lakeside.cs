@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Threading;
 
 namespace lakeside
 {
@@ -21,6 +23,34 @@ namespace lakeside
             Notifications only have 1 type of text - no title. This is to avoid being too cramped.
 
              */
+        }
+
+        public static void AnimatePanelSideways(Panel pnl, Point endPoint)
+        {
+            Point startPoint = pnl.Location;
+            int diff = Math.Abs(endPoint.X - startPoint.X);
+            bool left = false;
+            if (endPoint.X < startPoint.X)
+                left = true;
+            if (!left)
+            {
+                for (int i = 0; i < diff; i++)
+                {
+                    int x = pnl.Location.X;
+                    pnl.Location = new Point(x++, pnl.Location.Y);
+                    pnl.Refresh();
+                }
+            }
+            else
+            {
+                for (int i = 0; i < diff; i++)
+                {
+                    int x = pnl.Location.X;
+                    x--;
+                    pnl.Location = new Point(x, pnl.Location.Y);
+                    pnl.Refresh();
+                }
+            }
         }
     }
 
