@@ -173,7 +173,19 @@ namespace lakeside
 
         private void cbDebug_CheckedChanged(object sender, EventArgs e)
         {
-            Lakeside.debug = cbDebug.Checked;
+            if(cbDebug.Checked)
+            {
+                if(MessageBox.Show("Enabling the debug mode will remove certain validation to enable testing.\r\nAre you sure you want to do this?","Enable Debug Mode?",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    cbDebug.Checked = true;
+                    Lakeside.debug = cbDebug.Checked;
+                }
+                else
+                {
+                    cbDebug.Checked = false;
+                    Lakeside.debug = cbDebug.Checked;
+                }
+            }
         }
 
         private void addPodToolStripMenuItem_Click(object sender, EventArgs e)

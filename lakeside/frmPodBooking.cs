@@ -130,7 +130,7 @@ namespace lakeside
             proposedStartDate = new DateTime(current.Year, current.Month, Convert.ToInt32(dateDisplay.Text));
             proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
 
-            if (Validation.BookingStartDate(proposedStartDate) == null)
+            if (Validation.BookingStartDate(proposedStartDate) == null || Lakeside.debug)
             {
                 SelectDate(dateDisplay);
                 

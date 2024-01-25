@@ -27,29 +27,40 @@ namespace lakeside
 
         DateTime startDate = new DateTime();
         DateTime endDate = new DateTime();
+        int continueStep = 0;
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            btnContinue.Enabled = false;
-            //pnlStayLength.Visible = false;
-            cmbDatePickerStayLength.Enabled = false;
-            Lakeside.AnimatePanelSideways(pnlStayLength, new Point(20, 128));
-            //pnlStayLength.Location = new Point(20, 128);
-            Cursor.Current = Cursors.WaitCursor;
-            startDate = DateTime.Now.Date.AddDays(-Convert.ToInt32(cmbDatePickerStayLength.Text));
-            endDate = DateTime.Now.Date;
-            lbDateRange.Visible = true;
-            lbDateRange.Text = ($"{startDate.ToString("ddd d MMM")} - {endDate.ToString("ddd d MMM")}");
-            AddBookedPods();
-            pnlPodChooser.Visible = true;
-            Cursor.Current = Cursors.Default;
+            if(continueStep==0)
+            {
+                btnContinue.Enabled = false;
+                //pnlStayLength.Visible = false;
+                cmbDatePickerStayLength.Enabled = false;
+                Lakeside.AnimatePanelSideways(pnlStayLength, new Point(20, 128));
+                //pnlStayLength.Location = new Point(20, 128);
+                Cursor.Current = Cursors.WaitCursor;
+                startDate = DateTime.Now.Date.AddDays(-Convert.ToInt32(cmbDatePickerStayLength.Text));
+                endDate = DateTime.Now.Date;
+                lbDateRange.Visible = true;
+                lbDateRange.Text = ($"{startDate.ToString("ddd d MMM")} - {endDate.ToString("ddd d MMM")}");
+                AddBookedPods();
+                pnlPodChooser.Visible = true;
+                Cursor.Current = Cursors.Default;
+                continueStep = 1;
+                dgPods.ClearSelection();
 
+            }
+            else if (continueStep == 1)
+            {
+                pnlPodChooser.Visible = false;
+                lbPodName.Text = 
+            }
         }
 
         private bool AddBookedPods()
         {
             BookingDAL dal = new BookingDAL();
             // Get all available pods and add to data grid view.
-            DataTable results = dal.GetAvailablePods(startDate, endDate);
+            DataTable results = dal.GetBookedPods(startDate, endDate);
             if (results != null)
             {
                 //Set up data grid view
@@ -71,6 +82,18 @@ namespace lakeside
         private void frmCheckOutExperience_Load(object sender, EventArgs e)
         {
             
+        }
+
+        int podID;
+        private void dgPods_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnContinue.Enabled = true;
+
+            // Get the first selected row
+            DataGridViewRow selectedRow = dgPods.SelectedRows[0];
+
+            // Assuming the pod_id is in the first column (index 0)
+            podID = Convert.ToInt32(selectedRow.Cells[0].Value);
         }
     }
 }
