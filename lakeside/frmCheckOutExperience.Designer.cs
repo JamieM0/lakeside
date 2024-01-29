@@ -35,11 +35,11 @@ namespace lakeside
             this.lbNights = new System.Windows.Forms.Label();
             this.btnContinue = new System.Windows.Forms.Button();
             this.pnlStayLength = new System.Windows.Forms.Panel();
+            this.lbPodName = new System.Windows.Forms.Label();
             this.lbDateRange = new System.Windows.Forms.Label();
             this.pnlPodChooser = new System.Windows.Forms.Panel();
             this.dgPods = new System.Windows.Forms.DataGridView();
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector = new System.Windows.Forms.Label();
-            this.lbPodName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlStayLength.SuspendLayout();
             this.pnlPodChooser.SuspendLayout();
@@ -119,6 +119,18 @@ namespace lakeside
             this.pnlStayLength.Size = new System.Drawing.Size(246, 198);
             this.pnlStayLength.TabIndex = 16;
             // 
+            // lbPodName
+            // 
+            this.lbPodName.AutoSize = true;
+            this.lbPodName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPodName.Location = new System.Drawing.Point(28, 121);
+            this.lbPodName.Name = "lbPodName";
+            this.lbPodName.Size = new System.Drawing.Size(204, 21);
+            this.lbPodName.TabIndex = 18;
+            this.lbPodName.Text = "PodNameGoesHereThanks";
+            this.lbPodName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbPodName.Visible = false;
+            // 
             // lbDateRange
             // 
             this.lbDateRange.AutoSize = true;
@@ -158,17 +170,6 @@ namespace lakeside
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Size = new System.Drawing.Size(173, 25);
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.TabIndex = 0;
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Text = "Please Select a Pod";
-            // 
-            // lbPodName
-            // 
-            this.lbPodName.AutoSize = true;
-            this.lbPodName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPodName.Location = new System.Drawing.Point(28, 121);
-            this.lbPodName.Name = "lbPodName";
-            this.lbPodName.Size = new System.Drawing.Size(204, 21);
-            this.lbPodName.TabIndex = 18;
-            this.lbPodName.Text = "PodNameGoesHereThanks";
-            this.lbPodName.Visible = false;
             // 
             // frmCheckOutExperience
             // 

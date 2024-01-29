@@ -52,7 +52,8 @@ namespace lakeside
             else if (continueStep == 1)
             {
                 pnlPodChooser.Visible = false;
-                lbPodName.Text = 
+                lbPodName.Text = selectedPod.FriendlyName;
+                lbPodName.Visible = true;
             }
         }
 
@@ -85,6 +86,7 @@ namespace lakeside
         }
 
         int podID;
+        Pod selectedPod = new Pod();
         private void dgPods_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnContinue.Enabled = true;
@@ -94,6 +96,9 @@ namespace lakeside
 
             // Assuming the pod_id is in the first column (index 0)
             podID = Convert.ToInt32(selectedRow.Cells[0].Value);
+            PodDAL podDAL = new PodDAL();
+
+            selectedPod = podDAL.PodLookup(podID);
         }
     }
 }
