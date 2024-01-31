@@ -51,5 +51,19 @@ namespace lakeside.Models
             TotalOwed = totalOwed;
             DiscountPercent = discountPercent;
         }
+        public Booking(int bookingID, string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID, int discountPercent)
+        {
+            BookingID = bookingID;
+            BookingType = bookingType;
+            CheckInDate = checkInDate;
+            CheckOutDate = checkOutDate;
+            DateBooked = dateBooked;
+            NumberOccupants = numberOccupants;
+            DepositPaid = depositPaid;
+            DepositPayDate = depositPayDate;
+            BookedBy = bookedBy;
+            PodID = podID;
+            DiscountPercent = discountPercent;
+        }
     }
 }

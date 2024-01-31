@@ -40,6 +40,9 @@ namespace lakeside
             this.pnlPodChooser = new System.Windows.Forms.Panel();
             this.dgPods = new System.Windows.Forms.DataGridView();
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector = new System.Windows.Forms.Label();
+            this.dtpBookingStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpBookingEnd = new System.Windows.Forms.DateTimePicker();
+            this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlStayLength.SuspendLayout();
             this.pnlPodChooser.SuspendLayout();
@@ -108,6 +111,8 @@ namespace lakeside
             // 
             // pnlStayLength
             // 
+            this.pnlStayLength.Controls.Add(this.dtpBookingEnd);
+            this.pnlStayLength.Controls.Add(this.dtpBookingStart);
             this.pnlStayLength.Controls.Add(this.lbPodName);
             this.pnlStayLength.Controls.Add(this.btnContinue);
             this.pnlStayLength.Controls.Add(this.lbDateRange);
@@ -135,11 +140,11 @@ namespace lakeside
             // 
             this.lbDateRange.AutoSize = true;
             this.lbDateRange.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDateRange.Location = new System.Drawing.Point(28, 91);
+            this.lbDateRange.Location = new System.Drawing.Point(112, 90);
             this.lbDateRange.Name = "lbDateRange";
-            this.lbDateRange.Size = new System.Drawing.Size(184, 21);
+            this.lbDateRange.Size = new System.Drawing.Size(24, 21);
             this.lbDateRange.TabIndex = 17;
-            this.lbDateRange.Text = "01/01/0000 - 01/01/0000";
+            this.lbDateRange.Text = " - ";
             this.lbDateRange.Visible = false;
             // 
             // pnlPodChooser
@@ -171,11 +176,49 @@ namespace lakeside
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.TabIndex = 0;
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Text = "Please Select a Pod";
             // 
+            // dtpBookingStart
+            // 
+            this.dtpBookingStart.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBookingStart.Location = new System.Drawing.Point(19, 85);
+            this.dtpBookingStart.Name = "dtpBookingStart";
+            this.dtpBookingStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpBookingStart.Size = new System.Drawing.Size(75, 29);
+            this.dtpBookingStart.TabIndex = 19;
+            this.dtpBookingStart.Visible = false;
+            this.dtpBookingStart.ValueChanged += new System.EventHandler(this.dtpBookingStart_ValueChanged);
+            // 
+            // dtpBookingEnd
+            // 
+            this.dtpBookingEnd.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingEnd.Enabled = false;
+            this.dtpBookingEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBookingEnd.Location = new System.Drawing.Point(152, 84);
+            this.dtpBookingEnd.Name = "dtpBookingEnd";
+            this.dtpBookingEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpBookingEnd.Size = new System.Drawing.Size(75, 29);
+            this.dtpBookingEnd.TabIndex = 20;
+            this.dtpBookingEnd.Visible = false;
+            // 
+            // btnBackToHomeOrMainMenu
+            // 
+            this.btnBackToHomeOrMainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToHomeOrMainMenu.Location = new System.Drawing.Point(561, 2);
+            this.btnBackToHomeOrMainMenu.Name = "btnBackToHomeOrMainMenu";
+            this.btnBackToHomeOrMainMenu.Size = new System.Drawing.Size(137, 47);
+            this.btnBackToHomeOrMainMenu.TabIndex = 22;
+            this.btnBackToHomeOrMainMenu.Text = "Cancel Booking";
+            this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
+            this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
+            // 
             // frmCheckOutExperience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 350);
+            this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlStayLength);
             this.Controls.Add(this.pnlPodChooser);
@@ -205,5 +248,8 @@ namespace lakeside
         private System.Windows.Forms.Label lbInstructionsForThePodPickerOrPodChooserOrPodSelector;
         private System.Windows.Forms.DataGridView dgPods;
         private System.Windows.Forms.Label lbPodName;
+        private System.Windows.Forms.DateTimePicker dtpBookingEnd;
+        private System.Windows.Forms.DateTimePicker dtpBookingStart;
+        private System.Windows.Forms.Button btnBackToHomeOrMainMenu;
     }
 }

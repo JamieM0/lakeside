@@ -30,6 +30,39 @@ namespace lakeside.DAL
             return RunSelectQueryOnTable(command);
         }
 
+        public Booking GetBooking(Pod pod, DateTime start, DateTime end)
+        {
+            Booking result = new Booking();
+
+            //Get the guest corresponding to the guest_id
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM Booking WHERE pod_id = {pod.PodID} AND checkInDate = {start.ToString("dd/MM/yyyy")} AND checkOutDate = {end.ToString("dd/MM/yyyy")}", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            result = new Booking(int.Parse(String.Format($"{reader[0]}")), String.Format($"{reader[2]}"), start, end, DateTime.Parse(String.Format($"{reader[5]}")),
+                                int.Parse(String.Format($"{reader[6]}")), 0.0, DateTime.Parse(String.Format($"{reader[9]}")), int.Parse(String.Format($"{reader[10]}")), 
+                                int.Parse(String.Format($"{reader[1]}")), int.Parse(String.Format($"{reader[7]}")));
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public int GetNumberOfGuestsInBooking(Booking b)
+        {
+            SqlCommand command = new SqlCommand();
+            object obj = ExecuteScalar($"SELECT COUNT(*) AS NumberOfGuests FROM GuestBooking WHERE booking_id = {b.BookingID}; ");
+            return Convert.ToInt32(obj);
+        }
+
         public int AddNewBooking(Booking b)
         {
             //SqlCommand used to store details of the command
