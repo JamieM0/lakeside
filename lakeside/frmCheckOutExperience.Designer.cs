@@ -35,18 +35,20 @@ namespace lakeside
             this.lbNights = new System.Windows.Forms.Label();
             this.btnContinue = new System.Windows.Forms.Button();
             this.pnlStayLength = new System.Windows.Forms.Panel();
+            this.dtpBookingEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpBookingStart = new System.Windows.Forms.DateTimePicker();
             this.lbPodName = new System.Windows.Forms.Label();
             this.lbDateRange = new System.Windows.Forms.Label();
             this.pnlPodChooser = new System.Windows.Forms.Panel();
             this.dgPods = new System.Windows.Forms.DataGridView();
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector = new System.Windows.Forms.Label();
-            this.dtpBookingStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpBookingEnd = new System.Windows.Forms.DateTimePicker();
             this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
+            this.pnlPodNamePanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlStayLength.SuspendLayout();
             this.pnlPodChooser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPods)).BeginInit();
+            this.pnlPodNamePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -111,9 +113,9 @@ namespace lakeside
             // 
             // pnlStayLength
             // 
+            this.pnlStayLength.Controls.Add(this.pnlPodNamePanel);
             this.pnlStayLength.Controls.Add(this.dtpBookingEnd);
             this.pnlStayLength.Controls.Add(this.dtpBookingStart);
-            this.pnlStayLength.Controls.Add(this.lbPodName);
             this.pnlStayLength.Controls.Add(this.btnContinue);
             this.pnlStayLength.Controls.Add(this.lbDateRange);
             this.pnlStayLength.Controls.Add(this.label1);
@@ -124,16 +126,42 @@ namespace lakeside
             this.pnlStayLength.Size = new System.Drawing.Size(246, 198);
             this.pnlStayLength.TabIndex = 16;
             // 
+            // dtpBookingEnd
+            // 
+            this.dtpBookingEnd.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingEnd.Enabled = false;
+            this.dtpBookingEnd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBookingEnd.Location = new System.Drawing.Point(152, 84);
+            this.dtpBookingEnd.Name = "dtpBookingEnd";
+            this.dtpBookingEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpBookingEnd.Size = new System.Drawing.Size(75, 29);
+            this.dtpBookingEnd.TabIndex = 20;
+            this.dtpBookingEnd.Visible = false;
+            // 
+            // dtpBookingStart
+            // 
+            this.dtpBookingStart.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBookingStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBookingStart.Location = new System.Drawing.Point(19, 85);
+            this.dtpBookingStart.Name = "dtpBookingStart";
+            this.dtpBookingStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpBookingStart.Size = new System.Drawing.Size(75, 29);
+            this.dtpBookingStart.TabIndex = 19;
+            this.dtpBookingStart.Visible = false;
+            this.dtpBookingStart.ValueChanged += new System.EventHandler(this.dtpBookingStart_ValueChanged);
+            // 
             // lbPodName
             // 
-            this.lbPodName.AutoSize = true;
+            this.lbPodName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbPodName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPodName.Location = new System.Drawing.Point(28, 121);
+            this.lbPodName.Location = new System.Drawing.Point(0, 0);
             this.lbPodName.Name = "lbPodName";
-            this.lbPodName.Size = new System.Drawing.Size(204, 21);
+            this.lbPodName.Size = new System.Drawing.Size(240, 21);
             this.lbPodName.TabIndex = 18;
             this.lbPodName.Text = "PodNameGoesHereThanks";
-            this.lbPodName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbPodName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbPodName.Visible = false;
             // 
             // lbDateRange
@@ -161,7 +189,9 @@ namespace lakeside
             // 
             this.dgPods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPods.Location = new System.Drawing.Point(8, 36);
+            this.dgPods.MultiSelect = false;
             this.dgPods.Name = "dgPods";
+            this.dgPods.ReadOnly = true;
             this.dgPods.Size = new System.Drawing.Size(274, 187);
             this.dgPods.TabIndex = 1;
             this.dgPods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPods_CellClick);
@@ -176,32 +206,6 @@ namespace lakeside
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.TabIndex = 0;
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector.Text = "Please Select a Pod";
             // 
-            // dtpBookingStart
-            // 
-            this.dtpBookingStart.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookingStart.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookingStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookingStart.Location = new System.Drawing.Point(19, 85);
-            this.dtpBookingStart.Name = "dtpBookingStart";
-            this.dtpBookingStart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dtpBookingStart.Size = new System.Drawing.Size(75, 29);
-            this.dtpBookingStart.TabIndex = 19;
-            this.dtpBookingStart.Visible = false;
-            this.dtpBookingStart.ValueChanged += new System.EventHandler(this.dtpBookingStart_ValueChanged);
-            // 
-            // dtpBookingEnd
-            // 
-            this.dtpBookingEnd.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookingEnd.Enabled = false;
-            this.dtpBookingEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookingEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBookingEnd.Location = new System.Drawing.Point(152, 84);
-            this.dtpBookingEnd.Name = "dtpBookingEnd";
-            this.dtpBookingEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dtpBookingEnd.Size = new System.Drawing.Size(75, 29);
-            this.dtpBookingEnd.TabIndex = 20;
-            this.dtpBookingEnd.Visible = false;
-            // 
             // btnBackToHomeOrMainMenu
             // 
             this.btnBackToHomeOrMainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,6 +216,14 @@ namespace lakeside
             this.btnBackToHomeOrMainMenu.Text = "Cancel Booking";
             this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
             this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
+            // 
+            // pnlPodNamePanel
+            // 
+            this.pnlPodNamePanel.Controls.Add(this.lbPodName);
+            this.pnlPodNamePanel.Location = new System.Drawing.Point(3, 120);
+            this.pnlPodNamePanel.Name = "pnlPodNamePanel";
+            this.pnlPodNamePanel.Size = new System.Drawing.Size(240, 21);
+            this.pnlPodNamePanel.TabIndex = 23;
             // 
             // frmCheckOutExperience
             // 
@@ -231,6 +243,7 @@ namespace lakeside
             this.pnlPodChooser.ResumeLayout(false);
             this.pnlPodChooser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPods)).EndInit();
+            this.pnlPodNamePanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -251,5 +264,6 @@ namespace lakeside
         private System.Windows.Forms.DateTimePicker dtpBookingEnd;
         private System.Windows.Forms.DateTimePicker dtpBookingStart;
         private System.Windows.Forms.Button btnBackToHomeOrMainMenu;
+        private System.Windows.Forms.Panel pnlPodNamePanel;
     }
 }

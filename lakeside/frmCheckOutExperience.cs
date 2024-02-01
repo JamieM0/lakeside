@@ -91,6 +91,8 @@ namespace lakeside
                 pnlPodChooser.Visible = false;
                 lbPodName.Text = selectedPod.FriendlyName;
                 lbPodName.Visible = true;
+                dtpBookingStart.Enabled = false;
+                cmbDatePickerStayLength.Enabled = false;
                 TotalCostCalculator();
             }
         }
@@ -136,18 +138,26 @@ namespace lakeside
         Pod selectedPod = new Pod();
         private void dgPods_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnContinue.Enabled = true;
-            continueStep = 2;
-            btnContinue.Text = "Continue";
+            try
+            {
+                btnContinue.Enabled = true;
+                continueStep = 2;
+                btnContinue.Text = "Continue";
 
-            // Get the first selected row
-            DataGridViewRow selectedRow = dgPods.SelectedRows[0];
+                // Get the first selected row
+                DataGridViewRow selectedRow = dgPods.SelectedRows[0];
 
-            // Assuming the pod_id is in the first column (index 0)
-            podID = Convert.ToInt32(selectedRow.Cells[0].Value);
-            PodDAL podDAL = new PodDAL();
+                // Assuming the pod_id is in the first column (index 0)
+                podID = Convert.ToInt32(selectedRow.Cells[0].Value);
+                PodDAL podDAL = new PodDAL();
 
-            selectedPod = podDAL.PodLookup(podID);
+                selectedPod = podDAL.PodLookup(podID);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("There was an error selecting that pod! Try again!", "Error Selecting Pod", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                selectedPod = null;
+            }
         }
 
         private void dtpBookingStart_ValueChanged(object sender, EventArgs e)
