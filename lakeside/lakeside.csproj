@@ -76,11 +76,22 @@
     <Compile Include="frmCheckOutExperience.Designer.cs">
       <DependentUpon>frmCheckOutExperience.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInvoice.Designer.cs">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPodBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPodBooking.Designer.cs">
       <DependentUpon>frmPodBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LakesideInvoices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LakesideInvoices.xsd</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Invoice.cs" />
@@ -149,12 +160,16 @@
     <EmbeddedResource Include="frmCheckOutExperience.resx">
       <DependentUpon>frmCheckOutExperience.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInvoice.resx">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPodBooking.resx">
       <DependentUpon>frmPodBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchGuests.resx">
       <DependentUpon>frmSearchGuests.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LakesideReport.rdlc" />
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +188,17 @@
     </None>
     <None Include="LakesideDBDataSet.xss">
       <DependentUpon>LakesideDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LakesideInvoices.xsc">
+      <DependentUpon>LakesideInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="LakesideInvoices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LakesideInvoices.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="LakesideInvoices.xss">
+      <DependentUpon>LakesideInvoices.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -56,7 +56,7 @@ namespace lakeside.DAL
                         int i = 0;
                         while (reader.Read())
                         {
-                            allPods[i] = new Pod(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), String.Format($"{reader[6]}"), Convert.ToInt32($"{reader[4]}"), String.Format($"{reader[3]}"), String.Format($"{reader[5]}"), int.Parse(String.Format($"{reader[0]}")));
+                            allPods[i] = new Pod(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), Double.Parse($"{reader[6]}"), Convert.ToInt32($"{reader[4]}"), String.Format($"{reader[3]}"), String.Format($"{reader[5]}"), int.Parse(String.Format($"{reader[0]}")));
                             i++;
                         }
 
@@ -101,7 +101,7 @@ namespace lakeside.DAL
                     {
                         if (reader.Read())
                         {
-                            result = new Pod(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), String.Format($"{reader[6]}"), Convert.ToInt32($"{reader[4]}"), String.Format($"{reader[3]}"), String.Format($"{reader[5]}"), int.Parse(String.Format($"{reader[0]}")));
+                            result = new Pod(String.Format($"{reader[1]}"), String.Format($"{reader[2]}"), Double.Parse($"{reader[6]}"), Convert.ToInt32($"{reader[4]}"), String.Format($"{reader[3]}"), String.Format($"{reader[5]}"), int.Parse(String.Format($"{reader[0]}")));
                         }
                     }
                 }

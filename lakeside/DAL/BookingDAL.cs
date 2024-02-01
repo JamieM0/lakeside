@@ -39,7 +39,7 @@ namespace lakeside.DAL
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand($"SELECT * FROM Booking WHERE pod_id = {pod.PodID} AND checkInDate = {start.ToString("dd/MM/yyyy")} AND checkOutDate = {end.ToString("dd/MM/yyyy")}", connection))
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM Booking WHERE pod_id = {pod.PodID} AND checkInDate = '{start.ToString("dd/MM/yyyy")}' AND checkOutDate = '{end.ToString("dd/MM/yyyy")}'", connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -73,7 +73,7 @@ namespace lakeside.DAL
 
             object obj = ExecuteScalar($"INSERT INTO Booking OUTPUT INSERTED.booking_id " +
                 $"VALUES('{b.PodID}','{b.BookingType}','{b.CheckInDate}','{b.CheckOutDate}'," +
-                $"'{b.DateBooked}','{b.NumberOccupants}','{b.TotalOwed}','{b.DiscountPercent}'," +
+                $"'{b.DateBooked}','{b.NumberOccupants}','{b.DiscountPercent}'," +
                 $"'{b.DepositPaid}','{b.DepositPayDate}'," +
                 $"'{b.BookedBy}')");
 

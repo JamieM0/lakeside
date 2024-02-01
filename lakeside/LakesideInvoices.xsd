@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LakesideInvoices" targetNamespace="http://tempuri.org/LakesideInvoices.xsd" xmlns:mstns="http://tempuri.org/LakesideInvoices.xsd" xmlns="http://tempuri.org/LakesideInvoices.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LakesideDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LakesideDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.lakeside.Properties.Settings.GlobalReference.Default.LakesideDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LakesideDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Invoice.invoice_id AS Expr2, Payment.invoice_id AS Expr1, Payment.payment_id, Payment.amountPaid, Payment.paymentMethod, Payment.paymentDate, Invoice.invoiceType AS Expr3, Invoice.booking_id AS Expr4, Invoice.*, 
+                         Invoice.amountDue AS Expr5, Invoice.invoiceDate AS Expr6, Invoice.invoiceDue AS Expr7, Invoice.fullyPaid AS Expr8, Invoice.notes AS Expr9, Extra.extra_id AS Expr10, Extra.extraCost AS Expr11, Extra.extraName AS Expr12, 
+                         Extra.extraDescription AS Expr13, Extra.*, GuestExtras.*, Guest.guest_id AS Expr14, Guest.forename, GuestCouseBooking.*, Course.course_id AS Expr15, Course.costPN, Course.courseName, Booking.booking_id AS Expr16, 
+                         Booking.discountPercent, Booking.dateBooked, Booking.bookingType, Booking.depositPaid, Booking.depositPayDate, Pod.pod_id, Pod.pricePPPN, Pod.name
+FROM            Invoice INNER JOIN
+                         Payment ON Invoice.invoice_id = Payment.invoice_id INNER JOIN
+                         Booking ON Invoice.booking_id = Booking.booking_id INNER JOIN
+                         GuestExtras ON Booking.booking_id = GuestExtras.booking_id INNER JOIN
+                         Extra ON GuestExtras.extra_id = Extra.extra_id INNER JOIN
+                         Guest ON GuestExtras.payingGuest_id = Guest.guest_id INNER JOIN
+                         GuestCouseBooking ON Booking.booking_id = GuestCouseBooking.booking_id AND Guest.guest_id = GuestCouseBooking.guest_id INNER JOIN
+                         Course ON GuestCouseBooking.course_id = Course.course_id INNER JOIN
+                         Pod ON Booking.pod_id = Pod.pod_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="payment_id" DataSetColumn="payment_id" />
+              <Mapping SourceColumn="amountPaid" DataSetColumn="amountPaid" />
+              <Mapping SourceColumn="paymentMethod" DataSetColumn="paymentMethod" />
+              <Mapping SourceColumn="paymentDate" DataSetColumn="paymentDate" />
+              <Mapping SourceColumn="Expr3" DataSetColumn="Expr3" />
+              <Mapping SourceColumn="Expr4" DataSetColumn="Expr4" />
+              <Mapping SourceColumn="invoice_id" DataSetColumn="invoice_id" />
+              <Mapping SourceColumn="invoiceType" DataSetColumn="invoiceType" />
+              <Mapping SourceColumn="booking_id" DataSetColumn="booking_id" />
+              <Mapping SourceColumn="amountDue" DataSetColumn="amountDue" />
+              <Mapping SourceColumn="invoiceDate" DataSetColumn="invoiceDate" />
+              <Mapping SourceColumn="invoiceDue" DataSetColumn="invoiceDue" />
+              <Mapping SourceColumn="fullyPaid" DataSetColumn="fullyPaid" />
+              <Mapping SourceColumn="notes" DataSetColumn="notes" />
+              <Mapping SourceColumn="Expr5" DataSetColumn="Expr5" />
+              <Mapping SourceColumn="Expr6" DataSetColumn="Expr6" />
+              <Mapping SourceColumn="Expr7" DataSetColumn="Expr7" />
+              <Mapping SourceColumn="Expr8" DataSetColumn="Expr8" />
+              <Mapping SourceColumn="Expr9" DataSetColumn="Expr9" />
+              <Mapping SourceColumn="Expr10" DataSetColumn="Expr10" />
+              <Mapping SourceColumn="Expr11" DataSetColumn="Expr11" />
+              <Mapping SourceColumn="Expr12" DataSetColumn="Expr12" />
+              <Mapping SourceColumn="Expr13" DataSetColumn="Expr13" />
+              <Mapping SourceColumn="extra_id" DataSetColumn="extra_id" />
+              <Mapping SourceColumn="extraName" DataSetColumn="extraName" />
+              <Mapping SourceColumn="extraDescription" DataSetColumn="extraDescription" />
+              <Mapping SourceColumn="extraCost" DataSetColumn="extraCost" />
+              <Mapping SourceColumn="extra_id1" DataSetColumn="extra_id1" />
+              <Mapping SourceColumn="booking_id1" DataSetColumn="booking_id1" />
+              <Mapping SourceColumn="payingGuest_id" DataSetColumn="payingGuest_id" />
+              <Mapping SourceColumn="quantity" DataSetColumn="quantity" />
+              <Mapping SourceColumn="Expr14" DataSetColumn="Expr14" />
+              <Mapping SourceColumn="forename" DataSetColumn="forename" />
+              <Mapping SourceColumn="booking_id2" DataSetColumn="booking_id2" />
+              <Mapping SourceColumn="guest_id" DataSetColumn="guest_id" />
+              <Mapping SourceColumn="course_id" DataSetColumn="course_id" />
+              <Mapping SourceColumn="skillLevel" DataSetColumn="skillLevel" />
+              <Mapping SourceColumn="specialRequirements" DataSetColumn="specialRequirements" />
+              <Mapping SourceColumn="dietaryRequirements" DataSetColumn="dietaryRequirements" />
+              <Mapping SourceColumn="medicalRequirements" DataSetColumn="medicalRequirements" />
+              <Mapping SourceColumn="Expr15" DataSetColumn="Expr15" />
+              <Mapping SourceColumn="costPN" DataSetColumn="costPN" />
+              <Mapping SourceColumn="courseName" DataSetColumn="courseName" />
+              <Mapping SourceColumn="Expr16" DataSetColumn="Expr16" />
+              <Mapping SourceColumn="discountPercent" DataSetColumn="discountPercent" />
+              <Mapping SourceColumn="dateBooked" DataSetColumn="dateBooked" />
+              <Mapping SourceColumn="bookingType" DataSetColumn="bookingType" />
+              <Mapping SourceColumn="depositPaid" DataSetColumn="depositPaid" />
+              <Mapping SourceColumn="depositPayDate" DataSetColumn="depositPayDate" />
+              <Mapping SourceColumn="pod_id" DataSetColumn="pod_id" />
+              <Mapping SourceColumn="pricePPPN" DataSetColumn="pricePPPN" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LakesideInvoices" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LakesideInvoices" msprop:Generator_UserDSName="LakesideInvoices">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Expr2" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:int" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+              <xs:element name="payment_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnpayment_id" msprop:Generator_ColumnPropNameInRow="payment_id" msprop:Generator_ColumnPropNameInTable="payment_idColumn" msprop:Generator_UserColumnName="payment_id" type="xs:int" />
+              <xs:element name="amountPaid" msprop:Generator_ColumnVarNameInTable="columnamountPaid" msprop:Generator_ColumnPropNameInRow="amountPaid" msprop:Generator_ColumnPropNameInTable="amountPaidColumn" msprop:Generator_UserColumnName="amountPaid" type="xs:int" minOccurs="0" />
+              <xs:element name="paymentMethod" msprop:Generator_ColumnVarNameInTable="columnpaymentMethod" msprop:Generator_ColumnPropNameInRow="paymentMethod" msprop:Generator_ColumnPropNameInTable="paymentMethodColumn" msprop:Generator_UserColumnName="paymentMethod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="paymentDate" msprop:Generator_ColumnVarNameInTable="columnpaymentDate" msprop:Generator_ColumnPropNameInRow="paymentDate" msprop:Generator_ColumnPropNameInTable="paymentDateColumn" msprop:Generator_UserColumnName="paymentDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Expr3" msprop:Generator_ColumnVarNameInTable="columnExpr3" msprop:Generator_ColumnPropNameInRow="Expr3" msprop:Generator_ColumnPropNameInTable="Expr3Column" msprop:Generator_UserColumnName="Expr3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr4" msprop:Generator_ColumnVarNameInTable="columnExpr4" msprop:Generator_ColumnPropNameInRow="Expr4" msprop:Generator_ColumnPropNameInTable="Expr4Column" msprop:Generator_UserColumnName="Expr4" type="xs:int" minOccurs="0" />
+              <xs:element name="invoice_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columninvoice_id" msprop:Generator_ColumnPropNameInRow="invoice_id" msprop:Generator_ColumnPropNameInTable="invoice_idColumn" msprop:Generator_UserColumnName="invoice_id" type="xs:int" />
+              <xs:element name="invoiceType" msprop:Generator_ColumnVarNameInTable="columninvoiceType" msprop:Generator_ColumnPropNameInRow="invoiceType" msprop:Generator_ColumnPropNameInTable="invoiceTypeColumn" msprop:Generator_UserColumnName="invoiceType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="booking_id" msprop:Generator_ColumnVarNameInTable="columnbooking_id" msprop:Generator_ColumnPropNameInRow="booking_id" msprop:Generator_ColumnPropNameInTable="booking_idColumn" msprop:Generator_UserColumnName="booking_id" type="xs:int" minOccurs="0" />
+              <xs:element name="amountDue" msprop:Generator_ColumnVarNameInTable="columnamountDue" msprop:Generator_ColumnPropNameInRow="amountDue" msprop:Generator_ColumnPropNameInTable="amountDueColumn" msprop:Generator_UserColumnName="amountDue" type="xs:int" minOccurs="0" />
+              <xs:element name="invoiceDate" msprop:Generator_ColumnVarNameInTable="columninvoiceDate" msprop:Generator_ColumnPropNameInRow="invoiceDate" msprop:Generator_ColumnPropNameInTable="invoiceDateColumn" msprop:Generator_UserColumnName="invoiceDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="invoiceDue" msprop:Generator_ColumnVarNameInTable="columninvoiceDue" msprop:Generator_ColumnPropNameInRow="invoiceDue" msprop:Generator_ColumnPropNameInTable="invoiceDueColumn" msprop:Generator_UserColumnName="invoiceDue" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fullyPaid" msprop:Generator_ColumnVarNameInTable="columnfullyPaid" msprop:Generator_ColumnPropNameInRow="fullyPaid" msprop:Generator_ColumnPropNameInTable="fullyPaidColumn" msprop:Generator_UserColumnName="fullyPaid" type="xs:int" minOccurs="0" />
+              <xs:element name="notes" msprop:Generator_ColumnVarNameInTable="columnnotes" msprop:Generator_ColumnPropNameInRow="notes" msprop:Generator_ColumnPropNameInTable="notesColumn" msprop:Generator_UserColumnName="notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr5" msprop:Generator_ColumnVarNameInTable="columnExpr5" msprop:Generator_ColumnPropNameInRow="Expr5" msprop:Generator_ColumnPropNameInTable="Expr5Column" msprop:Generator_UserColumnName="Expr5" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr6" msprop:Generator_ColumnVarNameInTable="columnExpr6" msprop:Generator_ColumnPropNameInRow="Expr6" msprop:Generator_ColumnPropNameInTable="Expr6Column" msprop:Generator_UserColumnName="Expr6" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Expr7" msprop:Generator_ColumnVarNameInTable="columnExpr7" msprop:Generator_ColumnPropNameInRow="Expr7" msprop:Generator_ColumnPropNameInTable="Expr7Column" msprop:Generator_UserColumnName="Expr7" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Expr8" msprop:Generator_ColumnVarNameInTable="columnExpr8" msprop:Generator_ColumnPropNameInRow="Expr8" msprop:Generator_ColumnPropNameInTable="Expr8Column" msprop:Generator_UserColumnName="Expr8" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr9" msprop:Generator_ColumnVarNameInTable="columnExpr9" msprop:Generator_ColumnPropNameInRow="Expr9" msprop:Generator_ColumnPropNameInTable="Expr9Column" msprop:Generator_UserColumnName="Expr9" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr10" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr10" msprop:Generator_ColumnPropNameInRow="Expr10" msprop:Generator_ColumnPropNameInTable="Expr10Column" msprop:Generator_UserColumnName="Expr10" type="xs:int" />
+              <xs:element name="Expr11" msprop:Generator_ColumnVarNameInTable="columnExpr11" msprop:Generator_ColumnPropNameInRow="Expr11" msprop:Generator_ColumnPropNameInTable="Expr11Column" msprop:Generator_UserColumnName="Expr11" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr12" msprop:Generator_ColumnVarNameInTable="columnExpr12" msprop:Generator_ColumnPropNameInRow="Expr12" msprop:Generator_ColumnPropNameInTable="Expr12Column" msprop:Generator_UserColumnName="Expr12" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr13" msprop:Generator_ColumnVarNameInTable="columnExpr13" msprop:Generator_ColumnPropNameInRow="Expr13" msprop:Generator_ColumnPropNameInTable="Expr13Column" msprop:Generator_UserColumnName="Expr13" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="extra_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnextra_id" msprop:Generator_ColumnPropNameInRow="extra_id" msprop:Generator_ColumnPropNameInTable="extra_idColumn" msprop:Generator_UserColumnName="extra_id" type="xs:int" />
+              <xs:element name="extraName" msprop:Generator_ColumnVarNameInTable="columnextraName" msprop:Generator_ColumnPropNameInRow="extraName" msprop:Generator_ColumnPropNameInTable="extraNameColumn" msprop:Generator_UserColumnName="extraName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="extraDescription" msprop:Generator_ColumnVarNameInTable="columnextraDescription" msprop:Generator_ColumnPropNameInRow="extraDescription" msprop:Generator_ColumnPropNameInTable="extraDescriptionColumn" msprop:Generator_UserColumnName="extraDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="extraCost" msprop:Generator_ColumnVarNameInTable="columnextraCost" msprop:Generator_ColumnPropNameInRow="extraCost" msprop:Generator_ColumnPropNameInTable="extraCostColumn" msprop:Generator_UserColumnName="extraCost" type="xs:int" minOccurs="0" />
+              <xs:element name="extra_id1" msprop:Generator_ColumnVarNameInTable="columnextra_id1" msprop:Generator_ColumnPropNameInRow="extra_id1" msprop:Generator_ColumnPropNameInTable="extra_id1Column" msprop:Generator_UserColumnName="extra_id1" type="xs:int" />
+              <xs:element name="booking_id1" msprop:Generator_ColumnVarNameInTable="columnbooking_id1" msprop:Generator_ColumnPropNameInRow="booking_id1" msprop:Generator_ColumnPropNameInTable="booking_id1Column" msprop:Generator_UserColumnName="booking_id1" type="xs:int" />
+              <xs:element name="payingGuest_id" msprop:Generator_ColumnVarNameInTable="columnpayingGuest_id" msprop:Generator_ColumnPropNameInRow="payingGuest_id" msprop:Generator_ColumnPropNameInTable="payingGuest_idColumn" msprop:Generator_UserColumnName="payingGuest_id" type="xs:int" />
+              <xs:element name="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_UserColumnName="quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr14" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr14" msprop:Generator_ColumnPropNameInRow="Expr14" msprop:Generator_ColumnPropNameInTable="Expr14Column" msprop:Generator_UserColumnName="Expr14" type="xs:int" />
+              <xs:element name="forename" msprop:Generator_ColumnVarNameInTable="columnforename" msprop:Generator_ColumnPropNameInRow="forename" msprop:Generator_ColumnPropNameInTable="forenameColumn" msprop:Generator_UserColumnName="forename" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="booking_id2" msprop:Generator_ColumnVarNameInTable="columnbooking_id2" msprop:Generator_ColumnPropNameInRow="booking_id2" msprop:Generator_ColumnPropNameInTable="booking_id2Column" msprop:Generator_UserColumnName="booking_id2" type="xs:int" />
+              <xs:element name="guest_id" msprop:Generator_ColumnVarNameInTable="columnguest_id" msprop:Generator_ColumnPropNameInRow="guest_id" msprop:Generator_ColumnPropNameInTable="guest_idColumn" msprop:Generator_UserColumnName="guest_id" type="xs:int" />
+              <xs:element name="course_id" msprop:Generator_ColumnVarNameInTable="columncourse_id" msprop:Generator_ColumnPropNameInRow="course_id" msprop:Generator_ColumnPropNameInTable="course_idColumn" msprop:Generator_UserColumnName="course_id" type="xs:int" />
+              <xs:element name="skillLevel" msprop:Generator_ColumnVarNameInTable="columnskillLevel" msprop:Generator_ColumnPropNameInRow="skillLevel" msprop:Generator_ColumnPropNameInTable="skillLevelColumn" msprop:Generator_UserColumnName="skillLevel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="specialRequirements" msprop:Generator_ColumnVarNameInTable="columnspecialRequirements" msprop:Generator_ColumnPropNameInRow="specialRequirements" msprop:Generator_ColumnPropNameInTable="specialRequirementsColumn" msprop:Generator_UserColumnName="specialRequirements" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dietaryRequirements" msprop:Generator_ColumnVarNameInTable="columndietaryRequirements" msprop:Generator_ColumnPropNameInRow="dietaryRequirements" msprop:Generator_ColumnPropNameInTable="dietaryRequirementsColumn" msprop:Generator_UserColumnName="dietaryRequirements" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="medicalRequirements" msprop:Generator_ColumnVarNameInTable="columnmedicalRequirements" msprop:Generator_ColumnPropNameInRow="medicalRequirements" msprop:Generator_ColumnPropNameInTable="medicalRequirementsColumn" msprop:Generator_UserColumnName="medicalRequirements" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr15" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr15" msprop:Generator_ColumnPropNameInRow="Expr15" msprop:Generator_ColumnPropNameInTable="Expr15Column" msprop:Generator_UserColumnName="Expr15" type="xs:int" />
+              <xs:element name="costPN" msprop:Generator_ColumnVarNameInTable="columncostPN" msprop:Generator_ColumnPropNameInRow="costPN" msprop:Generator_ColumnPropNameInTable="costPNColumn" msprop:Generator_UserColumnName="costPN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="courseName" msprop:Generator_ColumnVarNameInTable="columncourseName" msprop:Generator_ColumnPropNameInRow="courseName" msprop:Generator_ColumnPropNameInTable="courseNameColumn" msprop:Generator_UserColumnName="courseName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr16" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr16" msprop:Generator_ColumnPropNameInRow="Expr16" msprop:Generator_ColumnPropNameInTable="Expr16Column" msprop:Generator_UserColumnName="Expr16" type="xs:int" />
+              <xs:element name="discountPercent" msprop:Generator_ColumnVarNameInTable="columndiscountPercent" msprop:Generator_ColumnPropNameInRow="discountPercent" msprop:Generator_ColumnPropNameInTable="discountPercentColumn" msprop:Generator_UserColumnName="discountPercent" type="xs:int" minOccurs="0" />
+              <xs:element name="dateBooked" msprop:Generator_ColumnVarNameInTable="columndateBooked" msprop:Generator_ColumnPropNameInRow="dateBooked" msprop:Generator_ColumnPropNameInTable="dateBookedColumn" msprop:Generator_UserColumnName="dateBooked" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="bookingType" msprop:Generator_ColumnVarNameInTable="columnbookingType" msprop:Generator_ColumnPropNameInRow="bookingType" msprop:Generator_ColumnPropNameInTable="bookingTypeColumn" msprop:Generator_UserColumnName="bookingType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="depositPaid" msprop:Generator_ColumnVarNameInTable="columndepositPaid" msprop:Generator_ColumnPropNameInRow="depositPaid" msprop:Generator_ColumnPropNameInTable="depositPaidColumn" msprop:Generator_UserColumnName="depositPaid" type="xs:boolean" minOccurs="0" />
+              <xs:element name="depositPayDate" msprop:Generator_ColumnVarNameInTable="columndepositPayDate" msprop:Generator_ColumnPropNameInRow="depositPayDate" msprop:Generator_ColumnPropNameInTable="depositPayDateColumn" msprop:Generator_UserColumnName="depositPayDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pod_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnpod_id" msprop:Generator_ColumnPropNameInRow="pod_id" msprop:Generator_ColumnPropNameInTable="pod_idColumn" msprop:Generator_UserColumnName="pod_id" type="xs:int" />
+              <xs:element name="pricePPPN" msprop:Generator_ColumnVarNameInTable="columnpricePPPN" msprop:Generator_ColumnPropNameInRow="pricePPPN" msprop:Generator_ColumnPropNameInTable="pricePPPNColumn" msprop:Generator_UserColumnName="pricePPPN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:Expr2" />
+      <xs:field xpath="mstns:payment_id" />
+      <xs:field xpath="mstns:invoice_id" />
+      <xs:field xpath="mstns:Expr10" />
+      <xs:field xpath="mstns:extra_id" />
+      <xs:field xpath="mstns:extra_id1" />
+      <xs:field xpath="mstns:booking_id1" />
+      <xs:field xpath="mstns:payingGuest_id" />
+      <xs:field xpath="mstns:Expr14" />
+      <xs:field xpath="mstns:booking_id2" />
+      <xs:field xpath="mstns:guest_id" />
+      <xs:field xpath="mstns:course_id" />
+      <xs:field xpath="mstns:Expr15" />
+      <xs:field xpath="mstns:Expr16" />
+      <xs:field xpath="mstns:pod_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

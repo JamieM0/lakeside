@@ -74,6 +74,20 @@ namespace lakeside
             }
             else if (continueStep == 1)
             {
+                if (!programmaticallyChanged)
+                {
+                    startDate = dtpBookingStart.Value;
+                    dtpBookingEnd.Value = startDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.Text));
+                    endDate = dtpBookingEnd.Value;
+                    Cursor.Current = Cursors.WaitCursor;
+                    AddBookedPods();
+                    Cursor.Current = Cursors.Default;
+                    continueStep = 1;
+                    dgPods.ClearSelection();
+                }
+            }
+            else if (continueStep==2)
+            {
                 pnlPodChooser.Visible = false;
                 lbPodName.Text = selectedPod.FriendlyName;
                 lbPodName.Visible = true;
@@ -123,6 +137,8 @@ namespace lakeside
         private void dgPods_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnContinue.Enabled = true;
+            continueStep = 2;
+            btnContinue.Text = "Continue";
 
             // Get the first selected row
             DataGridViewRow selectedRow = dgPods.SelectedRows[0];
@@ -136,16 +152,15 @@ namespace lakeside
 
         private void dtpBookingStart_ValueChanged(object sender, EventArgs e)
         {
-            if(!programmaticallyChanged)
+            if (!programmaticallyChanged)
             {
                 startDate = dtpBookingStart.Value;
                 dtpBookingEnd.Value = startDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.Text));
                 endDate = dtpBookingEnd.Value;
-                Cursor.Current = Cursors.WaitCursor;
-                AddBookedPods();
-                Cursor.Current = Cursors.Default;
                 continueStep = 1;
                 dgPods.ClearSelection();
+                btnContinue.Text = "Check Dates";
+                btnContinue.Enabled = true;
             }
         }
 
@@ -160,13 +175,17 @@ namespace lakeside
 
         private double TotalCostCalculator()
         {
+            double price = 0.0;
             BookingDAL BookingDAL = new BookingDAL();
 
             //Get Booking
             Booking selectedBooking = BookingDAL.GetBooking(selectedPod, startDate, endDate);
             // Get cost of pod over the number of days, and taking into consideration the number of guests staying in the booking.
             int numberOfGuestsInBooking = BookingDAL.GetNumberOfGuestsInBooking(selectedBooking);
-            return 0.0;
+            price += selectedPod.Price * numberOfGuestsInBooking * Convert.ToInt32(cmbDatePickerStayLength.Text);
+
+
+            return price;
         }
     }
 }
