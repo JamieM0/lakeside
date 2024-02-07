@@ -130,7 +130,7 @@ namespace lakeside
             return null;
         }
 
-        public static string BookingStartDate(DateTime date)
+        public static string BookingStartDate(DateTime date,int stayLength)
         {
             if (date < DateTime.Now)
                 return "Booking start date cannot be in the past.";
@@ -142,8 +142,9 @@ namespace lakeside
                 startInvalid = startInvalid.AddYears(-1);
                 endInvalid = endInvalid.AddYears(-1);
             }
-            if (date >= startInvalid && date <= endInvalid)
-                return "Booking start date cannot be between 20/12 and 20/01.";
+            //stayLength ++;
+            if ((date >= startInvalid && date <= endInvalid) || (date.AddDays(stayLength) >=startInvalid.AddYears(1) && date <= endInvalid.AddYears(1)))
+                return "Booking cannot take place between 20/12 and 20/01.";
             if(date<=DateTime.Now.AddMonths(2))
                 return "Booking start date must be at least 2 months in the future.";
             return null;

@@ -130,7 +130,7 @@ namespace lakeside
             proposedStartDate = new DateTime(current.Year, current.Month, Convert.ToInt32(dateDisplay.Text));
             proposedEndDate = proposedStartDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.SelectedItem.ToString()));
 
-            if (Validation.BookingStartDate(proposedStartDate) == null || Lakeside.debug)
+            if (Validation.BookingStartDate(proposedStartDate,Convert.ToInt32(cmbDatePickerStayLength.Text)) == null || Lakeside.debug)
             {
                 SelectDate(dateDisplay);
                 
@@ -139,7 +139,7 @@ namespace lakeside
             else
             {
                 //Invalid Start Date
-                MessageBox.Show(Validation.BookingStartDate(proposedStartDate), "Invalid Start Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Validation.BookingStartDate(proposedStartDate, Convert.ToInt32(cmbDatePickerStayLength.Text)), "Invalid Start Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 proposedStartDate = new DateTime();
                 proposedEndDate = new DateTime();
             }
