@@ -93,5 +93,32 @@ namespace lakeside.DAL
 
             return result;
         }
+
+        public List<Extra> GetExtraFromBooking(Booking b)
+        {
+            List<Extra> extras = new List<Extra>();
+            List<int> extraIDs = new List<int>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM BookingExtras WHERE booking_id = {b.BookingID}", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int i = 0;
+                        while (reader.Read())
+                        {
+                            extraIDs.Add(Convert.ToInt32(reader[0]));
+                            extras.Add(ExtraLookup(extraIDs[i]));
+                            i++;
+                        }
+                    }
+                }
+            }
+
+            return extras;
+        }
     }
 }

@@ -127,5 +127,32 @@ namespace lakeside.DAL
             command.CommandText = String.Format("SELECT COUNT(*) FROM Guest");
             return Convert.ToInt32(ExecuteScalar("SELECT COUNT(*) FROM Guest"));
         }
+
+        public List<Guest> GetGuestFromBooking(Booking b)
+        {
+            List<Guest> guests = new List<Guest>();
+            List<int> guestIDs = new List<int>();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM GuestBooking WHERE booking_id = {b.BookingID}", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        int i = 0;
+                        while (reader.Read())
+                        {
+                            guestIDs.Add(Convert.ToInt32(reader[1]));
+                            guests.Add(GuestLookup(guestIDs[i]));
+                            i++;
+                        }
+                    }
+                }
+            }
+
+            return guests;
+        }
     }
 }

@@ -121,5 +121,37 @@ namespace lakeside.DAL
 
             return result;
         }
+
+        public Course GetCoursesFromGuest(Booking b, Guest g)
+        {
+            Course course = new Course();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                try
+                {
+                    using (SqlCommand command = new SqlCommand($"SELECT Course.* FROM Course JOIN GuestCourseBooking ON Course.course_id = GuestCourseBooking.course_id WHERE GuestCourseBooking.guest_id = '{g.GuestID}' AND GuestCourseBooking.booking_id = '{b.BookingID}'", connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            int i = 0;
+                            while (reader.Read())
+                            {
+                                course = new Course(int.Parse(String.Format($"{reader[0]}")), int.Parse(String.Format($"{reader[1]}")), String.Format($"{reader[2]}"), String.Format($"{reader[3]}"), int.Parse(String.Format($"{reader[4]}")), int.Parse(String.Format($"{reader[5]}")), double.Parse(String.Format($"{reader[6]}")), int.Parse(String.Format($"{reader[7]}")));
+                                i++;
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    return new Course();
+                }
+            }
+
+            return course;
+        }
     }
 }

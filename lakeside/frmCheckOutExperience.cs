@@ -93,7 +93,7 @@ namespace lakeside
                 lbPodName.Visible = true;
                 dtpBookingStart.Enabled = false;
                 cmbDatePickerStayLength.Enabled = false;
-                TotalCostCalculator();
+                lbPodName.Text+=TotalCostCalculator();
             }
         }
 
@@ -187,6 +187,9 @@ namespace lakeside
         {
             double price = 0.0;
             BookingDAL BookingDAL = new BookingDAL();
+            LakesideDAL GuestDAL = new LakesideDAL();
+            CourseDAL CourseDAL = new CourseDAL();
+            ExtraDAL ExtraDAL = new ExtraDAL();
 
             //Get Booking
             Booking selectedBooking = BookingDAL.GetBooking(selectedPod, startDate, endDate);
@@ -194,7 +197,36 @@ namespace lakeside
             int numberOfGuestsInBooking = BookingDAL.GetNumberOfGuestsInBooking(selectedBooking);
             price += selectedPod.Price * numberOfGuestsInBooking * Convert.ToInt32(cmbDatePickerStayLength.Text);
 
+            // Get Guests from Booking
+            List<Guest> selectedGuests = GuestDAL.GetGuestFromBooking(selectedBooking);
 
+            // Add courses
+            List<Course> selectedCourses = new List<Course>();
+            int i = 0;
+            foreach(Guest g in selectedGuests)
+            {
+                Course GuestCourse = new Course();
+                GuestCourse = CourseDAL.GetCoursesFromGuest(selectedBooking, g);
+                if(GuestCourse!= new Course())
+                {
+                    selectedCourses.Add(GuestCourse);
+                    price += selectedCourses[i].Price;
+                    i++;
+                }
+            }
+
+            // Add Extras
+            List<Extra> selectedExtras = ExtraDAL.GetExtraFromBooking(selectedBooking);
+            foreach(Extra e in selectedExtras)
+            {
+                price += e.Price;
+            }
+
+            if(selectedBooking.DiscountPercent>0)
+            {
+                double percentDiscount = 1-(selectedBooking.DiscountPercent / 100);
+                price = price * percentDiscount;
+            }
             return price;
         }
     }

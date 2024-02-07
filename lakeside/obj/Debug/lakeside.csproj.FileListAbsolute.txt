@@ -38,3 +38,4 @@ C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmInvoice.resources
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\RdlCompile.cache
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\RdlCompile.compiled
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmEditExtra.resources

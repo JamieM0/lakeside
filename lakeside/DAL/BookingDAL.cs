@@ -39,7 +39,7 @@ namespace lakeside.DAL
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand($"SELECT * FROM Booking WHERE pod_id = {pod.PodID} AND checkInDate = '{start.ToString("dd/MM/yyyy")}' AND checkOutDate = '{end.ToString("dd/MM/yyyy")}'", connection))
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM Booking WHERE pod_id = {pod.PodID} AND checkInDate = '{start.ToString("MM/dd/yyyy")}' AND checkOutDate = '{end.ToString("MM/dd/yyyy")}'", connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
