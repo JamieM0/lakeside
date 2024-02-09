@@ -29,6 +29,17 @@ namespace lakeside.DAL
             return ExecuteNonQuery(command);
         }
 
+        public bool UpdateCourse(Course c)
+        {
+            //SqlCommand used to store details of the command
+            SqlCommand command = new SqlCommand();
+
+            //Set SQL query command text to valid insert statement using values from the Guest class.
+            command.CommandText = string.Format($"UPDATE Course SET staff_id = {c.TutorID}, courseName = '{c.CourseName}', description = '{c.Description}', durationMins = '{c.Duration}', capacity = '{c.Capacity}', costPN = '{c.Price}', level = '{c.Level}' WHERE course_id = {c.CourseID}");
+
+            return ExecuteNonQuery(command);
+        }
+
         /*public int CountPods(string type)
         {
             //Set SQL query command text to valid insert statement using values from the Guest class.

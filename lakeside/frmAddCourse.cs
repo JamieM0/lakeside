@@ -19,21 +19,34 @@ namespace lakeside
         StaffDAL dal = new StaffDAL();
         Staff[] allStaff;
         string cachedSearch = "";
+        int id = 0;
         public frmAddCourse()
         {
             InitializeComponent();
         }
         public frmAddCourse(Course c, string search)
         {
+            InitializeComponent();
+            allStaff = dal.GetTutors();
             cachedSearch = search;
             txtCourseName.Text = c.CourseName;
             txtDescription.Text = c.Description;
+            staffMembers = new int[allStaff.Length];
+            int i = 0;
+            foreach (Staff g in allStaff)
+            {
+                cmbTutor.Items.Add(g.Forename + " " + g.Surname + " (" + g.StaffID + ")");
+                staffMembers[i] = g.StaffID;
+                i++;
+            }
+            cmbTutor.Text = "Select Tutor";
             cmbTutor.SelectedIndex = c.TutorID;
             cmbCourseLevel.SelectedIndex = c.Level;
             txtDuration.Text = c.Duration.ToString();
             txtCapacity.Text = c.Capacity.ToString();
             txtPricePPPN.Text = c.Price.ToString();
             newCourse = false;
+            id = c.CourseID;
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
@@ -139,15 +152,19 @@ namespace lakeside
             
             cmbCourseLevel.Text = "Beginner";
             allStaff = dal.GetTutors();
-            staffMembers = new int[allStaff.Length];
-            int i = 0;
-            foreach(Staff g in allStaff)
+            if(cmbTutor.Text!= "Select Tutor")
             {
-                cmbTutor.Items.Add(g.Forename + " " + g.Surname + " (" + g.StaffID + ")");
-                staffMembers[i] = g.StaffID;
-                i++;
+                staffMembers = new int[allStaff.Length];
+                int i = 0;
+                foreach (Staff g in allStaff)
+                {
+                    cmbTutor.Items.Add(g.Forename + " " + g.Surname + " (" + g.StaffID + ")");
+                    staffMembers[i] = g.StaffID;
+                    i++;
+                }
+                cmbTutor.Text = "Select Tutor";
+                allValid[2] = true;
             }
-            cmbTutor.Text = "Select Tutor";
         }
 
         private void txtCourseName_TextChanged(object sender, EventArgs e)
@@ -231,6 +248,7 @@ namespace lakeside
 
             if (newCourse && CheckValidation())
             {
+                btnAddCourse.Enabled = false;
                 try
                 {
                     int tutorID = staffMembers[cmbTutor.SelectedIndex];
@@ -248,12 +266,37 @@ namespace lakeside
                 {
                     MessageBox.Show("Error adding course.\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     validTotal = true;
+                    btnAddCourse.Enabled = true;
+                }
+            }
+            else if (!newCourse && CheckValidation())
+            {
+                btnAddCourse.Enabled = false;
+                try
+                {
+                    int tutorID = staffMembers[cmbTutor.SelectedIndex];
+                    //int tutorID = TutorDAL.GetTutorID(cmbTutor.Text);
+                    Course course = new Course(id, tutorID, txtCourseName.Text, txtDescription.Text, int.Parse(txtDuration.Text), int.Parse(txtCapacity.Text), double.Parse(txtPricePPPN.Text), level);
+                    CourseDAL dal = new CourseDAL();
+                    if (dal.UpdateCourse(course))
+                    {
+                        MessageBox.Show("Course edited successfully");
+                        Hide();
+                        new frmSearchGuests(course, cachedSearch).Show();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error editing course.\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    validTotal = false;
+                    btnAddCourse.Enabled = true;
                 }
             }
             else
             {
                 MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 validTotal = true;
+                btnAddCourse.Enabled = true;
             }
         }
     }
