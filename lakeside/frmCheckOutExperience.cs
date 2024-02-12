@@ -90,10 +90,16 @@ namespace lakeside
             {
                 pnlPodChooser.Visible = false;
                 lbPodName.Text = selectedPod.FriendlyName;
-                lbPodName.Visible = true;
+                //lbPodName.Visible = true;
                 dtpBookingStart.Enabled = false;
                 cmbDatePickerStayLength.Enabled = false;
-                lbPodName.Text+=TotalCostCalculator();
+                lbPodName.Text+= " £"+TotalCostCalculator();
+                pnlBookingOverview.Visible = true;
+                lbPodBookedOverview.Text = selectedPod.FriendlyName;
+                lbDatesBookedOverview.Text = selectedBooking.CheckInDate.ToString("ddd d MMM") + " --> " + selectedBooking.CheckOutDate.ToString("ddd d MMM");
+                BookingDAL BookingDAL = new BookingDAL();
+                Guest leadBooker = BookingDAL.GetLeadBooker(selectedBooking);
+                lbGuestsStayingOverview.Text = leadBooker.Forename + " " + leadBooker.Surname + $" and {numberOfGuestsInBooking--} others.";
             }
         }
 
@@ -118,11 +124,13 @@ namespace lakeside
                 dgPods.MultiSelect = false;
                 dgPods.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgPods.ReadOnly = true;
+                dgPods.Visible = true;
                 pnlPodChooser.Visible = true;
                 return true;
             }
             catch(Exception ex)
             {
+                dgPods.Visible = false;
                 //Notification
                 MessageBox.Show("No pods have been booked on these dates. \r\nYou can change the selected dates on the left.", "No booked pods", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -182,7 +190,9 @@ namespace lakeside
                 new frmHome().Show();
             }
         }
-
+        Booking selectedBooking = new Booking();
+        List<Guest> selectedGuests = new List<Guest>();
+        int numberOfGuestsInBooking = new int();
         private double TotalCostCalculator()
         {
             double price = 0.0;
@@ -192,13 +202,13 @@ namespace lakeside
             ExtraDAL ExtraDAL = new ExtraDAL();
 
             //Get Booking
-            Booking selectedBooking = BookingDAL.GetBooking(selectedPod, startDate, endDate);
+            selectedBooking = BookingDAL.GetBooking(selectedPod, startDate, endDate);
             // Get cost of pod over the number of days, and taking into consideration the number of guests staying in the booking.
-            int numberOfGuestsInBooking = BookingDAL.GetNumberOfGuestsInBooking(selectedBooking);
+            numberOfGuestsInBooking = BookingDAL.GetNumberOfGuestsInBooking(selectedBooking);
             price += selectedPod.Price * numberOfGuestsInBooking * Convert.ToInt32(cmbDatePickerStayLength.Text);
 
             // Get Guests from Booking
-            List<Guest> selectedGuests = GuestDAL.GetGuestFromBooking(selectedBooking);
+            selectedGuests = GuestDAL.GetGuestFromBooking(selectedBooking);
 
             // Add courses
             List<Course> selectedCourses = new List<Course>();
@@ -228,6 +238,16 @@ namespace lakeside
                 price = price * percentDiscount;
             }
             return price;
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            pnlBookingOverview.Visible = false;
+            btnContinue.Enabled = true;
+            continueStep = 1;
+            dtpBookingStart.Enabled = true;
+            dgPods.Visible = true;
+            cmbDatePickerStayLength.Enabled = true;
         }
     }
 }

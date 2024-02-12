@@ -54,13 +54,13 @@ namespace lakeside
         }
     }
 
-    public class Notification
-    {
-        public PictureBox _pbIcon { get; set; }
-        public string _text { get; set; }
-        public int _notificationType { get; set; }
+    //public class Notification
+    //{
+    //    public PictureBox _pbIcon { get; set; }
+    //    public string _text { get; set; }
+    //    public int _notificationType { get; set; }
 
-    }
+    //}
 
     public class Guest
     {

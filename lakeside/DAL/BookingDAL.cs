@@ -63,6 +63,15 @@ namespace lakeside.DAL
             return Convert.ToInt32(obj);
         }
 
+        public Guest GetLeadBooker(Booking b)
+        {
+            SqlCommand command = new SqlCommand();
+            object obj = ExecuteScalar($"SELECT guest_id FROM GuestBooking WHERE booking_id = {b.BookingID} AND typeGuest = 'lead'; ");
+            int guestID = Convert.ToInt32(obj);
+            LakesideDAL GuestDAL = new LakesideDAL();
+            return GuestDAL.GuestLookup(guestID);
+        }
+
         public int AddNewBooking(Booking b)
         {
             //SqlCommand used to store details of the command

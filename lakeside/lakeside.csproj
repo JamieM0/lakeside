@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="frmAddCourse.cs">
@@ -235,6 +236,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\AcceptIcon.jpg" />
     <None Include="Resources\leadBookerIcon2.png" />
     <None Include="Resources\leadBookerIcon.png" />
     <None Include="Resources\SelectGuestButton2.png" />
