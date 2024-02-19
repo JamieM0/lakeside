@@ -75,7 +75,7 @@ namespace lakeside
             this.coursesToolStripMenuItem,
             this.extraToolStripMenuItem,
             this.staffToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(110, 9);
+            this.menuStrip1.Location = new System.Drawing.Point(152, 9);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(300, 33);
             this.menuStrip1.TabIndex = 1;
@@ -235,12 +235,13 @@ namespace lakeside
             // 
             // btnPodBooking
             // 
+            this.btnPodBooking.BackgroundImage = global::lakeside.Properties.Resources.CreateBookingButton;
+            this.btnPodBooking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPodBooking.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPodBooking.Location = new System.Drawing.Point(406, 315);
+            this.btnPodBooking.Location = new System.Drawing.Point(403, 315);
             this.btnPodBooking.Name = "btnPodBooking";
-            this.btnPodBooking.Size = new System.Drawing.Size(250, 183);
+            this.btnPodBooking.Size = new System.Drawing.Size(250, 112);
             this.btnPodBooking.TabIndex = 4;
-            this.btnPodBooking.Text = "Create a Booking";
             this.btnPodBooking.UseVisualStyleBackColor = true;
             this.btnPodBooking.Click += new System.EventHandler(this.btnPodBooking_Click);
             // 
@@ -350,11 +351,12 @@ namespace lakeside
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Location = new System.Drawing.Point(695, 433);
+            this.btnCheckOut.BackgroundImage = global::lakeside.Properties.Resources.CheckOutButton;
+            this.btnCheckOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCheckOut.Location = new System.Drawing.Point(403, 438);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(250, 65);
             this.btnCheckOut.TabIndex = 14;
-            this.btnCheckOut.Text = "Check Out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 

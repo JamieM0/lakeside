@@ -47,10 +47,8 @@ namespace lakeside
             this.pnlOverflow = new System.Windows.Forms.Panel();
             this.lbOverflowText = new System.Windows.Forms.Label();
             this.lbOverflow = new System.Windows.Forms.Label();
-            this.btnContinueFromCourseSelection = new System.Windows.Forms.Button();
             this.btnDatePickerOpenerSelector = new System.Windows.Forms.Button();
             this.dgAvailablePods = new System.Windows.Forms.DataGridView();
-            this.btnConfirmPod = new System.Windows.Forms.Button();
             this.lbLocationDisplay = new System.Windows.Forms.Label();
             this.pnlLocationDateDisplay = new System.Windows.Forms.Panel();
             this.llbChangeDates = new System.Windows.Forms.LinkLabel();
@@ -65,27 +63,29 @@ namespace lakeside
             this.tmrTick = new System.Windows.Forms.Timer(this.components);
             this.lbDebugInfo = new System.Windows.Forms.Label();
             this.pnlGuestDisplay = new System.Windows.Forms.Panel();
-            this.lbGuestDisplay6 = new System.Windows.Forms.Label();
-            this.lbGuestDisplay5 = new System.Windows.Forms.Label();
-            this.lbGuestDisplay4 = new System.Windows.Forms.Label();
-            this.lbGuestDisplay3 = new System.Windows.Forms.Label();
-            this.lbGuestDisplay2 = new System.Windows.Forms.Label();
-            this.llbChangeGuests = new System.Windows.Forms.LinkLabel();
-            this.lbGuestDisplay = new System.Windows.Forms.Label();
+            this.pnlInnerGuestDisplay = new System.Windows.Forms.Panel();
             this.lbGuestsStayingDisplayTitle = new System.Windows.Forms.Label();
+            this.lbGuestDisplay6 = new System.Windows.Forms.Label();
+            this.lbGuestDisplay = new System.Windows.Forms.Label();
+            this.lbGuestDisplay5 = new System.Windows.Forms.Label();
+            this.llbChangeGuests = new System.Windows.Forms.LinkLabel();
+            this.lbGuestDisplay4 = new System.Windows.Forms.Label();
+            this.lbGuestDisplay2 = new System.Windows.Forms.Label();
+            this.lbGuestDisplay3 = new System.Windows.Forms.Label();
             this.pnlCourses = new System.Windows.Forms.Panel();
             this.btnSkipCourseSelection = new System.Windows.Forms.Button();
             this.dgCourses = new System.Windows.Forms.DataGridView();
             this.lbCoursePickerInstructions = new System.Windows.Forms.Label();
             this.lbGuestCoursePickerTitle = new System.Windows.Forms.Label();
-            this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.pnlInnerGuestDisplay = new System.Windows.Forms.Panel();
+            this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
+            this.btnContinueFromCourseSelection = new System.Windows.Forms.Button();
             this.btnRandomiseData = new System.Windows.Forms.Button();
             this.btnSelectGuests = new System.Windows.Forms.Button();
             this.btnAcceptGuests = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnConfirmPod = new System.Windows.Forms.Button();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
             this.pnlOverflow.SuspendLayout();
@@ -95,9 +95,9 @@ namespace lakeside
             this.pnlGuestSelectionActionGroup.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlGuestDisplay.SuspendLayout();
+            this.pnlInnerGuestDisplay.SuspendLayout();
             this.pnlCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).BeginInit();
-            this.pnlInnerGuestDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,12 +217,13 @@ namespace lakeside
             // 
             // btnSelectDates
             // 
+            this.btnSelectDates.BackgroundImage = global::lakeside.Properties.Resources.SelectDatesButton;
+            this.btnSelectDates.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSelectDates.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectDates.Location = new System.Drawing.Point(17, 267);
+            this.btnSelectDates.Location = new System.Drawing.Point(17, 260);
             this.btnSelectDates.Name = "btnSelectDates";
-            this.btnSelectDates.Size = new System.Drawing.Size(228, 48);
+            this.btnSelectDates.Size = new System.Drawing.Size(228, 60);
             this.btnSelectDates.TabIndex = 15;
-            this.btnSelectDates.Text = "Select Dates";
             this.btnSelectDates.UseVisualStyleBackColor = true;
             this.btnSelectDates.Click += new System.EventHandler(this.btnSelectDates_Click);
             // 
@@ -288,25 +289,15 @@ namespace lakeside
             this.lbOverflow.Text = "12";
             this.lbOverflow.Visible = false;
             // 
-            // btnContinueFromCourseSelection
-            // 
-            this.btnContinueFromCourseSelection.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinueFromCourseSelection.Location = new System.Drawing.Point(119, 325);
-            this.btnContinueFromCourseSelection.Name = "btnContinueFromCourseSelection";
-            this.btnContinueFromCourseSelection.Size = new System.Drawing.Size(430, 64);
-            this.btnContinueFromCourseSelection.TabIndex = 4;
-            this.btnContinueFromCourseSelection.Text = "Complete Booking";
-            this.btnContinueFromCourseSelection.UseVisualStyleBackColor = true;
-            this.btnContinueFromCourseSelection.Click += new System.EventHandler(this.btnContinueFromCourseSelection_Click);
-            // 
             // btnDatePickerOpenerSelector
             // 
+            this.btnDatePickerOpenerSelector.BackgroundImage = global::lakeside.Properties.Resources.SelectDatesButton;
+            this.btnDatePickerOpenerSelector.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDatePickerOpenerSelector.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatePickerOpenerSelector.Location = new System.Drawing.Point(28, 51);
             this.btnDatePickerOpenerSelector.Name = "btnDatePickerOpenerSelector";
-            this.btnDatePickerOpenerSelector.Size = new System.Drawing.Size(142, 52);
+            this.btnDatePickerOpenerSelector.Size = new System.Drawing.Size(163, 52);
             this.btnDatePickerOpenerSelector.TabIndex = 10;
-            this.btnDatePickerOpenerSelector.Text = "Select Dates";
             this.btnDatePickerOpenerSelector.UseVisualStyleBackColor = true;
             this.btnDatePickerOpenerSelector.Click += new System.EventHandler(this.btnDatePickerOpenerSelector_Click);
             // 
@@ -322,18 +313,6 @@ namespace lakeside
             this.dgAvailablePods.TabIndex = 11;
             this.dgAvailablePods.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAvailablePods_CellClick);
             this.dgAvailablePods.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAvailablePods_CellDoubleClick);
-            // 
-            // btnConfirmPod
-            // 
-            this.btnConfirmPod.Enabled = false;
-            this.btnConfirmPod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmPod.Location = new System.Drawing.Point(28, 411);
-            this.btnConfirmPod.Name = "btnConfirmPod";
-            this.btnConfirmPod.Size = new System.Drawing.Size(228, 48);
-            this.btnConfirmPod.TabIndex = 16;
-            this.btnConfirmPod.Text = "Confirm Pod";
-            this.btnConfirmPod.UseVisualStyleBackColor = true;
-            this.btnConfirmPod.Click += new System.EventHandler(this.btnConfirmPod_Click);
             // 
             // lbLocationDisplay
             // 
@@ -472,6 +451,31 @@ namespace lakeside
             this.pnlGuestDisplay.TabIndex = 19;
             this.pnlGuestDisplay.Visible = false;
             // 
+            // pnlInnerGuestDisplay
+            // 
+            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestsStayingDisplayTitle);
+            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay6);
+            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay);
+            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay5);
+            this.pnlInnerGuestDisplay.Controls.Add(this.llbChangeGuests);
+            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay4);
+            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay2);
+            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay3);
+            this.pnlInnerGuestDisplay.Location = new System.Drawing.Point(18, 11);
+            this.pnlInnerGuestDisplay.Name = "pnlInnerGuestDisplay";
+            this.pnlInnerGuestDisplay.Size = new System.Drawing.Size(198, 199);
+            this.pnlInnerGuestDisplay.TabIndex = 26;
+            // 
+            // lbGuestsStayingDisplayTitle
+            // 
+            this.lbGuestsStayingDisplayTitle.AutoSize = true;
+            this.lbGuestsStayingDisplayTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestsStayingDisplayTitle.Location = new System.Drawing.Point(3, 0);
+            this.lbGuestsStayingDisplayTitle.Name = "lbGuestsStayingDisplayTitle";
+            this.lbGuestsStayingDisplayTitle.Size = new System.Drawing.Size(137, 25);
+            this.lbGuestsStayingDisplayTitle.TabIndex = 17;
+            this.lbGuestsStayingDisplayTitle.Text = "Guests Staying";
+            // 
             // lbGuestDisplay6
             // 
             this.lbGuestDisplay6.AutoSize = true;
@@ -483,6 +487,17 @@ namespace lakeside
             this.lbGuestDisplay6.Text = "label1";
             this.lbGuestDisplay6.Visible = false;
             this.lbGuestDisplay6.Click += new System.EventHandler(this.lbGuestDisplay6_Click);
+            // 
+            // lbGuestDisplay
+            // 
+            this.lbGuestDisplay.AutoSize = true;
+            this.lbGuestDisplay.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestDisplay.Location = new System.Drawing.Point(3, 41);
+            this.lbGuestDisplay.Name = "lbGuestDisplay";
+            this.lbGuestDisplay.Size = new System.Drawing.Size(58, 25);
+            this.lbGuestDisplay.TabIndex = 18;
+            this.lbGuestDisplay.Text = "label1";
+            this.lbGuestDisplay.Click += new System.EventHandler(this.lbGuestDisplay_Click);
             // 
             // lbGuestDisplay5
             // 
@@ -496,6 +511,17 @@ namespace lakeside
             this.lbGuestDisplay5.Visible = false;
             this.lbGuestDisplay5.Click += new System.EventHandler(this.lbGuestDisplay5_Click);
             // 
+            // llbChangeGuests
+            // 
+            this.llbChangeGuests.AutoSize = true;
+            this.llbChangeGuests.Location = new System.Drawing.Point(5, 23);
+            this.llbChangeGuests.Name = "llbChangeGuests";
+            this.llbChangeGuests.Size = new System.Drawing.Size(80, 13);
+            this.llbChangeGuests.TabIndex = 20;
+            this.llbChangeGuests.TabStop = true;
+            this.llbChangeGuests.Text = "Change Guests";
+            this.llbChangeGuests.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbChangeGuests_LinkClicked);
+            // 
             // lbGuestDisplay4
             // 
             this.lbGuestDisplay4.AutoSize = true;
@@ -507,18 +533,6 @@ namespace lakeside
             this.lbGuestDisplay4.Text = "label1";
             this.lbGuestDisplay4.Visible = false;
             this.lbGuestDisplay4.Click += new System.EventHandler(this.lbGuestDisplay4_Click);
-            // 
-            // lbGuestDisplay3
-            // 
-            this.lbGuestDisplay3.AutoSize = true;
-            this.lbGuestDisplay3.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestDisplay3.Location = new System.Drawing.Point(3, 91);
-            this.lbGuestDisplay3.Name = "lbGuestDisplay3";
-            this.lbGuestDisplay3.Size = new System.Drawing.Size(58, 25);
-            this.lbGuestDisplay3.TabIndex = 22;
-            this.lbGuestDisplay3.Text = "label1";
-            this.lbGuestDisplay3.Visible = false;
-            this.lbGuestDisplay3.Click += new System.EventHandler(this.lbGuestDisplay3_Click);
             // 
             // lbGuestDisplay2
             // 
@@ -532,37 +546,17 @@ namespace lakeside
             this.lbGuestDisplay2.Visible = false;
             this.lbGuestDisplay2.Click += new System.EventHandler(this.lbGuestDisplay2_Click);
             // 
-            // llbChangeGuests
+            // lbGuestDisplay3
             // 
-            this.llbChangeGuests.AutoSize = true;
-            this.llbChangeGuests.Location = new System.Drawing.Point(5, 23);
-            this.llbChangeGuests.Name = "llbChangeGuests";
-            this.llbChangeGuests.Size = new System.Drawing.Size(80, 13);
-            this.llbChangeGuests.TabIndex = 20;
-            this.llbChangeGuests.TabStop = true;
-            this.llbChangeGuests.Text = "Change Guests";
-            this.llbChangeGuests.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbChangeGuests_LinkClicked);
-            // 
-            // lbGuestDisplay
-            // 
-            this.lbGuestDisplay.AutoSize = true;
-            this.lbGuestDisplay.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestDisplay.Location = new System.Drawing.Point(3, 41);
-            this.lbGuestDisplay.Name = "lbGuestDisplay";
-            this.lbGuestDisplay.Size = new System.Drawing.Size(58, 25);
-            this.lbGuestDisplay.TabIndex = 18;
-            this.lbGuestDisplay.Text = "label1";
-            this.lbGuestDisplay.Click += new System.EventHandler(this.lbGuestDisplay_Click);
-            // 
-            // lbGuestsStayingDisplayTitle
-            // 
-            this.lbGuestsStayingDisplayTitle.AutoSize = true;
-            this.lbGuestsStayingDisplayTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestsStayingDisplayTitle.Location = new System.Drawing.Point(3, 0);
-            this.lbGuestsStayingDisplayTitle.Name = "lbGuestsStayingDisplayTitle";
-            this.lbGuestsStayingDisplayTitle.Size = new System.Drawing.Size(137, 25);
-            this.lbGuestsStayingDisplayTitle.TabIndex = 17;
-            this.lbGuestsStayingDisplayTitle.Text = "Guests Staying";
+            this.lbGuestDisplay3.AutoSize = true;
+            this.lbGuestDisplay3.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestDisplay3.Location = new System.Drawing.Point(3, 91);
+            this.lbGuestDisplay3.Name = "lbGuestDisplay3";
+            this.lbGuestDisplay3.Size = new System.Drawing.Size(58, 25);
+            this.lbGuestDisplay3.TabIndex = 22;
+            this.lbGuestDisplay3.Text = "label1";
+            this.lbGuestDisplay3.Visible = false;
+            this.lbGuestDisplay3.Click += new System.EventHandler(this.lbGuestDisplay3_Click);
             // 
             // pnlCourses
             // 
@@ -580,9 +574,9 @@ namespace lakeside
             // btnSkipCourseSelection
             // 
             this.btnSkipCourseSelection.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSkipCourseSelection.Location = new System.Drawing.Point(119, 283);
+            this.btnSkipCourseSelection.Location = new System.Drawing.Point(22, 276);
             this.btnSkipCourseSelection.Name = "btnSkipCourseSelection";
-            this.btnSkipCourseSelection.Size = new System.Drawing.Size(430, 36);
+            this.btnSkipCourseSelection.Size = new System.Drawing.Size(654, 36);
             this.btnSkipCourseSelection.TabIndex = 3;
             this.btnSkipCourseSelection.Text = "Skip Course Selection for {guest}";
             this.btnSkipCourseSelection.UseVisualStyleBackColor = true;
@@ -617,17 +611,6 @@ namespace lakeside
             this.lbGuestCoursePickerTitle.TabIndex = 0;
             this.lbGuestCoursePickerTitle.Text = "Choose a course for {guest}, or skip.";
             // 
-            // btnBackToHomeOrMainMenu
-            // 
-            this.btnBackToHomeOrMainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToHomeOrMainMenu.Location = new System.Drawing.Point(895, 12);
-            this.btnBackToHomeOrMainMenu.Name = "btnBackToHomeOrMainMenu";
-            this.btnBackToHomeOrMainMenu.Size = new System.Drawing.Size(152, 47);
-            this.btnBackToHomeOrMainMenu.TabIndex = 21;
-            this.btnBackToHomeOrMainMenu.Text = "Cancel Booking";
-            this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
-            this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
-            // 
             // lbTitle
             // 
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -638,20 +621,29 @@ namespace lakeside
             this.lbTitle.Text = "Check Availability";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // pnlInnerGuestDisplay
+            // btnBackToHomeOrMainMenu
             // 
-            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestsStayingDisplayTitle);
-            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay6);
-            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay);
-            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay5);
-            this.pnlInnerGuestDisplay.Controls.Add(this.llbChangeGuests);
-            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay4);
-            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay2);
-            this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay3);
-            this.pnlInnerGuestDisplay.Location = new System.Drawing.Point(18, 11);
-            this.pnlInnerGuestDisplay.Name = "pnlInnerGuestDisplay";
-            this.pnlInnerGuestDisplay.Size = new System.Drawing.Size(198, 199);
-            this.pnlInnerGuestDisplay.TabIndex = 26;
+            this.btnBackToHomeOrMainMenu.BackgroundImage = global::lakeside.Properties.Resources.CancelBookingButton;
+            this.btnBackToHomeOrMainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBackToHomeOrMainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToHomeOrMainMenu.Location = new System.Drawing.Point(846, 12);
+            this.btnBackToHomeOrMainMenu.Name = "btnBackToHomeOrMainMenu";
+            this.btnBackToHomeOrMainMenu.Size = new System.Drawing.Size(201, 47);
+            this.btnBackToHomeOrMainMenu.TabIndex = 21;
+            this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
+            this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
+            // 
+            // btnContinueFromCourseSelection
+            // 
+            this.btnContinueFromCourseSelection.BackgroundImage = global::lakeside.Properties.Resources.AddBookingButton;
+            this.btnContinueFromCourseSelection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnContinueFromCourseSelection.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinueFromCourseSelection.Location = new System.Drawing.Point(186, 325);
+            this.btnContinueFromCourseSelection.Name = "btnContinueFromCourseSelection";
+            this.btnContinueFromCourseSelection.Size = new System.Drawing.Size(309, 64);
+            this.btnContinueFromCourseSelection.TabIndex = 4;
+            this.btnContinueFromCourseSelection.UseVisualStyleBackColor = true;
+            this.btnContinueFromCourseSelection.Click += new System.EventHandler(this.btnContinueFromCourseSelection_Click);
             // 
             // btnRandomiseData
             // 
@@ -712,14 +704,27 @@ namespace lakeside
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // btnConfirmPod
+            // 
+            this.btnConfirmPod.BackgroundImage = global::lakeside.Properties.Resources.AcceptPodButton;
+            this.btnConfirmPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirmPod.Enabled = false;
+            this.btnConfirmPod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmPod.Location = new System.Drawing.Point(28, 411);
+            this.btnConfirmPod.Name = "btnConfirmPod";
+            this.btnConfirmPod.Size = new System.Drawing.Size(213, 48);
+            this.btnConfirmPod.TabIndex = 16;
+            this.btnConfirmPod.UseVisualStyleBackColor = true;
+            this.btnConfirmPod.Click += new System.EventHandler(this.btnConfirmPod_Click);
+            // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1059, 498);
+            this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pnlCourses);
             this.Controls.Add(this.pnlGuests);
-            this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.lbDebugInfo);
             this.Controls.Add(this.pnlGuestDisplay);
             this.Controls.Add(this.pnlLocationDateDisplay);
@@ -748,11 +753,11 @@ namespace lakeside
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlGuestDisplay.ResumeLayout(false);
+            this.pnlInnerGuestDisplay.ResumeLayout(false);
+            this.pnlInnerGuestDisplay.PerformLayout();
             this.pnlCourses.ResumeLayout(false);
             this.pnlCourses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).EndInit();
-            this.pnlInnerGuestDisplay.ResumeLayout(false);
-            this.pnlInnerGuestDisplay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

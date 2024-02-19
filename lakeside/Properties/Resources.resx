@@ -229,4 +229,67 @@
   <data name="AcceptIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AcceptIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AcceptBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AcceptBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AcceptBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AcceptBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AcceptPod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AcceptPod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AcceptPodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AcceptPodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bookingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bookingIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CancelBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CancelBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckOutButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CheckOutButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreateBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemoveBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemoveBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemovePodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemovePodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectBooking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectBooking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectBookingButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectBookingButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectDateButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectDateButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectDatesButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectDatesButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectPod.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectPodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectPodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

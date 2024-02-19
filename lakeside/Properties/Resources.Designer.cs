@@ -63,6 +63,26 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AcceptBooking {
+            get {
+                object obj = ResourceManager.GetObject("AcceptBooking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AcceptBookingButton {
+            get {
+                object obj = ResourceManager.GetObject("AcceptBookingButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AcceptGuestsButton {
             get {
                 object obj = ResourceManager.GetObject("AcceptGuestsButton", resourceCulture);
@@ -76,6 +96,46 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap AcceptIcon {
             get {
                 object obj = ResourceManager.GetObject("AcceptIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AcceptPod {
+            get {
+                object obj = ResourceManager.GetObject("AcceptPod", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AcceptPodButton {
+            get {
+                object obj = ResourceManager.GetObject("AcceptPodButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddBooking {
+            get {
+                object obj = ResourceManager.GetObject("AddBooking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddBookingButton {
+            get {
+                object obj = ResourceManager.GetObject("AddBookingButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +223,46 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bookingIcon {
+            get {
+                object obj = ResourceManager.GetObject("bookingIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CancelBookingButton {
+            get {
+                object obj = ResourceManager.GetObject("CancelBookingButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CheckOutButton {
+            get {
+                object obj = ResourceManager.GetObject("CheckOutButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CreateBookingButton {
+            get {
+                object obj = ResourceManager.GetObject("CreateBookingButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dateSelector {
             get {
                 object obj = ResourceManager.GetObject("dateSelector", resourceCulture);
@@ -186,6 +286,26 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap dice2 {
             get {
                 object obj = ResourceManager.GetObject("dice2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditBooking {
+            get {
+                object obj = ResourceManager.GetObject("EditBooking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditBookingButton {
+            get {
+                object obj = ResourceManager.GetObject("EditBookingButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +443,26 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RemoveBooking {
+            get {
+                object obj = ResourceManager.GetObject("RemoveBooking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoveBookingButton {
+            get {
+                object obj = ResourceManager.GetObject("RemoveBookingButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RemoveCourse {
             get {
                 object obj = ResourceManager.GetObject("RemoveCourse", resourceCulture);
@@ -346,6 +486,16 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap RemovePod {
             get {
                 object obj = ResourceManager.GetObject("RemovePod", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemovePodButton {
+            get {
+                object obj = ResourceManager.GetObject("RemovePodButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +543,46 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SelectBooking {
+            get {
+                object obj = ResourceManager.GetObject("SelectBooking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectBookingButton {
+            get {
+                object obj = ResourceManager.GetObject("SelectBookingButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectDateButton {
+            get {
+                object obj = ResourceManager.GetObject("SelectDateButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectDatesButton {
+            get {
+                object obj = ResourceManager.GetObject("SelectDatesButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SelectGuestButton2 {
             get {
                 object obj = ResourceManager.GetObject("SelectGuestButton2", resourceCulture);
@@ -406,6 +596,26 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap SelectGuestsButton {
             get {
                 object obj = ResourceManager.GetObject("SelectGuestsButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectPod {
+            get {
+                object obj = ResourceManager.GetObject("SelectPod", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectPodButton {
+            get {
+                object obj = ResourceManager.GetObject("SelectPodButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

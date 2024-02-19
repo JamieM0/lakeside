@@ -236,6 +236,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\SelectDatesButton.png" />
+    <None Include="Resources\SelectDateButton.png" />
+    <None Include="Resources\SelectPodButton.png" />
+    <None Include="Resources\SelectPod.png" />
+    <None Include="Resources\RemovePodButton.png" />
+    <None Include="Resources\AcceptPodButton.png" />
+    <None Include="Resources\AcceptPod.png" />
+    <None Include="Resources\CancelBookingButton.png" />
+    <None Include="Resources\CreateBookingButton.png" />
+    <None Include="Resources\SelectBookingButton.png" />
+    <None Include="Resources\SelectBooking.png" />
+    <None Include="Resources\RemoveBookingButton.png" />
+    <None Include="Resources\RemoveBooking.png" />
+    <None Include="Resources\EditBookingButton.png" />
+    <None Include="Resources\EditBooking.png" />
+    <None Include="Resources\bookingIcon.png" />
+    <None Include="Resources\AddBookingButton.png" />
+    <None Include="Resources\AddBooking.png" />
+    <None Include="Resources\AcceptBookingButton.png" />
+    <None Include="Resources\AcceptBooking.png" />
+    <None Include="Resources\CheckOutButton.png" />
     <None Include="Resources\AcceptIcon.jpg" />
     <None Include="Resources\leadBookerIcon2.png" />
     <None Include="Resources\leadBookerIcon.png" />
