@@ -77,7 +77,7 @@ namespace lakeside
             this.staffToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(152, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(300, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(572, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,7 +99,7 @@ namespace lakeside
             this.addGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addGuestToolStripMenuItem.Name = "addGuestToolStripMenuItem";
-            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
+            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addGuestToolStripMenuItem.Text = "Add Guest";
             this.addGuestToolStripMenuItem.Click += new System.EventHandler(this.addGuestToolStripMenuItem_Click);
             // 
@@ -108,7 +108,7 @@ namespace lakeside
             this.editGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editGuestToolStripMenuItem.Name = "editGuestToolStripMenuItem";
-            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
+            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.editGuestToolStripMenuItem.Text = "Edit Guest";
             this.editGuestToolStripMenuItem.Click += new System.EventHandler(this.editGuestToolStripMenuItem_Click);
             // 
@@ -182,14 +182,13 @@ namespace lakeside
             this.extraToolStripMenuItem.Name = "extraToolStripMenuItem";
             this.extraToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
             this.extraToolStripMenuItem.Text = "Extra";
-            this.extraToolStripMenuItem.Visible = false;
             // 
             // addExtraToolStripMenuItem
             // 
             this.addExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addExtraToolStripMenuItem.Text = "Add Extra";
             this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
             // 
@@ -198,7 +197,7 @@ namespace lakeside
             this.editExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 

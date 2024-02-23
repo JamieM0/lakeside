@@ -14,6 +14,7 @@ namespace lakeside
     {
         public frmInvoice()
         {
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             InitializeComponent();
         }
     }

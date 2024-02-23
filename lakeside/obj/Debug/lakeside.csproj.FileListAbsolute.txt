@@ -39,3 +39,9 @@ C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\RdlCompile.cache
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\RdlCompile.compiled
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.frmEditExtra.resources
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.csproj.CopyComplete
