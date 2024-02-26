@@ -169,6 +169,7 @@ namespace lakeside
             this.btnReturn.Text = "Return to Home";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnAddCourse
             // 

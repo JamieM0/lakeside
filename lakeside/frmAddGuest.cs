@@ -54,6 +54,7 @@ namespace lakeside
             btnRandomiseData.Image = null;
             btnRandomiseData.Text = "";
             btnRandomiseData.BackgroundImage = Properties.Resources.RemoveGuestButton;
+            btnClearAll.Visible = false;
             lbTitle.Text = "Edit Guest";
             this.Text = "Lakeside Escapes: Edit Guest";
             btnReturn.Text = "Return to Search";

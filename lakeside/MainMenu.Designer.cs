@@ -29,6 +29,7 @@ namespace lakeside
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ythToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,10 +58,14 @@ namespace lakeside
             this.btnAddGuest = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCheckOut = new System.Windows.Forms.Button();
+            this.lakesideDBDataSet = new lakeside.LakesideDBDataSet();
+            this.lakesideDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.pnlBlackBackground.SuspendLayout();
             this.pnlExit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -77,7 +82,7 @@ namespace lakeside
             this.staffToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(152, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(572, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(370, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,7 +104,7 @@ namespace lakeside
             this.addGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addGuestToolStripMenuItem.Name = "addGuestToolStripMenuItem";
-            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addGuestToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
             this.addGuestToolStripMenuItem.Text = "Add Guest";
             this.addGuestToolStripMenuItem.Click += new System.EventHandler(this.addGuestToolStripMenuItem_Click);
             // 
@@ -108,7 +113,7 @@ namespace lakeside
             this.editGuestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editGuestToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editGuestToolStripMenuItem.Name = "editGuestToolStripMenuItem";
-            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.editGuestToolStripMenuItem.Size = new System.Drawing.Size(177, 30);
             this.editGuestToolStripMenuItem.Text = "Edit Guest";
             this.editGuestToolStripMenuItem.Click += new System.EventHandler(this.editGuestToolStripMenuItem_Click);
             // 
@@ -237,9 +242,9 @@ namespace lakeside
             this.btnPodBooking.BackgroundImage = global::lakeside.Properties.Resources.CreateBookingButton;
             this.btnPodBooking.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPodBooking.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPodBooking.Location = new System.Drawing.Point(403, 315);
+            this.btnPodBooking.Location = new System.Drawing.Point(368, 276);
             this.btnPodBooking.Name = "btnPodBooking";
-            this.btnPodBooking.Size = new System.Drawing.Size(250, 112);
+            this.btnPodBooking.Size = new System.Drawing.Size(308, 112);
             this.btnPodBooking.TabIndex = 4;
             this.btnPodBooking.UseVisualStyleBackColor = true;
             this.btnPodBooking.Click += new System.EventHandler(this.btnPodBooking_Click);
@@ -294,9 +299,9 @@ namespace lakeside
             this.btnEditPod.BackgroundImage = global::lakeside.Properties.Resources.EditPodButton;
             this.btnEditPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEditPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPod.Location = new System.Drawing.Point(695, 374);
+            this.btnEditPod.Location = new System.Drawing.Point(-250, 433);
             this.btnEditPod.Name = "btnEditPod";
-            this.btnEditPod.Size = new System.Drawing.Size(250, 53);
+            this.btnEditPod.Size = new System.Drawing.Size(250, 65);
             this.btnEditPod.TabIndex = 11;
             this.btnEditPod.UseVisualStyleBackColor = true;
             this.btnEditPod.Click += new System.EventHandler(this.btnEditPod_Click);
@@ -306,9 +311,9 @@ namespace lakeside
             this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddPodButton;
             this.btnAddPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPod.Location = new System.Drawing.Point(695, 315);
+            this.btnAddPod.Location = new System.Drawing.Point(752, 368);
             this.btnAddPod.Name = "btnAddPod";
-            this.btnAddPod.Size = new System.Drawing.Size(250, 53);
+            this.btnAddPod.Size = new System.Drawing.Size(250, 65);
             this.btnAddPod.TabIndex = 10;
             this.btnAddPod.UseVisualStyleBackColor = true;
             this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
@@ -318,7 +323,7 @@ namespace lakeside
             this.btnEditGuest.BackgroundImage = global::lakeside.Properties.Resources.EditGuestButton;
             this.btnEditGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEditGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditGuest.Location = new System.Drawing.Point(110, 433);
+            this.btnEditGuest.Location = new System.Drawing.Point(-250, 433);
             this.btnEditGuest.Name = "btnEditGuest";
             this.btnEditGuest.Size = new System.Drawing.Size(250, 65);
             this.btnEditGuest.TabIndex = 6;
@@ -330,7 +335,7 @@ namespace lakeside
             this.btnAddGuest.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
             this.btnAddGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGuest.Location = new System.Drawing.Point(110, 315);
+            this.btnAddGuest.Location = new System.Drawing.Point(-250, 315);
             this.btnAddGuest.Name = "btnAddGuest";
             this.btnAddGuest.Size = new System.Drawing.Size(250, 65);
             this.btnAddGuest.TabIndex = 5;
@@ -352,12 +357,22 @@ namespace lakeside
             // 
             this.btnCheckOut.BackgroundImage = global::lakeside.Properties.Resources.CheckOutButton;
             this.btnCheckOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCheckOut.Location = new System.Drawing.Point(403, 438);
+            this.btnCheckOut.Location = new System.Drawing.Point(397, 432);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(250, 65);
             this.btnCheckOut.TabIndex = 14;
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
+            // lakesideDBDataSet
+            // 
+            this.lakesideDBDataSet.DataSetName = "LakesideDBDataSet";
+            this.lakesideDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lakesideDBDataSetBindingSource
+            // 
+            this.lakesideDBDataSetBindingSource.DataSource = this.lakesideDBDataSet;
+            this.lakesideDBDataSetBindingSource.Position = 0;
             // 
             // frmHome
             // 
@@ -394,6 +409,8 @@ namespace lakeside
             this.pnlExit.ResumeLayout(false);
             this.pnlExit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,6 +445,8 @@ namespace lakeside
         private System.Windows.Forms.Panel pnlExit;
         private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.Button btnCheckOut;
+        private LakesideDBDataSet lakesideDBDataSet;
+        private System.Windows.Forms.BindingSource lakesideDBDataSetBindingSource;
     }
 }
 

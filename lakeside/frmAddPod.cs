@@ -44,6 +44,7 @@ namespace lakeside
             newPod = false;
             cachedSearch = search;
             btnAddPod.BackgroundImage = Properties.Resources.EditPodButton;
+            btnClearAll.Visible = false;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

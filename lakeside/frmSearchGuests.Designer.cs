@@ -33,7 +33,11 @@
             this.pnlGuestContainer = new System.Windows.Forms.Panel();
             this.pbSearch = new System.Windows.Forms.PictureBox();
             this.btnReturn = new System.Windows.Forms.Button();
+            this.dgResults = new System.Windows.Forms.DataGridView();
+            this.btnEditElement = new System.Windows.Forms.Button();
+            this.btnRemoveElement = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgResults)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitle
@@ -55,13 +59,14 @@
             this.txtSearch.TabIndex = 2;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // pnlGuestContainer
             // 
             this.pnlGuestContainer.Location = new System.Drawing.Point(108, 146);
             this.pnlGuestContainer.Name = "pnlGuestContainer";
-            this.pnlGuestContainer.Size = new System.Drawing.Size(768, 444);
+            this.pnlGuestContainer.Size = new System.Drawing.Size(768, 321);
             this.pnlGuestContainer.TabIndex = 3;
             // 
             // pbSearch
@@ -89,11 +94,47 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
+            // dgResults
+            // 
+            this.dgResults.AllowUserToAddRows = false;
+            this.dgResults.AllowUserToDeleteRows = false;
+            this.dgResults.AllowUserToResizeRows = false;
+            this.dgResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgResults.Location = new System.Drawing.Point(127, 146);
+            this.dgResults.MultiSelect = false;
+            this.dgResults.Name = "dgResults";
+            this.dgResults.ReadOnly = true;
+            this.dgResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgResults.Size = new System.Drawing.Size(749, 308);
+            this.dgResults.TabIndex = 14;
+            // 
+            // btnEditElement
+            // 
+            this.btnEditElement.Location = new System.Drawing.Point(654, 489);
+            this.btnEditElement.Name = "btnEditElement";
+            this.btnEditElement.Size = new System.Drawing.Size(222, 60);
+            this.btnEditElement.TabIndex = 15;
+            this.btnEditElement.Text = "EDIT BUTTON";
+            this.btnEditElement.UseVisualStyleBackColor = true;
+            this.btnEditElement.Click += new System.EventHandler(this.btnEditElement_Click);
+            // 
+            // btnRemoveElement
+            // 
+            this.btnRemoveElement.Location = new System.Drawing.Point(127, 489);
+            this.btnRemoveElement.Name = "btnRemoveElement";
+            this.btnRemoveElement.Size = new System.Drawing.Size(222, 60);
+            this.btnRemoveElement.TabIndex = 16;
+            this.btnRemoveElement.Text = "DELETE BUTTON";
+            this.btnRemoveElement.UseVisualStyleBackColor = true;
+            // 
             // frmSearchGuests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 618);
+            this.ClientSize = new System.Drawing.Size(1054, 573);
+            this.Controls.Add(this.btnRemoveElement);
+            this.Controls.Add(this.btnEditElement);
+            this.Controls.Add(this.dgResults);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.pnlGuestContainer);
             this.Controls.Add(this.txtSearch);
@@ -103,6 +144,7 @@
             this.Text = "Lakeside Escapes: Search for a Guest";
             this.Load += new System.EventHandler(this.frmSearchGuests_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +157,8 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel pnlGuestContainer;
         private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.DataGridView dgResults;
+        private System.Windows.Forms.Button btnEditElement;
+        private System.Windows.Forms.Button btnRemoveElement;
     }
 }

@@ -316,6 +316,7 @@ namespace lakeside
                 {
                     c.MouseEnter += new EventHandler(Control_DebugUpdate);
                 }
+                lbDebugInfo.BringToFront();
             }
         }
         private void Control_DebugUpdate(object sender, EventArgs e)
@@ -363,26 +364,31 @@ namespace lakeside
 
         private void btnSelectDates_Click(object sender, EventArgs e)
         {
-            pnlLocationDateDisplay.Visible = false;
-            pnlGuestDisplay.Visible = false;
-            pnlGuests.Visible = false;
-            //Change cursor to loading cursor
-            Cursor.Current = Cursors.WaitCursor;
-            if(AddAvailablePods())
+            //First, check for valid booking dates (selected)
+            if(Validation.BookingStartDate(proposedStartDate, Convert.ToInt32(cmbDatePickerStayLength.Text)) == null || Lakeside.debug)
             {
-                pnlDatePicker.Visible = false;
-                Cursor.Current = Cursors.Default;
-                dgAvailablePods.Visible = true;
-                lbTitle.Text = "Select a Pod";
-                btnConfirmPod.Visible = true;
-            }
-            else
-            {
-                Cursor.Current = Cursors.Default;
-                //MessageBox.Show("There are no pods available on the dates selected!");
-                lbTitle.Text = "Check Availability";
+                pnlLocationDateDisplay.Visible = false;
+                pnlGuestDisplay.Visible = false;
+                pnlGuests.Visible = false;
+                //Change cursor to loading cursor
+                Cursor.Current = Cursors.WaitCursor;
+                if (AddAvailablePods())
+                {
+                    pnlDatePicker.Visible = false;
+                    Cursor.Current = Cursors.Default;
+                    dgAvailablePods.Visible = true;
+                    lbTitle.Text = "Select a Pod";
+                    btnConfirmPod.Visible = true;
+                }
+                else
+                {
+                    Cursor.Current = Cursors.Default;
+                    MessageBox.Show("There are no pods available on the dates selected!\r\nPlease select a valid start date to continue!");
+                    lbTitle.Text = "Check Availability";
+                }
             }
             
+
         }
         //private void ChangeTitleText(string newText)
         //{

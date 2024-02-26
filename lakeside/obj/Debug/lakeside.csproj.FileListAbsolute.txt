@@ -42,6 +42,10 @@ C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
-C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.WebForms.dll
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\obj\Debug\lakeside.csproj.CopyComplete
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.SqlServer.Types.dll

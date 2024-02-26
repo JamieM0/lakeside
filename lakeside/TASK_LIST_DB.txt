@@ -1,0 +1,18 @@
+Columns to hide:
+
+GUEST:
+cachedCourse (9)
+previousGuest (10)
+Rename 'GuestID' to 'ID'
+
+POD:
+Rename 'FriendlyName' to 'Name'
+Rename 'PodID' to 'Pod'
+
+COURSE:
+Hide TutorID, Description (1, 3)
+Rename 'CourseID' to 'ID'
+
+EXTRA:
+Rename 'ExtraID' to 'Extra ID'
+Rename 'ExtraName' to 'Name'

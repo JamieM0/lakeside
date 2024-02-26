@@ -46,6 +46,7 @@ namespace lakeside
             txtCapacity.Text = c.Capacity.ToString();
             txtPricePPPN.Text = c.Price.ToString();
             newCourse = false;
+            btnClearAll.Visible = false;
             id = c.CourseID;
         }
 
