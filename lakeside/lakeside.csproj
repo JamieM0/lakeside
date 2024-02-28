@@ -255,6 +255,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LakesideDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\CourseIconSingle_White.png" />
+    <None Include="Resources\ExtraIcon_White.png" />
+    <None Include="Resources\Full Main Logo %28Transparent%29.png" />
+    <None Include="Resources\Full Main Logo %28Transparent%292.png" />
+    <None Include="Resources\Full Main Logo %28Transparent%293.png" />
+    <None Include="Resources\AcceptExtra.png" />
+    <None Include="Resources\AcceptExtraButton.png" />
+    <None Include="Resources\AddExtra.png" />
+    <None Include="Resources\AddExtraButton.png" />
+    <None Include="Resources\EditExtra.png" />
+    <None Include="Resources\EditExtraButton.png" />
+    <None Include="Resources\RemoveExtra.png" />
+    <None Include="Resources\RemoveExtraButton.png" />
+    <None Include="Resources\SelectExtra.png" />
+    <None Include="Resources\SelectExtraButton.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

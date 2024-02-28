@@ -82,7 +82,7 @@ namespace lakeside
             this.staffToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(152, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(370, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(386, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,7 +154,7 @@ namespace lakeside
             this.editCourseToolStripMenuItem});
             this.coursesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coursesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.coursesToolStripMenuItem.Image = global::lakeside.Properties.Resources.AddCourse;
+            this.coursesToolStripMenuItem.Image = global::lakeside.Properties.Resources.CourseIconSingle_White;
             this.coursesToolStripMenuItem.Name = "coursesToolStripMenuItem";
             this.coursesToolStripMenuItem.Size = new System.Drawing.Size(110, 29);
             this.coursesToolStripMenuItem.Text = "Courses";
@@ -184,16 +184,18 @@ namespace lakeside
             this.editExtraToolStripMenuItem});
             this.extraToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.extraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.extraToolStripMenuItem.Image = global::lakeside.Properties.Resources.ExtraIcon_White;
             this.extraToolStripMenuItem.Name = "extraToolStripMenuItem";
-            this.extraToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
+            this.extraToolStripMenuItem.Size = new System.Drawing.Size(86, 29);
             this.extraToolStripMenuItem.Text = "Extra";
+            this.extraToolStripMenuItem.MouseEnter += new System.EventHandler(this.extraToolStripMenuItem_MouseEnter);
             // 
             // addExtraToolStripMenuItem
             // 
             this.addExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
             this.addExtraToolStripMenuItem.Text = "Add Extra";
             this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
             // 
@@ -202,7 +204,7 @@ namespace lakeside
             this.editExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 
@@ -345,7 +347,7 @@ namespace lakeside
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::lakeside.Properties.Resources.Full_Main_Logo__White_;
+            this.pictureBox1.Image = global::lakeside.Properties.Resources.Full_Main_Logo__Transparent_3;
             this.pictureBox1.Location = new System.Drawing.Point(110, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(835, 170);

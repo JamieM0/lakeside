@@ -31,6 +31,7 @@ namespace lakeside
             pnlBlackBackground.SendToBack();
             //LakesideDAL a = new LakesideDAL();
             //MessageBox.Show($"{a.CountGuests()}");
+            menuStrip1.Renderer = new MyRenderer();
         }
 
         private void MainMenu_MouseDown(object sender, MouseEventArgs e)
@@ -220,6 +221,44 @@ namespace lakeside
         {
             Hide();
             new frmCheckOutExperience().Show();
+        }
+
+        private void extraToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            //extraToolStripMenuItem.BackColor = Color.DarkBlue;
+        }
+
+        private class MyRenderer : ToolStripProfessionalRenderer
+        {
+            public MyRenderer() : base(new MyColors()) { }
+        }
+
+        private class MyColors : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected
+            {
+                get { return Color.DarkBlue; }
+            }
+            public override Color MenuItemSelectedGradientBegin
+            {
+                get { return Color.DarkBlue; }
+            }
+            public override Color MenuItemSelectedGradientEnd
+            {
+                get { return Color.DarkCyan; }
+            }
+            public override Color MenuItemBorder
+            {
+                get { return Color.DarkBlue; }
+            }
+            public override Color MenuItemPressedGradientBegin
+            {
+                get { return Color.DarkBlue; }
+            }
+            public override Color MenuItemPressedGradientEnd
+            {
+                get { return Color.DarkCyan; }
+            }
         }
     }
 }

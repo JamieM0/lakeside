@@ -83,6 +83,26 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AcceptExtra {
+            get {
+                object obj = ResourceManager.GetObject("AcceptExtra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AcceptExtraButton {
+            get {
+                object obj = ResourceManager.GetObject("AcceptExtraButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AcceptGuestsButton {
             get {
                 object obj = ResourceManager.GetObject("AcceptGuestsButton", resourceCulture);
@@ -156,6 +176,26 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap AddCourseButton {
             get {
                 object obj = ResourceManager.GetObject("AddCourseButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddExtra {
+            get {
+                object obj = ResourceManager.GetObject("AddExtra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddExtraButton {
+            get {
+                object obj = ResourceManager.GetObject("AddExtraButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +293,16 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CourseIconSingle_White {
+            get {
+                object obj = ResourceManager.GetObject("CourseIconSingle_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CreateBookingButton {
             get {
                 object obj = ResourceManager.GetObject("CreateBookingButton", resourceCulture);
@@ -343,6 +393,26 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditExtra {
+            get {
+                object obj = ResourceManager.GetObject("EditExtra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditExtraButton {
+            get {
+                object obj = ResourceManager.GetObject("EditExtraButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EditGuestButton {
             get {
                 object obj = ResourceManager.GetObject("EditGuestButton", resourceCulture);
@@ -386,6 +456,46 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap EditUser_Small {
             get {
                 object obj = ResourceManager.GetObject("EditUser_Small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExtraIcon_White {
+            get {
+                object obj = ResourceManager.GetObject("ExtraIcon_White", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Full_Main_Logo__Transparent_ {
+            get {
+                object obj = ResourceManager.GetObject("Full_Main_Logo__Transparent_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Full_Main_Logo__Transparent_2 {
+            get {
+                object obj = ResourceManager.GetObject("Full_Main_Logo__Transparent_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Full_Main_Logo__Transparent_3 {
+            get {
+                object obj = ResourceManager.GetObject("Full_Main_Logo__Transparent_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +576,26 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap RemoveCourse {
             get {
                 object obj = ResourceManager.GetObject("RemoveCourse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoveExtra {
+            get {
+                object obj = ResourceManager.GetObject("RemoveExtra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoveExtraButton {
+            get {
+                object obj = ResourceManager.GetObject("RemoveExtraButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -576,6 +706,26 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap SelectDatesButton {
             get {
                 object obj = ResourceManager.GetObject("SelectDatesButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectExtra {
+            get {
+                object obj = ResourceManager.GetObject("SelectExtra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SelectExtraButton {
+            get {
+                object obj = ResourceManager.GetObject("SelectExtraButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

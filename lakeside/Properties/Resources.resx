@@ -292,4 +292,49 @@
   <data name="SelectPodButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SelectPodButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AcceptExtra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AcceptExtra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AcceptExtraButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AcceptExtraButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddExtra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddExtra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddExtraButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddExtraButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CourseIconSingle_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CourseIconSingle_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditExtra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditExtra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditExtraButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditExtraButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExtraIcon_White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExtraIcon_White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Full_Main_Logo__Transparent_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Full Main Logo (Transparent).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Full_Main_Logo__Transparent_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Full Main Logo (Transparent)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Full_Main_Logo__Transparent_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Full Main Logo (Transparent)3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemoveExtra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveExtra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RemoveExtraButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveExtraButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectExtra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectExtra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectExtraButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SelectExtraButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

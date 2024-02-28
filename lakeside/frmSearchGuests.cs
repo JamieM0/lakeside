@@ -21,8 +21,8 @@ namespace lakeside
         public frmSearchGuests()
         {
             InitializeComponent();
-            txtSearch_SetText("Search for Name, Email, or Guest ID...");
             searchType = "guest";
+            txtSearch_SetText("Search for Name, Email, or Guest ID...");
         }
         public frmSearchGuests(string search)
         {
@@ -35,11 +35,11 @@ namespace lakeside
         {
             InitializeComponent();
             CenterToScreen();
-            txtSearch_SetText("Search for Name, Email, or Guest ID...");
             searchType = "guest";
             fromPodBooking = fromPodBookingForm;
             btnReturn.Text = "Back to Booking";
             buttonIcon = Properties.Resources.SelectGuestButton2;
+            txtSearch_SetText("Search for Name, Email, or Guest ID...");
         }
 
         public frmSearchGuests(object type, string search)
@@ -49,30 +49,30 @@ namespace lakeside
             if (type.GetType() == typeof(Pod))
             {
                 CenterToScreen();
-                txtSearch_SetText("Search for Pod Name, Location, or Pod ID...");
                 searchType = "pod";
                 lbTitle.Text = "Lakeside Escapes: Search Pods";
+                txtSearch_SetText("Search for Pod Name, Location, or Pod ID...");
             }
             else if (type.GetType() == typeof(Extra))
             {
                 CenterToScreen();
-                txtSearch_SetText("Search for Extra Name, Description, or Extra ID...");
                 searchType = "extra";
                 lbTitle.Text = "Lakeside Escapes: Search Extras";
+                txtSearch_SetText("Search for Extra Name, Description, or Extra ID...");
             }
             else if (type.GetType() == typeof(Staff))
             {
                 CenterToScreen();
-                txtSearch_SetText("Search for Staff Name, Email, or Staff ID...");
                 searchType = "staff";
                 lbTitle.Text = "Lakeside Escapes: Search Staff";
+                txtSearch_SetText("Search for Staff Name, Email, or Staff ID...");
             }
             else if (type.GetType() == typeof(Course))
             {
                 CenterToScreen();
-                txtSearch_SetText("Search for Course Name, Tutor, or Course ID...");
                 searchType = "course";
                 lbTitle.Text = "Lakeside Escapes: Search Course";
+                txtSearch_SetText("Search for Course Name, Tutor, or Course ID...");
             }
 
             if (search != null)
@@ -107,21 +107,29 @@ namespace lakeside
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            //Change cursor to loading cursor
+            Cursor.Current = Cursors.WaitCursor;
+
             string searchCase = txtSearch.Text;
             //foreach(Control c in pnlGuestContainer.Controls)
             //{
             //    pnlGuestContainer.Controls.Remove(c);
             //}
 
-            if (searchCase == "Search for Name, Email, or Guest ID..." || searchCase == "")
+            if (searchCase == "Search for Name, Email, or Guest ID..." || 
+                searchCase == "" || 
+                searchCase == "Search for Pod Name, Location, or Pod ID..." || 
+                searchCase == "Search for Extra Name, Description, or Extra ID..." || 
+                searchCase == "Search for Course Name, Tutor, or Course ID...")
             {
                 //dgvGuests.DataSource = Guest.GetGuests();
                 foreach (Control c in pnlGuestContainer.Controls)
                 {
                     pnlGuestContainer.Controls.Remove(c);
                 }
+                searchCase = "";
             }
-            else if (searchType == "guest")
+            if (searchType == "guest")
             {
                 LakesideDAL dal = new LakesideDAL();
                 Guest[] searchResults = dal.SearchGuests(searchCase);
@@ -153,6 +161,9 @@ namespace lakeside
                 Course[] searchResults = dal.SearchCourses(searchCase);
                 PopulateGuestResults(searchResults);
             }
+
+            //Change cursor to loading cursor
+            Cursor.Current = Cursors.Default;
         }
 
         private void PopulateGuestResults(object[] results)

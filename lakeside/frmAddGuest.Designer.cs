@@ -178,9 +178,9 @@ namespace lakeside
             this.btnAddGuest.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
             this.btnAddGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGuest.Location = new System.Drawing.Point(300, 470);
+            this.btnAddGuest.Location = new System.Drawing.Point(820, 415);
             this.btnAddGuest.Name = "btnAddGuest";
-            this.btnAddGuest.Size = new System.Drawing.Size(712, 65);
+            this.btnAddGuest.Size = new System.Drawing.Size(222, 60);
             this.btnAddGuest.TabIndex = 9;
             this.btnAddGuest.UseVisualStyleBackColor = true;
             this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
@@ -190,9 +190,9 @@ namespace lakeside
             this.btnRandomiseData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRandomiseData.Image = global::lakeside.Properties.Resources.dice2;
             this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRandomiseData.Location = new System.Drawing.Point(31, 470);
+            this.btnRandomiseData.Location = new System.Drawing.Point(12, 415);
             this.btnRandomiseData.Name = "btnRandomiseData";
-            this.btnRandomiseData.Size = new System.Drawing.Size(229, 65);
+            this.btnRandomiseData.Size = new System.Drawing.Size(222, 60);
             this.btnRandomiseData.TabIndex = 7;
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -270,7 +270,7 @@ namespace lakeside
             this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
             this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearAll.Location = new System.Drawing.Point(791, 9);
+            this.btnClearAll.Location = new System.Drawing.Point(786, 9);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(256, 65);
             this.btnClearAll.TabIndex = 19;
@@ -400,7 +400,7 @@ namespace lakeside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 563);
+            this.ClientSize = new System.Drawing.Size(1054, 487);
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.validPosition);
             this.Controls.Add(this.txtPosition);

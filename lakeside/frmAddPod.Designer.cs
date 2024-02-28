@@ -59,7 +59,7 @@ namespace lakeside
             this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
             this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearAll.Location = new System.Drawing.Point(597, 18);
+            this.btnClearAll.Location = new System.Drawing.Point(616, 12);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(256, 65);
             this.btnClearAll.TabIndex = 8;
@@ -128,7 +128,7 @@ namespace lakeside
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReturn.Image = global::lakeside.Properties.Resources.returnIcon;
             this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturn.Location = new System.Drawing.Point(7, 18);
+            this.btnReturn.Location = new System.Drawing.Point(14, 18);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(256, 65);
             this.btnReturn.TabIndex = 7;
@@ -153,9 +153,9 @@ namespace lakeside
             this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddPodButton;
             this.btnAddPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPod.Location = new System.Drawing.Point(246, 479);
+            this.btnAddPod.Location = new System.Drawing.Point(650, 425);
             this.btnAddPod.Name = "btnAddPod";
-            this.btnAddPod.Size = new System.Drawing.Size(347, 65);
+            this.btnAddPod.Size = new System.Drawing.Size(222, 60);
             this.btnAddPod.TabIndex = 6;
             this.btnAddPod.UseVisualStyleBackColor = true;
             this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
@@ -165,9 +165,9 @@ namespace lakeside
             this.btnRandomiseData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRandomiseData.Image = global::lakeside.Properties.Resources.dice2;
             this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRandomiseData.Location = new System.Drawing.Point(26, 479);
+            this.btnRandomiseData.Location = new System.Drawing.Point(14, 428);
             this.btnRandomiseData.Name = "btnRandomiseData";
-            this.btnRandomiseData.Size = new System.Drawing.Size(229, 65);
+            this.btnRandomiseData.Size = new System.Drawing.Size(222, 60);
             this.btnRandomiseData.TabIndex = 34;
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -325,7 +325,7 @@ namespace lakeside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 563);
+            this.ClientSize = new System.Drawing.Size(884, 501);
             this.Controls.Add(this.cmbPodLocation);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.validType);

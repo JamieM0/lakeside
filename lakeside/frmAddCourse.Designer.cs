@@ -36,11 +36,6 @@ namespace lakeside
             this.validPricePPPN = new System.Windows.Forms.Label();
             this.validDescription = new System.Windows.Forms.Label();
             this.validCourseName = new System.Windows.Forms.Label();
-            this.txtPricePPPN = new lakeside.ValidationTextBox();
-            this.cmbTutor = new lakeside.ValidationComboBox();
-            this.txtCapacity = new lakeside.ValidationTextBox();
-            this.txtDescription = new lakeside.ValidationTextBox();
-            this.txtCourseName = new lakeside.ValidationTextBox();
             this.lbTutor = new System.Windows.Forms.Label();
             this.lbCourseLevel = new System.Windows.Forms.Label();
             this.lbCapacity = new System.Windows.Forms.Label();
@@ -49,12 +44,17 @@ namespace lakeside
             this.lbCourseName = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.validDuration = new System.Windows.Forms.Label();
-            this.txtDuration = new lakeside.ValidationTextBox();
             this.lbDuration = new System.Windows.Forms.Label();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.btnRandomiseData = new System.Windows.Forms.Button();
+            this.txtDuration = new lakeside.ValidationTextBox();
+            this.txtPricePPPN = new lakeside.ValidationTextBox();
+            this.cmbTutor = new lakeside.ValidationComboBox();
+            this.txtCapacity = new lakeside.ValidationTextBox();
+            this.txtDescription = new lakeside.ValidationTextBox();
+            this.txtCourseName = new lakeside.ValidationTextBox();
             this.SuspendLayout();
             // 
             // cmbCourseLevel
@@ -139,58 +139,6 @@ namespace lakeside
             this.validCourseName.TabIndex = 63;
             this.validCourseName.Text = "label1";
             // 
-            // txtPricePPPN
-            // 
-            this.txtPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPricePPPN.Location = new System.Drawing.Point(207, 350);
-            this.txtPricePPPN.Name = "txtPricePPPN";
-            this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
-            this.txtPricePPPN.TabIndex = 4;
-            this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
-            this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
-            // 
-            // cmbTutor
-            // 
-            this.cmbTutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTutor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTutor.FormattingEnabled = true;
-            this.cmbTutor.Location = new System.Drawing.Point(207, 262);
-            this.cmbTutor.Name = "cmbTutor";
-            this.cmbTutor.Size = new System.Drawing.Size(221, 33);
-            this.cmbTutor.TabIndex = 2;
-            this.cmbTutor.TextChanged += new System.EventHandler(this.cmbTutor_TextChanged);
-            this.cmbTutor.Leave += new System.EventHandler(this.cmbTutor_Leave);
-            // 
-            // txtCapacity
-            // 
-            this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapacity.Location = new System.Drawing.Point(449, 353);
-            this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(105, 33);
-            this.txtCapacity.TabIndex = 5;
-            this.txtCapacity.TextChanged += new System.EventHandler(this.txtCapacity_TextChanged);
-            this.txtCapacity.Leave += new System.EventHandler(this.txtCapacity_Leave);
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(207, 182);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(658, 33);
-            this.txtDescription.TabIndex = 1;
-            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
-            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
-            // 
-            // txtCourseName
-            // 
-            this.txtCourseName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseName.Location = new System.Drawing.Point(207, 107);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(658, 33);
-            this.txtCourseName.TabIndex = 0;
-            this.txtCourseName.TextChanged += new System.EventHandler(this.txtCourseName_TextChanged);
-            this.txtCourseName.Leave += new System.EventHandler(this.txtCourseName_Leave);
-            // 
             // lbTutor
             // 
             this.lbTutor.AutoSize = true;
@@ -267,16 +215,6 @@ namespace lakeside
             this.validDuration.TabIndex = 74;
             this.validDuration.Text = "label3";
             // 
-            // txtDuration
-            // 
-            this.txtDuration.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.Location = new System.Drawing.Point(760, 354);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(105, 33);
-            this.txtDuration.TabIndex = 6;
-            this.txtDuration.TextChanged += new System.EventHandler(this.txtDuration_TextChanged);
-            this.txtDuration.Leave += new System.EventHandler(this.txtDuration_Leave);
-            // 
             // lbDuration
             // 
             this.lbDuration.AutoSize = true;
@@ -319,9 +257,9 @@ namespace lakeside
             this.btnAddCourse.BackgroundImage = global::lakeside.Properties.Resources.AddCourseButton;
             this.btnAddCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddCourse.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCourse.Location = new System.Drawing.Point(330, 444);
+            this.btnAddCourse.Location = new System.Drawing.Point(641, 425);
             this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Size = new System.Drawing.Size(535, 79);
+            this.btnAddCourse.Size = new System.Drawing.Size(222, 60);
             this.btnAddCourse.TabIndex = 7;
             this.btnAddCourse.UseVisualStyleBackColor = true;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
@@ -331,20 +269,82 @@ namespace lakeside
             this.btnRandomiseData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRandomiseData.Image = global::lakeside.Properties.Resources.dice2;
             this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRandomiseData.Location = new System.Drawing.Point(38, 444);
+            this.btnRandomiseData.Location = new System.Drawing.Point(19, 428);
             this.btnRandomiseData.Name = "btnRandomiseData";
-            this.btnRandomiseData.Size = new System.Drawing.Size(237, 79);
+            this.btnRandomiseData.Size = new System.Drawing.Size(222, 60);
             this.btnRandomiseData.TabIndex = 60;
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
             this.btnRandomiseData.Visible = false;
             // 
+            // txtDuration
+            // 
+            this.txtDuration.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuration.Location = new System.Drawing.Point(760, 354);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(105, 33);
+            this.txtDuration.TabIndex = 6;
+            this.txtDuration.TextChanged += new System.EventHandler(this.txtDuration_TextChanged);
+            this.txtDuration.Leave += new System.EventHandler(this.txtDuration_Leave);
+            // 
+            // txtPricePPPN
+            // 
+            this.txtPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPricePPPN.Location = new System.Drawing.Point(207, 350);
+            this.txtPricePPPN.Name = "txtPricePPPN";
+            this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
+            this.txtPricePPPN.TabIndex = 4;
+            this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
+            this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
+            // 
+            // cmbTutor
+            // 
+            this.cmbTutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTutor.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTutor.FormattingEnabled = true;
+            this.cmbTutor.Location = new System.Drawing.Point(207, 262);
+            this.cmbTutor.Name = "cmbTutor";
+            this.cmbTutor.Size = new System.Drawing.Size(221, 33);
+            this.cmbTutor.TabIndex = 2;
+            this.cmbTutor.TextChanged += new System.EventHandler(this.cmbTutor_TextChanged);
+            this.cmbTutor.Leave += new System.EventHandler(this.cmbTutor_Leave);
+            // 
+            // txtCapacity
+            // 
+            this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCapacity.Location = new System.Drawing.Point(449, 353);
+            this.txtCapacity.Name = "txtCapacity";
+            this.txtCapacity.Size = new System.Drawing.Size(105, 33);
+            this.txtCapacity.TabIndex = 5;
+            this.txtCapacity.TextChanged += new System.EventHandler(this.txtCapacity_TextChanged);
+            this.txtCapacity.Leave += new System.EventHandler(this.txtCapacity_Leave);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(207, 182);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(658, 33);
+            this.txtDescription.TabIndex = 1;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
+            // 
+            // txtCourseName
+            // 
+            this.txtCourseName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCourseName.Location = new System.Drawing.Point(207, 107);
+            this.txtCourseName.Name = "txtCourseName";
+            this.txtCourseName.Size = new System.Drawing.Size(658, 33);
+            this.txtCourseName.TabIndex = 0;
+            this.txtCourseName.TextChanged += new System.EventHandler(this.txtCourseName_TextChanged);
+            this.txtCourseName.Leave += new System.EventHandler(this.txtCourseName_Leave);
+            // 
             // frmAddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 563);
+            this.ClientSize = new System.Drawing.Size(875, 520);
             this.Controls.Add(this.validDuration);
             this.Controls.Add(this.txtDuration);
             this.Controls.Add(this.lbDuration);

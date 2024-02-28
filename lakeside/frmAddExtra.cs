@@ -162,5 +162,11 @@ namespace lakeside
                 MessageBox.Show("There was an error adding the extra!\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmHome().Show();
+        }
     }
 }

@@ -48,6 +48,7 @@ namespace lakeside
             newCourse = false;
             btnClearAll.Visible = false;
             id = c.CourseID;
+            btnAddCourse.BackgroundImage = Properties.Resources.EditCourseButton;
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
@@ -58,11 +59,17 @@ namespace lakeside
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if(newCourse)
-            {
+            //if(newCourse)
+            //{
                 Hide();
                 new frmHome().Show();
-            }
+            //}
+            //else
+            //{
+            //    Course course = new Course();
+            //    Hide();
+            //    new frmSearchGuests(course, cachedSearch);
+            //}
         }
 
         private void ValidSetter(int elementID)

@@ -28,34 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClearAll = new System.Windows.Forms.Button();
             this.validPricePPPN = new System.Windows.Forms.Label();
             this.validDescription = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.validExtraName = new System.Windows.Forms.Label();
-            this.btnAddCourse = new System.Windows.Forms.Button();
             this.txtPricePPPN = new lakeside.ValidationTextBox();
             this.txtDescription = new lakeside.ValidationTextBox();
             this.txtExtraName = new lakeside.ValidationTextBox();
-            this.btnRandomiseData = new System.Windows.Forms.Button();
             this.lbPricePPPN = new System.Windows.Forms.Label();
             this.lbDescription = new System.Windows.Forms.Label();
             this.lbExtraName = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnAddCourse = new System.Windows.Forms.Button();
+            this.btnRandomiseData = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnClearAll
-            // 
-            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
-            this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearAll.Location = new System.Drawing.Point(615, 31);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(256, 65);
-            this.btnClearAll.TabIndex = 5;
-            this.btnClearAll.Text = "Clear All Fields";
-            this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClearAll.UseVisualStyleBackColor = true;
             // 
             // validPricePPPN
             // 
@@ -79,19 +66,6 @@
             this.validDescription.TabIndex = 91;
             this.validDescription.Text = "label1";
             // 
-            // btnReturn
-            // 
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReturn.Image = global::lakeside.Properties.Resources.returnIcon;
-            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturn.Location = new System.Drawing.Point(25, 31);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(256, 65);
-            this.btnReturn.TabIndex = 4;
-            this.btnReturn.Text = "Return to Home";
-            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReturn.UseVisualStyleBackColor = true;
-            // 
             // validExtraName
             // 
             this.validExtraName.AutoSize = true;
@@ -102,18 +76,6 @@
             this.validExtraName.Size = new System.Drawing.Size(52, 21);
             this.validExtraName.TabIndex = 89;
             this.validExtraName.Text = "label1";
-            // 
-            // btnAddCourse
-            // 
-            this.btnAddCourse.BackgroundImage = global::lakeside.Properties.Resources.AddCourseButton;
-            this.btnAddCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddCourse.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCourse.Location = new System.Drawing.Point(336, 301);
-            this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Size = new System.Drawing.Size(535, 79);
-            this.btnAddCourse.TabIndex = 3;
-            this.btnAddCourse.UseVisualStyleBackColor = true;
-            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // txtPricePPPN
             // 
@@ -144,20 +106,6 @@
             this.txtExtraName.TabIndex = 0;
             this.txtExtraName.TextChanged += new System.EventHandler(this.txtExtraName_TextChanged);
             this.txtExtraName.Leave += new System.EventHandler(this.txtExtraName_Leave);
-            // 
-            // btnRandomiseData
-            // 
-            this.btnRandomiseData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRandomiseData.Image = global::lakeside.Properties.Resources.dice2;
-            this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRandomiseData.Location = new System.Drawing.Point(37, 301);
-            this.btnRandomiseData.Name = "btnRandomiseData";
-            this.btnRandomiseData.Size = new System.Drawing.Size(237, 79);
-            this.btnRandomiseData.TabIndex = 86;
-            this.btnRandomiseData.Text = "Randomise Data";
-            this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRandomiseData.UseVisualStyleBackColor = true;
-            this.btnRandomiseData.Visible = false;
             // 
             // lbPricePPPN
             // 
@@ -197,11 +145,64 @@
             this.lbTitle.TabIndex = 75;
             this.lbTitle.Text = "Add an Extra";
             // 
+            // btnClearAll
+            // 
+            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClearAll.Location = new System.Drawing.Point(615, 31);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(256, 65);
+            this.btnClearAll.TabIndex = 5;
+            this.btnClearAll.Text = "Clear All Fields";
+            this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReturn.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReturn.Location = new System.Drawing.Point(12, 31);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(256, 65);
+            this.btnReturn.TabIndex = 4;
+            this.btnReturn.Text = "Return to Home";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnAddCourse
+            // 
+            this.btnAddCourse.BackgroundImage = global::lakeside.Properties.Resources.AddExtraButton;
+            this.btnAddCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddCourse.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCourse.Location = new System.Drawing.Point(649, 277);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Size = new System.Drawing.Size(222, 60);
+            this.btnAddCourse.TabIndex = 3;
+            this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
+            // 
+            // btnRandomiseData
+            // 
+            this.btnRandomiseData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRandomiseData.Image = global::lakeside.Properties.Resources.dice2;
+            this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRandomiseData.Location = new System.Drawing.Point(12, 277);
+            this.btnRandomiseData.Name = "btnRandomiseData";
+            this.btnRandomiseData.Size = new System.Drawing.Size(222, 60);
+            this.btnRandomiseData.TabIndex = 86;
+            this.btnRandomiseData.Text = "Randomise Data";
+            this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Visible = false;
+            // 
             // frmAddExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 407);
+            this.ClientSize = new System.Drawing.Size(884, 349);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.validPricePPPN);
             this.Controls.Add(this.validDescription);
