@@ -60,6 +60,7 @@ namespace lakeside
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.lakesideDBDataSet = new lakeside.LakesideDBDataSet();
             this.lakesideDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnInvoice = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlBlackBackground.SuspendLayout();
             this.pnlExit.SuspendLayout();
@@ -376,6 +377,16 @@ namespace lakeside
             this.lakesideDBDataSetBindingSource.DataSource = this.lakesideDBDataSet;
             this.lakesideDBDataSetBindingSource.Position = 0;
             // 
+            // btnInvoice
+            // 
+            this.btnInvoice.Location = new System.Drawing.Point(110, 310);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(109, 39);
+            this.btnInvoice.TabIndex = 15;
+            this.btnInvoice.Text = "Invoice";
+            this.btnInvoice.UseVisualStyleBackColor = true;
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -385,6 +396,7 @@ namespace lakeside
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
+            this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnEditPod);
             this.Controls.Add(this.btnAddPod);
@@ -449,6 +461,7 @@ namespace lakeside
         private System.Windows.Forms.Button btnCheckOut;
         private LakesideDBDataSet lakesideDBDataSet;
         private System.Windows.Forms.BindingSource lakesideDBDataSetBindingSource;
+        private System.Windows.Forms.Button btnInvoice;
     }
 }
 

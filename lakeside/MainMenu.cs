@@ -260,5 +260,11 @@ namespace lakeside
                 get { return Color.DarkCyan; }
             }
         }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new frmInvoice().Show();
+        }
     }
 }
