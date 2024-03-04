@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using lakeside.DAL;
+using lakeside.Models;
 
 namespace lakeside
 {
     public partial class frmInvoice : Form
     {
-        public frmInvoice()
+        Invoice invoice = new Invoice();
+        public frmInvoice(Invoice Invoice)
         {
+            invoice = Invoice;
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             InitializeComponent();
         }
@@ -44,6 +48,50 @@ namespace lakeside
         private void lbPodName_TextChanged(object sender, EventArgs e)
         {
             CenterControlToFormHorizontally(lbPodName);
+        }
+
+        private void PopulateDatagrids()
+        {
+            //Populate Course Datagrid
+            for(int i=0; i<invoice.coursesSelected.Count;i++)
+            {
+                dgCourseSelected.Rows.Add(invoice.coursesSelected[i].CourseName);
+            }
+        }
+
+        private void frmInvoice_Load(object sender, EventArgs e)
+        {
+            dgCourseSelected.Font = new Font("Segoe UI", 12);
+            dgExtraSelected.Font = new Font("Segoe UI", 12);
+            switch(invoice.coursesSelected.Count)
+            {
+                case 0: lbInfoCourseSelected.Text = "No courses selected.";
+                    dgCourseSelected.Visible = false;
+                    lbInfoExtraSelected.Location = new Point(12, 137);
+                    dgExtraSelected.Location = new Point(16, 161);
+                    break;
+                case 1: lbInfoCourseSelected.Text = "Course Selected";
+                    dgCourseSelected.Visible = false;
+                    break;
+                default: lbInfoCourseSelected.Text = "Courses Selected";
+                    dgCourseSelected.Visible = false;
+                    break;
+            }
+            switch (invoice.extrasSelected.Count)
+            {
+                case 0:
+                    lbInfoCourseSelected.Text = "No extras selected.";
+                    dgExtraSelected.Visible = false;
+                    break;
+                case 1:
+                    lbInfoCourseSelected.Text = "Extra Selected";
+                    dgExtraSelected.Visible = true;
+                    break;
+                default:
+                    lbInfoCourseSelected.Text = "Extras Selected";
+                    dgExtraSelected.Visible = true;
+                    break;
+            }
         }
     }
 }

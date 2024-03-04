@@ -35,11 +35,17 @@ namespace lakeside
             this.lbPodName = new System.Windows.Forms.Label();
             this.lbInfoLeadGuestName = new System.Windows.Forms.Label();
             this.lbLeadGuestName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbInfoCourseSelected = new System.Windows.Forms.Label();
+            this.lbInfoExtraSelected = new System.Windows.Forms.Label();
+            this.dgCourseSelected = new System.Windows.Forms.DataGridView();
+            this.dgExtraSelected = new System.Windows.Forms.DataGridView();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CouseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PricePN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCourseSelected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgExtraSelected)).BeginInit();
             this.SuspendLayout();
             // 
             // lbDate
@@ -66,7 +72,7 @@ namespace lakeside
             // 
             this.lbInfoPodName.AutoSize = true;
             this.lbInfoPodName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfoPodName.Location = new System.Drawing.Point(350, 51);
+            this.lbInfoPodName.Location = new System.Drawing.Point(353, 51);
             this.lbInfoPodName.Name = "lbInfoPodName";
             this.lbInfoPodName.Size = new System.Drawing.Size(102, 21);
             this.lbInfoPodName.TabIndex = 3;
@@ -78,7 +84,7 @@ namespace lakeside
             // 
             this.lbPodName.AutoSize = true;
             this.lbPodName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPodName.Location = new System.Drawing.Point(324, 72);
+            this.lbPodName.Location = new System.Drawing.Point(327, 72);
             this.lbPodName.Name = "lbPodName";
             this.lbPodName.Size = new System.Drawing.Size(160, 30);
             this.lbPodName.TabIndex = 2;
@@ -108,70 +114,87 @@ namespace lakeside
             this.lbLeadGuestName.Text = "Lead Guest Name Here";
             this.lbLeadGuestName.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(616, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "GuestAddressLine1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(629, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 25);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "GuestAddressCity";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(585, 158);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 25);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "GuestAddressPostcode";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(594, 184);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 25);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "GuestAddressCountry";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 9);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(217, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(468, 32);
+            this.label5.Size = new System.Drawing.Size(367, 25);
             this.label5.TabIndex = 10;
             this.label5.Text = "Thank you for staying at Lakeside Escapes!";
+            // 
+            // lbInfoCourseSelected
+            // 
+            this.lbInfoCourseSelected.AutoSize = true;
+            this.lbInfoCourseSelected.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfoCourseSelected.Location = new System.Drawing.Point(12, 113);
+            this.lbInfoCourseSelected.Name = "lbInfoCourseSelected";
+            this.lbInfoCourseSelected.Size = new System.Drawing.Size(121, 21);
+            this.lbInfoCourseSelected.TabIndex = 12;
+            this.lbInfoCourseSelected.Text = "Course Selected";
+            // 
+            // lbInfoExtraSelected
+            // 
+            this.lbInfoExtraSelected.AutoSize = true;
+            this.lbInfoExtraSelected.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfoExtraSelected.Location = new System.Drawing.Point(13, 283);
+            this.lbInfoExtraSelected.Name = "lbInfoExtraSelected";
+            this.lbInfoExtraSelected.Size = new System.Drawing.Size(106, 21);
+            this.lbInfoExtraSelected.TabIndex = 14;
+            this.lbInfoExtraSelected.Text = "Extra Selected";
+            // 
+            // dgCourseSelected
+            // 
+            this.dgCourseSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCourseSelected.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Quantity,
+            this.CouseName,
+            this.PricePN,
+            this.TotalPrice});
+            this.dgCourseSelected.Location = new System.Drawing.Point(16, 137);
+            this.dgCourseSelected.Name = "dgCourseSelected";
+            this.dgCourseSelected.Size = new System.Drawing.Size(484, 119);
+            this.dgCourseSelected.TabIndex = 15;
+            // 
+            // dgExtraSelected
+            // 
+            this.dgExtraSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgExtraSelected.Location = new System.Drawing.Point(17, 307);
+            this.dgExtraSelected.Name = "dgExtraSelected";
+            this.dgExtraSelected.Size = new System.Drawing.Size(372, 104);
+            this.dgExtraSelected.TabIndex = 16;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Number of Guests";
+            this.Quantity.Name = "Quantity";
+            // 
+            // CouseName
+            // 
+            this.CouseName.HeaderText = "Course Name";
+            this.CouseName.Name = "CouseName";
+            // 
+            // PricePN
+            // 
+            this.PricePN.HeaderText = "Price / Guest";
+            this.PricePN.Name = "PricePN";
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.HeaderText = "Total Price";
+            this.TotalPrice.Name = "TotalPrice";
             // 
             // frmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgExtraSelected);
+            this.Controls.Add(this.dgCourseSelected);
+            this.Controls.Add(this.lbInfoExtraSelected);
+            this.Controls.Add(this.lbInfoCourseSelected);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbInfoLeadGuestName);
             this.Controls.Add(this.lbLeadGuestName);
             this.Controls.Add(this.lbInfoPodName);
@@ -180,6 +203,9 @@ namespace lakeside
             this.Controls.Add(this.lbDate);
             this.Name = "frmInvoice";
             this.Text = "Lakeside Escapes: Invoice";
+            this.Load += new System.EventHandler(this.frmInvoice_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgCourseSelected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgExtraSelected)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,10 +219,14 @@ namespace lakeside
         private System.Windows.Forms.Label lbPodName;
         private System.Windows.Forms.Label lbInfoLeadGuestName;
         private System.Windows.Forms.Label lbLeadGuestName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbInfoCourseSelected;
+        private System.Windows.Forms.Label lbInfoExtraSelected;
+        private System.Windows.Forms.DataGridView dgCourseSelected;
+        private System.Windows.Forms.DataGridView dgExtraSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CouseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PricePN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
     }
 }

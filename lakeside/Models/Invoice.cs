@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace lakeside.Models
 {
-    class Invoice
+    public class Invoice
     {
         // Reference to the booking that is selected
         public Booking booking { get; set; }
 
         // Lead guest of the booking
-        //public Guest leadGuest { get; set; }
+        public Guest leadGuest { get; set; }
 
         // Pod being stayed in for the booking
-        //public Pod bookedBod { get; set; }
+        public Pod bookedBod { get; set; }
 
         // All guests in the booking, including the lead guest, who is ID=0;
         //public List<Guest> guestsStaying { get; set; }
 
-        //public List<Course> coursesSelected { get; set; }
+        public List<Course> coursesSelected { get; set; }
+        public List<Extra> extrasSelected { get; set; }
     }
 }
