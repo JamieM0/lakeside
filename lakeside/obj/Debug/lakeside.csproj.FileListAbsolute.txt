@@ -49,3 +49,16 @@ C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\SqlServer
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\jmatthews864\Source\Repos\JamieM0\lakeside\lakeside\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmCheckOutExperience.resources
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmEditExtra.resources
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.frmInvoice.resources
+C:\Users\Jamie\Documents\GitHub\lakeside\lakeside\obj\Debug\lakeside.csproj.CopyComplete

@@ -20,6 +20,7 @@ namespace lakeside
             invoice = Invoice;
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             InitializeComponent();
+            CenterToScreen();
         }
 
         public void CenterControlToFormHorizontally(Control control)

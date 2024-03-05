@@ -18,6 +18,7 @@ namespace lakeside
         public frmCheckOutExperience()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void cmbDatePickerStayLength_SelectedIndexChanged(object sender, EventArgs e)
