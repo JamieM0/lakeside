@@ -44,18 +44,18 @@ namespace lakeside
             this.lbInstructionsForThePodPickerOrPodChooserOrPodSelector = new System.Windows.Forms.Label();
             this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
             this.pnlBookingOverview = new System.Windows.Forms.Panel();
-            this.lbBookingOverview = new System.Windows.Forms.Label();
-            this.btnGoBack = new System.Windows.Forms.Button();
-            this.btnProceed = new System.Windows.Forms.Button();
-            this.pnlProceedToInvoiceIcon = new System.Windows.Forms.Panel();
-            this.pnlReturnIcon = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbPodInfo = new System.Windows.Forms.Label();
-            this.lbDatesInfo = new System.Windows.Forms.Label();
-            this.lbGuestsInfo = new System.Windows.Forms.Label();
-            this.lbPodBookedOverview = new System.Windows.Forms.Label();
-            this.lbDatesBookedOverview = new System.Windows.Forms.Label();
             this.lbGuestsStayingOverview = new System.Windows.Forms.Label();
+            this.lbDatesBookedOverview = new System.Windows.Forms.Label();
+            this.lbPodBookedOverview = new System.Windows.Forms.Label();
+            this.lbGuestsInfo = new System.Windows.Forms.Label();
+            this.lbDatesInfo = new System.Windows.Forms.Label();
+            this.lbPodInfo = new System.Windows.Forms.Label();
+            this.pnlProceedToInvoiceIcon = new System.Windows.Forms.Panel();
+            this.btnProceed = new System.Windows.Forms.Button();
+            this.pnlReturnIcon = new System.Windows.Forms.Panel();
+            this.btnGoBack = new System.Windows.Forms.Button();
+            this.lbBookingOverview = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlStayLength.SuspendLayout();
             this.pnlPodNamePanel.SuspendLayout();
             this.pnlPodChooser.SuspendLayout();
@@ -246,15 +246,96 @@ namespace lakeside
             this.pnlBookingOverview.TabIndex = 23;
             this.pnlBookingOverview.Visible = false;
             // 
-            // lbBookingOverview
+            // lbGuestsStayingOverview
             // 
-            this.lbBookingOverview.AutoSize = true;
-            this.lbBookingOverview.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBookingOverview.Location = new System.Drawing.Point(141, 8);
-            this.lbBookingOverview.Name = "lbBookingOverview";
-            this.lbBookingOverview.Size = new System.Drawing.Size(167, 30);
-            this.lbBookingOverview.TabIndex = 0;
-            this.lbBookingOverview.Text = "Booking Located";
+            this.lbGuestsStayingOverview.AutoSize = true;
+            this.lbGuestsStayingOverview.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestsStayingOverview.Location = new System.Drawing.Point(160, 130);
+            this.lbGuestsStayingOverview.Name = "lbGuestsStayingOverview";
+            this.lbGuestsStayingOverview.Size = new System.Drawing.Size(115, 25);
+            this.lbGuestsStayingOverview.TabIndex = 32;
+            this.lbGuestsStayingOverview.Text = "Pod Booked:";
+            // 
+            // lbDatesBookedOverview
+            // 
+            this.lbDatesBookedOverview.AutoSize = true;
+            this.lbDatesBookedOverview.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDatesBookedOverview.Location = new System.Drawing.Point(160, 93);
+            this.lbDatesBookedOverview.Name = "lbDatesBookedOverview";
+            this.lbDatesBookedOverview.Size = new System.Drawing.Size(115, 25);
+            this.lbDatesBookedOverview.TabIndex = 31;
+            this.lbDatesBookedOverview.Text = "Pod Booked:";
+            // 
+            // lbPodBookedOverview
+            // 
+            this.lbPodBookedOverview.AutoSize = true;
+            this.lbPodBookedOverview.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPodBookedOverview.Location = new System.Drawing.Point(160, 57);
+            this.lbPodBookedOverview.Name = "lbPodBookedOverview";
+            this.lbPodBookedOverview.Size = new System.Drawing.Size(115, 25);
+            this.lbPodBookedOverview.TabIndex = 30;
+            this.lbPodBookedOverview.Text = "Pod Booked:";
+            // 
+            // lbGuestsInfo
+            // 
+            this.lbGuestsInfo.AutoSize = true;
+            this.lbGuestsInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestsInfo.Location = new System.Drawing.Point(21, 130);
+            this.lbGuestsInfo.Name = "lbGuestsInfo";
+            this.lbGuestsInfo.Size = new System.Drawing.Size(138, 25);
+            this.lbGuestsInfo.TabIndex = 29;
+            this.lbGuestsInfo.Text = "Guests Staying:";
+            // 
+            // lbDatesInfo
+            // 
+            this.lbDatesInfo.AutoSize = true;
+            this.lbDatesInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDatesInfo.Location = new System.Drawing.Point(28, 93);
+            this.lbDatesInfo.Name = "lbDatesInfo";
+            this.lbDatesInfo.Size = new System.Drawing.Size(131, 25);
+            this.lbDatesInfo.TabIndex = 28;
+            this.lbDatesInfo.Text = "Dates Booked:";
+            // 
+            // lbPodInfo
+            // 
+            this.lbPodInfo.AutoSize = true;
+            this.lbPodInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPodInfo.Location = new System.Drawing.Point(43, 57);
+            this.lbPodInfo.Name = "lbPodInfo";
+            this.lbPodInfo.Size = new System.Drawing.Size(116, 25);
+            this.lbPodInfo.TabIndex = 27;
+            this.lbPodInfo.Text = "Pod Booked:";
+            // 
+            // pnlProceedToInvoiceIcon
+            // 
+            this.pnlProceedToInvoiceIcon.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlProceedToInvoiceIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlProceedToInvoiceIcon.Location = new System.Drawing.Point(375, 13);
+            this.pnlProceedToInvoiceIcon.Name = "pnlProceedToInvoiceIcon";
+            this.pnlProceedToInvoiceIcon.Size = new System.Drawing.Size(41, 29);
+            this.pnlProceedToInvoiceIcon.TabIndex = 26;
+            // 
+            // btnProceed
+            // 
+            this.btnProceed.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProceed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProceed.Location = new System.Drawing.Point(165, 180);
+            this.btnProceed.Name = "btnProceed";
+            this.btnProceed.Size = new System.Drawing.Size(251, 43);
+            this.btnProceed.TabIndex = 25;
+            this.btnProceed.Text = "Proceed to Invoice";
+            this.btnProceed.UseVisualStyleBackColor = false;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
+            // 
+            // pnlReturnIcon
+            // 
+            this.pnlReturnIcon.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlReturnIcon.BackgroundImage = global::lakeside.Properties.Resources.returnIcon;
+            this.pnlReturnIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlReturnIcon.Location = new System.Drawing.Point(16, 187);
+            this.pnlReturnIcon.Name = "pnlReturnIcon";
+            this.pnlReturnIcon.Size = new System.Drawing.Size(39, 29);
+            this.pnlReturnIcon.TabIndex = 24;
             // 
             // btnGoBack
             // 
@@ -268,35 +349,15 @@ namespace lakeside
             this.btnGoBack.UseVisualStyleBackColor = false;
             this.btnGoBack.Click += new System.EventHandler(this.btnGoBack_Click);
             // 
-            // btnProceed
+            // lbBookingOverview
             // 
-            this.btnProceed.BackColor = System.Drawing.SystemColors.Control;
-            this.btnProceed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProceed.Location = new System.Drawing.Point(165, 180);
-            this.btnProceed.Name = "btnProceed";
-            this.btnProceed.Size = new System.Drawing.Size(251, 43);
-            this.btnProceed.TabIndex = 25;
-            this.btnProceed.Text = "Proceed to Invoice";
-            this.btnProceed.UseVisualStyleBackColor = false;
-            // 
-            // pnlProceedToInvoiceIcon
-            // 
-            this.pnlProceedToInvoiceIcon.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlProceedToInvoiceIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlProceedToInvoiceIcon.Location = new System.Drawing.Point(375, 13);
-            this.pnlProceedToInvoiceIcon.Name = "pnlProceedToInvoiceIcon";
-            this.pnlProceedToInvoiceIcon.Size = new System.Drawing.Size(41, 29);
-            this.pnlProceedToInvoiceIcon.TabIndex = 26;
-            // 
-            // pnlReturnIcon
-            // 
-            this.pnlReturnIcon.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlReturnIcon.BackgroundImage = global::lakeside.Properties.Resources.returnIcon;
-            this.pnlReturnIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlReturnIcon.Location = new System.Drawing.Point(16, 187);
-            this.pnlReturnIcon.Name = "pnlReturnIcon";
-            this.pnlReturnIcon.Size = new System.Drawing.Size(39, 29);
-            this.pnlReturnIcon.TabIndex = 24;
+            this.lbBookingOverview.AutoSize = true;
+            this.lbBookingOverview.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBookingOverview.Location = new System.Drawing.Point(141, 8);
+            this.lbBookingOverview.Name = "lbBookingOverview";
+            this.lbBookingOverview.Size = new System.Drawing.Size(167, 30);
+            this.lbBookingOverview.TabIndex = 0;
+            this.lbBookingOverview.Text = "Booking Located";
             // 
             // pictureBox1
             // 
@@ -308,66 +369,6 @@ namespace lakeside
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // lbPodInfo
-            // 
-            this.lbPodInfo.AutoSize = true;
-            this.lbPodInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPodInfo.Location = new System.Drawing.Point(43, 57);
-            this.lbPodInfo.Name = "lbPodInfo";
-            this.lbPodInfo.Size = new System.Drawing.Size(116, 25);
-            this.lbPodInfo.TabIndex = 27;
-            this.lbPodInfo.Text = "Pod Booked:";
-            // 
-            // lbDatesInfo
-            // 
-            this.lbDatesInfo.AutoSize = true;
-            this.lbDatesInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDatesInfo.Location = new System.Drawing.Point(28, 93);
-            this.lbDatesInfo.Name = "lbDatesInfo";
-            this.lbDatesInfo.Size = new System.Drawing.Size(131, 25);
-            this.lbDatesInfo.TabIndex = 28;
-            this.lbDatesInfo.Text = "Dates Booked:";
-            // 
-            // lbGuestsInfo
-            // 
-            this.lbGuestsInfo.AutoSize = true;
-            this.lbGuestsInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestsInfo.Location = new System.Drawing.Point(21, 130);
-            this.lbGuestsInfo.Name = "lbGuestsInfo";
-            this.lbGuestsInfo.Size = new System.Drawing.Size(138, 25);
-            this.lbGuestsInfo.TabIndex = 29;
-            this.lbGuestsInfo.Text = "Guests Staying:";
-            // 
-            // lbPodBookedOverview
-            // 
-            this.lbPodBookedOverview.AutoSize = true;
-            this.lbPodBookedOverview.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPodBookedOverview.Location = new System.Drawing.Point(160, 57);
-            this.lbPodBookedOverview.Name = "lbPodBookedOverview";
-            this.lbPodBookedOverview.Size = new System.Drawing.Size(115, 25);
-            this.lbPodBookedOverview.TabIndex = 30;
-            this.lbPodBookedOverview.Text = "Pod Booked:";
-            // 
-            // lbDatesBookedOverview
-            // 
-            this.lbDatesBookedOverview.AutoSize = true;
-            this.lbDatesBookedOverview.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDatesBookedOverview.Location = new System.Drawing.Point(160, 93);
-            this.lbDatesBookedOverview.Name = "lbDatesBookedOverview";
-            this.lbDatesBookedOverview.Size = new System.Drawing.Size(115, 25);
-            this.lbDatesBookedOverview.TabIndex = 31;
-            this.lbDatesBookedOverview.Text = "Pod Booked:";
-            // 
-            // lbGuestsStayingOverview
-            // 
-            this.lbGuestsStayingOverview.AutoSize = true;
-            this.lbGuestsStayingOverview.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestsStayingOverview.Location = new System.Drawing.Point(160, 130);
-            this.lbGuestsStayingOverview.Name = "lbGuestsStayingOverview";
-            this.lbGuestsStayingOverview.Size = new System.Drawing.Size(115, 25);
-            this.lbGuestsStayingOverview.TabIndex = 32;
-            this.lbGuestsStayingOverview.Text = "Pod Booked:";
             // 
             // frmCheckOutExperience
             // 

@@ -39,11 +39,11 @@ namespace lakeside
             this.lbInfoCourseSelected = new System.Windows.Forms.Label();
             this.lbInfoExtraSelected = new System.Windows.Forms.Label();
             this.dgCourseSelected = new System.Windows.Forms.DataGridView();
-            this.dgExtraSelected = new System.Windows.Forms.DataGridView();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CouseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PricePN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgExtraSelected = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgCourseSelected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgExtraSelected)).BeginInit();
             this.SuspendLayout();
@@ -157,14 +157,6 @@ namespace lakeside
             this.dgCourseSelected.Size = new System.Drawing.Size(484, 119);
             this.dgCourseSelected.TabIndex = 15;
             // 
-            // dgExtraSelected
-            // 
-            this.dgExtraSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgExtraSelected.Location = new System.Drawing.Point(17, 307);
-            this.dgExtraSelected.Name = "dgExtraSelected";
-            this.dgExtraSelected.Size = new System.Drawing.Size(372, 104);
-            this.dgExtraSelected.TabIndex = 16;
-            // 
             // Quantity
             // 
             this.Quantity.HeaderText = "Number of Guests";
@@ -184,6 +176,14 @@ namespace lakeside
             // 
             this.TotalPrice.HeaderText = "Total Price";
             this.TotalPrice.Name = "TotalPrice";
+            // 
+            // dgExtraSelected
+            // 
+            this.dgExtraSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgExtraSelected.Location = new System.Drawing.Point(17, 307);
+            this.dgExtraSelected.Name = "dgExtraSelected";
+            this.dgExtraSelected.Size = new System.Drawing.Size(372, 104);
+            this.dgExtraSelected.TabIndex = 16;
             // 
             // frmInvoice
             // 

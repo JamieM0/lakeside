@@ -52,11 +52,56 @@ namespace lakeside
 
         private void PopulateDatagrids()
         {
-            //Populate Course Datagrid
-            for(int i=0; i<invoice.coursesSelected.Count;i++)
+            // Assuming you have a class called Course with a property called Type and a list of courses called coursesSelected
+            // Create a dictionary to store the counts of each course type
+            Dictionary<string, int> courseTypeCounts = new Dictionary<string, int>();
+
+            // Loop through the list of courses
+            foreach (Course course in invoice.coursesSelected)
             {
-                dgCourseSelected.Rows.Add(invoice.coursesSelected[i].CourseName);
+                // Get the course type
+                string courseType = course.CourseName;
+
+                // Check if the dictionary already contains the course type
+                if (courseTypeCounts.ContainsKey(courseType))
+                {
+                    // Increment the count by one
+                    courseTypeCounts[courseType]++;
+                }
+                else
+                {
+                    // Add the course type to the dictionary with a count of one
+                    courseTypeCounts.Add(courseType, 1);
+                }
             }
+
+            // Print the results
+            foreach (KeyValuePair<string, int> pair in courseTypeCounts)
+            {
+                //Console.WriteLine($"There are {pair.Value} courses of type {pair.Key}");
+                Course currentCourse=new Course();
+                foreach(Course course in invoice.coursesSelected)
+                {
+                    if(course.CourseName==pair.Key)
+                    {
+                        currentCourse = course;
+                    }
+                }
+                dgCourseSelected.Rows.Add(pair.Value, pair.Key, currentCourse.Price, currentCourse.Price * pair.Value);
+            }
+
+            //Populate Course Datagrid
+            //for (int i=0; i<invoice.coursesSelected.Count;i++)
+            //{
+            //    dgCourseSelected.Rows.Add(invoice.coursesSelected[i].CourseName);
+            //}
+        }
+
+        private void SetLabels()
+        {
+            lbDate.Text = invoice.booking.CheckInDate.ToString("ddd d MMM") + " - " + DateTime.Now.Date.ToString("ddd d MMM");
+            lbPodName.Text = invoice.bookedPod.FriendlyName;
+            lbLeadGuestName.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
         }
 
         private void frmInvoice_Load(object sender, EventArgs e)
@@ -71,10 +116,10 @@ namespace lakeside
                     dgExtraSelected.Location = new Point(16, 161);
                     break;
                 case 1: lbInfoCourseSelected.Text = "Course Selected";
-                    dgCourseSelected.Visible = false;
+                    dgCourseSelected.Visible = true;
                     break;
                 default: lbInfoCourseSelected.Text = "Courses Selected";
-                    dgCourseSelected.Visible = false;
+                    dgCourseSelected.Visible = true;
                     break;
             }
             switch (invoice.extrasSelected.Count)
@@ -92,6 +137,9 @@ namespace lakeside
                     dgExtraSelected.Visible = true;
                     break;
             }
+
+            PopulateDatagrids();
+            SetLabels();
         }
     }
 }

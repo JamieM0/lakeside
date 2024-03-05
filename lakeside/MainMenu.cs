@@ -264,7 +264,7 @@ namespace lakeside
         private void btnInvoice_Click(object sender, EventArgs e)
         {
             Hide();
-            new frmInvoice().Show();
+            new frmInvoice(new Invoice()).Show();
         }
     }
 }

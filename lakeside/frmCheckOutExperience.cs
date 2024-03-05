@@ -40,6 +40,7 @@ namespace lakeside
         DateTime endDate = new DateTime();
         int continueStep = 0;
         bool programmaticallyChanged = false;
+        Guest leadBooker=new Guest();
         private void btnContinue_Click(object sender, EventArgs e)
         {
             if(continueStep==0)
@@ -98,7 +99,7 @@ namespace lakeside
                 lbPodBookedOverview.Text = selectedPod.FriendlyName;
                 lbDatesBookedOverview.Text = selectedBooking.CheckInDate.ToString("ddd d MMM") + " --> " + selectedBooking.CheckOutDate.ToString("ddd d MMM");
                 BookingDAL BookingDAL = new BookingDAL();
-                Guest leadBooker = BookingDAL.GetLeadBooker(selectedBooking);
+                leadBooker = BookingDAL.GetLeadBooker(selectedBooking);
                 lbGuestsStayingOverview.Text = leadBooker.Forename + " " + leadBooker.Surname + $" and {numberOfGuestsInBooking--} others.";
             }
         }
@@ -193,6 +194,8 @@ namespace lakeside
         Booking selectedBooking = new Booking();
         List<Guest> selectedGuests = new List<Guest>();
         int numberOfGuestsInBooking = new int();
+        List<Course> selectedCourses = new List<Course>();
+        List<Extra> selectedExtras = new List<Extra>();
         private double TotalCostCalculator()
         {
             double price = 0.0;
@@ -211,7 +214,6 @@ namespace lakeside
             selectedGuests = GuestDAL.GetGuestFromBooking(selectedBooking);
 
             // Add courses
-            List<Course> selectedCourses = new List<Course>();
             int i = 0;
             foreach(Guest g in selectedGuests)
             {
@@ -226,7 +228,7 @@ namespace lakeside
             }
 
             // Add Extras
-            List<Extra> selectedExtras = ExtraDAL.GetExtraFromBooking(selectedBooking);
+            selectedExtras = ExtraDAL.GetExtraFromBooking(selectedBooking);
             foreach(Extra e in selectedExtras)
             {
                 price += e.Price;
@@ -248,6 +250,13 @@ namespace lakeside
             dtpBookingStart.Enabled = true;
             dgPods.Visible = true;
             cmbDatePickerStayLength.Enabled = true;
+        }
+
+        private void btnProceed_Click(object sender, EventArgs e)
+        {
+            Invoice invoice = new Invoice(selectedBooking,leadBooker,selectedPod,selectedCourses,selectedExtras);
+            Hide();
+            new frmInvoice(invoice).Show();
         }
     }
 }
