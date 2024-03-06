@@ -56,6 +56,7 @@ namespace lakeside
             this.pnlGuests = new System.Windows.Forms.Panel();
             this.btnRandomiseData = new System.Windows.Forms.Button();
             this.pnlGuestSelectionActionGroup = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnSelectGuests = new System.Windows.Forms.Button();
             this.btnAcceptGuests = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@ namespace lakeside
             this.lbTitle = new System.Windows.Forms.Label();
             this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
             this.btnConfirmPod = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
             this.pnlOverflow.SuspendLayout();
@@ -128,8 +128,8 @@ namespace lakeside
             this.pnlCalOutside.Controls.Add(this.lbMonthName);
             this.pnlCalOutside.Controls.Add(this.btnPreviousMonth);
             this.pnlCalOutside.Controls.Add(this.btnNextMonth);
-            this.pnlCalOutside.Controls.Add(this.lbDayTitles);
             this.pnlCalOutside.Controls.Add(this.pnlCalContainer);
+            this.pnlCalOutside.Controls.Add(this.lbDayTitles);
             this.pnlCalOutside.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlCalOutside.Location = new System.Drawing.Point(266, 3);
             this.pnlCalOutside.Name = "pnlCalOutside";
@@ -395,6 +395,17 @@ namespace lakeside
             this.pnlGuestSelectionActionGroup.Name = "pnlGuestSelectionActionGroup";
             this.pnlGuestSelectionActionGroup.Size = new System.Drawing.Size(254, 285);
             this.pnlGuestSelectionActionGroup.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 32);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "The first guest you add to the booking \r\nwill become the \'lead booker\'.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnSelectGuests
             // 
@@ -718,17 +729,6 @@ namespace lakeside
             this.btnConfirmPod.TabIndex = 16;
             this.btnConfirmPod.UseVisualStyleBackColor = true;
             this.btnConfirmPod.Click += new System.EventHandler(this.btnConfirmPod_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 32);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "The first guest you add to the booking \r\nwill become the \'lead booker\'.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmPodBooking
             // 

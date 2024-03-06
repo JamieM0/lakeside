@@ -253,8 +253,9 @@ namespace lakeside
             pbSelector.Image = Properties.Resources.dateSelector;
             pbSelector.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSelector.Location = new Point(dateDisplay.Location.X - 4, dateDisplay.Location.Y - 9);
+            pbSelector.BringToFront();
             containerPanel.Controls.Add(pbSelector);
-            //pbSelector.BringToFront();
+
         }
 
         private void btnNextMonth_Click(object sender, EventArgs e)

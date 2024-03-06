@@ -101,7 +101,7 @@ namespace lakeside
                 lbDatesBookedOverview.Text = selectedBooking.CheckInDate.ToString("ddd d MMM") + " --> " + selectedBooking.CheckOutDate.ToString("ddd d MMM");
                 BookingDAL BookingDAL = new BookingDAL();
                 leadBooker = BookingDAL.GetLeadBooker(selectedBooking);
-                lbGuestsStayingOverview.Text = leadBooker.Forename + " " + leadBooker.Surname + $" and {numberOfGuestsInBooking--} others.";
+                lbGuestsStayingOverview.Text = leadBooker.Forename + " " + leadBooker.Surname + $" and {numberOfGuestsInBooking-1} others.";
             }
         }
 

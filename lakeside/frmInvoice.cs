@@ -100,7 +100,7 @@ namespace lakeside
 
         private void SetLabels()
         {
-            lbDate.Text = invoice.booking.CheckInDate.ToString("ddd d MMM") + " - " + DateTime.Now.Date.ToString("ddd d MMM");
+            lbDate.Text = invoice.booking.CheckInDate.ToString("ddd d MMM") + " - " + invoice.booking.CheckOutDate.ToString("ddd d MMM");
             lbPodName.Text = invoice.bookedPod.FriendlyName;
             lbLeadGuestName.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
         }
@@ -109,7 +109,20 @@ namespace lakeside
         {
             dgCourseSelected.Font = new Font("Segoe UI", 12);
             dgExtraSelected.Font = new Font("Segoe UI", 12);
-            switch(invoice.coursesSelected.Count)
+            int allCourseCount = 0;
+            int allExtraCount = 0;
+            foreach(Course course in invoice.coursesSelected)
+            {
+                if (course.CourseName != new Course().CourseName)
+                    allCourseCount++;
+            }
+            foreach(Extra extra in invoice.extrasSelected)
+            {
+                if (extra.ExtraName != new Extra().ExtraName)
+                    allExtraCount++;
+            }
+            
+            switch(allCourseCount)
             {
                 case 0: lbInfoCourseSelected.Text = "No courses selected.";
                     dgCourseSelected.Visible = false;
@@ -123,24 +136,83 @@ namespace lakeside
                     dgCourseSelected.Visible = true;
                     break;
             }
-            switch (invoice.extrasSelected.Count)
+            switch (allExtraCount)
             {
                 case 0:
-                    lbInfoCourseSelected.Text = "No extras selected.";
+                    lbInfoExtraSelected.Text = "No extras selected.";
                     dgExtraSelected.Visible = false;
                     break;
                 case 1:
-                    lbInfoCourseSelected.Text = "Extra Selected";
+                    lbInfoExtraSelected.Text = "Extra Selected";
                     dgExtraSelected.Visible = true;
                     break;
                 default:
-                    lbInfoCourseSelected.Text = "Extras Selected";
+                    lbInfoExtraSelected.Text = "Extras Selected";
                     dgExtraSelected.Visible = true;
                     break;
             }
 
+            BookingDAL BookingDAL = new BookingDAL();
+            int numberOfGuestsInBooking = BookingDAL.GetNumberOfGuestsInBooking(invoice.booking);
+            lbPodCalculationsPodName.Text = $"{invoice.bookedPod.FriendlyName} \r\n@ £{invoice.bookedPod.Price} per guest per night";
+            lbPodCalculationsGuestCount.Text = $"x {numberOfGuestsInBooking} Guests";
+            lbPodCalculationsNightStayingCount.Text = $"x {(invoice.booking.CheckOutDate - invoice.booking.CheckInDate).TotalDays} Nights";
+            double podPrice = invoice.bookedPod.Price * numberOfGuestsInBooking * (invoice.booking.CheckOutDate - invoice.booking.CheckInDate).TotalDays;
+            lbPodCalculationsPrice.Text = $"£{podPrice} for {invoice.bookedPod.FriendlyName}";
+
+            CenterControlToFormHorizontally(lbTitle);
+
             PopulateDatagrids();
             SetLabels();
+
+            double totalPrice = podPrice + TotalCoursePrice() + TotalExtraPrice();
+            lbTotalPrice.Text = "Total Price: £" + totalPrice;
+
+            lbNameOnCard.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
+        }
+
+        private double TotalCoursePrice()
+        {
+            double price = 0.0;
+            foreach (DataGridViewRow row in dgCourseSelected.Rows)
+            {
+                if (row.Cells[3].Value!=null)
+                {
+                    price += Double.Parse(row.Cells[3].Value.ToString());
+                }
+            }
+            return price;
+        }
+        private double TotalExtraPrice()
+        {
+            double price = 0.0;
+            foreach(DataGridViewRow row in dgExtraSelected.Rows)
+            {
+                if(row.Cells[3].Value!=null)
+                {
+                    price += Double.Parse(row.Cells[3].Value.ToString());
+                }
+            }
+            return price;
+        }
+
+        private void btnMakePayment_Click(object sender, EventArgs e)
+        {
+            btnMakePayment.Enabled = false;
+            pnlPaymentWindow.Visible = true;
+        }
+
+        private void btnPayNow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCardNumber_TextChanged(object sender, EventArgs e)
+        {
+            if(Validation.NumberRange(txtCardNumber.Text.Length.ToString(), 16, 16, "Card Number") != null)
+            {
+                lbCardDateError.Text = Validation.NumberRange(txtCardNumber.Text.Length.ToString(), 16, 16, "Card Number");
+            }
         }
     }
 }

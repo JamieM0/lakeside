@@ -143,7 +143,7 @@ namespace lakeside.DAL
 
                 try
                 {
-                    using (SqlCommand command = new SqlCommand($"SELECT Course.* FROM Course JOIN GuestCourseBooking ON Course.course_id = GuestCourseBooking.course_id WHERE GuestCourseBooking.guest_id = '{g.GuestID}' AND GuestCourseBooking.booking_id = '{b.BookingID}'", connection))
+                    using (SqlCommand command = new SqlCommand($"SELECT Course.* FROM Course JOIN GuestCouseBooking ON Course.course_id = GuestCouseBooking.course_id WHERE GuestCouseBooking.guest_id = '{g.GuestID}' AND GuestCouseBooking.booking_id = '{b.BookingID}'", connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
