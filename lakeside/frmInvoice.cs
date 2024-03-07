@@ -172,9 +172,31 @@ namespace lakeside
             SetLabels();
 
             double totalPrice = podPrice + TotalCoursePrice() + TotalExtraPrice();
-            lbTotalPrice.Text = "Total Price: £" + totalPrice;
+            lbSubtotal.Text = "£" + totalPrice;
 
-           txtNameOnCard.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
+            int discount = CalculateDiscount();
+            double totalPriceWithDiscounts = totalPrice * (discount/100);
+            lbTotalPrice.Text = "Total Price: £" + totalPriceWithDiscounts;
+            txtNameOnCard.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
+        }
+
+        private int CalculateDiscount()
+        {
+            int discount = 0;
+            if (invoice.booking.PreviousGuests)
+            {
+                discount += 2;
+                cbReturningGuest.Checked = true;
+                lbInfoReturningGuest.Visible = true;
+            }
+            int monthsBookedDifference = Convert.ToInt32((invoice.booking.CheckInDate - invoice.booking.DateBooked).TotalDays);
+            if (monthsBookedDifference <= 6)
+            {
+                discount += 3;
+                cbBookedEarly.Checked = true;
+                lbInfoBookedEarly.Visible = true;
+            }
+            return discount;
         }
 
         private double TotalCoursePrice()

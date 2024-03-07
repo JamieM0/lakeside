@@ -856,9 +856,17 @@ namespace lakeside
             {
                 //Give User Feedback
                 btnContinueFromCourseSelection.Enabled = false;
-                
+
+                //If any of the guests in the booking are new (not previous), then set newGuests to true in the booking to calculate the discount later (at the invoice stage)
+                bool previousGuestsInBooking = false;
+                foreach(Guest g in selectedGuests)
+                {
+                    if (g.previousGuest == true)
+                        previousGuestsInBooking = true;
+                }
+                MessageBox.Show($"The result is: {previousGuestsInBooking}");
                 //Create new booking
-                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID,0.0,0);
+                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID,0.0,0, previousGuestsInBooking);
                 BookingDAL BookingDAL = new BookingDAL();
                 b.TotalOwed = CalculateTotalAmountToPay();
                 b.DiscountPercent = CalculateTotalDiscountAllowedOnBooking();

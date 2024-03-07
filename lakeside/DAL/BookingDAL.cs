@@ -83,12 +83,14 @@ namespace lakeside.DAL
 
             //Set SQL query command text to valid insert statement using values from the Guest class.
             //command.CommandText = string.Format
-
+            int previousGuests = 0;
+            if (b.PreviousGuests)
+                previousGuests = 1;
             object obj = ExecuteScalar($"INSERT INTO Booking OUTPUT INSERTED.booking_id " +
                 $"VALUES('{b.PodID}','{b.BookingType}','{b.CheckInDate}','{b.CheckOutDate}'," +
                 $"'{b.DateBooked}','{b.NumberOccupants}','{b.DiscountPercent}'," +
                 $"'{b.DepositPaid}','{b.DepositPayDate}'," +
-                $"'{b.BookedBy}')");
+                $"'{b.BookedBy}','{previousGuests}')");
 
             return Convert.ToInt32(obj);
         }

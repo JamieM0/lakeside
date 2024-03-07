@@ -20,7 +20,7 @@ namespace lakeside.Models
         public int BookingID { get; set; }
         public double TotalOwed { get; set; }
         public int DiscountPercent { get; set; }
-        public bool NewGuests { get; set; }
+        public bool PreviousGuests { get; set; }
 
         public Booking()
         {
@@ -38,7 +38,7 @@ namespace lakeside.Models
             DiscountPercent = 0;
         }
 
-        public Booking(string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID, double totalOwed, int discountPercent, bool newGuests)
+        public Booking(string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID, double totalOwed, int discountPercent, bool previousGuests)
         {
             BookingType = bookingType;
             CheckInDate = checkInDate;
@@ -51,9 +51,9 @@ namespace lakeside.Models
             PodID = podID;
             TotalOwed = totalOwed;
             DiscountPercent = discountPercent;
-            NewGuests = newGuests;
+            PreviousGuests = previousGuests;
         }
-        public Booking(int bookingID, string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID, int discountPercent, bool newGuests)
+        public Booking(int bookingID, string bookingType, DateTime checkInDate, DateTime checkOutDate, DateTime dateBooked, int numberOccupants, double depositPaid, DateTime depositPayDate, int bookedBy, int podID, int discountPercent, bool previousGuests)
         {
             BookingID = bookingID;
             BookingType = bookingType;
@@ -66,7 +66,7 @@ namespace lakeside.Models
             BookedBy = bookedBy;
             PodID = podID;
             DiscountPercent = discountPercent;
-            NewGuests = newGuests;
+            PreviousGuests = previousGuests;
         }
     }
 }
