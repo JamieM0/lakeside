@@ -88,7 +88,10 @@ namespace lakeside
                         currentCourse = course;
                     }
                 }
-                dgCourseSelected.Rows.Add(pair.Value, pair.Key, currentCourse.Price, currentCourse.Price * pair.Value);
+                if(pair.Key!="")
+                {
+                    dgCourseSelected.Rows.Add(pair.Value, pair.Key, currentCourse.Price, currentCourse.Price * pair.Value);
+                }
             }
 
             //Populate Course Datagrid
@@ -161,6 +164,9 @@ namespace lakeside
             lbPodCalculationsPrice.Text = $"£{podPrice} for {invoice.bookedPod.FriendlyName}";
 
             CenterControlToFormHorizontally(lbTitle);
+            CenterControlToFormHorizontally(lbPodName);
+            CenterControlToFormHorizontally(lbInfoPodName);
+            CenterControlToFormHorizontally(pnlPodNames);
 
             PopulateDatagrids();
             SetLabels();
@@ -168,7 +174,7 @@ namespace lakeside
             double totalPrice = podPrice + TotalCoursePrice() + TotalExtraPrice();
             lbTotalPrice.Text = "Total Price: £" + totalPrice;
 
-            lbNameOnCard.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
+           txtNameOnCard.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
         }
 
         private double TotalCoursePrice()

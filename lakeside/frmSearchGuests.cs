@@ -38,7 +38,7 @@ namespace lakeside
             searchType = "guest";
             fromPodBooking = fromPodBookingForm;
             btnReturn.Text = "Back to Booking";
-            buttonIcon = Properties.Resources.SelectGuestButton2;
+            //btn = Properties.Resources.SelectGuestButton2;
             txtSearch_SetText("Search for Name, Email, or Guest ID...");
         }
 
@@ -409,6 +409,10 @@ namespace lakeside
                 btnEditElement.BackgroundImage = Properties.Resources.EditGuestButton;
                 btnRemoveElement.BackgroundImage = Properties.Resources.RemoveGuestButton;
                 btnRemoveElement.Visible = false;
+                if(fromPodBooking)
+                {
+                    btnEditElement.BackgroundImage = Properties.Resources.SelectGuestButton2;
+                }
             }
             else if(searchType=="pod")
             {

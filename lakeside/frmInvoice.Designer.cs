@@ -51,22 +51,25 @@ namespace lakeside
             this.lbPodCalculationsPrice = new System.Windows.Forms.Label();
             this.lbTotalPrice = new System.Windows.Forms.Label();
             this.pnlPaymentWindow = new System.Windows.Forms.Panel();
-            this.lbCardNumber = new System.Windows.Forms.Label();
-            this.txtCardNumber = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbNameOnCard = new System.Windows.Forms.Label();
+            this.lbCardDateError = new System.Windows.Forms.Label();
+            this.lbCVVError = new System.Windows.Forms.Label();
+            this.lbNameOnCardError = new System.Windows.Forms.Label();
+            this.lbCardNumberError = new System.Windows.Forms.Label();
+            this.btnPayNow = new System.Windows.Forms.Button();
+            this.dtpCardDate = new System.Windows.Forms.DateTimePicker();
+            this.lbCardDate = new System.Windows.Forms.Label();
             this.txtCVV = new System.Windows.Forms.TextBox();
             this.lbCVV = new System.Windows.Forms.Label();
-            this.lbCardDate = new System.Windows.Forms.Label();
-            this.dtpCardDate = new System.Windows.Forms.DateTimePicker();
-            this.btnPayNow = new System.Windows.Forms.Button();
-            this.lbCardNumberError = new System.Windows.Forms.Label();
-            this.lbNameOnCardError = new System.Windows.Forms.Label();
-            this.lbCVVError = new System.Windows.Forms.Label();
-            this.lbCardDateError = new System.Windows.Forms.Label();
+            this.txtNameOnCard = new System.Windows.Forms.TextBox();
+            this.lbNameOnCard = new System.Windows.Forms.Label();
+            this.txtCardNumber = new System.Windows.Forms.TextBox();
+            this.lbCardNumber = new System.Windows.Forms.Label();
+            this.pnlPodNames = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgCourseSelected)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgExtraSelected)).BeginInit();
             this.pnlPaymentWindow.SuspendLayout();
+            this.pnlPodNames.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbDate
@@ -93,7 +96,7 @@ namespace lakeside
             // 
             this.lbInfoPodName.AutoSize = true;
             this.lbInfoPodName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfoPodName.Location = new System.Drawing.Point(353, 51);
+            this.lbInfoPodName.Location = new System.Drawing.Point(106, 0);
             this.lbInfoPodName.Name = "lbInfoPodName";
             this.lbInfoPodName.Size = new System.Drawing.Size(102, 21);
             this.lbInfoPodName.TabIndex = 3;
@@ -105,7 +108,7 @@ namespace lakeside
             // 
             this.lbPodName.AutoSize = true;
             this.lbPodName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPodName.Location = new System.Drawing.Point(327, 72);
+            this.lbPodName.Location = new System.Drawing.Point(80, 21);
             this.lbPodName.Name = "lbPodName";
             this.lbPodName.Size = new System.Drawing.Size(160, 30);
             this.lbPodName.TabIndex = 2;
@@ -281,7 +284,7 @@ namespace lakeside
             this.pnlPaymentWindow.Controls.Add(this.lbCardDate);
             this.pnlPaymentWindow.Controls.Add(this.txtCVV);
             this.pnlPaymentWindow.Controls.Add(this.lbCVV);
-            this.pnlPaymentWindow.Controls.Add(this.textBox1);
+            this.pnlPaymentWindow.Controls.Add(this.txtNameOnCard);
             this.pnlPaymentWindow.Controls.Add(this.lbNameOnCard);
             this.pnlPaymentWindow.Controls.Add(this.txtCardNumber);
             this.pnlPaymentWindow.Controls.Add(this.lbCardNumber);
@@ -291,42 +294,83 @@ namespace lakeside
             this.pnlPaymentWindow.TabIndex = 24;
             this.pnlPaymentWindow.Visible = false;
             // 
-            // lbCardNumber
+            // lbCardDateError
             // 
-            this.lbCardNumber.AutoSize = true;
-            this.lbCardNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCardNumber.Location = new System.Drawing.Point(52, 21);
-            this.lbCardNumber.Name = "lbCardNumber";
-            this.lbCardNumber.Size = new System.Drawing.Size(108, 21);
-            this.lbCardNumber.TabIndex = 0;
-            this.lbCardNumber.Text = "Card Number:";
+            this.lbCardDateError.AutoSize = true;
+            this.lbCardDateError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardDateError.ForeColor = System.Drawing.Color.Red;
+            this.lbCardDateError.Location = new System.Drawing.Point(163, 234);
+            this.lbCardDateError.Name = "lbCardDateError";
+            this.lbCardDateError.Size = new System.Drawing.Size(125, 17);
+            this.lbCardDateError.TabIndex = 29;
+            this.lbCardDateError.Text = "Card Number: Error";
+            this.lbCardDateError.Visible = false;
             // 
-            // txtCardNumber
+            // lbCVVError
             // 
-            this.txtCardNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardNumber.Location = new System.Drawing.Point(166, 18);
-            this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Size = new System.Drawing.Size(276, 29);
-            this.txtCardNumber.TabIndex = 1;
-            this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
+            this.lbCVVError.AutoSize = true;
+            this.lbCVVError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCVVError.ForeColor = System.Drawing.Color.Red;
+            this.lbCVVError.Location = new System.Drawing.Point(163, 174);
+            this.lbCVVError.Name = "lbCVVError";
+            this.lbCVVError.Size = new System.Drawing.Size(125, 17);
+            this.lbCVVError.TabIndex = 28;
+            this.lbCVVError.Text = "Card Number: Error";
+            this.lbCVVError.Visible = false;
             // 
-            // textBox1
+            // lbNameOnCardError
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(166, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 29);
-            this.textBox1.TabIndex = 3;
+            this.lbNameOnCardError.AutoSize = true;
+            this.lbNameOnCardError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameOnCardError.ForeColor = System.Drawing.Color.Red;
+            this.lbNameOnCardError.Location = new System.Drawing.Point(163, 113);
+            this.lbNameOnCardError.Name = "lbNameOnCardError";
+            this.lbNameOnCardError.Size = new System.Drawing.Size(125, 17);
+            this.lbNameOnCardError.TabIndex = 27;
+            this.lbNameOnCardError.Text = "Card Number: Error";
+            this.lbNameOnCardError.Visible = false;
             // 
-            // lbNameOnCard
+            // lbCardNumberError
             // 
-            this.lbNameOnCard.AutoSize = true;
-            this.lbNameOnCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameOnCard.Location = new System.Drawing.Point(43, 84);
-            this.lbNameOnCard.Name = "lbNameOnCard";
-            this.lbNameOnCard.Size = new System.Drawing.Size(117, 21);
-            this.lbNameOnCard.TabIndex = 2;
-            this.lbNameOnCard.Text = "Name On Card:";
+            this.lbCardNumberError.AutoSize = true;
+            this.lbCardNumberError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardNumberError.ForeColor = System.Drawing.Color.Red;
+            this.lbCardNumberError.Location = new System.Drawing.Point(163, 49);
+            this.lbCardNumberError.Name = "lbCardNumberError";
+            this.lbCardNumberError.Size = new System.Drawing.Size(125, 17);
+            this.lbCardNumberError.TabIndex = 26;
+            this.lbCardNumberError.Text = "Card Number: Error";
+            this.lbCardNumberError.Visible = false;
+            // 
+            // btnPayNow
+            // 
+            this.btnPayNow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayNow.Location = new System.Drawing.Point(300, 266);
+            this.btnPayNow.Name = "btnPayNow";
+            this.btnPayNow.Size = new System.Drawing.Size(180, 45);
+            this.btnPayNow.TabIndex = 25;
+            this.btnPayNow.Text = "Pay Now";
+            this.btnPayNow.UseVisualStyleBackColor = true;
+            this.btnPayNow.Click += new System.EventHandler(this.btnPayNow_Click);
+            // 
+            // dtpCardDate
+            // 
+            this.dtpCardDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCardDate.Location = new System.Drawing.Point(165, 201);
+            this.dtpCardDate.Name = "dtpCardDate";
+            this.dtpCardDate.Size = new System.Drawing.Size(133, 29);
+            this.dtpCardDate.TabIndex = 7;
+            // 
+            // lbCardDate
+            // 
+            this.lbCardDate.AutoSize = true;
+            this.lbCardDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardDate.Location = new System.Drawing.Point(47, 204);
+            this.lbCardDate.Name = "lbCardDate";
+            this.lbCardDate.Size = new System.Drawing.Size(112, 21);
+            this.lbCardDate.TabIndex = 6;
+            this.lbCardDate.Text = "Card End Date:";
             // 
             // txtCVV
             // 
@@ -347,89 +391,68 @@ namespace lakeside
             this.lbCVV.TabIndex = 4;
             this.lbCVV.Text = "CVV / Security Code:";
             // 
-            // lbCardDate
+            // txtNameOnCard
             // 
-            this.lbCardDate.AutoSize = true;
-            this.lbCardDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCardDate.Location = new System.Drawing.Point(47, 204);
-            this.lbCardDate.Name = "lbCardDate";
-            this.lbCardDate.Size = new System.Drawing.Size(112, 21);
-            this.lbCardDate.TabIndex = 6;
-            this.lbCardDate.Text = "Card End Date:";
+            this.txtNameOnCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameOnCard.Location = new System.Drawing.Point(166, 81);
+            this.txtNameOnCard.Name = "txtNameOnCard";
+            this.txtNameOnCard.Size = new System.Drawing.Size(276, 29);
+            this.txtNameOnCard.TabIndex = 3;
             // 
-            // dtpCardDate
+            // lbNameOnCard
             // 
-            this.dtpCardDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCardDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpCardDate.Location = new System.Drawing.Point(165, 201);
-            this.dtpCardDate.Name = "dtpCardDate";
-            this.dtpCardDate.Size = new System.Drawing.Size(133, 29);
-            this.dtpCardDate.TabIndex = 7;
+            this.lbNameOnCard.AutoSize = true;
+            this.lbNameOnCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameOnCard.Location = new System.Drawing.Point(43, 84);
+            this.lbNameOnCard.Name = "lbNameOnCard";
+            this.lbNameOnCard.Size = new System.Drawing.Size(117, 21);
+            this.lbNameOnCard.TabIndex = 2;
+            this.lbNameOnCard.Text = "Name On Card:";
             // 
-            // btnPayNow
+            // txtCardNumber
             // 
-            this.btnPayNow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayNow.Location = new System.Drawing.Point(300, 266);
-            this.btnPayNow.Name = "btnPayNow";
-            this.btnPayNow.Size = new System.Drawing.Size(180, 45);
-            this.btnPayNow.TabIndex = 25;
-            this.btnPayNow.Text = "Pay Now";
-            this.btnPayNow.UseVisualStyleBackColor = true;
-            this.btnPayNow.Click += new System.EventHandler(this.btnPayNow_Click);
+            this.txtCardNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardNumber.Location = new System.Drawing.Point(166, 18);
+            this.txtCardNumber.Name = "txtCardNumber";
+            this.txtCardNumber.Size = new System.Drawing.Size(276, 29);
+            this.txtCardNumber.TabIndex = 1;
+            this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
             // 
-            // lbCardNumberError
+            // lbCardNumber
             // 
-            this.lbCardNumberError.AutoSize = true;
-            this.lbCardNumberError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCardNumberError.ForeColor = System.Drawing.Color.Red;
-            this.lbCardNumberError.Location = new System.Drawing.Point(163, 49);
-            this.lbCardNumberError.Name = "lbCardNumberError";
-            this.lbCardNumberError.Size = new System.Drawing.Size(125, 17);
-            this.lbCardNumberError.TabIndex = 26;
-            this.lbCardNumberError.Text = "Card Number: Error";
-            this.lbCardNumberError.Visible = false;
+            this.lbCardNumber.AutoSize = true;
+            this.lbCardNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardNumber.Location = new System.Drawing.Point(52, 21);
+            this.lbCardNumber.Name = "lbCardNumber";
+            this.lbCardNumber.Size = new System.Drawing.Size(108, 21);
+            this.lbCardNumber.TabIndex = 0;
+            this.lbCardNumber.Text = "Card Number:";
             // 
-            // lbNameOnCardError
+            // pnlPodNames
             // 
-            this.lbNameOnCardError.AutoSize = true;
-            this.lbNameOnCardError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameOnCardError.ForeColor = System.Drawing.Color.Red;
-            this.lbNameOnCardError.Location = new System.Drawing.Point(163, 113);
-            this.lbNameOnCardError.Name = "lbNameOnCardError";
-            this.lbNameOnCardError.Size = new System.Drawing.Size(125, 17);
-            this.lbNameOnCardError.TabIndex = 27;
-            this.lbNameOnCardError.Text = "Card Number: Error";
-            this.lbNameOnCardError.Visible = false;
+            this.pnlPodNames.Controls.Add(this.lbInfoPodName);
+            this.pnlPodNames.Controls.Add(this.lbPodName);
+            this.pnlPodNames.Location = new System.Drawing.Point(225, 51);
+            this.pnlPodNames.Name = "pnlPodNames";
+            this.pnlPodNames.Size = new System.Drawing.Size(318, 56);
+            this.pnlPodNames.TabIndex = 25;
             // 
-            // lbCVVError
+            // label1
             // 
-            this.lbCVVError.AutoSize = true;
-            this.lbCVVError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCVVError.ForeColor = System.Drawing.Color.Red;
-            this.lbCVVError.Location = new System.Drawing.Point(163, 174);
-            this.lbCVVError.Name = "lbCVVError";
-            this.lbCVVError.Size = new System.Drawing.Size(125, 17);
-            this.lbCVVError.TabIndex = 28;
-            this.lbCVVError.Text = "Card Number: Error";
-            this.lbCVVError.Visible = false;
-            // 
-            // lbCardDateError
-            // 
-            this.lbCardDateError.AutoSize = true;
-            this.lbCardDateError.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCardDateError.ForeColor = System.Drawing.Color.Red;
-            this.lbCardDateError.Location = new System.Drawing.Point(163, 234);
-            this.lbCardDateError.Name = "lbCardDateError";
-            this.lbCardDateError.Size = new System.Drawing.Size(125, 17);
-            this.lbCardDateError.TabIndex = 29;
-            this.lbCardDateError.Text = "Card Number: Error";
-            this.lbCardDateError.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(517, 314);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "label1";
             // 
             // frmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pnlPodNames);
             this.Controls.Add(this.pnlPaymentWindow);
             this.Controls.Add(this.lbPodCalculationsPrice);
             this.Controls.Add(this.lbPodCalculationsNightStayingCount);
@@ -443,8 +466,6 @@ namespace lakeside
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.lbInfoLeadGuestName);
             this.Controls.Add(this.lbLeadGuestName);
-            this.Controls.Add(this.lbInfoPodName);
-            this.Controls.Add(this.lbPodName);
             this.Controls.Add(this.lbInfoDate);
             this.Controls.Add(this.lbDate);
             this.Controls.Add(this.lbTotalPrice);
@@ -455,6 +476,8 @@ namespace lakeside
             ((System.ComponentModel.ISupportInitialize)(this.dgExtraSelected)).EndInit();
             this.pnlPaymentWindow.ResumeLayout(false);
             this.pnlPaymentWindow.PerformLayout();
+            this.pnlPodNames.ResumeLayout(false);
+            this.pnlPodNames.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,7 +507,7 @@ namespace lakeside
         private System.Windows.Forms.Label lbPodCalculationsPrice;
         private System.Windows.Forms.Label lbTotalPrice;
         private System.Windows.Forms.Panel pnlPaymentWindow;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNameOnCard;
         private System.Windows.Forms.Label lbNameOnCard;
         private System.Windows.Forms.TextBox txtCardNumber;
         private System.Windows.Forms.Label lbCardNumber;
@@ -497,5 +520,7 @@ namespace lakeside
         private System.Windows.Forms.Label lbCVVError;
         private System.Windows.Forms.Label lbNameOnCardError;
         private System.Windows.Forms.Label lbCardNumberError;
+        private System.Windows.Forms.Panel pnlPodNames;
+        private System.Windows.Forms.Label label1;
     }
 }
