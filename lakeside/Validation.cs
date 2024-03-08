@@ -149,6 +149,32 @@ namespace lakeside
                 return "Booking start date must be at least 2 months in the future.";
             return null;
         }
+
+        public static string RequiredLength(string input, int requiredLength, string elementName)
+        {
+            if (input.Length < 1)
+                return elementName + " cannot be empty.";
+            try
+            {
+                int number = input.Length;
+                if (number > requiredLength)
+                    return elementName + " is too long! Length must be " + requiredLength + ".";
+                if (number < requiredLength)
+                    return elementName + " is not long enough! Length must be " + requiredLength + ".";
+                return null;
+            }
+            catch
+            {
+                return "Not a valid number.";
+            }
+        }
+        
+        public static string DateCheckOverCurrent(DateTime input, string elementName)
+        {
+            if (input <= DateTime.Now)
+                return elementName + " must be in the future.";
+            return null;
+        }
     }
 
     //public class ValidationParts

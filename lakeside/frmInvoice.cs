@@ -175,9 +175,12 @@ namespace lakeside
             lbSubtotal.Text = "£" + totalPrice;
 
             int discount = CalculateDiscount();
-            double totalPriceWithDiscounts = totalPrice * (discount/100);
+            double discountApplied = 100 - discount;
+            double discountApplied2 = discountApplied / 100;
+            double totalPriceWithDiscounts = totalPrice * discountApplied2;
             lbTotalPrice.Text = "Total Price: £" + totalPriceWithDiscounts;
             txtNameOnCard.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
+            dtpCardDate.Value = DateTime.Now.AddDays(1);
         }
 
         private int CalculateDiscount()
@@ -237,10 +240,42 @@ namespace lakeside
 
         private void txtCardNumber_TextChanged(object sender, EventArgs e)
         {
-            if(Validation.NumberRange(txtCardNumber.Text.Length.ToString(), 16, 16, "Card Number") != null)
+            if(Validation.RequiredLength(txtCardNumber.Text, 16, "Card Number") != null)
             {
-                lbCardDateError.Text = Validation.NumberRange(txtCardNumber.Text.Length.ToString(), 16, 16, "Card Number");
+                lbCardNumberError.Text = Validation.RequiredLength(txtCardNumber.Text, 16, "Card Number");
             }
+            else
+            {
+                lbCardNumberError.Text = "";
+            }
+        }
+
+        private void txtNameOnCard_TextChanged(object sender, EventArgs e)
+        {
+            if (Validation.Name(txtNameOnCard.Text) != null)
+                lbNameOnCardError.Text = Validation.Name(txtNameOnCard.Text);
+            else
+                lbNameOnCardError.Text = "";
+        }
+
+        private void txtCVV_TextChanged(object sender, EventArgs e)
+        {
+            if (Validation.RequiredLength(txtCVV.Text, 3, "CVV") != null)
+            {
+                lbCVVError.Text = Validation.RequiredLength(txtCVV.Text, 3, "CVV");
+            }
+            else
+            {
+                lbCVVError.Text = "";
+            }
+        }
+
+        private void dtpCardDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (Validation.DateCheckOverCurrent(dtpCardDate.Value, "Card Expiry Date") != null)
+                lbCardDateError.Text = Validation.DateCheckOverCurrent(dtpCardDate.Value, "Card Expiry Date");
+            else
+                lbCardDateError.Text = "";
         }
     }
 }

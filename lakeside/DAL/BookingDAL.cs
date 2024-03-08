@@ -45,13 +45,13 @@ namespace lakeside.DAL
                     {
                         if (reader.Read())
                         {
-                            bool newGuests = false;
-                            if (int.Parse(String.Format($"{reader[12]}")) == 1)
-                                newGuests = true;
+                            //bool newGuests = false;
+                            //if (int.Parse(String.Format($"{reader[12]}")) == 1)
+                            //    newGuests = true;
 
                             result = new Booking(int.Parse(String.Format($"{reader[0]}")), String.Format($"{reader[2]}"), start, end, DateTime.Parse(String.Format($"{reader[5]}")),
                                 int.Parse(String.Format($"{reader[6]}")), 0.0, DateTime.Parse(String.Format($"{reader[9]}")), int.Parse(String.Format($"{reader[10]}")),
-                                int.Parse(String.Format($"{reader[1]}")), int.Parse(String.Format($"{reader[7]}")), newGuests); ;
+                                int.Parse(String.Format($"{reader[1]}")), int.Parse(String.Format($"{reader[7]}")), Convert.ToBoolean(Convert.ToInt16(String.Format($"{reader[11]}"))));
                         }
                     }
                 }
