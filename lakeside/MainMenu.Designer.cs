@@ -53,14 +53,12 @@ namespace lakeside
             this.pnlExit = new System.Windows.Forms.Panel();
             this.lbExit = new System.Windows.Forms.Label();
             this.btnEditPod = new System.Windows.Forms.Button();
-            this.btnAddPod = new System.Windows.Forms.Button();
             this.btnEditGuest = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.lakesideDBDataSet = new lakeside.LakesideDBDataSet();
             this.lakesideDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnInvoice = new System.Windows.Forms.Button();
             this.pnlExtraSelected = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,10 +73,12 @@ namespace lakeside
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.createBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlBlackBackground.SuspendLayout();
             this.pnlExit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSetBindingSource)).BeginInit();
             this.pnlExtraSelected.SuspendLayout();
@@ -96,10 +96,12 @@ namespace lakeside
             this.managePodsToolStripMenuItem,
             this.coursesToolStripMenuItem,
             this.extraToolStripMenuItem,
-            this.staffToolStripMenuItem});
+            this.staffToolStripMenuItem,
+            this.createBookingToolStripMenuItem,
+            this.checkOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(152, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(386, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(663, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -212,7 +214,7 @@ namespace lakeside
             this.addExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addExtraToolStripMenuItem.Text = "Add Extra";
             this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
             // 
@@ -221,7 +223,7 @@ namespace lakeside
             this.editExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 
@@ -278,6 +280,7 @@ namespace lakeside
             this.cbDebug.TabIndex = 12;
             this.cbDebug.Text = "Use Debug Tools?";
             this.cbDebug.UseVisualStyleBackColor = true;
+            this.cbDebug.Visible = false;
             this.cbDebug.CheckedChanged += new System.EventHandler(this.cbDebug_CheckedChanged);
             // 
             // pnlBlackBackground
@@ -325,18 +328,6 @@ namespace lakeside
             this.btnEditPod.UseVisualStyleBackColor = true;
             this.btnEditPod.Click += new System.EventHandler(this.btnEditPod_Click);
             // 
-            // btnAddPod
-            // 
-            this.btnAddPod.BackgroundImage = global::lakeside.Properties.Resources.AddPodButton;
-            this.btnAddPod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddPod.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPod.Location = new System.Drawing.Point(752, 368);
-            this.btnAddPod.Name = "btnAddPod";
-            this.btnAddPod.Size = new System.Drawing.Size(250, 65);
-            this.btnAddPod.TabIndex = 10;
-            this.btnAddPod.UseVisualStyleBackColor = true;
-            this.btnAddPod.Click += new System.EventHandler(this.btnAddPod_Click);
-            // 
             // btnEditGuest
             // 
             this.btnEditGuest.BackgroundImage = global::lakeside.Properties.Resources.EditGuestButton;
@@ -361,16 +352,16 @@ namespace lakeside
             this.btnAddGuest.UseVisualStyleBackColor = true;
             this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::lakeside.Properties.Resources.Full_Main_Logo__Transparent_3;
-            this.pictureBox1.Location = new System.Drawing.Point(110, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(835, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pbLogo.Image = global::lakeside.Properties.Resources.Full_Main_Logo__Transparent_3;
+            this.pbLogo.Location = new System.Drawing.Point(110, 63);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(835, 170);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // btnCheckOut
             // 
@@ -392,16 +383,6 @@ namespace lakeside
             // 
             this.lakesideDBDataSetBindingSource.DataSource = this.lakesideDBDataSet;
             this.lakesideDBDataSetBindingSource.Position = 0;
-            // 
-            // btnInvoice
-            // 
-            this.btnInvoice.Location = new System.Drawing.Point(110, 310);
-            this.btnInvoice.Name = "btnInvoice";
-            this.btnInvoice.Size = new System.Drawing.Size(109, 39);
-            this.btnInvoice.TabIndex = 15;
-            this.btnInvoice.Text = "Invoice";
-            this.btnInvoice.UseVisualStyleBackColor = true;
-            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
             // 
             // pnlExtraSelected
             // 
@@ -549,6 +530,22 @@ namespace lakeside
             this.label1.TabIndex = 13;
             this.label1.Text = "label1";
             // 
+            // createBookingToolStripMenuItem
+            // 
+            this.createBookingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.createBookingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.createBookingToolStripMenuItem.Name = "createBookingToolStripMenuItem";
+            this.createBookingToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
+            this.createBookingToolStripMenuItem.Text = "Create Booking";
+            // 
+            // checkOutToolStripMenuItem
+            // 
+            this.checkOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.checkOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(115, 29);
+            this.checkOutToolStripMenuItem.Text = "Check Out";
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -558,14 +555,12 @@ namespace lakeside
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 563);
             this.ControlBox = false;
-            this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.btnEditPod);
-            this.Controls.Add(this.btnAddPod);
             this.Controls.Add(this.btnEditGuest);
             this.Controls.Add(this.btnAddGuest);
             this.Controls.Add(this.btnPodBooking);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlBlackBackground);
             this.Controls.Add(this.pnlCourseSelected);
@@ -586,7 +581,7 @@ namespace lakeside
             this.pnlBlackBackground.PerformLayout();
             this.pnlExit.ResumeLayout(false);
             this.pnlExit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lakesideDBDataSetBindingSource)).EndInit();
             this.pnlExtraSelected.ResumeLayout(false);
@@ -600,7 +595,7 @@ namespace lakeside
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button btnPodBooking;
         private System.Windows.Forms.Button btnEditGuest;
@@ -609,7 +604,6 @@ namespace lakeside
         private System.Windows.Forms.ToolStripMenuItem addGuestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editGuestToolStripMenuItem;
         private System.Windows.Forms.Button btnEditPod;
-        private System.Windows.Forms.Button btnAddPod;
         private System.Windows.Forms.ToolStripMenuItem managePodsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addPodToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editPosdToolStripMenuItem;
@@ -629,7 +623,6 @@ namespace lakeside
         private System.Windows.Forms.Button btnCheckOut;
         private LakesideDBDataSet lakesideDBDataSet;
         private System.Windows.Forms.BindingSource lakesideDBDataSetBindingSource;
-        private System.Windows.Forms.Button btnInvoice;
         private System.Windows.Forms.Panel pnlExtraSelected;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -644,6 +637,8 @@ namespace lakeside
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem createBookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkOutToolStripMenuItem;
     }
 }
 

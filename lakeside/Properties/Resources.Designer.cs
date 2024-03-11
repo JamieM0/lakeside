@@ -263,6 +263,16 @@ namespace lakeside.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Booking_Form_Gradient {
+            get {
+                object obj = ResourceManager.GetObject("Booking_Form_Gradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bookingIcon {
             get {
                 object obj = ResourceManager.GetObject("bookingIcon", resourceCulture);
@@ -506,6 +516,16 @@ namespace lakeside.Properties {
         internal static System.Drawing.Bitmap Full_Main_Logo__White_ {
             get {
                 object obj = ResourceManager.GetObject("Full_Main_Logo__White_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gradient_Booking2 {
+            get {
+                object obj = ResourceManager.GetObject("Gradient_Booking2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

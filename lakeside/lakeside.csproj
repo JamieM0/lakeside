@@ -270,6 +270,8 @@
     <None Include="Resources\RemoveExtraButton.png" />
     <None Include="Resources\SelectExtra.png" />
     <None Include="Resources\SelectExtraButton.png" />
+    <None Include="Resources\Booking_Form_Gradient.png" />
+    <None Include="Resources\Gradient_Booking2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

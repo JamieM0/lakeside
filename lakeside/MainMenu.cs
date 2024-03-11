@@ -57,7 +57,7 @@ namespace lakeside
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnClose_MouseEnter(object sender, EventArgs e)

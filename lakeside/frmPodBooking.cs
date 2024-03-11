@@ -319,6 +319,11 @@ namespace lakeside
                 }
                 lbDebugInfo.BringToFront();
             }
+
+            //foreach(Control c in this.Controls)
+            //{
+            //    c.ForeColor = Color.White;
+            //}
         }
         private void Control_DebugUpdate(object sender, EventArgs e)
         {
@@ -864,7 +869,7 @@ namespace lakeside
                     if (g.previousGuest == true)
                         previousGuestsInBooking = true;
                 }
-                MessageBox.Show($"The result is: {previousGuestsInBooking}");
+                //MessageBox.Show($"The result is: {previousGuestsInBooking}");
                 //Create new booking
                 Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID,0.0,0, previousGuestsInBooking);
                 BookingDAL BookingDAL = new BookingDAL();

@@ -41,13 +41,12 @@ namespace lakeside
             this.lbDateRange = new System.Windows.Forms.Label();
             this.cmbDatePickerStayLength = new System.Windows.Forms.ComboBox();
             this.lbDatePickerStayPeriod = new System.Windows.Forms.Label();
-            this.btnSelectDates = new System.Windows.Forms.Button();
             this.pnlDatePicker = new System.Windows.Forms.Panel();
             this.btnContinueCourseSelection = new System.Windows.Forms.Button();
             this.pnlOverflow = new System.Windows.Forms.Panel();
             this.lbOverflowText = new System.Windows.Forms.Label();
             this.lbOverflow = new System.Windows.Forms.Label();
-            this.btnDatePickerOpenerSelector = new System.Windows.Forms.Button();
+            this.btnSelectDates = new System.Windows.Forms.Button();
             this.dgAvailablePods = new System.Windows.Forms.DataGridView();
             this.lbLocationDisplay = new System.Windows.Forms.Label();
             this.pnlLocationDateDisplay = new System.Windows.Forms.Panel();
@@ -84,9 +83,10 @@ namespace lakeside
             this.dgCourses = new System.Windows.Forms.DataGridView();
             this.lbCoursePickerInstructions = new System.Windows.Forms.Label();
             this.lbGuestCoursePickerTitle = new System.Windows.Forms.Label();
-            this.lbTitle = new System.Windows.Forms.Label();
             this.btnBackToHomeOrMainMenu = new System.Windows.Forms.Button();
+            this.btnDatePickerOpenerSelector = new System.Windows.Forms.Button();
             this.btnConfirmPod = new System.Windows.Forms.Button();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
             this.pnlOverflow.SuspendLayout();
@@ -216,20 +216,9 @@ namespace lakeside
             this.lbDatePickerStayPeriod.TabIndex = 11;
             this.lbDatePickerStayPeriod.Text = "Stay Length:             Nights";
             // 
-            // btnSelectDates
-            // 
-            this.btnSelectDates.BackgroundImage = global::lakeside.Properties.Resources.SelectDatesButton;
-            this.btnSelectDates.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSelectDates.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectDates.Location = new System.Drawing.Point(17, 260);
-            this.btnSelectDates.Name = "btnSelectDates";
-            this.btnSelectDates.Size = new System.Drawing.Size(228, 60);
-            this.btnSelectDates.TabIndex = 15;
-            this.btnSelectDates.UseVisualStyleBackColor = true;
-            this.btnSelectDates.Click += new System.EventHandler(this.btnSelectDates_Click);
-            // 
             // pnlDatePicker
             // 
+            this.pnlDatePicker.BackColor = System.Drawing.Color.Transparent;
             this.pnlDatePicker.Controls.Add(this.btnContinueCourseSelection);
             this.pnlDatePicker.Controls.Add(this.pnlOverflow);
             this.pnlDatePicker.Controls.Add(this.cmbDatePickerStayLength);
@@ -290,17 +279,17 @@ namespace lakeside
             this.lbOverflow.Text = "12";
             this.lbOverflow.Visible = false;
             // 
-            // btnDatePickerOpenerSelector
+            // btnSelectDates
             // 
-            this.btnDatePickerOpenerSelector.BackgroundImage = global::lakeside.Properties.Resources.SelectDatesButton;
-            this.btnDatePickerOpenerSelector.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDatePickerOpenerSelector.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatePickerOpenerSelector.Location = new System.Drawing.Point(28, 51);
-            this.btnDatePickerOpenerSelector.Name = "btnDatePickerOpenerSelector";
-            this.btnDatePickerOpenerSelector.Size = new System.Drawing.Size(163, 52);
-            this.btnDatePickerOpenerSelector.TabIndex = 10;
-            this.btnDatePickerOpenerSelector.UseVisualStyleBackColor = true;
-            this.btnDatePickerOpenerSelector.Click += new System.EventHandler(this.btnDatePickerOpenerSelector_Click);
+            this.btnSelectDates.BackgroundImage = global::lakeside.Properties.Resources.SelectDatesButton;
+            this.btnSelectDates.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSelectDates.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectDates.Location = new System.Drawing.Point(17, 260);
+            this.btnSelectDates.Name = "btnSelectDates";
+            this.btnSelectDates.Size = new System.Drawing.Size(228, 60);
+            this.btnSelectDates.TabIndex = 15;
+            this.btnSelectDates.UseVisualStyleBackColor = true;
+            this.btnSelectDates.Click += new System.EventHandler(this.btnSelectDates_Click);
             // 
             // dgAvailablePods
             // 
@@ -327,6 +316,7 @@ namespace lakeside
             // 
             // pnlLocationDateDisplay
             // 
+            this.pnlLocationDateDisplay.BackColor = System.Drawing.Color.Transparent;
             this.pnlLocationDateDisplay.Controls.Add(this.llbChangeDates);
             this.pnlLocationDateDisplay.Controls.Add(this.lbDateDisplay);
             this.pnlLocationDateDisplay.Controls.Add(this.lbLocationDisplay);
@@ -359,6 +349,7 @@ namespace lakeside
             // 
             // pnlGuests
             // 
+            this.pnlGuests.BackColor = System.Drawing.Color.Transparent;
             this.pnlGuests.Controls.Add(this.btnRandomiseData);
             this.pnlGuests.Controls.Add(this.pnlGuestSelectionActionGroup);
             this.pnlGuests.Controls.Add(this.panel1);
@@ -505,6 +496,7 @@ namespace lakeside
             // 
             // pnlGuestDisplay
             // 
+            this.pnlGuestDisplay.BackColor = System.Drawing.Color.Transparent;
             this.pnlGuestDisplay.Controls.Add(this.pictureBox1);
             this.pnlGuestDisplay.Controls.Add(this.pnlInnerGuestDisplay);
             this.pnlGuestDisplay.Location = new System.Drawing.Point(5, 181);
@@ -525,6 +517,7 @@ namespace lakeside
             // 
             // pnlInnerGuestDisplay
             // 
+            this.pnlInnerGuestDisplay.BackColor = System.Drawing.Color.Transparent;
             this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestsStayingDisplayTitle);
             this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay6);
             this.pnlInnerGuestDisplay.Controls.Add(this.lbGuestDisplay);
@@ -632,6 +625,7 @@ namespace lakeside
             // 
             // pnlCourses
             // 
+            this.pnlCourses.BackColor = System.Drawing.Color.Transparent;
             this.pnlCourses.Controls.Add(this.btnSkipCourseSelection);
             this.pnlCourses.Controls.Add(this.btnContinueFromCourseSelection);
             this.pnlCourses.Controls.Add(this.dgCourses);
@@ -695,16 +689,6 @@ namespace lakeside
             this.lbGuestCoursePickerTitle.TabIndex = 0;
             this.lbGuestCoursePickerTitle.Text = "Choose a course for {guest}, or skip.";
             // 
-            // lbTitle
-            // 
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(0, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(1059, 498);
-            this.lbTitle.TabIndex = 2;
-            this.lbTitle.Text = "Check Availability";
-            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // btnBackToHomeOrMainMenu
             // 
             this.btnBackToHomeOrMainMenu.BackgroundImage = global::lakeside.Properties.Resources.CancelBookingButton;
@@ -716,6 +700,18 @@ namespace lakeside
             this.btnBackToHomeOrMainMenu.TabIndex = 21;
             this.btnBackToHomeOrMainMenu.UseVisualStyleBackColor = true;
             this.btnBackToHomeOrMainMenu.Click += new System.EventHandler(this.btnBackToHomeOrMainMenu_Click);
+            // 
+            // btnDatePickerOpenerSelector
+            // 
+            this.btnDatePickerOpenerSelector.BackgroundImage = global::lakeside.Properties.Resources.SelectDatesButton;
+            this.btnDatePickerOpenerSelector.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDatePickerOpenerSelector.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatePickerOpenerSelector.Location = new System.Drawing.Point(28, 51);
+            this.btnDatePickerOpenerSelector.Name = "btnDatePickerOpenerSelector";
+            this.btnDatePickerOpenerSelector.Size = new System.Drawing.Size(163, 52);
+            this.btnDatePickerOpenerSelector.TabIndex = 10;
+            this.btnDatePickerOpenerSelector.UseVisualStyleBackColor = true;
+            this.btnDatePickerOpenerSelector.Click += new System.EventHandler(this.btnDatePickerOpenerSelector_Click);
             // 
             // btnConfirmPod
             // 
@@ -730,10 +726,22 @@ namespace lakeside
             this.btnConfirmPod.UseVisualStyleBackColor = true;
             this.btnConfirmPod.Click += new System.EventHandler(this.btnConfirmPod_Click);
             // 
+            // lbTitle
+            // 
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(0, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(1061, 33);
+            this.lbTitle.TabIndex = 2;
+            this.lbTitle.Text = "Check Availability";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Booking2;
             this.ClientSize = new System.Drawing.Size(1059, 498);
             this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pnlGuests);
@@ -831,10 +839,10 @@ namespace lakeside
         private System.Windows.Forms.Label lbGuestDisplay6;
         private System.Windows.Forms.Label lbGuestDisplay5;
         private System.Windows.Forms.Panel pnlGuestSelectionActionGroup;
-        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Button btnRandomiseData;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlInnerGuestDisplay;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbTitle;
     }
 }
