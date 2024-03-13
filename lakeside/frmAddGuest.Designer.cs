@@ -39,16 +39,12 @@ namespace lakeside
             this.lbCountry = new System.Windows.Forms.Label();
             this.llbPostcodeFormat = new System.Windows.Forms.LinkLabel();
             this.validFullName = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnAddGuest = new System.Windows.Forms.Button();
-            this.btnRandomiseData = new System.Windows.Forms.Button();
             this.validEmail = new System.Windows.Forms.Label();
             this.validNumber = new System.Windows.Forms.Label();
             this.validAdd1 = new System.Windows.Forms.Label();
             this.validPostcode = new System.Windows.Forms.Label();
             this.validCityTown = new System.Windows.Forms.Label();
             this.validCountry = new System.Windows.Forms.Label();
-            this.btnClearAll = new System.Windows.Forms.Button();
             this.validPosition = new System.Windows.Forms.Label();
             this.lbPosition = new System.Windows.Forms.Label();
             this.txtFullName = new lakeside.ValidationTextBox();
@@ -60,11 +56,16 @@ namespace lakeside
             this.txtCityTown = new lakeside.ValidationTextBox();
             this.txtAdd1 = new lakeside.ValidationTextBox();
             this.txtEmail = new lakeside.ValidationTextBox();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnAddGuest = new System.Windows.Forms.Button();
+            this.btnRandomiseData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(437, 20);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -76,6 +77,7 @@ namespace lakeside
             // lbFullName
             // 
             this.lbFullName.AutoSize = true;
+            this.lbFullName.BackColor = System.Drawing.Color.Transparent;
             this.lbFullName.Location = new System.Drawing.Point(26, 94);
             this.lbFullName.Name = "lbFullName";
             this.lbFullName.Size = new System.Drawing.Size(112, 30);
@@ -85,6 +87,7 @@ namespace lakeside
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
+            this.lbEmail.BackColor = System.Drawing.Color.Transparent;
             this.lbEmail.Location = new System.Drawing.Point(60, 169);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(68, 30);
@@ -94,6 +97,7 @@ namespace lakeside
             // lbMobileNumber
             // 
             this.lbMobileNumber.AutoSize = true;
+            this.lbMobileNumber.BackColor = System.Drawing.Color.Transparent;
             this.lbMobileNumber.Location = new System.Drawing.Point(528, 169);
             this.lbMobileNumber.Name = "lbMobileNumber";
             this.lbMobileNumber.Size = new System.Drawing.Size(164, 30);
@@ -103,6 +107,7 @@ namespace lakeside
             // lbAdd1
             // 
             this.lbAdd1.AutoSize = true;
+            this.lbAdd1.BackColor = System.Drawing.Color.Transparent;
             this.lbAdd1.Location = new System.Drawing.Point(26, 271);
             this.lbAdd1.Name = "lbAdd1";
             this.lbAdd1.Size = new System.Drawing.Size(242, 30);
@@ -112,6 +117,7 @@ namespace lakeside
             // lbCityTown
             // 
             this.lbCityTown.AutoSize = true;
+            this.lbCityTown.BackColor = System.Drawing.Color.Transparent;
             this.lbCityTown.Location = new System.Drawing.Point(139, 341);
             this.lbCityTown.Name = "lbCityTown";
             this.lbCityTown.Size = new System.Drawing.Size(121, 30);
@@ -121,6 +127,7 @@ namespace lakeside
             // lbPostcode
             // 
             this.lbPostcode.AutoSize = true;
+            this.lbPostcode.BackColor = System.Drawing.Color.Transparent;
             this.lbPostcode.Location = new System.Drawing.Point(680, 270);
             this.lbPostcode.Name = "lbPostcode";
             this.lbPostcode.Size = new System.Drawing.Size(102, 30);
@@ -130,6 +137,7 @@ namespace lakeside
             // lbCountry
             // 
             this.lbCountry.AutoSize = true;
+            this.lbCountry.BackColor = System.Drawing.Color.Transparent;
             this.lbCountry.Location = new System.Drawing.Point(686, 345);
             this.lbCountry.Name = "lbCountry";
             this.lbCountry.Size = new System.Drawing.Size(91, 30);
@@ -139,6 +147,7 @@ namespace lakeside
             // llbPostcodeFormat
             // 
             this.llbPostcodeFormat.AutoSize = true;
+            this.llbPostcodeFormat.BackColor = System.Drawing.Color.Transparent;
             this.llbPostcodeFormat.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPostcodeFormat.Location = new System.Drawing.Point(897, 288);
             this.llbPostcodeFormat.Name = "llbPostcodeFormat";
@@ -151,6 +160,7 @@ namespace lakeside
             // validFullName
             // 
             this.validFullName.AutoSize = true;
+            this.validFullName.BackColor = System.Drawing.Color.Transparent;
             this.validFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validFullName.ForeColor = System.Drawing.Color.Red;
             this.validFullName.Location = new System.Drawing.Point(140, 131);
@@ -159,49 +169,10 @@ namespace lakeside
             this.validFullName.TabIndex = 11;
             this.validFullName.Text = "label1";
             // 
-            // btnReturn
-            // 
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReturn.Image = global::lakeside.Properties.Resources.returnIcon;
-            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturn.Location = new System.Drawing.Point(12, 9);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(256, 65);
-            this.btnReturn.TabIndex = 12;
-            this.btnReturn.Text = "Return to Home";
-            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
-            // btnAddGuest
-            // 
-            this.btnAddGuest.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
-            this.btnAddGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGuest.Location = new System.Drawing.Point(820, 415);
-            this.btnAddGuest.Name = "btnAddGuest";
-            this.btnAddGuest.Size = new System.Drawing.Size(222, 60);
-            this.btnAddGuest.TabIndex = 9;
-            this.btnAddGuest.UseVisualStyleBackColor = true;
-            this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
-            // 
-            // btnRandomiseData
-            // 
-            this.btnRandomiseData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRandomiseData.Image = global::lakeside.Properties.Resources.dice2;
-            this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRandomiseData.Location = new System.Drawing.Point(12, 415);
-            this.btnRandomiseData.Name = "btnRandomiseData";
-            this.btnRandomiseData.Size = new System.Drawing.Size(222, 60);
-            this.btnRandomiseData.TabIndex = 7;
-            this.btnRandomiseData.Text = "Randomise Data";
-            this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRandomiseData.UseVisualStyleBackColor = true;
-            this.btnRandomiseData.Click += new System.EventHandler(this.btnRandomiseData_Click);
-            // 
             // validEmail
             // 
             this.validEmail.AutoSize = true;
+            this.validEmail.BackColor = System.Drawing.Color.Transparent;
             this.validEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validEmail.ForeColor = System.Drawing.Color.Red;
             this.validEmail.Location = new System.Drawing.Point(140, 206);
@@ -213,6 +184,7 @@ namespace lakeside
             // validNumber
             // 
             this.validNumber.AutoSize = true;
+            this.validNumber.BackColor = System.Drawing.Color.Transparent;
             this.validNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validNumber.ForeColor = System.Drawing.Color.Red;
             this.validNumber.Location = new System.Drawing.Point(787, 206);
@@ -224,6 +196,7 @@ namespace lakeside
             // validAdd1
             // 
             this.validAdd1.AutoSize = true;
+            this.validAdd1.BackColor = System.Drawing.Color.Transparent;
             this.validAdd1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validAdd1.ForeColor = System.Drawing.Color.Red;
             this.validAdd1.Location = new System.Drawing.Point(270, 308);
@@ -235,6 +208,7 @@ namespace lakeside
             // validPostcode
             // 
             this.validPostcode.AutoSize = true;
+            this.validPostcode.BackColor = System.Drawing.Color.Transparent;
             this.validPostcode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPostcode.ForeColor = System.Drawing.Color.Red;
             this.validPostcode.Location = new System.Drawing.Point(781, 307);
@@ -246,6 +220,7 @@ namespace lakeside
             // validCityTown
             // 
             this.validCityTown.AutoSize = true;
+            this.validCityTown.BackColor = System.Drawing.Color.Transparent;
             this.validCityTown.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCityTown.ForeColor = System.Drawing.Color.Red;
             this.validCityTown.Location = new System.Drawing.Point(270, 382);
@@ -257,6 +232,7 @@ namespace lakeside
             // validCountry
             // 
             this.validCountry.AutoSize = true;
+            this.validCountry.BackColor = System.Drawing.Color.Transparent;
             this.validCountry.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCountry.ForeColor = System.Drawing.Color.Red;
             this.validCountry.Location = new System.Drawing.Point(787, 382);
@@ -265,23 +241,10 @@ namespace lakeside
             this.validCountry.TabIndex = 18;
             this.validCountry.Text = "label6";
             // 
-            // btnClearAll
-            // 
-            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
-            this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClearAll.Location = new System.Drawing.Point(786, 9);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(256, 65);
-            this.btnClearAll.TabIndex = 19;
-            this.btnClearAll.Text = "Clear All Fields";
-            this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
-            // 
             // validPosition
             // 
             this.validPosition.AutoSize = true;
+            this.validPosition.BackColor = System.Drawing.Color.Transparent;
             this.validPosition.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPosition.ForeColor = System.Drawing.Color.Red;
             this.validPosition.Location = new System.Drawing.Point(787, 135);
@@ -294,6 +257,7 @@ namespace lakeside
             // lbPosition
             // 
             this.lbPosition.AutoSize = true;
+            this.lbPosition.BackColor = System.Drawing.Color.Transparent;
             this.lbPosition.Location = new System.Drawing.Point(693, 95);
             this.lbPosition.Name = "lbPosition";
             this.lbPosition.Size = new System.Drawing.Size(91, 30);
@@ -306,7 +270,7 @@ namespace lakeside
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.Location = new System.Drawing.Point(144, 95);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(499, 33);
+            this.txtFullName.Size = new System.Drawing.Size(316, 33);
             this.txtFullName.TabIndex = 0;
             this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
             this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
@@ -340,7 +304,7 @@ namespace lakeside
             this.txtMobileNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMobileNumber.Location = new System.Drawing.Point(785, 170);
             this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(227, 33);
+            this.txtMobileNumber.Size = new System.Drawing.Size(221, 33);
             this.txtMobileNumber.TabIndex = 2;
             this.txtMobileNumber.TextChanged += new System.EventHandler(this.txtMobileNumber_TextChanged);
             this.txtMobileNumber.Leave += new System.EventHandler(this.txtMobileNumber_Leave);
@@ -396,10 +360,66 @@ namespace lakeside
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
+            // btnClearAll
+            // 
+            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClearAll.Location = new System.Drawing.Point(786, 9);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(256, 65);
+            this.btnClearAll.TabIndex = 19;
+            this.btnClearAll.Text = "Clear All Fields";
+            this.btnClearAll.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReturn.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReturn.Location = new System.Drawing.Point(12, 9);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(256, 65);
+            this.btnReturn.TabIndex = 12;
+            this.btnReturn.Text = "Return to Home";
+            this.btnReturn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnAddGuest
+            // 
+            this.btnAddGuest.BackgroundImage = global::lakeside.Properties.Resources.AddGuestButton;
+            this.btnAddGuest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddGuest.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGuest.Location = new System.Drawing.Point(820, 415);
+            this.btnAddGuest.Name = "btnAddGuest";
+            this.btnAddGuest.Size = new System.Drawing.Size(222, 60);
+            this.btnAddGuest.TabIndex = 9;
+            this.btnAddGuest.UseVisualStyleBackColor = true;
+            this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
+            // 
+            // btnRandomiseData
+            // 
+            this.btnRandomiseData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRandomiseData.Image = global::lakeside.Properties.Resources.dice2;
+            this.btnRandomiseData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRandomiseData.Location = new System.Drawing.Point(12, 415);
+            this.btnRandomiseData.Name = "btnRandomiseData";
+            this.btnRandomiseData.Size = new System.Drawing.Size(222, 60);
+            this.btnRandomiseData.TabIndex = 7;
+            this.btnRandomiseData.Text = "Randomise Data";
+            this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Click += new System.EventHandler(this.btnRandomiseData_Click);
+            // 
             // frmAddGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Guest2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 487);
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.validPosition);

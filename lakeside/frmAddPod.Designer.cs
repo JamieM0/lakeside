@@ -71,6 +71,7 @@ namespace lakeside
             // validType
             // 
             this.validType.AutoSize = true;
+            this.validType.BackColor = System.Drawing.Color.Transparent;
             this.validType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validType.ForeColor = System.Drawing.Color.Red;
             this.validType.Location = new System.Drawing.Point(175, 294);
@@ -82,6 +83,7 @@ namespace lakeside
             // validPodLocation
             // 
             this.validPodLocation.AutoSize = true;
+            this.validPodLocation.BackColor = System.Drawing.Color.Transparent;
             this.validPodLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPodLocation.ForeColor = System.Drawing.Color.Red;
             this.validPodLocation.Location = new System.Drawing.Point(175, 387);
@@ -93,6 +95,7 @@ namespace lakeside
             // validCapacity
             // 
             this.validCapacity.AutoSize = true;
+            this.validCapacity.BackColor = System.Drawing.Color.Transparent;
             this.validCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCapacity.ForeColor = System.Drawing.Color.Red;
             this.validCapacity.Location = new System.Drawing.Point(621, 383);
@@ -104,6 +107,7 @@ namespace lakeside
             // validPricePPPN
             // 
             this.validPricePPPN.AutoSize = true;
+            this.validPricePPPN.BackColor = System.Drawing.Color.Transparent;
             this.validPricePPPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPricePPPN.ForeColor = System.Drawing.Color.Red;
             this.validPricePPPN.Location = new System.Drawing.Point(621, 294);
@@ -115,6 +119,7 @@ namespace lakeside
             // validDescription
             // 
             this.validDescription.AutoSize = true;
+            this.validDescription.BackColor = System.Drawing.Color.Transparent;
             this.validDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validDescription.ForeColor = System.Drawing.Color.Red;
             this.validDescription.Location = new System.Drawing.Point(175, 215);
@@ -140,6 +145,7 @@ namespace lakeside
             // validFriendlyName
             // 
             this.validFriendlyName.AutoSize = true;
+            this.validFriendlyName.BackColor = System.Drawing.Color.Transparent;
             this.validFriendlyName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validFriendlyName.ForeColor = System.Drawing.Color.Red;
             this.validFriendlyName.Location = new System.Drawing.Point(175, 140);
@@ -177,6 +183,8 @@ namespace lakeside
             // lbType
             // 
             this.lbType.AutoSize = true;
+            this.lbType.BackColor = System.Drawing.Color.Transparent;
+            this.lbType.ForeColor = System.Drawing.Color.White;
             this.lbType.Location = new System.Drawing.Point(71, 257);
             this.lbType.Name = "lbType";
             this.lbType.Size = new System.Drawing.Size(102, 30);
@@ -186,6 +194,8 @@ namespace lakeside
             // lbPodLocation
             // 
             this.lbPodLocation.AutoSize = true;
+            this.lbPodLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lbPodLocation.ForeColor = System.Drawing.Color.White;
             this.lbPodLocation.Location = new System.Drawing.Point(35, 346);
             this.lbPodLocation.Name = "lbPodLocation";
             this.lbPodLocation.Size = new System.Drawing.Size(138, 30);
@@ -195,6 +205,8 @@ namespace lakeside
             // lbCapacity
             // 
             this.lbCapacity.AutoSize = true;
+            this.lbCapacity.BackColor = System.Drawing.Color.Transparent;
+            this.lbCapacity.ForeColor = System.Drawing.Color.White;
             this.lbCapacity.Location = new System.Drawing.Point(526, 346);
             this.lbCapacity.Name = "lbCapacity";
             this.lbCapacity.Size = new System.Drawing.Size(138, 30);
@@ -204,6 +216,8 @@ namespace lakeside
             // lbPricePPPN
             // 
             this.lbPricePPPN.AutoSize = true;
+            this.lbPricePPPN.BackColor = System.Drawing.Color.Transparent;
+            this.lbPricePPPN.ForeColor = System.Drawing.Color.White;
             this.lbPricePPPN.Location = new System.Drawing.Point(552, 261);
             this.lbPricePPPN.Name = "lbPricePPPN";
             this.lbPricePPPN.Size = new System.Drawing.Size(121, 30);
@@ -213,6 +227,8 @@ namespace lakeside
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
+            this.lbDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lbDescription.ForeColor = System.Drawing.Color.White;
             this.lbDescription.Location = new System.Drawing.Point(9, 182);
             this.lbDescription.Name = "lbDescription";
             this.lbDescription.Size = new System.Drawing.Size(164, 30);
@@ -222,6 +238,8 @@ namespace lakeside
             // lbFriendlyName
             // 
             this.lbFriendlyName.AutoSize = true;
+            this.lbFriendlyName.BackColor = System.Drawing.Color.Transparent;
+            this.lbFriendlyName.ForeColor = System.Drawing.Color.White;
             this.lbFriendlyName.Location = new System.Drawing.Point(21, 103);
             this.lbFriendlyName.Name = "lbFriendlyName";
             this.lbFriendlyName.Size = new System.Drawing.Size(152, 30);
@@ -231,7 +249,9 @@ namespace lakeside
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(366, 29);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
@@ -325,6 +345,8 @@ namespace lakeside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Pod;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 501);
             this.Controls.Add(this.cmbPodLocation);
             this.Controls.Add(this.btnClearAll);

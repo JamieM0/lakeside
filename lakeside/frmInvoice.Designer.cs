@@ -81,6 +81,7 @@ namespace lakeside
             // lbDate
             // 
             this.lbDate.AutoSize = true;
+            this.lbDate.BackColor = System.Drawing.Color.Transparent;
             this.lbDate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDate.Location = new System.Drawing.Point(12, 72);
             this.lbDate.Name = "lbDate";
@@ -91,6 +92,7 @@ namespace lakeside
             // lbInfoDate
             // 
             this.lbInfoDate.AutoSize = true;
+            this.lbInfoDate.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoDate.Location = new System.Drawing.Point(12, 51);
             this.lbInfoDate.Name = "lbInfoDate";
@@ -101,6 +103,7 @@ namespace lakeside
             // lbInfoPodName
             // 
             this.lbInfoPodName.AutoSize = true;
+            this.lbInfoPodName.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoPodName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoPodName.Location = new System.Drawing.Point(106, 0);
             this.lbInfoPodName.Name = "lbInfoPodName";
@@ -113,6 +116,7 @@ namespace lakeside
             // lbPodName
             // 
             this.lbPodName.AutoSize = true;
+            this.lbPodName.BackColor = System.Drawing.Color.Transparent;
             this.lbPodName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPodName.Location = new System.Drawing.Point(80, 21);
             this.lbPodName.Name = "lbPodName";
@@ -125,6 +129,7 @@ namespace lakeside
             // lbInfoLeadGuestName
             // 
             this.lbInfoLeadGuestName.AutoSize = true;
+            this.lbInfoLeadGuestName.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoLeadGuestName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoLeadGuestName.Location = new System.Drawing.Point(645, 51);
             this.lbInfoLeadGuestName.Name = "lbInfoLeadGuestName";
@@ -135,6 +140,7 @@ namespace lakeside
             // 
             // lbLeadGuestName
             // 
+            this.lbLeadGuestName.BackColor = System.Drawing.Color.Transparent;
             this.lbLeadGuestName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLeadGuestName.Location = new System.Drawing.Point(560, 72);
             this.lbLeadGuestName.Name = "lbLeadGuestName";
@@ -146,6 +152,7 @@ namespace lakeside
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(239, 9);
             this.lbTitle.Name = "lbTitle";
@@ -156,6 +163,7 @@ namespace lakeside
             // lbInfoCourseSelected
             // 
             this.lbInfoCourseSelected.AutoSize = true;
+            this.lbInfoCourseSelected.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoCourseSelected.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoCourseSelected.Location = new System.Drawing.Point(12, 113);
             this.lbInfoCourseSelected.Name = "lbInfoCourseSelected";
@@ -166,6 +174,7 @@ namespace lakeside
             // lbInfoExtraSelected
             // 
             this.lbInfoExtraSelected.AutoSize = true;
+            this.lbInfoExtraSelected.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoExtraSelected.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoExtraSelected.Location = new System.Drawing.Point(13, 283);
             this.lbInfoExtraSelected.Name = "lbInfoExtraSelected";
@@ -228,6 +237,7 @@ namespace lakeside
             // lbPodCalculationsPodName
             // 
             this.lbPodCalculationsPodName.AutoSize = true;
+            this.lbPodCalculationsPodName.BackColor = System.Drawing.Color.Transparent;
             this.lbPodCalculationsPodName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPodCalculationsPodName.Location = new System.Drawing.Point(499, 118);
             this.lbPodCalculationsPodName.Name = "lbPodCalculationsPodName";
@@ -239,6 +249,7 @@ namespace lakeside
             // lbPodCalculationsGuestCount
             // 
             this.lbPodCalculationsGuestCount.AutoSize = true;
+            this.lbPodCalculationsGuestCount.BackColor = System.Drawing.Color.Transparent;
             this.lbPodCalculationsGuestCount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPodCalculationsGuestCount.Location = new System.Drawing.Point(525, 168);
             this.lbPodCalculationsGuestCount.Name = "lbPodCalculationsGuestCount";
@@ -250,6 +261,7 @@ namespace lakeside
             // lbPodCalculationsNightStayingCount
             // 
             this.lbPodCalculationsNightStayingCount.AutoSize = true;
+            this.lbPodCalculationsNightStayingCount.BackColor = System.Drawing.Color.Transparent;
             this.lbPodCalculationsNightStayingCount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPodCalculationsNightStayingCount.Location = new System.Drawing.Point(525, 193);
             this.lbPodCalculationsNightStayingCount.Name = "lbPodCalculationsNightStayingCount";
@@ -260,6 +272,7 @@ namespace lakeside
             // 
             // lbPodCalculationsPrice
             // 
+            this.lbPodCalculationsPrice.BackColor = System.Drawing.Color.Transparent;
             this.lbPodCalculationsPrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPodCalculationsPrice.Location = new System.Drawing.Point(592, 207);
             this.lbPodCalculationsPrice.Name = "lbPodCalculationsPrice";
@@ -270,6 +283,7 @@ namespace lakeside
             // 
             // lbTotalPrice
             // 
+            this.lbTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lbTotalPrice.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalPrice.Location = new System.Drawing.Point(504, 331);
             this.lbTotalPrice.Name = "lbTotalPrice";
@@ -280,6 +294,7 @@ namespace lakeside
             // 
             // pnlPaymentWindow
             // 
+            this.pnlPaymentWindow.BackColor = System.Drawing.Color.Transparent;
             this.pnlPaymentWindow.Controls.Add(this.lbCardDateError);
             this.pnlPaymentWindow.Controls.Add(this.lbCVVError);
             this.pnlPaymentWindow.Controls.Add(this.lbNameOnCardError);
@@ -293,7 +308,7 @@ namespace lakeside
             this.pnlPaymentWindow.Controls.Add(this.lbNameOnCard);
             this.pnlPaymentWindow.Controls.Add(this.txtCardNumber);
             this.pnlPaymentWindow.Controls.Add(this.lbCardNumber);
-            this.pnlPaymentWindow.Location = new System.Drawing.Point(7, 113);
+            this.pnlPaymentWindow.Location = new System.Drawing.Point(12, 118);
             this.pnlPaymentWindow.Name = "pnlPaymentWindow";
             this.pnlPaymentWindow.Size = new System.Drawing.Size(486, 335);
             this.pnlPaymentWindow.TabIndex = 24;
@@ -363,6 +378,7 @@ namespace lakeside
             // lbCardDate
             // 
             this.lbCardDate.AutoSize = true;
+            this.lbCardDate.BackColor = System.Drawing.Color.Transparent;
             this.lbCardDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCardDate.Location = new System.Drawing.Point(47, 204);
             this.lbCardDate.Name = "lbCardDate";
@@ -383,6 +399,7 @@ namespace lakeside
             // lbCVV
             // 
             this.lbCVV.AutoSize = true;
+            this.lbCVV.BackColor = System.Drawing.Color.Transparent;
             this.lbCVV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCVV.Location = new System.Drawing.Point(6, 144);
             this.lbCVV.Name = "lbCVV";
@@ -402,6 +419,7 @@ namespace lakeside
             // lbNameOnCard
             // 
             this.lbNameOnCard.AutoSize = true;
+            this.lbNameOnCard.BackColor = System.Drawing.Color.Transparent;
             this.lbNameOnCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameOnCard.Location = new System.Drawing.Point(43, 84);
             this.lbNameOnCard.Name = "lbNameOnCard";
@@ -421,6 +439,7 @@ namespace lakeside
             // lbCardNumber
             // 
             this.lbCardNumber.AutoSize = true;
+            this.lbCardNumber.BackColor = System.Drawing.Color.Transparent;
             this.lbCardNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCardNumber.Location = new System.Drawing.Point(52, 21);
             this.lbCardNumber.Name = "lbCardNumber";
@@ -430,6 +449,7 @@ namespace lakeside
             // 
             // pnlPodNames
             // 
+            this.pnlPodNames.BackColor = System.Drawing.Color.Transparent;
             this.pnlPodNames.Controls.Add(this.lbInfoPodName);
             this.pnlPodNames.Controls.Add(this.lbPodName);
             this.pnlPodNames.Location = new System.Drawing.Point(225, 51);
@@ -440,6 +460,7 @@ namespace lakeside
             // lbInfoSubtotal
             // 
             this.lbInfoSubtotal.AutoSize = true;
+            this.lbInfoSubtotal.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoSubtotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoSubtotal.Location = new System.Drawing.Point(499, 244);
             this.lbInfoSubtotal.Name = "lbInfoSubtotal";
@@ -449,6 +470,7 @@ namespace lakeside
             // 
             // lbSubtotal
             // 
+            this.lbSubtotal.BackColor = System.Drawing.Color.Transparent;
             this.lbSubtotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSubtotal.Location = new System.Drawing.Point(697, 238);
             this.lbSubtotal.Name = "lbSubtotal";
@@ -459,6 +481,7 @@ namespace lakeside
             // 
             // cbBookedEarly
             // 
+            this.cbBookedEarly.BackColor = System.Drawing.Color.Transparent;
             this.cbBookedEarly.Enabled = false;
             this.cbBookedEarly.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBookedEarly.Location = new System.Drawing.Point(632, 270);
@@ -467,10 +490,11 @@ namespace lakeside
             this.cbBookedEarly.TabIndex = 28;
             this.cbBookedEarly.Text = "Booked Early";
             this.cbBookedEarly.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbBookedEarly.UseVisualStyleBackColor = true;
+            this.cbBookedEarly.UseVisualStyleBackColor = false;
             // 
             // cbReturningGuest
             // 
+            this.cbReturningGuest.BackColor = System.Drawing.Color.Transparent;
             this.cbReturningGuest.Enabled = false;
             this.cbReturningGuest.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbReturningGuest.Location = new System.Drawing.Point(632, 301);
@@ -479,11 +503,12 @@ namespace lakeside
             this.cbReturningGuest.TabIndex = 29;
             this.cbReturningGuest.Text = "Returning Guest";
             this.cbReturningGuest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbReturningGuest.UseVisualStyleBackColor = true;
+            this.cbReturningGuest.UseVisualStyleBackColor = false;
             // 
             // lbInfoDiscounts
             // 
             this.lbInfoDiscounts.AutoSize = true;
+            this.lbInfoDiscounts.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoDiscounts.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoDiscounts.Location = new System.Drawing.Point(499, 273);
             this.lbInfoDiscounts.Name = "lbInfoDiscounts";
@@ -494,6 +519,7 @@ namespace lakeside
             // lbInfoBookedEarly
             // 
             this.lbInfoBookedEarly.AutoSize = true;
+            this.lbInfoBookedEarly.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoBookedEarly.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoBookedEarly.Location = new System.Drawing.Point(588, 271);
             this.lbInfoBookedEarly.Name = "lbInfoBookedEarly";
@@ -505,6 +531,7 @@ namespace lakeside
             // lbInfoReturningGuest
             // 
             this.lbInfoReturningGuest.AutoSize = true;
+            this.lbInfoReturningGuest.BackColor = System.Drawing.Color.Transparent;
             this.lbInfoReturningGuest.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoReturningGuest.Location = new System.Drawing.Point(588, 303);
             this.lbInfoReturningGuest.Name = "lbInfoReturningGuest";
@@ -517,6 +544,7 @@ namespace lakeside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Invoice;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbInfoReturningGuest);
             this.Controls.Add(this.lbInfoBookedEarly);

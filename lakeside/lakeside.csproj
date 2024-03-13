@@ -272,6 +272,12 @@
     <None Include="Resources\SelectExtraButton.png" />
     <None Include="Resources\Booking_Form_Gradient.png" />
     <None Include="Resources\Gradient_Booking2.png" />
+    <None Include="Resources\Gradient_Guest.png" />
+    <None Include="Resources\Gradient_Guest2.png" />
+    <None Include="Resources\Gradient_Pod.png" />
+    <None Include="Resources\Gradient_Extra.png" />
+    <None Include="Resources\Gradient_Course.png" />
+    <None Include="Resources\Gradient_Invoice.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -742,6 +742,7 @@ namespace lakeside
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Booking2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1059, 498);
             this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pnlGuests);

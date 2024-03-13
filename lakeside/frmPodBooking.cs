@@ -629,7 +629,7 @@ namespace lakeside
                 }
 
                 changeSelectedGuest(selectedGuests[0], lbGuestDisplay);
-                currentIterationThroughGuests = 1; 
+                currentIterationThroughGuests = 0; 
             }
             else
             {
@@ -733,7 +733,7 @@ namespace lakeside
         private void lbGuestDisplay_Click(object sender, EventArgs e)
         {
             changeSelectedGuest(selectedGuests[0], lbGuestDisplay);
-            currentIterationThroughGuests = 1;
+            currentIterationThroughGuests = 0;
         }
 
         private void lbGuestDisplay2_Click(object sender, EventArgs e)

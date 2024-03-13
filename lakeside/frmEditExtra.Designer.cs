@@ -49,6 +49,7 @@ namespace lakeside
             // validPricePPPN
             // 
             this.validPricePPPN.AutoSize = true;
+            this.validPricePPPN.BackColor = System.Drawing.Color.Transparent;
             this.validPricePPPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPricePPPN.ForeColor = System.Drawing.Color.Red;
             this.validPricePPPN.Location = new System.Drawing.Point(176, 307);
@@ -60,6 +61,7 @@ namespace lakeside
             // validDescription
             // 
             this.validDescription.AutoSize = true;
+            this.validDescription.BackColor = System.Drawing.Color.Transparent;
             this.validDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validDescription.ForeColor = System.Drawing.Color.Red;
             this.validDescription.Location = new System.Drawing.Point(176, 234);
@@ -71,6 +73,7 @@ namespace lakeside
             // validExtraName
             // 
             this.validExtraName.AutoSize = true;
+            this.validExtraName.BackColor = System.Drawing.Color.Transparent;
             this.validExtraName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validExtraName.ForeColor = System.Drawing.Color.Red;
             this.validExtraName.Location = new System.Drawing.Point(176, 158);
@@ -106,7 +109,9 @@ namespace lakeside
             // lbPricePPPN
             // 
             this.lbPricePPPN.AutoSize = true;
+            this.lbPricePPPN.BackColor = System.Drawing.Color.Transparent;
             this.lbPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPricePPPN.ForeColor = System.Drawing.Color.White;
             this.lbPricePPPN.Location = new System.Drawing.Point(60, 274);
             this.lbPricePPPN.Name = "lbPricePPPN";
             this.lbPricePPPN.Size = new System.Drawing.Size(125, 25);
@@ -116,7 +121,9 @@ namespace lakeside
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
+            this.lbDescription.BackColor = System.Drawing.Color.Transparent;
             this.lbDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescription.ForeColor = System.Drawing.Color.White;
             this.lbDescription.Location = new System.Drawing.Point(7, 193);
             this.lbDescription.Name = "lbDescription";
             this.lbDescription.Size = new System.Drawing.Size(159, 25);
@@ -126,7 +133,9 @@ namespace lakeside
             // lbExtraName
             // 
             this.lbExtraName.AutoSize = true;
+            this.lbExtraName.BackColor = System.Drawing.Color.Transparent;
             this.lbExtraName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExtraName.ForeColor = System.Drawing.Color.White;
             this.lbExtraName.Location = new System.Drawing.Point(53, 125);
             this.lbExtraName.Name = "lbExtraName";
             this.lbExtraName.Size = new System.Drawing.Size(113, 25);
@@ -136,7 +145,9 @@ namespace lakeside
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(358, 19);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
@@ -194,6 +205,8 @@ namespace lakeside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Extra;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 442);
             this.Controls.Add(this.dgExtras);
             this.Controls.Add(this.btnClearAll);

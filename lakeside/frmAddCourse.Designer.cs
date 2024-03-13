@@ -76,6 +76,7 @@ namespace lakeside
             // validTutor
             // 
             this.validTutor.AutoSize = true;
+            this.validTutor.BackColor = System.Drawing.Color.Transparent;
             this.validTutor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validTutor.ForeColor = System.Drawing.Color.Red;
             this.validTutor.Location = new System.Drawing.Point(203, 299);
@@ -87,6 +88,7 @@ namespace lakeside
             // validCourseLevel
             // 
             this.validCourseLevel.AutoSize = true;
+            this.validCourseLevel.BackColor = System.Drawing.Color.Transparent;
             this.validCourseLevel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCourseLevel.ForeColor = System.Drawing.Color.Red;
             this.validCourseLevel.Location = new System.Drawing.Point(640, 305);
@@ -98,6 +100,7 @@ namespace lakeside
             // validCapacity
             // 
             this.validCapacity.AutoSize = true;
+            this.validCapacity.BackColor = System.Drawing.Color.Transparent;
             this.validCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCapacity.ForeColor = System.Drawing.Color.Red;
             this.validCapacity.Location = new System.Drawing.Point(347, 391);
@@ -109,6 +112,7 @@ namespace lakeside
             // validPricePPPN
             // 
             this.validPricePPPN.AutoSize = true;
+            this.validPricePPPN.BackColor = System.Drawing.Color.Transparent;
             this.validPricePPPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPricePPPN.ForeColor = System.Drawing.Color.Red;
             this.validPricePPPN.Location = new System.Drawing.Point(58, 391);
@@ -120,6 +124,7 @@ namespace lakeside
             // validDescription
             // 
             this.validDescription.AutoSize = true;
+            this.validDescription.BackColor = System.Drawing.Color.Transparent;
             this.validDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validDescription.ForeColor = System.Drawing.Color.Red;
             this.validDescription.Location = new System.Drawing.Point(203, 218);
@@ -131,6 +136,7 @@ namespace lakeside
             // validCourseName
             // 
             this.validCourseName.AutoSize = true;
+            this.validCourseName.BackColor = System.Drawing.Color.Transparent;
             this.validCourseName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validCourseName.ForeColor = System.Drawing.Color.Red;
             this.validCourseName.Location = new System.Drawing.Point(203, 143);
@@ -142,6 +148,8 @@ namespace lakeside
             // lbTutor
             // 
             this.lbTutor.AutoSize = true;
+            this.lbTutor.BackColor = System.Drawing.Color.Transparent;
+            this.lbTutor.ForeColor = System.Drawing.Color.White;
             this.lbTutor.Location = new System.Drawing.Point(134, 261);
             this.lbTutor.Name = "lbTutor";
             this.lbTutor.Size = new System.Drawing.Size(67, 30);
@@ -151,6 +159,8 @@ namespace lakeside
             // lbCourseLevel
             // 
             this.lbCourseLevel.AutoSize = true;
+            this.lbCourseLevel.BackColor = System.Drawing.Color.Transparent;
+            this.lbCourseLevel.ForeColor = System.Drawing.Color.White;
             this.lbCourseLevel.Location = new System.Drawing.Point(503, 262);
             this.lbCourseLevel.Name = "lbCourseLevel";
             this.lbCourseLevel.Size = new System.Drawing.Size(135, 30);
@@ -160,6 +170,8 @@ namespace lakeside
             // lbCapacity
             // 
             this.lbCapacity.AutoSize = true;
+            this.lbCapacity.BackColor = System.Drawing.Color.Transparent;
+            this.lbCapacity.ForeColor = System.Drawing.Color.White;
             this.lbCapacity.Location = new System.Drawing.Point(346, 352);
             this.lbCapacity.Name = "lbCapacity";
             this.lbCapacity.Size = new System.Drawing.Size(97, 30);
@@ -169,6 +181,8 @@ namespace lakeside
             // lbPricePPPN
             // 
             this.lbPricePPPN.AutoSize = true;
+            this.lbPricePPPN.BackColor = System.Drawing.Color.Transparent;
+            this.lbPricePPPN.ForeColor = System.Drawing.Color.White;
             this.lbPricePPPN.Location = new System.Drawing.Point(57, 352);
             this.lbPricePPPN.Name = "lbPricePPPN";
             this.lbPricePPPN.Size = new System.Drawing.Size(150, 30);
@@ -178,6 +192,8 @@ namespace lakeside
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
+            this.lbDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lbDescription.ForeColor = System.Drawing.Color.White;
             this.lbDescription.Location = new System.Drawing.Point(8, 185);
             this.lbDescription.Name = "lbDescription";
             this.lbDescription.Size = new System.Drawing.Size(193, 30);
@@ -187,6 +203,8 @@ namespace lakeside
             // lbCourseName
             // 
             this.lbCourseName.AutoSize = true;
+            this.lbCourseName.BackColor = System.Drawing.Color.Transparent;
+            this.lbCourseName.ForeColor = System.Drawing.Color.White;
             this.lbCourseName.Location = new System.Drawing.Point(57, 106);
             this.lbCourseName.Name = "lbCourseName";
             this.lbCourseName.Size = new System.Drawing.Size(144, 30);
@@ -196,7 +214,9 @@ namespace lakeside
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(356, 23);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
@@ -207,6 +227,7 @@ namespace lakeside
             // validDuration
             // 
             this.validDuration.AutoSize = true;
+            this.validDuration.BackColor = System.Drawing.Color.Transparent;
             this.validDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validDuration.ForeColor = System.Drawing.Color.Red;
             this.validDuration.Location = new System.Drawing.Point(593, 391);
@@ -218,6 +239,8 @@ namespace lakeside
             // lbDuration
             // 
             this.lbDuration.AutoSize = true;
+            this.lbDuration.BackColor = System.Drawing.Color.Transparent;
+            this.lbDuration.ForeColor = System.Drawing.Color.White;
             this.lbDuration.Location = new System.Drawing.Point(592, 353);
             this.lbDuration.Name = "lbDuration";
             this.lbDuration.Size = new System.Drawing.Size(162, 30);
@@ -344,6 +367,8 @@ namespace lakeside
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Course;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(875, 520);
             this.Controls.Add(this.validDuration);
             this.Controls.Add(this.txtDuration);

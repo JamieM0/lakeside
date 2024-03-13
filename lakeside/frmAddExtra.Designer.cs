@@ -31,9 +31,6 @@
             this.validPricePPPN = new System.Windows.Forms.Label();
             this.validDescription = new System.Windows.Forms.Label();
             this.validExtraName = new System.Windows.Forms.Label();
-            this.txtPricePPPN = new lakeside.ValidationTextBox();
-            this.txtDescription = new lakeside.ValidationTextBox();
-            this.txtExtraName = new lakeside.ValidationTextBox();
             this.lbPricePPPN = new System.Windows.Forms.Label();
             this.lbDescription = new System.Windows.Forms.Label();
             this.lbExtraName = new System.Windows.Forms.Label();
@@ -42,11 +39,15 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.btnRandomiseData = new System.Windows.Forms.Button();
+            this.txtPricePPPN = new lakeside.ValidationTextBox();
+            this.txtDescription = new lakeside.ValidationTextBox();
+            this.txtExtraName = new lakeside.ValidationTextBox();
             this.SuspendLayout();
             // 
             // validPricePPPN
             // 
             this.validPricePPPN.AutoSize = true;
+            this.validPricePPPN.BackColor = System.Drawing.Color.Transparent;
             this.validPricePPPN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validPricePPPN.ForeColor = System.Drawing.Color.Red;
             this.validPricePPPN.Location = new System.Drawing.Point(629, 231);
@@ -58,6 +59,7 @@
             // validDescription
             // 
             this.validDescription.AutoSize = true;
+            this.validDescription.BackColor = System.Drawing.Color.Transparent;
             this.validDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validDescription.ForeColor = System.Drawing.Color.Red;
             this.validDescription.Location = new System.Drawing.Point(209, 231);
@@ -69,6 +71,7 @@
             // validExtraName
             // 
             this.validExtraName.AutoSize = true;
+            this.validExtraName.BackColor = System.Drawing.Color.Transparent;
             this.validExtraName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validExtraName.ForeColor = System.Drawing.Color.Red;
             this.validExtraName.Location = new System.Drawing.Point(209, 151);
@@ -77,39 +80,11 @@
             this.validExtraName.TabIndex = 89;
             this.validExtraName.Text = "label1";
             // 
-            // txtPricePPPN
-            // 
-            this.txtPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPricePPPN.Location = new System.Drawing.Point(766, 190);
-            this.txtPricePPPN.Name = "txtPricePPPN";
-            this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
-            this.txtPricePPPN.TabIndex = 2;
-            this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
-            this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(213, 190);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(373, 33);
-            this.txtDescription.TabIndex = 1;
-            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
-            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
-            // 
-            // txtExtraName
-            // 
-            this.txtExtraName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExtraName.Location = new System.Drawing.Point(213, 115);
-            this.txtExtraName.Name = "txtExtraName";
-            this.txtExtraName.Size = new System.Drawing.Size(658, 33);
-            this.txtExtraName.TabIndex = 0;
-            this.txtExtraName.TextChanged += new System.EventHandler(this.txtExtraName_TextChanged);
-            this.txtExtraName.Leave += new System.EventHandler(this.txtExtraName_Leave);
-            // 
             // lbPricePPPN
             // 
             this.lbPricePPPN.AutoSize = true;
+            this.lbPricePPPN.BackColor = System.Drawing.Color.Transparent;
+            this.lbPricePPPN.ForeColor = System.Drawing.Color.White;
             this.lbPricePPPN.Location = new System.Drawing.Point(628, 190);
             this.lbPricePPPN.Name = "lbPricePPPN";
             this.lbPricePPPN.Size = new System.Drawing.Size(132, 30);
@@ -119,6 +94,8 @@
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
+            this.lbDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lbDescription.ForeColor = System.Drawing.Color.White;
             this.lbDescription.Location = new System.Drawing.Point(32, 189);
             this.lbDescription.Name = "lbDescription";
             this.lbDescription.Size = new System.Drawing.Size(175, 30);
@@ -128,6 +105,8 @@
             // lbExtraName
             // 
             this.lbExtraName.AutoSize = true;
+            this.lbExtraName.BackColor = System.Drawing.Color.Transparent;
+            this.lbExtraName.ForeColor = System.Drawing.Color.White;
             this.lbExtraName.Location = new System.Drawing.Point(81, 118);
             this.lbExtraName.Name = "lbExtraName";
             this.lbExtraName.Size = new System.Drawing.Size(126, 30);
@@ -137,7 +116,9 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
+            this.lbTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(364, 31);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbTitle.Name = "lbTitle";
@@ -198,10 +179,42 @@
             this.btnRandomiseData.UseVisualStyleBackColor = true;
             this.btnRandomiseData.Visible = false;
             // 
+            // txtPricePPPN
+            // 
+            this.txtPricePPPN.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPricePPPN.Location = new System.Drawing.Point(766, 190);
+            this.txtPricePPPN.Name = "txtPricePPPN";
+            this.txtPricePPPN.Size = new System.Drawing.Size(105, 33);
+            this.txtPricePPPN.TabIndex = 2;
+            this.txtPricePPPN.TextChanged += new System.EventHandler(this.txtPricePPPN_TextChanged);
+            this.txtPricePPPN.Leave += new System.EventHandler(this.txtPricePPPN_Leave);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(213, 190);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(373, 33);
+            this.txtDescription.TabIndex = 1;
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
+            // 
+            // txtExtraName
+            // 
+            this.txtExtraName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExtraName.Location = new System.Drawing.Point(213, 115);
+            this.txtExtraName.Name = "txtExtraName";
+            this.txtExtraName.Size = new System.Drawing.Size(658, 33);
+            this.txtExtraName.TabIndex = 0;
+            this.txtExtraName.TextChanged += new System.EventHandler(this.txtExtraName_TextChanged);
+            this.txtExtraName.Leave += new System.EventHandler(this.txtExtraName_Leave);
+            // 
             // frmAddExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Extra;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 349);
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.validPricePPPN);
