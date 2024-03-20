@@ -95,6 +95,7 @@ namespace lakeside
             this.pnlGuests.SuspendLayout();
             this.pnlGuestSelectionActionGroup.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.pnlGuestPicker.SuspendLayout();
             this.pnlGuestDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlInnerGuestDisplay.SuspendLayout();
@@ -352,7 +353,6 @@ namespace lakeside
             this.pnlGuests.BackColor = System.Drawing.Color.Transparent;
             this.pnlGuests.Controls.Add(this.btnRandomiseData);
             this.pnlGuests.Controls.Add(this.pnlGuestSelectionActionGroup);
-            this.pnlGuests.Controls.Add(this.panel1);
             this.pnlGuests.Controls.Add(this.pnlGuestPicker);
             this.pnlGuests.Controls.Add(this.lbGuestsTitle);
             this.pnlGuests.Location = new System.Drawing.Point(356, 36);
@@ -382,7 +382,7 @@ namespace lakeside
             this.pnlGuestSelectionActionGroup.Controls.Add(this.btnSelectGuests);
             this.pnlGuestSelectionActionGroup.Controls.Add(this.btnAcceptGuests);
             this.pnlGuestSelectionActionGroup.Controls.Add(this.btnAddGuest);
-            this.pnlGuestSelectionActionGroup.Location = new System.Drawing.Point(39, 36);
+            this.pnlGuestSelectionActionGroup.Location = new System.Drawing.Point(338, 31);
             this.pnlGuestSelectionActionGroup.Name = "pnlGuestSelectionActionGroup";
             this.pnlGuestSelectionActionGroup.Size = new System.Drawing.Size(254, 285);
             this.pnlGuestSelectionActionGroup.TabIndex = 23;
@@ -436,7 +436,7 @@ namespace lakeside
             // 
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(15, 31);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 40);
             this.panel1.TabIndex = 22;
@@ -451,6 +451,7 @@ namespace lakeside
             this.button1.TabIndex = 1;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -464,6 +465,7 @@ namespace lakeside
             // 
             // pnlGuestPicker
             // 
+            this.pnlGuestPicker.Controls.Add(this.panel1);
             this.pnlGuestPicker.Location = new System.Drawing.Point(15, 32);
             this.pnlGuestPicker.Name = "pnlGuestPicker";
             this.pnlGuestPicker.Size = new System.Drawing.Size(308, 363);
@@ -775,6 +777,7 @@ namespace lakeside
             this.pnlGuestSelectionActionGroup.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlGuestPicker.ResumeLayout(false);
             this.pnlGuestDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlInnerGuestDisplay.ResumeLayout(false);

@@ -485,23 +485,26 @@ namespace lakeside
             pnlGuestSelectionActionGroup.Location = new Point(329, 31);
             int i = 0;
             pnlGuestPicker.Location = new Point(12, 50);
-            foreach(Control c in pnlGuests.Controls)
-            {
-                if(c.GetType() == typeof(Panel) && c.Name[4]=='A')
-                {
-                    pnlGuests.Controls.Remove(c);
-                }
-            }
+            //foreach (Control c in pnlGuestPicker.Controls)
+            //{
+            //    if (c.GetType() == typeof(Panel) && c.Name[4] == 'A')
+            //    {
+            //        pnlGuestPicker.Controls.Remove(c);
+            //    }
+            //}
+            pnlGuestPicker.Controls.Clear();
 
-            foreach(Guest g in selectedGuests)
+            foreach (Guest g in selectedGuests)
             {
-                pnlGuestPicker.Location = new Point(pnlGuestPicker.Location.X, pnlGuestPicker.Location.Y + 45);
+                //pnlGuestPicker.Location = new Point(pnlGuestPicker.Location.X, pnlGuestPicker.Location.Y + 45);
                 Panel pnl = new Panel();
                 pnl.Size = new Size(308, 40);
-                pnl.Location = new Point(12, 45*(i+1));
+                //pnl.Location = new Point(12, 45*(i+1));
+                pnl.Location = new Point(0, 40 * (i));
                 //pnl.BackColor = Color.LightBlue;
                 pnl.Name = $"pnlGA_" + i;
-                pnlGuests.Controls.Add(pnl);
+                //pnlGuests.Controls.Add(pnl);
+                pnlGuestPicker.Controls.Add(pnl);
 
                 Label lb = new Label();
                 lb.Font = new Font("Segoe UI", 14);
@@ -939,6 +942,11 @@ namespace lakeside
                 discount += 3;
             }
             return discount;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)
