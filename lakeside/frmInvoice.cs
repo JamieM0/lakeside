@@ -249,16 +249,17 @@ namespace lakeside
                 case 1:
                     changeColour = txtNameOnCard;
                     errorDisplay = lbNameOnCardError;
-                    msg = Validation.OtherText(changeColour.Text, "Extra description", 50);
+                    msg = Validation.Name(txtNameOnCard.Text);
                     break;
                 case 2:
                     changeColour = txtCVV;
                     errorDisplay = lbCVVError;
-                    msg = Validation.Money(changeColour.Text);
+                    msg = Validation.RequiredLength(txtCVV.Text, 3, "CVV");
                     break;
                 case 3:
                     changeColour = dtpCardDate;
                     errorDisplay = lbCardDateError;
+                    msg = Validation.DateCheckOverCurrent(dtpCardDate.Value, "Card Expiry Date");
                     break;
             }
             if (msg == null)
@@ -291,71 +292,71 @@ namespace lakeside
 
         private void btnPayNow_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (CheckValidation())
-                {
-                     newExtra = new Extra(0, txtExtraName.Text, txtDescription.Text, Convert.ToDouble(txtPricePPPN.Text));
+            //try
+            //{
+            //    if (CheckValidation())
+            //    {
+            //         newExtra = new Extra(0, txtExtraName.Text, txtDescription.Text, Convert.ToDouble(txtPricePPPN.Text));
 
-                    ExtraDAL dal = new ExtraDAL();
+            //        ExtraDAL dal = new ExtraDAL();
 
-                    if (dal.AddNewExtra(newExtra))
-                    {
-                        MessageBox.Show("Extra added successfully");
-                        Hide();
-                        new frmAddExtra().Show();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    validTotal = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was an error making the payment!\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //        if (dal.AddNewExtra(newExtra))
+            //        {
+            //            MessageBox.Show("Extra added successfully");
+            //            Hide();
+            //            new frmAddExtra().Show();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        validTotal = true;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("There was an error making the payment!\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void txtCardNumber_TextChanged(object sender, EventArgs e)
         {
-            if(Validation.RequiredLength(txtCardNumber.Text, 16, "Card Number") != null)
-            {
-                lbCardNumberError.Text = ;
-            }
-            else
-            {
-                lbCardNumberError.Text = "";
-            }
+            ValidSetter(0);
         }
 
         private void txtNameOnCard_TextChanged(object sender, EventArgs e)
         {
-            if (Validation.Name(txtNameOnCard.Text) != null)
-                lbNameOnCardError.Text = ;
-            else
-                lbNameOnCardError.Text = "";
+            ValidSetter(1);
         }
 
         private void txtCVV_TextChanged(object sender, EventArgs e)
         {
-            if (Validation.RequiredLength(txtCVV.Text, 3, "CVV") != null)
-            {
-                lbCVVError.Text = Validation.RequiredLength(txtCVV.Text, 3, "CVV");
-            }
-            else
-            {
-                lbCVVError.Text = "";
-            }
+            ValidSetter(2);
         }
 
         private void dtpCardDate_ValueChanged(object sender, EventArgs e)
         {
-            if (Validation.DateCheckOverCurrent(dtpCardDate.Value, "Card Expiry Date") != null)
-                lbCardDateError.Text = Validation.DateCheckOverCurrent(dtpCardDate.Value, "Card Expiry Date");
-            else
-                lbCardDateError.Text = "";
+            ValidSetter(3);
+        }
+
+        private void txtCardNumber_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(0);
+        }
+
+        private void txtNameOnCard_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(1);
+        }
+
+        private void txtCVV_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(2);
+        }
+
+        private void dtpCardDate_Leave(object sender, EventArgs e)
+        {
+            ValidSetter(3);
         }
     }
 }

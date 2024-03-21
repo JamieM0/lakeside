@@ -374,6 +374,7 @@ namespace lakeside
             this.dtpCardDate.Size = new System.Drawing.Size(133, 29);
             this.dtpCardDate.TabIndex = 7;
             this.dtpCardDate.ValueChanged += new System.EventHandler(this.dtpCardDate_ValueChanged);
+            this.dtpCardDate.Leave += new System.EventHandler(this.dtpCardDate_Leave);
             // 
             // lbCardDate
             // 
@@ -395,6 +396,7 @@ namespace lakeside
             this.txtCVV.Size = new System.Drawing.Size(133, 29);
             this.txtCVV.TabIndex = 5;
             this.txtCVV.TextChanged += new System.EventHandler(this.txtCVV_TextChanged);
+            this.txtCVV.Leave += new System.EventHandler(this.txtCVV_Leave);
             // 
             // lbCVV
             // 
@@ -415,6 +417,7 @@ namespace lakeside
             this.txtNameOnCard.Size = new System.Drawing.Size(276, 29);
             this.txtNameOnCard.TabIndex = 3;
             this.txtNameOnCard.TextChanged += new System.EventHandler(this.txtNameOnCard_TextChanged);
+            this.txtNameOnCard.Leave += new System.EventHandler(this.txtNameOnCard_Leave);
             // 
             // lbNameOnCard
             // 
@@ -435,6 +438,7 @@ namespace lakeside
             this.txtCardNumber.Size = new System.Drawing.Size(276, 29);
             this.txtCardNumber.TabIndex = 1;
             this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
+            this.txtCardNumber.Leave += new System.EventHandler(this.txtCardNumber_Leave);
             // 
             // lbCardNumber
             // 
