@@ -15,6 +15,7 @@ namespace lakeside
     public partial class frmInvoice : Form
     {
         Invoice invoice = new Invoice();
+        bool[] allValid = new bool[4];
         public frmInvoice(Invoice Invoice)
         {
             invoice = Invoice;
@@ -233,16 +234,95 @@ namespace lakeside
             pnlPaymentWindow.Visible = true;
         }
 
+        private void ValidSetter(int elementID)
+        {
+            Control changeColour = null;
+            Label errorDisplay = null;
+            string msg = null;
+            switch (elementID)
+            {
+                case 0:
+                    changeColour = txtCardNumber;
+                    errorDisplay = lbCardNumberError;
+                    msg = Validation.RequiredLength(txtCardNumber.Text, 16, "Card Number");
+                    break;
+                case 1:
+                    changeColour = txtNameOnCard;
+                    errorDisplay = lbNameOnCardError;
+                    msg = Validation.OtherText(changeColour.Text, "Extra description", 50);
+                    break;
+                case 2:
+                    changeColour = txtCVV;
+                    errorDisplay = lbCVVError;
+                    msg = Validation.Money(changeColour.Text);
+                    break;
+                case 3:
+                    changeColour = dtpCardDate;
+                    errorDisplay = lbCardDateError;
+                    break;
+            }
+            if (msg == null)
+                Validator(elementID, changeColour, errorDisplay, msg);
+            else
+                Invalidator(elementID, changeColour, errorDisplay, msg);
+        }
+        private void Invalidator(int elementID, Control changeColour, Label errorDisplay, string msg)
+        {
+            changeColour.BackColor = Color.LightCoral;
+            errorDisplay.Text = msg;
+            allValid[elementID] = false;
+        }
+        private void Validator(int elementID, Control changeColour, Label errorDisplay, string msg)
+        {
+            changeColour.BackColor = Color.White;
+            errorDisplay.Text = "";
+            allValid[elementID] = true;
+        }
+        bool validTotal = true;
+        private bool CheckValidation()
+        {
+            foreach (bool validTest in allValid)
+            {
+                if (!validTest)
+                    validTotal = false;
+            }
+            return validTotal;
+        }
+
         private void btnPayNow_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (CheckValidation())
+                {
+                     newExtra = new Extra(0, txtExtraName.Text, txtDescription.Text, Convert.ToDouble(txtPricePPPN.Text));
 
+                    ExtraDAL dal = new ExtraDAL();
+
+                    if (dal.AddNewExtra(newExtra))
+                    {
+                        MessageBox.Show("Extra added successfully");
+                        Hide();
+                        new frmAddExtra().Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    validTotal = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error making the payment!\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtCardNumber_TextChanged(object sender, EventArgs e)
         {
             if(Validation.RequiredLength(txtCardNumber.Text, 16, "Card Number") != null)
             {
-                lbCardNumberError.Text = Validation.RequiredLength(txtCardNumber.Text, 16, "Card Number");
+                lbCardNumberError.Text = ;
             }
             else
             {
@@ -253,7 +333,7 @@ namespace lakeside
         private void txtNameOnCard_TextChanged(object sender, EventArgs e)
         {
             if (Validation.Name(txtNameOnCard.Text) != null)
-                lbNameOnCardError.Text = Validation.Name(txtNameOnCard.Text);
+                lbNameOnCardError.Text = ;
             else
                 lbNameOnCardError.Text = "";
         }

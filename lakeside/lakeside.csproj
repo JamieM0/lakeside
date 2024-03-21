@@ -85,6 +85,7 @@
     <Compile Include="DAL\CourseDAL.cs" />
     <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\ExtraDAL.cs" />
+    <Compile Include="DAL\InvoiceDAL.cs" />
     <Compile Include="DAL\LakesideDAL.cs" />
     <Compile Include="DAL\PodDAL.cs" />
     <Compile Include="frmCheckOutExperience.cs">
