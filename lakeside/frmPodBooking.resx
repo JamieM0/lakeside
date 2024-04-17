@@ -120,4 +120,12 @@
   <metadata name="tmrTick.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Click 'Ok' to be taken to the invoice form, where you can enter 
+payment card details in order to pay for your booking.
+
+If you do not pay for your deposit within 3 days, your temporary
+booking will be removed, and your selected dates and pod will
+be available for others to book.</value>
+  </data>
 </root>

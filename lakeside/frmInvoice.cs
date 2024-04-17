@@ -16,12 +16,23 @@ namespace lakeside
     {
         Invoice invoice = new Invoice();
         bool[] allValid = new bool[4];
+        bool depositMode=false;
         public frmInvoice(Invoice Invoice)
         {
             invoice = Invoice;
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             InitializeComponent();
             CenterToScreen();
+        }
+        public frmInvoice(Invoice Invoice, bool DepositMode)
+        {
+            invoice = Invoice;
+            depositMode = DepositMode;
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
+            InitializeComponent();
+            CenterToScreen();
+            lbTitle.Text = "Welcome to Lakeside Escapes";
+            lbInfoPodName.Text = "Pod staying in";
         }
 
         public void CenterControlToFormHorizontally(Control control)
@@ -109,6 +120,7 @@ namespace lakeside
             lbLeadGuestName.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
         }
 
+        double totalDue = 0.0;
         private void frmInvoice_Load(object sender, EventArgs e)
         {
             dgCourseSelected.Font = new Font("Segoe UI", 12);
@@ -178,8 +190,12 @@ namespace lakeside
             int discount = CalculateDiscount();
             double discountApplied = 100 - discount;
             double discountApplied2 = discountApplied / 100;
-            double totalPriceWithDiscounts = totalPrice * discountApplied2;
-            lbTotalPrice.Text = "Total Price: £" + totalPriceWithDiscounts;
+            double totalPriceWithDiscounts = Math.Round(totalPrice * discountApplied2,2);
+            if(depositMode!=true)
+                lbTotalPrice.Text = "Total Price: £" + (totalPriceWithDiscounts / 2).ToString("N2");
+            else
+                lbTotalPrice.Text = "Deposit Due: £" + (totalPriceWithDiscounts / 2).ToString("N2");
+            totalDue = totalPriceWithDiscounts / 2;
             txtNameOnCard.Text = invoice.leadGuest.Forename + " " + invoice.leadGuest.Surname;
             dtpCardDate.Value = DateTime.Now.AddDays(1);
         }
@@ -292,31 +308,37 @@ namespace lakeside
 
         private void btnPayNow_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (CheckValidation())
-            //    {
-            //         newExtra = new Extra(0, txtExtraName.Text, txtDescription.Text, Convert.ToDouble(txtPricePPPN.Text));
+            try
+            {
+                if (CheckValidation())
+                {
+                    Payment payment = new Payment(invoice.booking.BookingID,totalDue,"Payment Card",DateTime.Now.Date);
 
-            //        ExtraDAL dal = new ExtraDAL();
+                    PaymentDAL dal = new PaymentDAL();
 
-            //        if (dal.AddNewExtra(newExtra))
-            //        {
-            //            MessageBox.Show("Extra added successfully");
-            //            Hide();
-            //            new frmAddExtra().Show();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        validTotal = true;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("There was an error making the payment!\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                    if (dal.MakePayment(payment))
+                    {
+                        MessageBox.Show("Payment made successfully!");
+                        if (depositMode == true)
+                        {
+                            BookingDAL bookingDAL = new BookingDAL();
+                            bookingDAL.ConvertToFullBooking(invoice.booking);
+                        }
+
+                        Hide();
+                        new frmHome().Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    validTotal = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error making the payment!\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtCardNumber_TextChanged(object sender, EventArgs e)

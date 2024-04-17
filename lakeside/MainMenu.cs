@@ -32,6 +32,9 @@ namespace lakeside
             //LakesideDAL a = new LakesideDAL();
             //MessageBox.Show($"{a.CountGuests()}");
             menuStrip1.Renderer = new MyRenderer();
+
+            BookingDAL bookingDAL = new BookingDAL();
+            bookingDAL.RemoveBookings();
         }
 
         private void MainMenu_MouseDown(object sender, MouseEventArgs e)

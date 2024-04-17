@@ -85,6 +85,7 @@
     <Compile Include="DAL\CourseDAL.cs" />
     <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\ExtraDAL.cs" />
+    <Compile Include="DAL\PaymentDAL.cs" />
     <Compile Include="DAL\InvoiceDAL.cs" />
     <Compile Include="DAL\LakesideDAL.cs" />
     <Compile Include="DAL\PodDAL.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="frmAddCourse.cs">

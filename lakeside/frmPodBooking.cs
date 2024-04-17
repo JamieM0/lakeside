@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using lakeside.Models;
+using System.Diagnostics;
 
 namespace lakeside
 {
@@ -68,17 +69,17 @@ namespace lakeside
 
         private void DisplayCurrentMonth(DateTime currentDate)
         {
+            //Place lbMonthName in the middle of pnlCalOutside
+            lbMonthName.Text = currentDate.ToString("MMMM yyyy");
+            lbMonthName.Location = new Point((pnlCalOutside.Width - lbMonthName.Width) / 2, lbMonthName.Location.Y);
+            lbMonthName.TextAlign = ContentAlignment.MiddleCenter;
+
             //DateTime currentDate = DateTime.Now;
             current = currentDate;
             foreach (Panel day in dayPanels)
             {
                 day.Controls.Clear();
             }
-
-            //Place lbMonthName in the middle of pnlCalOutside
-            lbMonthName.Text = currentDate.ToString("MMMM yyyy");
-            lbMonthName.Location = new Point((pnlCalOutside.Width - lbMonthName.Width) / 2, lbMonthName.Location.Y);
-            lbMonthName.TextAlign = ContentAlignment.MiddleCenter;
 
             int daysInMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
             DateTime firstDayOfMonth = new DateTime(currentDate.Year, currentDate.Month, 1);
@@ -852,6 +853,7 @@ namespace lakeside
             }
         }
 
+        Booking b;
         private void btnContinueFromCourseSelection_Click(object sender, EventArgs e)
         {
             bool allValidCourses = true;
@@ -874,14 +876,19 @@ namespace lakeside
                 }
                 //MessageBox.Show($"The result is: {previousGuestsInBooking}");
                 //Create new booking
-                Booking b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID,0.0,0, previousGuestsInBooking);
+                b = new Booking("provisional", proposedStartDate, proposedEndDate, DateTime.Now.Date, selectedGuests.Count, 0.00, DateTime.Now.Date, 1, selectedPod.PodID,0.0,0, previousGuestsInBooking);
                 BookingDAL BookingDAL = new BookingDAL();
                 b.TotalOwed = CalculateTotalAmountToPay();
                 b.DiscountPercent = CalculateTotalDiscountAllowedOnBooking();
                 b.BookingID = BookingDAL.AddNewBooking(b);
                 if (b.BookingID!=null)
                 {
-                    MessageBox.Show("Booking added successfully!");
+                    pnlGuests.Visible = false;
+                    pnlCourses.Visible = false;
+                    pnlDepositInfo.Visible = true;
+                    llbChangeDates.Visible = false;
+                    llbChangeGuests.Visible = false;
+                    btnBackToHomeOrMainMenu.Visible = false;
                 }
                 
                 LakesideDAL GuestDAL = new LakesideDAL();
@@ -898,9 +905,6 @@ namespace lakeside
                         GuestDAL.RegisterForCourse(g,CourseDAL.CourseLookup(g.cachedCourseChoiceID),b);
                     }
                 }
-
-                Hide();
-                new frmHome().Show();
             }
             else
             {
@@ -947,6 +951,31 @@ namespace lakeside
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDepositGoTo_Click(object sender, EventArgs e)
+        {
+            List<Course> selectedCourses = new List<Course>();
+            CourseDAL courseDAL = new CourseDAL();
+            foreach (Guest g in selectedGuests)
+            {
+                Course GuestCourse = new Course();
+                GuestCourse = courseDAL.GetCoursesFromGuest(b, g);
+                if (GuestCourse != new Course())
+                {
+                    selectedCourses.Add(GuestCourse);
+                }
+            }
+            List<Extra> selectedExtras = new List<Extra>();
+
+            Invoice invoice = new Invoice(b, selectedGuests[0], selectedPod, selectedCourses, selectedExtras);
+            Hide();
+            new frmInvoice(invoice, true).Show();
         }
 
         //private void pnlDatePicker_Paint(object sender, PaintEventArgs e)

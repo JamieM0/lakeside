@@ -30,6 +30,7 @@ namespace lakeside
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPodBooking));
             this.pnlSundays = new System.Windows.Forms.Panel();
             this.pnlSaturdays = new System.Windows.Forms.Panel();
             this.pnlCalContainer = new System.Windows.Forms.Panel();
@@ -59,10 +60,10 @@ namespace lakeside
             this.btnSelectGuests = new System.Windows.Forms.Button();
             this.btnAcceptGuests = new System.Windows.Forms.Button();
             this.btnAddGuest = new System.Windows.Forms.Button();
+            this.pnlGuestPicker = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlGuestPicker = new System.Windows.Forms.Panel();
             this.lbGuestsTitle = new System.Windows.Forms.Label();
             this.tmrTick = new System.Windows.Forms.Timer(this.components);
             this.lbDebugInfo = new System.Windows.Forms.Label();
@@ -87,6 +88,11 @@ namespace lakeside
             this.btnDatePickerOpenerSelector = new System.Windows.Forms.Button();
             this.btnConfirmPod = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.pnlDepositInfo = new System.Windows.Forms.Panel();
+            this.btnDepositGoTo = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbDepositTitle = new System.Windows.Forms.Label();
             this.pnlCalOutside.SuspendLayout();
             this.pnlDatePicker.SuspendLayout();
             this.pnlOverflow.SuspendLayout();
@@ -94,13 +100,14 @@ namespace lakeside
             this.pnlLocationDateDisplay.SuspendLayout();
             this.pnlGuests.SuspendLayout();
             this.pnlGuestSelectionActionGroup.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pnlGuestPicker.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlGuestDisplay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlInnerGuestDisplay.SuspendLayout();
             this.pnlCourses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).BeginInit();
+            this.pnlDepositInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSundays
@@ -382,7 +389,7 @@ namespace lakeside
             this.pnlGuestSelectionActionGroup.Controls.Add(this.btnSelectGuests);
             this.pnlGuestSelectionActionGroup.Controls.Add(this.btnAcceptGuests);
             this.pnlGuestSelectionActionGroup.Controls.Add(this.btnAddGuest);
-            this.pnlGuestSelectionActionGroup.Location = new System.Drawing.Point(338, 31);
+            this.pnlGuestSelectionActionGroup.Location = new System.Drawing.Point(36, 32);
             this.pnlGuestSelectionActionGroup.Name = "pnlGuestSelectionActionGroup";
             this.pnlGuestSelectionActionGroup.Size = new System.Drawing.Size(254, 285);
             this.pnlGuestSelectionActionGroup.TabIndex = 23;
@@ -393,7 +400,7 @@ namespace lakeside
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(10, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 32);
+            this.label2.Size = new System.Drawing.Size(232, 32);
             this.label2.TabIndex = 22;
             this.label2.Text = "The first guest you add to the booking \r\nwill become the \'lead booker\'.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -432,6 +439,14 @@ namespace lakeside
             this.btnAddGuest.UseVisualStyleBackColor = true;
             this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
             // 
+            // pnlGuestPicker
+            // 
+            this.pnlGuestPicker.Controls.Add(this.panel1);
+            this.pnlGuestPicker.Location = new System.Drawing.Point(15, 32);
+            this.pnlGuestPicker.Name = "pnlGuestPicker";
+            this.pnlGuestPicker.Size = new System.Drawing.Size(308, 363);
+            this.pnlGuestPicker.TabIndex = 21;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
@@ -462,14 +477,6 @@ namespace lakeside
             this.label1.Size = new System.Drawing.Size(138, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Example Name";
-            // 
-            // pnlGuestPicker
-            // 
-            this.pnlGuestPicker.Controls.Add(this.panel1);
-            this.pnlGuestPicker.Location = new System.Drawing.Point(15, 32);
-            this.pnlGuestPicker.Name = "pnlGuestPicker";
-            this.pnlGuestPicker.Size = new System.Drawing.Size(308, 363);
-            this.pnlGuestPicker.TabIndex = 21;
             // 
             // lbGuestsTitle
             // 
@@ -739,6 +746,61 @@ namespace lakeside
             this.lbTitle.Text = "Check Availability";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pnlDepositInfo
+            // 
+            this.pnlDepositInfo.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDepositInfo.Controls.Add(this.btnDepositGoTo);
+            this.pnlDepositInfo.Controls.Add(this.label4);
+            this.pnlDepositInfo.Controls.Add(this.label3);
+            this.pnlDepositInfo.Controls.Add(this.lbDepositTitle);
+            this.pnlDepositInfo.Location = new System.Drawing.Point(279, 71);
+            this.pnlDepositInfo.Name = "pnlDepositInfo";
+            this.pnlDepositInfo.Size = new System.Drawing.Size(492, 312);
+            this.pnlDepositInfo.TabIndex = 22;
+            this.pnlDepositInfo.Visible = false;
+            // 
+            // btnDepositGoTo
+            // 
+            this.btnDepositGoTo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepositGoTo.Location = new System.Drawing.Point(187, 247);
+            this.btnDepositGoTo.Name = "btnDepositGoTo";
+            this.btnDepositGoTo.Size = new System.Drawing.Size(117, 44);
+            this.btnDepositGoTo.TabIndex = 3;
+            this.btnDepositGoTo.Text = "Ok";
+            this.btnDepositGoTo.UseVisualStyleBackColor = true;
+            this.btnDepositGoTo.Click += new System.EventHandler(this.btnDepositGoTo_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(454, 126);
+            this.label4.TabIndex = 2;
+            this.label4.Text = resources.GetString("label4.Text");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(42, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(403, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "You must now pay the deposit for the booking.";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // lbDepositTitle
+            // 
+            this.lbDepositTitle.AutoSize = true;
+            this.lbDepositTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDepositTitle.Location = new System.Drawing.Point(87, 12);
+            this.lbDepositTitle.Name = "lbDepositTitle";
+            this.lbDepositTitle.Size = new System.Drawing.Size(306, 30);
+            this.lbDepositTitle.TabIndex = 0;
+            this.lbDepositTitle.Text = "Your booking has been added!";
+            // 
             // frmPodBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -746,10 +808,11 @@ namespace lakeside
             this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Booking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1059, 498);
-            this.Controls.Add(this.btnBackToHomeOrMainMenu);
-            this.Controls.Add(this.pnlGuests);
-            this.Controls.Add(this.pnlCourses);
             this.Controls.Add(this.lbDebugInfo);
+            this.Controls.Add(this.pnlGuests);
+            this.Controls.Add(this.pnlDepositInfo);
+            this.Controls.Add(this.btnBackToHomeOrMainMenu);
+            this.Controls.Add(this.pnlCourses);
             this.Controls.Add(this.pnlGuestDisplay);
             this.Controls.Add(this.pnlLocationDateDisplay);
             this.Controls.Add(this.dgAvailablePods);
@@ -775,9 +838,9 @@ namespace lakeside
             this.pnlGuests.PerformLayout();
             this.pnlGuestSelectionActionGroup.ResumeLayout(false);
             this.pnlGuestSelectionActionGroup.PerformLayout();
+            this.pnlGuestPicker.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlGuestPicker.ResumeLayout(false);
             this.pnlGuestDisplay.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlInnerGuestDisplay.ResumeLayout(false);
@@ -785,6 +848,8 @@ namespace lakeside
             this.pnlCourses.ResumeLayout(false);
             this.pnlCourses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).EndInit();
+            this.pnlDepositInfo.ResumeLayout(false);
+            this.pnlDepositInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -848,5 +913,10 @@ namespace lakeside
         private System.Windows.Forms.Panel pnlInnerGuestDisplay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbTitle;
+        private System.Windows.Forms.Panel pnlDepositInfo;
+        private System.Windows.Forms.Label lbDepositTitle;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDepositGoTo;
     }
 }

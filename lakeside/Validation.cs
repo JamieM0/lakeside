@@ -20,14 +20,24 @@ namespace lakeside
                 return "You must enter at least one forename and a surname.";
             if (name.Length < 3)
                 return "Name must be at least 3 charactes long.";
-            string pattern = @"^[\p{L}\p{M}' \.\-]+$";
+            string pattern = @"^[\p{L}][\p{L}\p{M}' \.\-]*( [\p{L}\p{M}' \.\-]+)?$";
             Regex regex = new Regex(pattern);
-            if (regex.IsMatch(name))
-                return null;
+
+            if (regex.IsMatch(name.Trim()))
+            {
+                // Check for multiple spaces, spaces at the start, and spaces at the end
+                if (Regex.IsMatch(name, @"^ ") || Regex.IsMatch(name, @" {2,}") || name.EndsWith(" "))
+                    return "Name cannot start with a space, contain multiple spaces, or end with a space.";
+                else
+                    return null;
+            }
             else
-                return "Name contains illegal characters.";
+            {
+                return "Name contains illegal characters, or is in an invalid format.";
+            }
         }
 
+        //Name contains illegal characters, or is in an invalid format.
         public static string Email(string email)
         {
             string pattern = @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$";

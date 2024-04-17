@@ -8,6 +8,8 @@ namespace lakeside.Models
 {
     public class Invoice
     {
+        public int Id { get; set; }
+        
         // Reference to the booking that is selected
         public Booking booking { get; set; }
 

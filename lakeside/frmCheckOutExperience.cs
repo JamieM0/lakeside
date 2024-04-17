@@ -32,7 +32,7 @@ namespace lakeside
                 AddBookedPods();
                 pnlPodChooser.Visible = true;
                 Cursor.Current = Cursors.Default;
-                continueStep = 1;
+                //continueStep = 1;
                 dgPods.ClearSelection();
             }
         }
@@ -134,7 +134,7 @@ namespace lakeside
             {
                 dgPods.Visible = false;
                 //Notification
-                MessageBox.Show("No pods have been booked on these dates. \r\nYou can change the selected dates on the left.", "No booked pods", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No pods have been booked on these dates. \r\nYou can change the selected dates on the left.\r\n\r\nRemember: Bookings where the deposits haven't been made will not appear.", "No booked pods", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
         }
@@ -177,10 +177,12 @@ namespace lakeside
                 startDate = dtpBookingStart.Value;
                 dtpBookingEnd.Value = startDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.Text));
                 endDate = dtpBookingEnd.Value;
-                continueStep = 1;
+                //continueStep = 1;
                 dgPods.ClearSelection();
                 btnContinue.Text = "Check Dates";
                 btnContinue.Enabled = true;
+                lbDateRange.Visible = true;
+                dtpBookingEnd.Visible = true;
             }
         }
 
@@ -258,6 +260,11 @@ namespace lakeside
             Invoice invoice = new Invoice(selectedBooking,leadBooker,selectedPod,selectedCourses,selectedExtras);
             Hide();
             new frmInvoice(invoice).Show();
+        }
+
+        private void lbPodName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
