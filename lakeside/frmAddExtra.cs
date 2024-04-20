@@ -17,6 +17,7 @@ namespace lakeside
         bool[] allValid = new bool[3];
         bool newMode = true;
         string cachedSearch = "";
+        Extra toEdit = new Extra();
         
         public frmAddExtra()
         {
@@ -30,7 +31,9 @@ namespace lakeside
             txtExtraName.Text = ex.ExtraName;
             txtPricePPPN.Text = ex.Price.ToString();
             txtDescription.Text = ex.Description;
-
+            toEdit = ex;
+            btnRandomiseData.Visible = false;
+            btnAddCourse.BackgroundImage = Properties.Resources.EditCourseButton;
         }
 
         private void frmAddExtra_Load(object sender, EventArgs e)
@@ -140,7 +143,7 @@ namespace lakeside
                 }
                 else if (!newMode && CheckValidation())
                 {
-                    Extra newExtra = new Extra(0, txtExtraName.Text, txtDescription.Text, Convert.ToDouble(txtPricePPPN.Text));
+                    Extra newExtra = new Extra(toEdit.ExtraID, txtExtraName.Text, txtDescription.Text, Convert.ToDouble(txtPricePPPN.Text));
 
                     ExtraDAL dal = new ExtraDAL();
 
@@ -148,7 +151,7 @@ namespace lakeside
                     {
                         MessageBox.Show("Extra updated successfully");
                         Hide();
-                        new frmAddExtra().Show();
+                        new frmSearchGuests(toEdit,cachedSearch).Show();
                     }
                 }
                 else

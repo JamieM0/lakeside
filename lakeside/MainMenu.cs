@@ -143,11 +143,11 @@ namespace lakeside
 
         private void editExtraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Extra tmp = new Extra();
-            //Hide();
-            //new frmSearchGuests(tmp, null).Show();
+            Extra tmp = new Extra();
             Hide();
-            new frmEditExtra().Show();
+            new frmSearchGuests(tmp, null).Show();
+            //Hide();
+            //new frmEditExtra().Show();
         }
 
         private void addStaffMemberToolStripMenuItem_Click(object sender, EventArgs e)

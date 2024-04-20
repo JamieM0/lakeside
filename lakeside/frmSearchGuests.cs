@@ -426,6 +426,12 @@ namespace lakeside
                 btnRemoveElement.BackgroundImage = Properties.Resources.RemoveCourse;
                 btnRemoveElement.Visible = false;
             }
+            else if(searchType == "extra")
+            {
+                btnEditElement.BackgroundImage = Properties.Resources.EditExtraButton;
+                btnRemoveElement.BackgroundImage = Properties.Resources.RemoveExtraButton;
+                btnRemoveElement.Visible = false;
+            }
         }
 
         private void btnEditElement_Click(object sender, EventArgs e)
@@ -476,39 +482,39 @@ namespace lakeside
                     MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            //else if (searchType == "extra")
-            //{
-            //    try
-            //    {
-            //        ExtraDAL dal = new ExtraDAL();
-            //        System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
-            //        int extraID = int.Parse(dgResults.SelectedRows[0].Cells[6].Value.ToString());
-            //        Extra ex = dal.ExtraLookup(extraID);
-            //        Hide();
-            //        new frmAddExtra(ex, txtSearch.Text).Show();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
-            //else if (searchType == "staff")
-            //{
-            //    try
-            //    {
-            //        StaffDAL dal = new StaffDAL();
-            //        System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
-            //        string btnName = btn.Name;
-            //        int staffID = int.Parse(btnName.Split('_')[1]);
-            //        Staff s = dal.StaffLookup(staffID);
-            //        Hide();
-            //        new frmAddGuest(s, txtSearch.Text).Show();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
+            else if (searchType == "extra")
+            {
+                try
+                {
+                    ExtraDAL dal = new ExtraDAL();
+                    System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+                    int extraID = int.Parse(dgResults.SelectedRows[0].Cells[0].Value.ToString());
+                    Extra ex = dal.ExtraLookup(extraID);
+                    Hide();
+                    new frmAddExtra(ex, txtSearch.Text).Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (searchType == "staff")
+            {
+                try
+                {
+                    StaffDAL dal = new StaffDAL();
+                    System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;
+                    string btnName = btn.Name;
+                    int staffID = int.Parse(btnName.Split('_')[1]);
+                    Staff s = dal.StaffLookup(staffID);
+                    Hide();
+                    new frmAddGuest(s, txtSearch.Text).Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Sorry the requested record couldn't be located! \r\nMore details: {ex.Message}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             else if (searchType == "course")
             {
                 try
