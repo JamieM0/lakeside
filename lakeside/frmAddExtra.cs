@@ -129,6 +129,7 @@ namespace lakeside
 
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
+            btnAddCourse.Enabled = false;
             try
             {
                 if (newMode && CheckValidation())
@@ -161,12 +162,15 @@ namespace lakeside
                 {
                     MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     validTotal = true;
+                    btnAddCourse.Enabled = true;
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show("There was an error adding the extra!\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnAddCourse.Enabled = true;
             }
+            btnAddCourse.Enabled = true;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

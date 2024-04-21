@@ -250,6 +250,7 @@ namespace lakeside
 
         private void btnAddCourse_Click(object sender, EventArgs e)
         {
+            btnAddCourse.Enabled = false;
             int level = 0;
             if (cmbCourseLevel.Text == "Intermediate")
                 level = 1;
@@ -308,6 +309,7 @@ namespace lakeside
                 validTotal = true;
                 btnAddCourse.Enabled = true;
             }
+            btnAddCourse.Enabled = true;
         }
     }
 }

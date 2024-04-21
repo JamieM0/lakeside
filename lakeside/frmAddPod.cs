@@ -66,7 +66,8 @@ namespace lakeside
 
         private void btnAddPod_Click(object sender, EventArgs e)
         {
-            if(newPod && CheckValidation())
+            btnAddPod.Enabled = false;
+            if (newPod && CheckValidation())
             {
                 try
                 {
@@ -82,6 +83,7 @@ namespace lakeside
                 catch (Exception ex)
                 {
                     MessageBox.Show("Sorry, there was a problem adding the pod. Please try again later.\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnAddPod.Enabled = true;
                 }
             }
             else if (CheckValidation())
@@ -100,12 +102,14 @@ namespace lakeside
                 catch(Exception ex)
                 {
                     MessageBox.Show("Sorry, there was a problem updating the pod. Please try again later.\r\nMore Details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnAddPod.Enabled = true;
                 }
             }
             else
             {
                 MessageBox.Show("There are errors in the form! Please correct them.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 validTotal = true;
+                btnAddPod.Enabled = true;
             }
         }
 

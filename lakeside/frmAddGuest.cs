@@ -151,6 +151,7 @@ namespace lakeside
 
         private void btnAddGuest_Click(object sender, EventArgs e)
         {
+            btnAddGuest.Enabled = false;
             UseWaitCursor = true;
             allValid[6] = true;
             DisableAllFields();
@@ -261,6 +262,7 @@ namespace lakeside
                 validTotal = true;
             }
             UseWaitCursor = false;
+            btnAddGuest.Enabled = true;
         }
 
         private void ClearAllFields()
