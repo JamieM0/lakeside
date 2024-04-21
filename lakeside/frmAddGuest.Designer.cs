@@ -363,7 +363,7 @@ namespace lakeside
             // btnClearAll
             // 
             this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnClearAll.Image = global::lakeside.Properties.Resources.clear_icon_small;
             this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClearAll.Location = new System.Drawing.Point(786, 9);
             this.btnClearAll.Name = "btnClearAll";
@@ -412,6 +412,7 @@ namespace lakeside
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Visible = false;
             this.btnRandomiseData.Click += new System.EventHandler(this.btnRandomiseData_Click);
             // 
             // frmAddGuest

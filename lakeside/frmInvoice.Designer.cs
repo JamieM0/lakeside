@@ -438,6 +438,7 @@ namespace lakeside
             this.txtCardNumber.Size = new System.Drawing.Size(276, 29);
             this.txtCardNumber.TabIndex = 1;
             this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
+            this.txtCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCardNumber_KeyPress);
             this.txtCardNumber.Leave += new System.EventHandler(this.txtCardNumber_Leave);
             // 
             // lbCardNumber

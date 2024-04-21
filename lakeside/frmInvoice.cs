@@ -318,11 +318,18 @@ namespace lakeside
 
                     if (dal.MakePayment(payment))
                     {
-                        MessageBox.Show("Payment made successfully!");
+                        
                         if (depositMode == true)
                         {
+                            MessageBox.Show("Deposit Paid Successfully!");
                             BookingDAL bookingDAL = new BookingDAL();
                             bookingDAL.ConvertToFullBooking(invoice.booking);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Payment made successfully! \r\nThank you for staying at Lakeside Escapes!");
+                            BookingDAL bookingDAL = new BookingDAL();
+                            bookingDAL.ConvertToPaidBooking(invoice.booking);
                         }
 
                         Hide();
@@ -379,6 +386,15 @@ namespace lakeside
         private void dtpCardDate_Leave(object sender, EventArgs e)
         {
             ValidSetter(3);
+        }
+
+        private void txtCardNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Make txtCardNumber only accept numbers
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

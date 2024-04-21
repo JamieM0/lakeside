@@ -71,7 +71,7 @@ namespace lakeside
             {
                 CenterToScreen();
                 searchType = "course";
-                lbTitle.Text = "Lakeside Escapes: Search Course";
+                lbTitle.Text = "Lakeside Escapes: Search Courses";
                 txtSearch_SetText("Search for Course Name, Tutor, or Course ID...");
             }
 

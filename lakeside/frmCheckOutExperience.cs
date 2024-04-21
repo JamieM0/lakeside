@@ -52,8 +52,10 @@ namespace lakeside
                 //cmbDatePickerStayLength.Enabled = false;
                 Lakeside.AnimatePanelSideways(pnlStayLength, new Point(20, 128));
                 //pnlStayLength.Location = new Point(20, 128);
-                startDate = DateTime.Now.Date.AddDays(-Convert.ToInt32(cmbDatePickerStayLength.Text));
-                endDate = DateTime.Now.Date;
+                //startDate = DateTime.Now.Date.AddDays(-Convert.ToInt32(cmbDatePickerStayLength.Text));
+                //endDate = DateTime.Now.Date;
+                startDate = dtpBookingStart.Value;
+                endDate = startDate.AddDays(Convert.ToInt32(cmbDatePickerStayLength.Text));
                 lbDateRange.Visible = true;
                 //lbDateRange.Text = ($"{startDate.ToString("ddd d MMM")} - {endDate.ToString("ddd d MMM")}");
                 dtpBookingStart.Format = DateTimePickerFormat.Custom;

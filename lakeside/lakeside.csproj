@@ -281,6 +281,8 @@
     <None Include="Resources\Gradient_Extra.png" />
     <None Include="Resources\Gradient_Course.png" />
     <None Include="Resources\Gradient_Invoice.png" />
+    <None Include="Resources\clear-icon.png" />
+    <None Include="Resources\clear-icon_small.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -152,6 +152,17 @@ namespace lakeside.DAL
             return ExecuteNonQuery(command);
         }
 
+        public bool ConvertToPaidBooking(Booking b)
+        {
+            //This method converts the booking type to be 'full'
+            SqlCommand command = new SqlCommand();
+
+            //Set SQL query command text to valid insert statement using values from the Guest class.
+            command.CommandText = string.Format($"UPDATE Booking SET bookingType = 'paid' WHERE booking_id = {b.BookingID}");
+
+            return ExecuteNonQuery(command);
+        }
+
         public bool RemoveBookings()
         {
             List<Booking> bookings = new List<Booking>();

@@ -250,7 +250,7 @@ namespace lakeside
             // btnClearAll
             // 
             this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClearAll.Image = global::lakeside.Properties.Resources.returnIcon;
+            this.btnClearAll.Image = global::lakeside.Properties.Resources.clear_icon_small;
             this.btnClearAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClearAll.Location = new System.Drawing.Point(609, 23);
             this.btnClearAll.Name = "btnClearAll";

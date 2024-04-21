@@ -47,6 +47,8 @@ namespace lakeside
             this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editStaffMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPodBooking = new System.Windows.Forms.Button();
             this.cbDebug = new System.Windows.Forms.CheckBox();
             this.pnlBlackBackground = new System.Windows.Forms.Panel();
@@ -73,8 +75,6 @@ namespace lakeside
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.createBookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlBlackBackground.SuspendLayout();
             this.pnlExit.SuspendLayout();
@@ -101,7 +101,7 @@ namespace lakeside
             this.checkOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(152, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(663, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(386, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -214,7 +214,7 @@ namespace lakeside
             this.addExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
             this.addExtraToolStripMenuItem.Text = "Add Extra";
             this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
             // 
@@ -223,7 +223,7 @@ namespace lakeside
             this.editExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 
@@ -257,6 +257,24 @@ namespace lakeside
             this.editStaffMemberToolStripMenuItem.Size = new System.Drawing.Size(248, 30);
             this.editStaffMemberToolStripMenuItem.Text = "Edit Staff Member";
             this.editStaffMemberToolStripMenuItem.Click += new System.EventHandler(this.editStaffMemberToolStripMenuItem_Click);
+            // 
+            // createBookingToolStripMenuItem
+            // 
+            this.createBookingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.createBookingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.createBookingToolStripMenuItem.Name = "createBookingToolStripMenuItem";
+            this.createBookingToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
+            this.createBookingToolStripMenuItem.Text = "Create Booking";
+            this.createBookingToolStripMenuItem.Visible = false;
+            // 
+            // checkOutToolStripMenuItem
+            // 
+            this.checkOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.checkOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(115, 29);
+            this.checkOutToolStripMenuItem.Text = "Check Out";
+            this.checkOutToolStripMenuItem.Visible = false;
             // 
             // btnPodBooking
             // 
@@ -529,22 +547,6 @@ namespace lakeside
             this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 13;
             this.label1.Text = "label1";
-            // 
-            // createBookingToolStripMenuItem
-            // 
-            this.createBookingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.createBookingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.createBookingToolStripMenuItem.Name = "createBookingToolStripMenuItem";
-            this.createBookingToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
-            this.createBookingToolStripMenuItem.Text = "Create Booking";
-            // 
-            // checkOutToolStripMenuItem
-            // 
-            this.checkOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.checkOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(115, 29);
-            this.checkOutToolStripMenuItem.Text = "Check Out";
             // 
             // frmHome
             // 

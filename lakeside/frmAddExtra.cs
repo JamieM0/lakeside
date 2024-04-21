@@ -22,10 +22,12 @@ namespace lakeside
         public frmAddExtra()
         {
             InitializeComponent();
+            CenterToScreen();
         }
         public frmAddExtra(Extra ex, string cache)
         {
             InitializeComponent();
+            CenterToScreen();
             cachedSearch = cache;
             newMode = false;
             txtExtraName.Text = ex.ExtraName;
@@ -34,6 +36,7 @@ namespace lakeside
             toEdit = ex;
             btnRandomiseData.Visible = false;
             btnAddCourse.BackgroundImage = Properties.Resources.EditCourseButton;
+            btnClearAll.Visible = false;
         }
 
         private void frmAddExtra_Load(object sender, EventArgs e)

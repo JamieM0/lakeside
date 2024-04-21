@@ -23,10 +23,12 @@ namespace lakeside
         public frmAddCourse()
         {
             InitializeComponent();
+            CenterToScreen();
         }
         public frmAddCourse(Course c, string search)
         {
             InitializeComponent();
+            CenterToScreen();
             allStaff = dal.GetTutors();
             cachedSearch = search;
             txtCourseName.Text = c.CourseName;

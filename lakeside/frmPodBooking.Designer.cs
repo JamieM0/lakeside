@@ -381,6 +381,7 @@ namespace lakeside
             this.btnRandomiseData.Text = "Randomise Data";
             this.btnRandomiseData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRandomiseData.UseVisualStyleBackColor = true;
+            this.btnRandomiseData.Visible = false;
             this.btnRandomiseData.Click += new System.EventHandler(this.btnRandomiseData_Click);
             // 
             // pnlGuestSelectionActionGroup
@@ -808,10 +809,10 @@ namespace lakeside
             this.BackgroundImage = global::lakeside.Properties.Resources.Gradient_Booking2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1059, 498);
+            this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.lbDebugInfo);
             this.Controls.Add(this.pnlGuests);
             this.Controls.Add(this.pnlDepositInfo);
-            this.Controls.Add(this.btnBackToHomeOrMainMenu);
             this.Controls.Add(this.pnlCourses);
             this.Controls.Add(this.pnlGuestDisplay);
             this.Controls.Add(this.pnlLocationDateDisplay);
