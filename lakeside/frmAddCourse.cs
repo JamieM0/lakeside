@@ -311,5 +311,15 @@ namespace lakeside
             }
             btnAddCourse.Enabled = true;
         }
+
+        private void lbTutor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTutor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

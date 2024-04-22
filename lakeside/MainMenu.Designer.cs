@@ -101,7 +101,7 @@ namespace lakeside
             this.checkOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(152, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(386, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(865, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -214,7 +214,7 @@ namespace lakeside
             this.addExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.addExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addExtraToolStripMenuItem.Name = "addExtraToolStripMenuItem";
-            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.addExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.addExtraToolStripMenuItem.Text = "Add Extra";
             this.addExtraToolStripMenuItem.Click += new System.EventHandler(this.addExtraToolStripMenuItem_Click);
             // 
@@ -223,7 +223,7 @@ namespace lakeside
             this.editExtraToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.editExtraToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editExtraToolStripMenuItem.Name = "editExtraToolStripMenuItem";
-            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
+            this.editExtraToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.editExtraToolStripMenuItem.Text = "Edit Extra";
             this.editExtraToolStripMenuItem.Click += new System.EventHandler(this.editExtraToolStripMenuItem_Click);
             // 
@@ -238,7 +238,6 @@ namespace lakeside
             this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
             this.staffToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
             this.staffToolStripMenuItem.Text = "Staff";
-            this.staffToolStripMenuItem.Visible = false;
             // 
             // addStaffMemberToolStripMenuItem
             // 

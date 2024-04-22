@@ -155,6 +155,7 @@ namespace lakeside
             this.lbTutor.Size = new System.Drawing.Size(67, 30);
             this.lbTutor.TabIndex = 61;
             this.lbTutor.Text = "Tutor:";
+            this.lbTutor.Click += new System.EventHandler(this.lbTutor_Click);
             // 
             // lbCourseLevel
             // 
@@ -330,6 +331,7 @@ namespace lakeside
             this.cmbTutor.Name = "cmbTutor";
             this.cmbTutor.Size = new System.Drawing.Size(221, 33);
             this.cmbTutor.TabIndex = 2;
+            this.cmbTutor.SelectedIndexChanged += new System.EventHandler(this.cmbTutor_SelectedIndexChanged);
             this.cmbTutor.TextChanged += new System.EventHandler(this.cmbTutor_TextChanged);
             this.cmbTutor.Leave += new System.EventHandler(this.cmbTutor_Leave);
             // 
